@@ -142,12 +142,208 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            position: relative;
+            cursor: zoom-in;
+            transition: all 0.2s ease;
+        }
+        .img-container:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.15);
         }
         .img-container img {
             max-width: 100%;
             height: auto;
             border-radius: 4px;
             transition: transform 0.2s;
+            pointer-events: none;
+        }
+        .img-container:hover img {
+            transform: scale(1.01);
+        }
+        .zoom-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #38bdf8;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            backdrop-filter: blur(4px);
+            opacity: 0.85;
+            transition: all 0.2s;
+            pointer-events: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+        .img-container:hover .zoom-badge {
+            opacity: 1;
+            background: #1e293b;
+            color: #60a5fa;
+            transform: translateY(-1px);
+        }
+
+        /* FULLSCREEN INTERACTIVE LIGHTBOX */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 99999;
+            flex-direction: column;
+            user-select: none;
+        }
+        .lightbox-modal.active {
+            display: flex;
+        }
+        .lightbox-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.65rem 1.5rem;
+            background: rgba(30, 41, 59, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .lightbox-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .lightbox-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .subpanel-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: rgba(15, 23, 42, 0.65);
+            padding: 0.2rem 0.4rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .subpanel-lbl {
+            font-size: 0.78rem;
+            color: #94a3b8;
+            font-weight: 600;
+            margin-right: 0.2rem;
+            padding-left: 0.2rem;
+        }
+        .subpanel-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #e2e8f0;
+            padding: 0.3rem 0.55rem;
+            border-radius: 5px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .subpanel-btn:hover {
+            background: rgba(37, 99, 235, 0.6);
+            color: white;
+            border-color: #3b82f6;
+        }
+        .subpanel-btn.active {
+            background: #2563eb;
+            color: white;
+            border-color: #60a5fa;
+            box-shadow: 0 0 10px rgba(37, 99, 235, 0.6);
+        }
+        .zoom-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .tool-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.35rem 0.7rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .tool-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        .tool-btn.close-btn {
+            background: #ef4444;
+            border-color: #f87171;
+            margin-left: 0.4rem;
+        }
+        .tool-btn.close-btn:hover {
+            background: #dc2626;
+        }
+        .zoom-indicator {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #38bdf8;
+            min-width: 48px;
+            text-align: center;
+        }
+        .lightbox-body {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: grab;
+        }
+        .lightbox-body.grabbing {
+            cursor: grabbing;
+        }
+        .lightbox-img-wrapper {
+            position: absolute;
+            transform-origin: center center;
+            transition: transform 0.15s cubic-bezier(0.2, 0, 0.2, 1);
+            will-change: transform;
+        }
+        .lightbox-img-wrapper.no-transition {
+            transition: none;
+        }
+        .lightbox-img-wrapper img {
+            max-width: none;
+            display: block;
+            pointer-events: auto;
+            cursor: crosshair;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+            border-radius: 4px;
+        }
+        .lightbox-footer {
+            padding: 0.5rem 1.5rem;
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 0.78rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .lightbox-footer code {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            color: #e2e8f0;
         }
 
         .search-box {
@@ -220,13 +416,15 @@
             <div class="grid-2">
                 <div>
                     <h4 id="lbl-img-a" style="margin-bottom: 0.5rem; color: #1e293b;">Species A</h4>
-                    <div class="img-container">
+                    <div class="img-container" onclick="openLightbox(this)">
+                        <div class="zoom-badge">🔍 Click to zoom sub-panels</div>
                         <img id="img-comp-a" src="" alt="Plot A">
                     </div>
                 </div>
                 <div>
                     <h4 id="lbl-img-b" style="margin-bottom: 0.5rem; color: #1e293b;">Species B</h4>
-                    <div class="img-container">
+                    <div class="img-container" onclick="openLightbox(this)">
+                        <div class="zoom-badge">🔍 Click to zoom sub-panels</div>
                         <img id="img-comp-b" src="" alt="Plot B">
                     </div>
                 </div>
@@ -257,7 +455,8 @@
                             <button class="btn" onclick="setDeepView('bivariate')">📐 Standard Bivariate</button>
                         </div>
                     </div>
-                    <div class="img-container">
+                    <div class="img-container" onclick="openLightbox(this)">
+                        <div class="zoom-badge">🔍 Click to zoom sub-panels</div>
                         <img id="deep-img" src="" alt="Deep dive plot">
                     </div>
                 </div>
@@ -277,7 +476,8 @@
                     <button class="btn" onclick="setMetaView('fig3')">🗺️ Fig 3: Clade Heatmap</button>
                 </div>
             </div>
-            <div class="img-container">
+            <div class="img-container" onclick="openLightbox(this)">
+                <div class="zoom-badge">🔍 Click to zoom sub-panels</div>
                 <img id="meta-img" src="meta_comparative_graph_clean.png" alt="Meta figure">
             </div>
         </div>
@@ -382,6 +582,42 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+    </div>
+
+    <!-- FULLSCREEN INTERACTIVE LIGHTBOX MODAL -->
+    <div id="lightbox-modal" class="lightbox-modal">
+        <div class="lightbox-header">
+            <div class="lightbox-title" id="lightbox-title">🔬 High-Resolution Figure Inspection</div>
+            <div class="lightbox-controls">
+                <div id="lightbox-subpanels" class="subpanel-nav" style="display: none;">
+                    <span class="subpanel-lbl">Diagnostic Sub-Panels:</span>
+                    <button class="subpanel-btn active" onclick="zoomToPanel('all')">Full View</button>
+                    <button class="subpanel-btn" onclick="zoomToPanel('A')">Panel A (Whole-Gene GC)</button>
+                    <button class="subpanel-btn" onclick="zoomToPanel('B')">Panel B (CDS GC)</button>
+                    <button class="subpanel-btn" onclick="zoomToPanel('C')">Panel C (Gene Length)</button>
+                    <button class="subpanel-btn" onclick="zoomToPanel('D')">Panel D (Gene vs CDS)</button>
+                    <button class="subpanel-btn" onclick="zoomToPanel('E')">Panel E (CDS vs GC3)</button>
+                    <button class="subpanel-btn" onclick="zoomToPanel('F')">Panel F (Compartments)</button>
+                </div>
+                <div class="zoom-btn-group">
+                    <button class="tool-btn" onclick="changeZoom(-0.35)" title="Zoom Out (-)">−</button>
+                    <span id="zoom-level-text" class="zoom-indicator">100%</span>
+                    <button class="tool-btn" onclick="changeZoom(0.35)" title="Zoom In (+)">+</button>
+                    <button class="tool-btn" onclick="fitToScreen()" title="Fit to Screen (Key: 0)">Fit</button>
+                    <button class="tool-btn" onclick="setZoom100()" title="100% Native Pixels">1:1</button>
+                    <button class="tool-btn close-btn" onclick="closeLightbox()" title="Close (Esc)">✕ Close</button>
+                </div>
+            </div>
+        </div>
+        <div class="lightbox-body" id="lightbox-body" onwheel="handleWheel(event)" onmousedown="startDrag(event)" onmousemove="doDrag(event)" onmouseup="endDrag(event)" onmouseleave="endDrag(event)">
+            <div class="lightbox-img-wrapper" id="lightbox-wrapper">
+                <img id="lightbox-img" src="" alt="Zoomed Plot" draggable="false" onclick="handleImageClick(event)">
+            </div>
+        </div>
+        <div class="lightbox-footer">
+            <span>🖱️ <b>Interactive Zoom:</b> Click directly on any sub-panel to zoom in • Scroll wheel to zoom in/out • Drag to pan across figure</span>
+            <span>⌨️ <b>Shortcuts:</b> <code>Esc</code> Close • <code>0</code> Fit • <code>+</code>/<code>-</code> Zoom • <code>1</code>–<code>6</code> Panels A–F</span>
         </div>
     </div>
 
@@ -554,6 +790,228 @@
             );
             renderGenesTable(filtered.slice(0, 100));
         }
+
+        /* --- INTERACTIVE PAN & ZOOM LIGHTBOX LOGIC --- */
+        let zoomScale = 1.0;
+        let panX = 0;
+        let panY = 0;
+        let isDragging = false;
+        let startDragX = 0;
+        let startDragY = 0;
+        let activePanel = 'all';
+        let currentLightboxType = '';
+
+        function openLightbox(container) {
+            const img = container.querySelector('img');
+            if (!img || !img.src) return;
+
+            const modal = document.getElementById('lightbox-modal');
+            const lbImg = document.getElementById('lightbox-img');
+            const titleEl = document.getElementById('lightbox-title');
+            const subpanelNav = document.getElementById('lightbox-subpanels');
+
+            let title = '🔬 High-Resolution Figure Inspection';
+            const heading = container.parentElement.querySelector('h4') || container.parentElement.querySelector('h3');
+            if (heading) title = heading.innerText;
+
+            titleEl.innerText = title;
+            lbImg.src = img.src;
+
+            const isDiagnostic = img.src.includes('diagnostic_') || currentCompView === 'diagnostic' || currentDeepView === 'diagnostic';
+            currentLightboxType = isDiagnostic ? 'diagnostic' : 'standard';
+            subpanelNav.style.display = isDiagnostic ? 'flex' : 'none';
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            lbImg.onload = function() {
+                fitToScreen();
+            };
+            if (lbImg.complete) {
+                fitToScreen();
+            }
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function applyTransform(withTransition = true) {
+            const wrapper = document.getElementById('lightbox-wrapper');
+            if (withTransition) {
+                wrapper.classList.remove('no-transition');
+            } else {
+                wrapper.classList.add('no-transition');
+            }
+            wrapper.style.transform = `translate(${panX}px, ${panY}px) scale(${zoomScale})`;
+            document.getElementById('zoom-level-text').innerText = `${Math.round(zoomScale * 100)}%`;
+        }
+
+        function fitToScreen() {
+            const body = document.getElementById('lightbox-body');
+            const img = document.getElementById('lightbox-img');
+            const bw = body.clientWidth - 40;
+            const bh = body.clientHeight - 40;
+            const iw = img.naturalWidth || 1000;
+            const ih = img.naturalHeight || 1000;
+
+            const scale = Math.min(bw / iw, bh / ih, 1.0);
+            zoomScale = scale;
+            panX = 0;
+            panY = 0;
+            activePanel = 'all';
+            updateSubpanelButtons();
+            applyTransform(true);
+        }
+
+        function setZoom100() {
+            zoomScale = 1.0;
+            panX = 0;
+            panY = 0;
+            activePanel = '';
+            updateSubpanelButtons();
+            applyTransform(true);
+        }
+
+        function changeZoom(delta) {
+            const newScale = Math.max(0.1, Math.min(10.0, zoomScale + delta));
+            zoomScale = newScale;
+            applyTransform(true);
+        }
+
+        function zoomToPanel(panel) {
+            activePanel = panel;
+            updateSubpanelButtons();
+
+            if (panel === 'all') {
+                fitToScreen();
+                return;
+            }
+
+            const body = document.getElementById('lightbox-body');
+            const img = document.getElementById('lightbox-img');
+            const bw = body.clientWidth;
+            const bh = body.clientHeight;
+            const iw = img.naturalWidth || 6600;
+            const ih = img.naturalHeight || 6600;
+
+            let cx = 0.5, cy = 0.5;
+            if (panel === 'A') { cx = 0.28; cy = 0.19; }
+            else if (panel === 'B') { cx = 0.74; cy = 0.19; }
+            else if (panel === 'C') { cx = 0.28; cy = 0.52; }
+            else if (panel === 'D') { cx = 0.74; cy = 0.52; }
+            else if (panel === 'E') { cx = 0.28; cy = 0.83; }
+            else if (panel === 'F') { cx = 0.74; cy = 0.83; }
+
+            const targetScale = Math.max(1.8, (bw * 0.82) / (iw * 0.45));
+            zoomScale = targetScale;
+            panX = (0.5 - cx) * iw * zoomScale;
+            panY = (0.5 - cy) * ih * zoomScale;
+            applyTransform(true);
+        }
+
+        function updateSubpanelButtons() {
+            document.querySelectorAll('.subpanel-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('onclick')?.includes(`'${activePanel}'`)) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        function handleWheel(e) {
+            e.preventDefault();
+            const zoomFactor = e.deltaY < 0 ? 1.15 : 0.87;
+            const newScale = Math.max(0.1, Math.min(10.0, zoomScale * zoomFactor));
+
+            const rect = document.getElementById('lightbox-body').getBoundingClientRect();
+            const mouseX = e.clientX - rect.left - rect.width / 2;
+            const mouseY = e.clientY - rect.top - rect.height / 2;
+
+            panX = mouseX - (mouseX - panX) * (newScale / zoomScale);
+            panY = mouseY - (mouseY - panY) * (newScale / zoomScale);
+            zoomScale = newScale;
+
+            applyTransform(false);
+        }
+
+        function startDrag(e) {
+            if (e.button !== 0) return;
+            isDragging = true;
+            startDragX = e.clientX - panX;
+            startDragY = e.clientY - panY;
+            document.getElementById('lightbox-body').classList.add('grabbing');
+        }
+
+        function doDrag(e) {
+            if (!isDragging) return;
+            panX = e.clientX - startDragX;
+            panY = e.clientY - startDragY;
+            applyTransform(false);
+        }
+
+        function endDrag(e) {
+            if (isDragging) {
+                isDragging = false;
+                document.getElementById('lightbox-body').classList.remove('grabbing');
+            }
+        }
+
+        function handleImageClick(e) {
+            const rect = e.target.getBoundingClientRect();
+            const clickX = (e.clientX - rect.left) / rect.width;
+            const clickY = (e.clientY - rect.top) / rect.height;
+
+            if (currentLightboxType === 'diagnostic' && zoomScale <= 1.2) {
+                let targetP = 'A';
+                if (clickX < 0.5) {
+                    if (clickY < 0.36) targetP = 'A';
+                    else if (clickY < 0.69) targetP = 'C';
+                    else targetP = 'E';
+                } else {
+                    if (clickY < 0.36) targetP = 'B';
+                    else if (clickY < 0.69) targetP = 'D';
+                    else targetP = 'F';
+                }
+                zoomToPanel(targetP);
+                return;
+            }
+
+            const img = document.getElementById('lightbox-img');
+            const iw = img.naturalWidth || 2000;
+            const ih = img.naturalHeight || 2000;
+
+            if (zoomScale <= 1.2) {
+                zoomScale = 2.4;
+                panX = (0.5 - clickX) * iw * zoomScale;
+                panY = (0.5 - clickY) * ih * zoomScale;
+                applyTransform(true);
+            } else if (zoomScale < 3.5) {
+                zoomScale = 4.0;
+                panX = (0.5 - clickX) * iw * zoomScale;
+                panY = (0.5 - clickY) * ih * zoomScale;
+                applyTransform(true);
+            } else {
+                fitToScreen();
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById('lightbox-modal');
+            if (!modal || !modal.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === '+' || e.key === '=') changeZoom(0.35);
+            if (e.key === '-' || e.key === '_') changeZoom(-0.35);
+            if (e.key === '0') fitToScreen();
+            if (e.key === '1') zoomToPanel('A');
+            if (e.key === '2') zoomToPanel('B');
+            if (e.key === '3') zoomToPanel('C');
+            if (e.key === '4') zoomToPanel('D');
+            if (e.key === '5') zoomToPanel('E');
+            if (e.key === '6') zoomToPanel('F');
+        });
 
         window.onload = populateSpeciesDropdowns;
     </script>
