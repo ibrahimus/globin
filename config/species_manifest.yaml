@@ -1225,6 +1225,66 @@ species:
       left_gene: LOC119978731
       right_gene: LOC119978783
       notes: 'Cartilaginous fish ancestral jawed vertebrate linked cluster on chr15 (NC_052160.1): LOC119978731 (beta) - LOC119978771 (alpha) - LOC119978759 (alpha) - LOC119978783 (beta)'
+  heptranchias_perlo:
+    common_name: Sharpnose Sevengill Shark (H. perlo)
+    clade: chondrichthyes
+    division: NCBI_RefSeq
+    assembly: sHepPer1.hap1
+    status: active
+    loci:
+    - locus_id: alpha_beta_cluster
+      chromosome: NC_090346.1
+      start: 21050000
+      end: 21650000
+      strand: '+'
+      left_gene: LOC137340586
+      right_gene: LOC137340887
+      notes: 'Hexanchiform shark ancestral linked cluster on chr22 (NC_090346.1): LOC137340586 (beta) - LOC137340588 (alpha) - LOC137340587 (alpha) - LOC137340887 (beta)'
+  somniosus_microcephalus:
+    common_name: Greenland Shark (S. microcephalus)
+    clade: chondrichthyes
+    division: NCBI_RefSeq
+    assembly: FLI_Smic_1.0
+    status: active
+    loci:
+    - locus_id: alpha_beta_cluster
+      chromosome: NC_140997.1
+      start: 34600000
+      end: 35850000
+      strand: '+'
+      left_gene: LOC147110465
+      right_gene: LOC147110472
+      notes: 'Squaliform shark expanded linked cluster on chr11 (NC_140997.1): 7 tandem globins (beta-alpha-alpha-beta-alpha-beta-beta) LOC147110465..LOC147110472'
+  chiloscyllium_punctatum:
+    common_name: Brownbanded Bamboo Shark (C. punctatum)
+    clade: chondrichthyes
+    division: NCBI_RefSeq
+    assembly: sChiPun1.3
+    status: active
+    loci:
+    - locus_id: alpha_beta_cluster
+      chromosome: NC_092778.1
+      start: 19100000
+      end: 19350000
+      strand: '+'
+      left_gene: LOC140464411
+      right_gene: LOC140464413
+      notes: 'Orectolobiform shark linked cluster on chr40 (NC_092778.1): LOC140464411 (beta) - LOC140464415 (alpha) - LOC140464412 (alpha) - LOC140464413 (beta)'
+  carcharhinus_amblyrhynchos:
+    common_name: Grey Reef Shark (C. amblyrhynchos)
+    clade: chondrichthyes
+    division: NCBI_RefSeq
+    assembly: sCarAmb.v2.hapA
+    status: active
+    loci:
+    - locus_id: alpha_beta_cluster
+      chromosome: NC_137341.1
+      start: 3800000
+      end: 4050000
+      strand: '+'
+      left_gene: LOC145354793
+      right_gene: LOC145354794
+      notes: 'Carcharhiniform shark peri-telomeric linked cluster on chr18 (NC_137341.1): LOC145354793 (beta) - LOC145354628 (alpha) - LOC145354629 (alpha) - LOC145354794 (beta)'
   heterocephalus_glaber:
     common_name: Naked Mole-Rat (H. glaber)
     clade: amniote_mammal

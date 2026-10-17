@@ -88,6 +88,10 @@ zalophus_californianus,Sea Lion (Z. californianus),Mammalia,beta_globin,NC_04560
 loxodonta_africana,Elephant (L. africana),Mammalia,alpha_globin,NC_087353.1,53580000,53720000,140001,53206144.0,49.75,Interstitial (≥5% Arm),6,0,0,4,61.37,2.08,62.09,1.17,,,,,53.36,1.01
 loxodonta_africana,Elephant (L. africana),Mammalia,beta_globin,NC_087348.1,82900000,82950000,50001,53978058.0,39.42,Interstitial (≥5% Arm),0,4,0,0,,,,,43.34,-0.33,52.83,0.08,,
 scyliorhinus_canicula,Catshark (S. canicula),Chondrichthyes,alpha_beta_cluster,NC_052160.1,73580000,73860000,280001,73212200.0,49.79,Interstitial (≥5% Arm),2,2,0,0,40.14,-1.85,49.54,0.23,37.9,-2.44,45.53,-0.46,,
+heptranchias_perlo,Sevengill Shark (H. perlo),Chondrichthyes,alpha_beta_cluster,NC_090346.1,21050000,21650000,600001,21054060.0,40.08,Interstitial (≥5% Arm),2,2,0,3,40.49,-0.92,52.68,0.6,36.49,-1.68,42.66,-1.0,41.37,-0.75
+somniosus_microcephalus,Greenland Shark (S. microcephalus),Chondrichthyes,alpha_beta_cluster,NC_140997.1,34600000,35850000,1250001,34678075.0,14.46,Interstitial (≥5% Arm),3,4,0,1,39.72,-1.69,49.65,-0.04,38.71,-1.92,45.83,-0.64,45.38,-0.43
+chiloscyllium_punctatum,Bamboo Shark (C. punctatum),Chondrichthyes,alpha_beta_cluster,NC_092778.1,19100000,19350000,250001,19113314.0,27.41,Interstitial (≥5% Arm),2,2,0,1,46.36,0.61,45.57,-0.35,40.86,-0.54,39.78,-1.25,40.6,-0.6
+carcharhinus_amblyrhynchos,Grey Reef Shark (C. amblyrhynchos),Chondrichthyes,alpha_beta_cluster,NC_137341.1,3800000,4050000,250001,3799426.0,6.72,Interstitial (≥5% Arm),2,3,0,1,43.7,-0.18,52.22,0.66,42.02,-0.57,49.94,0.28,46.69,0.49
 heterocephalus_glaber,Naked Mole-Rat (H. glaber),Mammalia,alpha_globin,NW_004624913.1,950000,1150000,200001,937483.0,42.62,Interstitial (≥5% Arm),4,0,0,9,56.9,1.19,59.26,0.68,,,,,52.15,0.63
 heterocephalus_glaber,Naked Mole-Rat (H. glaber),Mammalia,beta_globin,NW_004624817.1,6650000,6750000,100001,2972471.0,30.6,Interstitial (≥5% Arm),0,3,0,1,,,,,46.29,-0.05,53.7,0.04,47.33,0.07
 vipera_berus,Adder (V. berus),Reptilia,alpha_globin,NC_138216.1,100000,200000,100001,98267.0,0.49,Subtelomeric (<5% Arm),2,0,0,12,54.4,1.8,54.02,0.7,,,,,55.71,2.01

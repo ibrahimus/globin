@@ -88,6 +88,10 @@ zalophus_californianus,California Sea Lion (Z. californianus),amniote_mammal,bet
 loxodonta_africana,African Savanna Elephant (L. africana),amniote_mammal,alpha_globin,NC_087353.1,53580000,53720000,140001,49.87,60.36,48.16,61.49,49.02,62.09,42.46,49.64,38.87,61.7,48.0,46.53,49.9,6,10
 loxodonta_africana,African Savanna Elephant (L. africana),amniote_mammal,beta_globin,NC_087348.1,82900000,82950000,50001,39.59,50.2,38.9,52.83,35.09,52.83,35.09,39.79,37.77,42.85,39.59,39.59,39.59,4,4
 scyliorhinus_canicula,Small-spotted Catshark (S. canicula),chondrichthyes,alpha_beta_cluster,NC_052160.1,73580000,73860000,280001,49.67,42.47,49.75,47.53,46.4,47.53,46.4,49.64,42.98,57.3,49.64,48.45,51.1,4,4
+heptranchias_perlo,Sharpnose Sevengill Shark (H. perlo),chondrichthyes,alpha_beta_cluster,NC_090346.1,21050000,21650000,600001,44.37,39.76,44.46,45.34,43.06,47.67,44.93,44.41,38.82,51.49,44.52,43.15,45.54,4,7
+somniosus_microcephalus,Greenland Shark (S. microcephalus),chondrichthyes,alpha_beta_cluster,NC_140997.1,34600000,35850000,1250001,48.49,42.09,48.54,46.8,41.32,47.47,41.11,48.48,41.72,57.07,48.57,46.52,50.69,7,8
+chiloscyllium_punctatum,Brownbanded Bamboo Shark (C. punctatum),chondrichthyes,alpha_beta_cluster,NC_092778.1,19100000,19350000,250001,43.15,40.3,43.21,42.65,37.85,42.68,39.6,43.16,37.53,46.46,43.18,42.76,43.56,4,5
+carcharhinus_amblyrhynchos,Grey Reef Shark (C. amblyrhynchos),chondrichthyes,alpha_beta_cluster,NC_137341.1,3800000,4050000,250001,46.9,46.16,46.91,49.81,46.06,50.85,43.94,46.91,43.66,52.09,46.78,46.2,47.26,5,6
 heterocephalus_glaber,Naked Mole-Rat (H. glaber),amniote_mammal,alpha_globin,NW_004624913.1,950000,1150000,200001,48.01,55.97,46.96,58.3,50.65,59.27,41.26,47.77,41.14,60.73,46.56,45.22,48.59,4,13
 heterocephalus_glaber,Naked Mole-Rat (H. glaber),amniote_mammal,beta_globin,NW_004624817.1,6650000,6750000,100001,36.23,49.66,35.91,52.11,56.88,53.7,59.7,36.33,33.68,39.24,36.23,36.23,36.23,3,4
 vipera_berus,Adder (V. berus),amniote_reptile,alpha_globin,NC_138216.1,100000,200000,100001,51.98,56.82,49.81,58.33,55.68,54.02,48.26,52.39,46.44,58.5,51.98,51.98,51.98,2,14

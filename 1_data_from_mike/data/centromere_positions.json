@@ -99,5 +99,9 @@
   "notechis_scutatus::NC_142020.1": 1000000,
   "notechis_scutatus::NC_142013.1": 35000000,
   "pantherophis_guttatus::NC_142076.1": 1000000,
-  "pantherophis_guttatus::NC_142067.1": 38000000
+  "pantherophis_guttatus::NC_142067.1": 38000000,
+  "heptranchias_perlo::NC_090346.1": 26000000,
+  "chiloscyllium_punctatum::NC_092778.1": 30000000,
+  "somniosus_microcephalus::NC_140997.1": 80000000,
+  "carcharhinus_amblyrhynchos::NC_137341.1": 25000000
 }

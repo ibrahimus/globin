@@ -22,7 +22,11 @@ class Visualizer:
         "petromyzon_marinus",
         "lampetra_fluviatilis",
         # Cartilaginous Fish (Chondrichthyes: Ancestral Jawed Vertebrate Baseline)
+        "heptranchias_perlo",
+        "somniosus_microcephalus",
+        "chiloscyllium_punctatum",
         "scyliorhinus_canicula",
+        "carcharhinus_amblyrhynchos",
         # Non-teleost Ray-finned Fish (Pre-3R Duplication)
         "lepisosteus_oculatus",
         # Teleost Fish (Post-3R Whole-Genome Duplication)
@@ -146,6 +150,10 @@ class Visualizer:
         "danio_rerio": "Zebrafish (D. rerio)",
         "lepisosteus_oculatus": "Spotted Gar (L. oculatus)",
         "scyliorhinus_canicula": "Catshark (S. canicula)",
+        "heptranchias_perlo": "Sevengill Shark (H. perlo)",
+        "somniosus_microcephalus": "Greenland Shark (S. microcephalus)",
+        "chiloscyllium_punctatum": "Bamboo Shark (C. punctatum)",
+        "carcharhinus_amblyrhynchos": "Grey Reef Shark (C. amblyrhynchos)",
         "petromyzon_marinus": "Sea Lamprey (P. marinus)",
         "lampetra_fluviatilis": "River Lamprey (L. fluviatilis)",
         "eptatretus_burgeri": "Inshore Hagfish (E. burgeri)",

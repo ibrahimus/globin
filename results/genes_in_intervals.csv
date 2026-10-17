@@ -1141,6 +1141,58 @@ scyliorhinus_canicula,chondrichthyes,alpha_beta_cluster,NC_052160.1,GeneID:11997
 ",alpha_globin,HBA,True,73731496,73732902,1406,+,LOC119978759
 scyliorhinus_canicula,chondrichthyes,alpha_beta_cluster,NC_052160.1,GeneID:119978783,LOC119978783,HBB_like_2,"protein_coding
 ",beta_globin,HBB,True,73822523,73824145,1622,+,LOC119978783
+heptranchias_perlo,chondrichthyes,alpha_beta_cluster,NC_090346.1,GeneID:137340582,fam234a,fam234a,"protein_coding
+",cluster_non_globin,FAM234A,False,21054060,21121731,67671,-,family with sequence similarity 234 member A
+heptranchias_perlo,chondrichthyes,alpha_beta_cluster,NC_090346.1,GeneID:137340584,luc7l,luc7l,"protein_coding
+",cluster_non_globin,LUC7L,False,21121880,21159097,37217,+,LUC7-like (S. cerevisiae)
+heptranchias_perlo,chondrichthyes,alpha_beta_cluster,NC_090346.1,GeneID:137340585,LOC137340585,LOC137340585,"protein_coding
+",cluster_non_globin,CYGB,False,21256608,21264619,8011,+,cytoglobin-2-like
+heptranchias_perlo,chondrichthyes,alpha_beta_cluster,NC_090346.1,GeneID:137340586,LOC137340586,HBB_like_1,"protein_coding
+",beta_globin,HBB,True,21337907,21339480,1573,-,hemoglobin subunit beta-like
+heptranchias_perlo,chondrichthyes,alpha_beta_cluster,NC_090346.1,GeneID:137340588,LOC137340588,HBA_like_1,"protein_coding
+",alpha_globin,HBA,True,21356863,21358151,1288,-,hemoglobin subunit alpha-like
+heptranchias_perlo,chondrichthyes,alpha_beta_cluster,NC_090346.1,GeneID:137340587,LOC137340587,HBA_like_2,"protein_coding
+",alpha_globin,HBA,True,21474746,21476036,1290,+,hemoglobin subunit alpha-like
+heptranchias_perlo,chondrichthyes,alpha_beta_cluster,NC_090346.1,GeneID:137340887,LOC137340887,HBB_like_2,"protein_coding
+",beta_globin,HBB,True,21505067,21506640,1573,+,hemoglobin subunit beta-like
+somniosus_microcephalus,chondrichthyes,alpha_beta_cluster,NC_140997.1,GeneID:147110465,LOC147110465,HBB_like_1,"protein_coding
+",beta_globin,HBB,True,34678075,34679492,1417,-,hemoglobin subunit beta-2-like
+somniosus_microcephalus,chondrichthyes,alpha_beta_cluster,NC_140997.1,GeneID:147110466,LOC147110466,HBA_like_1,"protein_coding
+",alpha_globin,HBA,True,34691368,34692773,1405,-,hemoglobin subunit alpha-like
+somniosus_microcephalus,chondrichthyes,alpha_beta_cluster,NC_140997.1,GeneID:147110467,LOC147110467,HBA_like_2,"protein_coding
+",alpha_globin,HBA,True,34870430,34871813,1383,+,hemoglobin subunit alpha
+somniosus_microcephalus,chondrichthyes,alpha_beta_cluster,NC_140997.1,GeneID:147110468,LOC147110468,HBB_like_2,"protein_coding
+",beta_globin,HBB,True,34916912,34918675,1763,+,hemoglobin subunit beta-3
+somniosus_microcephalus,chondrichthyes,alpha_beta_cluster,NC_140997.1,GeneID:147110469,LOC147110469,HBA_like_3,"protein_coding
+",alpha_globin,HBA,True,35019179,35020565,1386,+,hemoglobin subunit alpha
+somniosus_microcephalus,chondrichthyes,alpha_beta_cluster,NC_140997.1,GeneID:147110470,LOC147110470,HBB_like_3,"protein_coding
+",beta_globin,HBB,True,35073399,35075183,1784,+,hemoglobin subunit beta-2
+somniosus_microcephalus,chondrichthyes,alpha_beta_cluster,NC_140997.1,GeneID:147110472,LOC147110472,HBB_like_4,"protein_coding
+",beta_globin,HBB,True,35580494,35582018,1524,+,hemoglobin subunit beta-like
+somniosus_microcephalus,chondrichthyes,alpha_beta_cluster,NC_140997.1,GeneID:147110473,LOC147110473,LOC147110473,"protein_coding
+",cluster_non_globin,CYGB,False,35769873,35795288,25415,-,cytoglobin-2-like
+chiloscyllium_punctatum,chondrichthyes,alpha_beta_cluster,NC_092778.1,GeneID:140464410,LOC140464410,LOC140464410,"protein_coding
+",cluster_non_globin,CYGB,False,19113314,19125461,12147,+,cytoglobin-2-like
+chiloscyllium_punctatum,chondrichthyes,alpha_beta_cluster,NC_092778.1,GeneID:140464411,LOC140464411,HBB_like_1,"protein_coding
+",beta_globin,HBB,True,19164772,19166550,1778,-,hemoglobin subunit beta-like
+chiloscyllium_punctatum,chondrichthyes,alpha_beta_cluster,NC_092778.1,GeneID:140464415,LOC140464415,HBA_like_1,"protein_coding
+",alpha_globin,HBA,True,19188411,19189968,1557,-,hemoglobin subunit alpha-like
+chiloscyllium_punctatum,chondrichthyes,alpha_beta_cluster,NC_092778.1,GeneID:140464412,LOC140464412,HBA_like_2,"protein_coding
+",alpha_globin,HBA,True,19251852,19253418,1566,+,hemoglobin subunit alpha-like
+chiloscyllium_punctatum,chondrichthyes,alpha_beta_cluster,NC_092778.1,GeneID:140464413,LOC140464413,HBB_like_2,"protein_coding
+",beta_globin,HBB,True,19269697,19271477,1780,+,hemoglobin subunit beta-like
+carcharhinus_amblyrhynchos,chondrichthyes,alpha_beta_cluster,NC_137341.1,GeneID:145354792,LOC145354792,LOC145354792,"protein_coding
+",cluster_non_globin,CYGB,False,3799426,3819210,19784,+,cytoglobin-like
+carcharhinus_amblyrhynchos,chondrichthyes,alpha_beta_cluster,NC_137341.1,GeneID:145354793,LOC145354793,HBB_like_1,"protein_coding
+",beta_globin,HBB,True,3865723,3867043,1320,-,hemoglobin subunit beta-like
+carcharhinus_amblyrhynchos,chondrichthyes,alpha_beta_cluster,NC_137341.1,GeneID:145354628,LOC145354628,HBA_like_1,"protein_coding
+",alpha_globin,HBA,True,3901683,3903011,1328,-,hemoglobin subunit alpha-like
+carcharhinus_amblyrhynchos,chondrichthyes,alpha_beta_cluster,NC_137341.1,GeneID:145354629,LOC145354629,HBA_like_2,"protein_coding
+",alpha_globin,HBA,True,3950916,3952242,1326,+,hemoglobin subunit alpha-like
+carcharhinus_amblyrhynchos,chondrichthyes,alpha_beta_cluster,NC_137341.1,GeneID:145354794,LOC145354794,HBB_like_2,"protein_coding
+",beta_globin,HBB,True,3991154,3992470,1316,+,hemoglobin subunit beta-like
+carcharhinus_amblyrhynchos,chondrichthyes,alpha_beta_cluster,NC_137341.1,GeneID:145354795,LOC145354795,HBB_like_3,"protein_coding
+",beta_globin,HBB,True,3978352,3979318,966,+,hemoglobin subunit beta-like
 heterocephalus_glaber,amniote_mammal,alpha_globin,NW_004624913.1,GeneID:101707862,Rhbdf1,Rhbdf1,"protein_coding
 ",cluster_non_globin,RHBDF1,False,937483,954449,16966,-,Rhbdf1
 heterocephalus_glaber,amniote_mammal,alpha_globin,NW_004624913.1,GeneID:101707491,Mpg,Mpg,"protein_coding

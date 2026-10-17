@@ -87,6 +87,10 @@ NC_045605.1	61010000	61060000	zalophus_californianus:beta_globin	0	+
 NC_087353.1	53580000	53720000	loxodonta_africana:alpha_globin	0	-
 NC_087348.1	82900000	82950000	loxodonta_africana:beta_globin	0	+
 NC_052160.1	73580000	73860000	scyliorhinus_canicula:alpha_beta_cluster	0	+
+NC_090346.1	21050000	21650000	heptranchias_perlo:alpha_beta_cluster	0	+
+NC_140997.1	34600000	35850000	somniosus_microcephalus:alpha_beta_cluster	0	+
+NC_092778.1	19100000	19350000	chiloscyllium_punctatum:alpha_beta_cluster	0	+
+NC_137341.1	3800000	4050000	carcharhinus_amblyrhynchos:alpha_beta_cluster	0	+
 NW_004624913.1	950000	1150000	heterocephalus_glaber:alpha_globin	0	-
 NW_004624817.1	6650000	6750000	heterocephalus_glaber:beta_globin	0	+
 NC_138216.1	100000	200000	vipera_berus:alpha_globin	0	+
