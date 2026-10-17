@@ -458,6 +458,37 @@ def export_tables_cmd(output_dir):
     else:
         click.secho(f"Export script not found: {script}", fg="red")
 
+@main.command(name="dashboard")
+@click.option("--port", "-p", default=8501, type=int, help="Port to run interactive dashboard on.")
+@click.option("--no-browser", is_flag=True, help="Do not automatically launch web browser.")
+def dashboard_cmd(port, no_browser):
+    """Launches the interactive Vertebrate Globin Genomics Explorer Dashboard."""
+    import subprocess
+    from pathlib import Path
+
+    dashboard_app = Path(__file__).resolve().parent / "dashboard" / "app.py"
+    if not dashboard_app.exists():
+        click.secho(f"Dashboard app not found at: {dashboard_app}", fg="red")
+        raise SystemExit(1)
+
+    click.echo(f"=== Launching Vertebrate Globin Genomics Explorer on port {port} ===")
+    click.echo(f"Dashboard: http://localhost:{port}")
+    cmd = [
+        sys.executable,
+        "-m",
+        "streamlit",
+        "run",
+        str(dashboard_app),
+        "--server.port",
+        str(port),
+    ]
+    if no_browser:
+        cmd.append("--server.headless=true")
+    try:
+        subprocess.run(cmd)
+    except KeyboardInterrupt:
+        click.echo("\nDashboard stopped.")
+
 
 if __name__ == "__main__":
     main()

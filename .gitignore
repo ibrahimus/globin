@@ -72,3 +72,4 @@ results/bivariate_with_inset_plots/
 results/bivariate_length_gc_plots/
 results/chromosome_plots/
 results/*.html
+!results/dashboard.html
