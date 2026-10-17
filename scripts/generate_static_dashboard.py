@@ -44,14 +44,36 @@ def main():
 
         # Globin locus metrics
         sp_genes = df_genes[df_genes["species"] == sp]
-        alpha_genes = sp_genes[sp_genes["comparative_group"].str.contains("alpha_globin", case=False, na=False)]
-        beta_genes = sp_genes[sp_genes["comparative_group"].str.contains("beta_globin", case=False, na=False)]
+        globins = sp_genes[sp_genes["is_globin"] == True]
+
+        def _is_alpha(r):
+            grp = str(r.get("comparative_group", "")).lower()
+            sym = str(r.get("display_symbol", "")).lower()
+            name = str(r.get("gene_name", "")).lower()
+            if "alpha" in grp: return True
+            if "beta" in grp: return False
+            return any(sym.startswith(p) for p in ["hba", "hbaa", "hbae", "hbz", "hbm", "hbq"]) or "hba" in sym or "hba" in name
+
+        def _is_beta(r):
+            grp = str(r.get("comparative_group", "")).lower()
+            sym = str(r.get("display_symbol", "")).lower()
+            name = str(r.get("gene_name", "")).lower()
+            if "beta" in grp: return True
+            if "alpha" in grp: return False
+            return any(sym.startswith(p) for p in ["hbb", "hbba", "hbbe", "hbd", "hbg", "ba1l", "gb-beta", "rho"]) or "hbb" in sym or "hbb" in name
+
+        alpha_genes = globins[globins.apply(_is_alpha, axis=1)]
+        beta_genes = globins[globins.apply(_is_beta, axis=1)]
 
         z_col = "z_score_full_gene_gc" if "z_score_full_gene_gc" in sp_genes.columns else ("zscore_full_gene" if "zscore_full_gene" in sp_genes.columns else None)
         alpha_gc = float(alpha_genes["cds_gc"].mean()) if not alpha_genes.empty else None
         alpha_z = float(alpha_genes[z_col].mean()) if (z_col and not alpha_genes.empty) else None
         beta_gc = float(beta_genes["cds_gc"].mean()) if not beta_genes.empty else None
         beta_z = float(beta_genes[z_col].mean()) if (z_col and not beta_genes.empty) else None
+
+        # Handle cyclostomes (ancestral proto-globins)
+        proto_gc = float(globins["cds_gc"].mean()) if (alpha_gc is None and beta_gc is None and not globins.empty) else None
+        proto_z = float(globins[z_col].mean()) if (alpha_z is None and beta_z is None and z_col and not globins.empty) else None
 
         polarity = (alpha_z - beta_z) if (alpha_z is not None and beta_z is not None) else None
 
@@ -68,6 +90,8 @@ def main():
             "alpha_z": alpha_z,
             "beta_gc": beta_gc,
             "beta_z": beta_z,
+            "proto_gc": proto_gc,
+            "proto_z": proto_z,
             "polarity": polarity,
         }
 
@@ -516,9 +540,9 @@ def main():
                 ['Assembly Accession', dA.assembly, dB.assembly, '—'],
                 ['Baseline Coding GC (%)', `${{dA.mean_cds_gc.toFixed(2)}}% (±${{dA.std_cds_gc.toFixed(2)}}%)`, `${{dB.mean_cds_gc.toFixed(2)}}% (±${{dB.std_cds_gc.toFixed(2)}}%)`, `${{(dA.mean_cds_gc - dB.mean_cds_gc).toFixed(2)}}%`],
                 ['Curated Globin Loci', `${{dA.loci_count}} loci`, `${{dB.loci_count}} loci`, '—'],
-                ['α-Globin GC / Whole-Gene Z', dA.alpha_gc ? `${{dA.alpha_gc.toFixed(1)}}% (Z=${{dA.alpha_z > 0 ? '+' : ''}}${{dA.alpha_z.toFixed(2)}}σ)` : 'N/A', dB.alpha_gc ? `${{dB.alpha_gc.toFixed(1)}}% (Z=${{dB.alpha_z > 0 ? '+' : ''}}${{dB.alpha_z.toFixed(2)}}σ)` : 'N/A', (dA.alpha_z && dB.alpha_z) ? `ΔZ = ${{ (dA.alpha_z - dB.alpha_z).toFixed(2) }}σ` : 'N/A'],
-                ['β-Globin GC / Whole-Gene Z', dA.beta_gc ? `${{dA.beta_gc.toFixed(1)}}% (Z=${{dA.beta_z > 0 ? '+' : ''}}${{dA.beta_z.toFixed(2)}}σ)` : 'N/A', dB.beta_gc ? `${{dB.beta_gc.toFixed(1)}}% (Z=${{dB.beta_z > 0 ? '+' : ''}}${{dB.beta_z.toFixed(2)}}σ)` : 'N/A', (dA.beta_z && dB.beta_z) ? `ΔZ = ${{ (dA.beta_z - dB.beta_z).toFixed(2) }}σ` : 'N/A'],
-                ['Subunit Polarity (ΔZ = α - β)', dA.polarity ? `${{dA.polarity > 0 ? '+' : ''}}${{dA.polarity.toFixed(2)}}σ` : 'N/A', dB.polarity ? `${{dB.polarity > 0 ? '+' : ''}}${{dB.polarity.toFixed(2)}}σ` : 'N/A', (dA.polarity && dB.polarity) ? ((dA.polarity > 0 && dB.polarity < 0) || (dA.polarity < 0 && dB.polarity > 0) ? '⚡ Polarity Inversion' : 'Conserved Polarity') : 'N/A']
+                ['α-Globin GC / Whole-Gene Z', dA.alpha_gc ? `${{dA.alpha_gc.toFixed(1)}}% (Z=${{dA.alpha_z > 0 ? '+' : ''}}${{dA.alpha_z.toFixed(2)}}σ)` : (dA.proto_gc ? `Proto: ${{dA.proto_gc.toFixed(1)}}% (Z=${{dA.proto_z > 0 ? '+' : ''}}${{dA.proto_z.toFixed(2)}}σ)` : 'N/A'), dB.alpha_gc ? `${{dB.alpha_gc.toFixed(1)}}% (Z=${{dB.alpha_z > 0 ? '+' : ''}}${{dB.alpha_z.toFixed(2)}}σ)` : (dB.proto_gc ? `Proto: ${{dB.proto_gc.toFixed(1)}}% (Z=${{dB.proto_z > 0 ? '+' : ''}}${{dB.proto_z.toFixed(2)}}σ)` : 'N/A'), (dA.alpha_z && dB.alpha_z) ? `ΔZ = ${{ (dA.alpha_z - dB.alpha_z).toFixed(2) }}σ` : 'N/A'],
+                ['β-Globin GC / Whole-Gene Z', dA.beta_gc ? `${{dA.beta_gc.toFixed(1)}}% (Z=${{dA.beta_z > 0 ? '+' : ''}}${{dA.beta_z.toFixed(2)}}σ)` : (dA.proto_gc ? 'N/A (Ancestral Proto-Globin)' : 'N/A'), dB.beta_gc ? `${{dB.beta_gc.toFixed(1)}}% (Z=${{dB.beta_z > 0 ? '+' : ''}}${{dB.beta_z.toFixed(2)}}σ)` : (dB.proto_gc ? 'N/A (Ancestral Proto-Globin)' : 'N/A'), (dA.beta_z && dB.beta_z) ? `ΔZ = ${{ (dA.beta_z - dB.beta_z).toFixed(2) }}σ` : 'N/A'],
+                ['Subunit Polarity (ΔZ = α - β)', dA.polarity ? `${{dA.polarity > 0 ? '+' : ''}}${{dA.polarity.toFixed(2)}}σ` : (dA.proto_gc ? 'N/A (Monomeric Proto-Globin)' : 'N/A'), dB.polarity ? `${{dB.polarity > 0 ? '+' : ''}}${{dB.polarity.toFixed(2)}}σ` : (dB.proto_gc ? 'N/A (Monomeric Proto-Globin)' : 'N/A'), (dA.polarity && dB.polarity) ? ((dA.polarity > 0 && dB.polarity < 0) || (dA.polarity < 0 && dB.polarity > 0) ? '⚡ Polarity Inversion' : 'Conserved Polarity') : 'N/A']
             ];
 
             const tbody = document.getElementById('comp-tbody');
@@ -546,6 +570,17 @@ def main():
             document.getElementById('deep-title').innerText = `${{sp}} (${{d.common_name}}) Architecture & Distribution`;
             document.getElementById('deep-img').src = getPlotPath(sp, currentDeepView);
 
+            let globinHtml = '';
+            if (d.alpha_gc) {{
+                globinHtml = `
+                    <div><b>α-Globin GC:</b> ${{d.alpha_gc.toFixed(1)}}% (Z=${{d.alpha_z > 0 ? '+' : ''}}${{d.alpha_z.toFixed(2)}}σ)</div>
+                    <div><b>β-Globin GC:</b> ${{d.beta_gc.toFixed(1)}}% (Z=${{d.beta_z > 0 ? '+' : ''}}${{d.beta_z.toFixed(2)}}σ)</div>
+                    <div><b>Subunit Polarity:</b> ${{d.polarity > 0 ? '+' : ''}}${{d.polarity.toFixed(2)}}σ</div>
+                `;
+            }} else if (d.proto_gc) {{
+                globinHtml = `<div><b>Proto-Globin GC:</b> ${{d.proto_gc.toFixed(1)}}% (Z=${{d.proto_z > 0 ? '+' : ''}}${{d.proto_z.toFixed(2)}}σ)</div>`;
+            }}
+
             document.getElementById('deep-profile').innerHTML = `
                 <div><b>Common Name:</b> ${{d.common_name}}</div>
                 <div><b>Clade:</b> <code>${{d.clade}}</code></div>
@@ -553,6 +588,7 @@ def main():
                 <div><b>Baseline CDS GC:</b> ${{d.mean_cds_gc.toFixed(2)}}% (±${{d.std_cds_gc.toFixed(2)}}%)</div>
                 <div><b>Total Coding Genes:</b> ${{typeof d.num_genes === 'number' ? d.num_genes.toLocaleString() : d.num_genes}}</div>
                 <div><b>Curated Loci:</b> ${{d.loci_count}} intervals</div>
+                ${{globinHtml}}
             `;
         }}
 

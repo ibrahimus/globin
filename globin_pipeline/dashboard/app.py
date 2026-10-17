@@ -197,7 +197,8 @@ if mode == "⚖️ 1-on-1 Head-to-Head Comparison":
         # Baselines
         if not df_baselines.empty and sp in df_baselines["species"].values:
             b = df_baselines[df_baselines["species"] == sp].iloc[0]
-            m["clade"] = str(b.get("clade", "N/A"))
+            b_clade = str(b.get("clade", "N/A"))
+            m["clade"] = b_clade if b_clade not in ["nan", "None", "N/A", ""] else "N/A"
             m["assembly"] = str(b.get("assembly", "N/A"))
             m["mean_cds_gc"] = float(b.get("mean_cds_gc", 0.0))
             m["std_cds_gc"] = float(b.get("std_cds_gc", 0.0))
@@ -209,21 +210,43 @@ if mode == "⚖️ 1-on-1 Head-to-Head Comparison":
             m["std_cds_gc"] = 0.0
             m["gene_count"] = "N/A"
 
-        # Loci
+        # Loci & Intervals
         sp_genes = df_genes[df_genes["species"] == sp]
         sp_intervals = df_intervals[df_intervals["species"] == sp]
         m["intervals_count"] = len(sp_intervals)
+        if m["clade"] == "N/A" and not sp_intervals.empty:
+            m["clade"] = str(sp_intervals["clade"].iloc[0])
         
-        # Alpha locus
-        alpha_genes = sp_genes[sp_genes["comparative_group"].str.contains("alpha_globin", case=False, na=False)]
-        m["alpha_gc"] = alpha_genes["cds_gc"].mean() if not alpha_genes.empty else np.nan
-        z_col = "z_score_full_gene_gc" if "z_score_full_gene_gc" in sp_genes.columns else ("zscore_full_gene" if "zscore_full_gene" in sp_genes.columns else None)
-        m["alpha_z"] = alpha_genes[z_col].mean() if (z_col and not alpha_genes.empty) else np.nan
+        globins = sp_genes[sp_genes["is_globin"] == True]
 
-        # Beta locus
-        beta_genes = sp_genes[sp_genes["comparative_group"].str.contains("beta_globin", case=False, na=False)]
-        m["beta_gc"] = beta_genes["cds_gc"].mean() if not beta_genes.empty else np.nan
-        m["beta_z"] = beta_genes[z_col].mean() if (z_col and not beta_genes.empty) else np.nan
+        def _is_alpha(r):
+            grp = str(r.get("comparative_group", "")).lower()
+            sym = str(r.get("display_symbol", "")).lower()
+            name = str(r.get("gene_name", "")).lower()
+            if "alpha" in grp: return True
+            if "beta" in grp: return False
+            return any(sym.startswith(p) for p in ["hba", "hbaa", "hbae", "hbz", "hbm", "hbq"]) or "hba" in sym or "hba" in name
+
+        def _is_beta(r):
+            grp = str(r.get("comparative_group", "")).lower()
+            sym = str(r.get("display_symbol", "")).lower()
+            name = str(r.get("gene_name", "")).lower()
+            if "beta" in grp: return True
+            if "alpha" in grp: return False
+            return any(sym.startswith(p) for p in ["hbb", "hbba", "hbbe", "hbd", "hbg", "ba1l", "gb-beta", "rho"]) or "hbb" in sym or "hbb" in name
+
+        alpha_genes = globins[globins.apply(_is_alpha, axis=1)]
+        beta_genes = globins[globins.apply(_is_beta, axis=1)]
+        z_col = "z_score_full_gene_gc" if "z_score_full_gene_gc" in sp_genes.columns else ("zscore_full_gene" if "zscore_full_gene" in sp_genes.columns else None)
+
+        m["alpha_gc"] = float(alpha_genes["cds_gc"].mean()) if not alpha_genes.empty else np.nan
+        m["alpha_z"] = float(alpha_genes[z_col].mean()) if (z_col and not alpha_genes.empty) else np.nan
+        m["beta_gc"] = float(beta_genes["cds_gc"].mean()) if not beta_genes.empty else np.nan
+        m["beta_z"] = float(beta_genes[z_col].mean()) if (z_col and not beta_genes.empty) else np.nan
+
+        # Proto-globin for cyclostomes
+        m["proto_gc"] = float(globins["cds_gc"].mean()) if (np.isnan(m["alpha_gc"]) and np.isnan(m["beta_gc"]) and not globins.empty) else np.nan
+        m["proto_z"] = float(globins[z_col].mean()) if (np.isnan(m["alpha_z"]) and np.isnan(m["beta_z"]) and z_col and not globins.empty) else np.nan
 
         # Polarity
         if not np.isnan(m["alpha_z"]) and not np.isnan(m["beta_z"]):
@@ -236,14 +259,42 @@ if mode == "⚖️ 1-on-1 Head-to-Head Comparison":
     m_a = get_species_metrics(sp_a)
     m_b = get_species_metrics(sp_b)
 
+    def _format_alpha(m_dict):
+        if not np.isnan(m_dict["alpha_gc"]):
+            return f"{m_dict['alpha_gc']:.1f}% (Z = {m_dict['alpha_z']:+.2f}σ)"
+        if not np.isnan(m_dict["proto_gc"]):
+            return f"Proto: {m_dict['proto_gc']:.1f}% (Z = {m_dict['proto_z']:+.2f}σ)"
+        return "N/A"
+
+    def _format_beta(m_dict):
+        if not np.isnan(m_dict["beta_gc"]):
+            return f"{m_dict['beta_gc']:.1f}% (Z = {m_dict['beta_z']:+.2f}σ)"
+        if not np.isnan(m_dict["proto_gc"]):
+            return "N/A (Ancestral Proto-Globin)"
+        return "N/A"
+
+    def _format_polarity(m_dict):
+        if not np.isnan(m_dict["polarity"]):
+            return f"{m_dict['polarity']:+.2f}σ"
+        if not np.isnan(m_dict["proto_gc"]):
+            return "N/A (Monomeric Proto-Globin)"
+        return "N/A"
+
+    def _format_polarity_diff(m1, m2):
+        if not np.isnan(m1["polarity"]) and not np.isnan(m2["polarity"]):
+            if (m1["polarity"] > 0 and m2["polarity"] < 0) or (m1["polarity"] < 0 and m2["polarity"] > 0):
+                return "⚡ Polarity Inversion"
+            return "Conserved Polarity"
+        return "N/A"
+
     scorecard_data = [
         {"Metric": "Phylogenetic Clade", sp_a: m_a["clade"], sp_b: m_b["clade"], "Contrast / Difference": "Same Clade" if m_a["clade"] == m_b["clade"] else "Cross-Clade"},
         {"Metric": "Genome Assembly Accession", sp_a: m_a["assembly"], sp_b: m_b["assembly"], "Contrast / Difference": "—"},
         {"Metric": "Genome Baseline CDS GC (%)", sp_a: f"{m_a['mean_cds_gc']:.2f}% (±{m_a['std_cds_gc']:.2f}%)", sp_b: f"{m_b['mean_cds_gc']:.2f}% (±{m_b['std_cds_gc']:.2f}%)", "Contrast / Difference": f"{m_a['mean_cds_gc'] - m_b['mean_cds_gc']:+.2f}%"},
         {"Metric": "Curated Globin Intervals", sp_a: f"{m_a['intervals_count']} loci", sp_b: f"{m_b['intervals_count']} loci", "Contrast / Difference": "—"},
-        {"Metric": "α-Globin Coding GC / Whole-Gene Z", sp_a: f"{m_a['alpha_gc']:.1f}% (Z = {m_a['alpha_z']:+.2f}σ)" if not np.isnan(m_a["alpha_gc"]) else "N/A", sp_b: f"{m_b['alpha_gc']:.1f}% (Z = {m_b['alpha_z']:+.2f}σ)" if not np.isnan(m_b["alpha_gc"]) else "N/A", "Contrast / Difference": f"ΔZ = {m_a['alpha_z'] - m_b['alpha_z']:+.2f}σ" if not np.isnan(m_a['alpha_z']) and not np.isnan(m_b['alpha_z']) else "N/A"},
-        {"Metric": "β-Globin Coding GC / Whole-Gene Z", sp_a: f"{m_a['beta_gc']:.1f}% (Z = {m_a['beta_z']:+.2f}σ)" if not np.isnan(m_a["beta_gc"]) else "N/A", sp_b: f"{m_b['beta_gc']:.1f}% (Z = {m_b['beta_z']:+.2f}σ)" if not np.isnan(m_b["beta_gc"]) else "N/A", "Contrast / Difference": f"ΔZ = {m_a['beta_z'] - m_b['beta_z']:+.2f}σ" if not np.isnan(m_a['beta_z']) and not np.isnan(m_b['beta_z']) else "N/A"},
-        {"Metric": "Subunit Polarity (ΔZ = α - β)", sp_a: f"{m_a['polarity']:+.2f}σ" if not np.isnan(m_a["polarity"]) else "N/A", sp_b: f"{m_b['polarity']:+.2f}σ" if not np.isnan(m_b["polarity"]) else "N/A", "Contrast / Difference": "Polarity Shift" if (m_a["polarity"] > 0 and m_b["polarity"] < 0) or (m_a["polarity"] < 0 and m_b["polarity"] > 0) else "Conserved Polarity"},
+        {"Metric": "α-Globin Coding GC / Whole-Gene Z", sp_a: _format_alpha(m_a), sp_b: _format_alpha(m_b), "Contrast / Difference": f"ΔZ = {m_a['alpha_z'] - m_b['alpha_z']:+.2f}σ" if not np.isnan(m_a['alpha_z']) and not np.isnan(m_b['alpha_z']) else "N/A"},
+        {"Metric": "β-Globin Coding GC / Whole-Gene Z", sp_a: _format_beta(m_a), sp_b: _format_beta(m_b), "Contrast / Difference": f"ΔZ = {m_a['beta_z'] - m_b['beta_z']:+.2f}σ" if not np.isnan(m_a['beta_z']) and not np.isnan(m_b['beta_z']) else "N/A"},
+        {"Metric": "Subunit Polarity (ΔZ = α - β)", sp_a: _format_polarity(m_a), sp_b: _format_polarity(m_b), "Contrast / Difference": _format_polarity_diff(m_a, m_b)},
     ]
     st.table(pd.DataFrame(scorecard_data).set_index("Metric"))
 
@@ -319,6 +370,15 @@ elif mode == "🔬 Single Species Deep Dive":
             if not pd.isna(r.get('num_genes')):
                 st.markdown(f"**Coding Genes**: `{int(r.get('num_genes')):,}`")
         st.markdown(f"**Curated Loci**: `{len(sp_int)} intervals`")
+        
+        # Globin Subunit Metrics
+        sm = get_species_metrics(selected_species)
+        if not np.isnan(sm["alpha_gc"]):
+            st.markdown(f"**α-Globin GC**: `{sm['alpha_gc']:.1f}%` (Z = `{sm['alpha_z']:+.2f}σ`)")
+            st.markdown(f"**β-Globin GC**: `{sm['beta_gc']:.1f}%` (Z = `{sm['beta_z']:+.2f}σ`)")
+            st.markdown(f"**Subunit Polarity**: `{sm['polarity']:+.2f}σ`")
+        elif not np.isnan(sm["proto_gc"]):
+            st.markdown(f"**Proto-Globin GC**: `{sm['proto_gc']:.1f}%` (Z = `{sm['proto_z']:+.2f}σ`)")
 
     with col2:
         tab_chr, tab_inset, tab_diag, tab_biv, tab_table = st.tabs([
