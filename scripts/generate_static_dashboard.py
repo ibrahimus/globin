@@ -6,6 +6,7 @@ Requires zero server or Python runtime to view—can be double-clicked in any br
 import json
 import os
 from pathlib import Path
+import yaml
 import pandas as pd
 import numpy as np
 
@@ -17,6 +18,12 @@ def main():
     df_intervals = pd.read_csv(PROJECT_ROOT / "results" / "curated_intervals.csv")
     df_baselines = pd.read_csv(PROJECT_ROOT / "results" / "genome_baseline_stats.csv")
     df_stats = pd.read_csv(PROJECT_ROOT / "results" / "Supplementary_Table_S4_Statistical_Contrasts.csv")
+
+    manifest_path = PROJECT_ROOT / "config" / "species_manifest.yaml"
+    manifest_species = {}
+    if manifest_path.exists():
+        with open(manifest_path) as f:
+            manifest_species = yaml.safe_load(f).get("species", {})
 
     species_list = sorted(df_genes["species"].unique())
     print(f"Loaded {len(species_list)} species.")
@@ -30,17 +37,27 @@ def main():
 
         # Baseline stats
         base_row = df_baselines[df_baselines["species"] == sp]
-        if not base_row.empty:
-            b = base_row.iloc[0]
-            assembly = str(b.get("assembly", "N/A"))
-            mean_cds = float(b.get("mean_cds_gc", 0.0))
-            std_cds = float(b.get("std_cds_gc", 0.0))
-            num_genes = int(b.get("num_genes", 0)) if not pd.isna(b.get("num_genes")) else "N/A"
-        else:
+        b = base_row.iloc[0] if not base_row.empty else {}
+
+        # Assembly resolution
+        assembly = str(b.get("assembly", "")).strip()
+        if not assembly or assembly in ["nan", "None", "N/A"] or assembly.startswith("NC_"):
+            m_asm = manifest_species.get(sp, {}).get("assembly")
+            if m_asm:
+                assembly = str(m_asm).strip()
+        if not assembly or assembly in ["nan", "None"]:
             assembly = "N/A"
-            mean_cds = 0.0
-            std_cds = 0.0
-            num_genes = "N/A"
+
+        mean_cds = float(b.get("mean_cds_gc", 0.0)) if pd.notna(b.get("mean_cds_gc")) else 0.0
+        std_cds = float(b.get("std_cds_gc", 0.0)) if pd.notna(b.get("std_cds_gc")) else 0.0
+
+        # Gene count resolution across all available columns
+        num_genes = "N/A"
+        for col in ["num_genes", "total_genes", "num_cds_genes", "num_whole_genes"]:
+            val = b.get(col)
+            if pd.notna(val) and float(val) > 0:
+                num_genes = int(float(val))
+                break
 
         # Globin locus metrics
         sp_genes = df_genes[df_genes["species"] == sp]

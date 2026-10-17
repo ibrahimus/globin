@@ -23,6 +23,7 @@ def build_data_package(
     print("Loading datasets...")
     df_genes = pd.read_csv(os.path.join(base_dir, "results/gene_zscores.csv"))
     df_intervals = pd.read_csv(os.path.join(base_dir, "results/curated_intervals.csv"))
+    df_baselines = pd.read_csv(os.path.join(base_dir, "results/genome_baseline_stats.csv"))
     
     with open(os.path.join(base_dir, "config/species_manifest.yaml"), "r") as f:
         manifest = yaml.safe_load(f)
@@ -55,9 +56,19 @@ def build_data_package(
                 
         # Manifest entry
         m_entry = manifest.get("species", {}).get(sp, {})
-        assembly_acc = m_entry.get("assembly_accession", stats_data.get("assembly", "NCBI/Ensembl"))
-        assembly_name = m_entry.get("assembly_name", stats_data.get("assembly", "RefSeq"))
+        asm_val = m_entry.get("assembly", stats_data.get("assembly", "NCBI/Ensembl"))
+        assembly_acc = m_entry.get("assembly_accession", asm_val)
+        assembly_name = m_entry.get("assembly_name", asm_val)
         
+        base_df = df_baselines[df_baselines["species"] == sp] if not df_baselines.empty else pd.DataFrame()
+        b_row = base_df.iloc[0] if not base_df.empty else {}
+        num_whole = stats_data.get("num_whole_genes", b_row.get("num_whole_genes", b_row.get("num_genes", len(sp_genes))))
+        num_cds = stats_data.get("num_cds_genes", b_row.get("num_cds_genes", b_row.get("num_genes", np.nan)))
+        if pd.isna(num_whole) or num_whole <= len(sp_genes):
+            num_whole = b_row.get("num_genes", b_row.get("total_genes", num_whole))
+        if pd.isna(num_cds):
+            num_cds = b_row.get("num_genes", b_row.get("total_genes", np.nan))
+
         s1_rows.append({
             "species": sp,
             "common_name": cname,
@@ -65,10 +76,10 @@ def build_data_package(
             "clade_label": clade_lbl,
             "assembly_name": assembly_name,
             "assembly_accession": assembly_acc,
-            "num_whole_genes_annotated": stats_data.get("num_whole_genes", stats_data.get("num_genes", len(sp_genes))),
+            "num_whole_genes_annotated": int(num_whole) if pd.notna(num_whole) else len(sp_genes),
             "empirical_mean_whole_gene_gc_pct": stats_data.get("mean_whole_gene_gc", sp_genes["genome_mean_gene_gc"].iloc[0]),
             "empirical_std_whole_gene_gc_pct": stats_data.get("std_whole_gene_gc", sp_genes["genome_std_gene_gc"].iloc[0]),
-            "num_cds_genes_analyzed": stats_data.get("num_cds_genes", np.nan),
+            "num_cds_genes_analyzed": int(num_cds) if pd.notna(num_cds) else np.nan,
             "empirical_mean_cds_gc_pct": stats_data.get("mean_cds_gc", sp_genes["genome_mean_cds_gc"].iloc[0]),
             "empirical_std_cds_gc_pct": stats_data.get("std_cds_gc", sp_genes["genome_std_cds_gc"].iloc[0]),
             "empirical_mean_gc3_pct": stats_data.get("mean_gc3", sp_genes["genome_mean_gc3"].iloc[0]),

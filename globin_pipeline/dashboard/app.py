@@ -4,6 +4,7 @@ import os
 import sys
 import importlib.resources as pkg_resources
 from pathlib import Path
+import yaml
 import pandas as pd
 import numpy as np
 import plotly.express as px
@@ -103,10 +104,24 @@ def load_datasets():
     if df_stats.empty:
         df_stats = resolve_csv("statistical_comparisons.csv")
 
-    return df_genes, df_intervals, df_baselines, df_stats
+    manifest_species = {}
+    manifest_candidates = [
+        PROJECT_ROOT / "config" / "species_manifest.yaml",
+        PROJECT_ROOT / "globin_pipeline" / "data" / "species_manifest.yaml",
+    ]
+    for mc in manifest_candidates:
+        if mc.exists():
+            try:
+                with open(mc) as f:
+                    manifest_species = yaml.safe_load(f).get("species", {})
+                    break
+            except Exception:
+                pass
+
+    return df_genes, df_intervals, df_baselines, df_stats, manifest_species
 
 
-df_genes, df_intervals, df_baselines, df_stats = load_datasets()
+df_genes, df_intervals, df_baselines, df_stats, manifest_species = load_datasets()
 
 # Initialize Visualizer
 @st.cache_resource
@@ -195,20 +210,33 @@ if mode == "⚖️ 1-on-1 Head-to-Head Comparison":
     def get_species_metrics(sp):
         m = {}
         # Baselines
-        if not df_baselines.empty and sp in df_baselines["species"].values:
-            b = df_baselines[df_baselines["species"] == sp].iloc[0]
-            b_clade = str(b.get("clade", "N/A"))
-            m["clade"] = b_clade if b_clade not in ["nan", "None", "N/A", ""] else "N/A"
-            m["assembly"] = str(b.get("assembly", "N/A"))
-            m["mean_cds_gc"] = float(b.get("mean_cds_gc", 0.0))
-            m["std_cds_gc"] = float(b.get("std_cds_gc", 0.0))
-            m["gene_count"] = int(b.get("num_genes", 0)) if not pd.isna(b.get("num_genes")) else "N/A"
-        else:
-            m["clade"] = "N/A"
-            m["assembly"] = "N/A"
-            m["mean_cds_gc"] = 0.0
-            m["std_cds_gc"] = 0.0
-            m["gene_count"] = "N/A"
+        base_row = df_baselines[df_baselines["species"] == sp] if not df_baselines.empty else pd.DataFrame()
+        b = base_row.iloc[0] if not base_row.empty else {}
+
+        # Clade
+        b_clade = str(b.get("clade", "N/A"))
+        m["clade"] = b_clade if b_clade not in ["nan", "None", "N/A", ""] else "N/A"
+
+        # Assembly resolution with manifest fallback
+        asm = str(b.get("assembly", "")).strip()
+        if not asm or asm in ["nan", "None", "N/A"] or asm.startswith("NC_"):
+            m_asm = manifest_species.get(sp, {}).get("assembly")
+            asm = str(m_asm).strip() if m_asm else "N/A"
+        if not asm or asm in ["nan", "None"]:
+            asm = "N/A"
+        m["assembly"] = asm
+
+        m["mean_cds_gc"] = float(b.get("mean_cds_gc", 0.0)) if pd.notna(b.get("mean_cds_gc")) else 0.0
+        m["std_cds_gc"] = float(b.get("std_cds_gc", 0.0)) if pd.notna(b.get("std_cds_gc")) else 0.0
+
+        # Gene count resolution across all possible columns
+        gene_count = "N/A"
+        for col in ["num_genes", "total_genes", "num_cds_genes", "num_whole_genes"]:
+            val = b.get(col)
+            if pd.notna(val) and float(val) > 0:
+                gene_count = int(float(val))
+                break
+        m["gene_count"] = gene_count
 
         # Loci & Intervals
         sp_genes = df_genes[df_genes["species"] == sp]
@@ -361,18 +389,19 @@ elif mode == "🔬 Single Species Deep Dive":
         sp_base = df_baselines[df_baselines["species"] == selected_species] if not df_baselines.empty else pd.DataFrame()
         
         st.markdown("#### ℹ️ Species Profile")
-        if not sp_base.empty:
-            r = sp_base.iloc[0]
-            st.markdown(f"**Common Name**: {r.get('common_name', selected_species)}")
-            st.markdown(f"**Clade**: `{r.get('clade', 'N/A')}`")
-            st.markdown(f"**Assembly**: `{r.get('assembly', 'N/A')}`")
-            st.markdown(f"**Baseline CDS GC**: `{r.get('mean_cds_gc', 0.0):.2f}%` (± `{r.get('std_cds_gc', 0.0):.2f}%`)")
-            if not pd.isna(r.get('num_genes')):
-                st.markdown(f"**Coding Genes**: `{int(r.get('num_genes')):,}`")
+        sm = get_species_metrics(selected_species)
+        common_name = df_intervals[df_intervals["species"] == selected_species]["common_name"].iloc[0] if not sp_int.empty else selected_species
+        st.markdown(f"**Common Name**: {common_name}")
+        st.markdown(f"**Clade**: `{sm['clade']}`")
+        st.markdown(f"**Assembly**: `{sm['assembly']}`")
+        st.markdown(f"**Baseline CDS GC**: `{sm['mean_cds_gc']:.2f}%` (± `{sm['std_cds_gc']:.2f}%`)")
+        if sm["gene_count"] != "N/A":
+            st.markdown(f"**Total Coding Genes**: `{sm['gene_count']:,}`")
+        else:
+            st.markdown(f"**Total Coding Genes**: `N/A`")
         st.markdown(f"**Curated Loci**: `{len(sp_int)} intervals`")
         
         # Globin Subunit Metrics
-        sm = get_species_metrics(selected_species)
         if not np.isnan(sm["alpha_gc"]):
             st.markdown(f"**α-Globin GC**: `{sm['alpha_gc']:.1f}%` (Z = `{sm['alpha_z']:+.2f}σ`)")
             st.markdown(f"**β-Globin GC**: `{sm['beta_gc']:.1f}%` (Z = `{sm['beta_z']:+.2f}σ`)")
