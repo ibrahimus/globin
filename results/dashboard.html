@@ -287,55 +287,57 @@
             background: white;
             border: 1px solid var(--border);
             border-radius: 8px;
-            padding: 0.5rem;
-            text-align: center;
-            min-height: 380px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
-            position: relative;
             cursor: zoom-in;
+            display: flex;
+            flex-direction: column;
             transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
         .img-container:hover {
-            border-color: var(--primary);
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.15);
+            border-color: #3b82f6;
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.15);
         }
         .img-container img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
-            border-radius: 4px;
+            display: block;
+            border-radius: 7px 7px 0 0;
             transition: transform 0.2s;
             pointer-events: none;
         }
         .img-container:hover img {
-            transform: scale(1.01);
+            transform: scale(1.006);
         }
-        .zoom-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(15, 23, 42, 0.85);
-            color: #38bdf8;
-            padding: 0.35rem 0.75rem;
-            border-radius: 6px;
-            font-size: 0.78rem;
+        .img-caption-bar {
+            padding: 0.45rem 0.8rem;
+            background: #f8fafc;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+        .caption-text {
             font-weight: 600;
+            color: #334155;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .caption-action {
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 0.78rem;
             display: flex;
             align-items: center;
-            gap: 0.35rem;
-            backdrop-filter: blur(4px);
-            opacity: 0.85;
-            transition: all 0.2s;
-            pointer-events: none;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            gap: 0.2rem;
+            white-space: nowrap;
         }
-        .img-container:hover .zoom-badge {
-            opacity: 1;
-            background: #1e293b;
-            color: #60a5fa;
-            transform: translateY(-1px);
+        .img-container:hover .caption-action {
+            color: #1d4ed8;
+            text-decoration: underline;
         }
 
         /* FULLSCREEN INTERACTIVE LIGHTBOX */
@@ -614,15 +616,21 @@
                 <div>
                     <h4 id="lbl-img-a" style="margin-bottom: 0.5rem; color: #1e293b;">Species A</h4>
                     <div class="img-container" onclick="openLightbox(this)">
-                        <div class="zoom-badge">🔍 Click to zoom sub-panels</div>
                         <img id="img-comp-a" src="" alt="Plot A">
+                        <div class="img-caption-bar">
+                            <span class="caption-text" id="caption-comp-a">Species A Plot</span>
+                            <span class="caption-action">🔍 Inspect & Zoom →</span>
+                        </div>
                     </div>
                 </div>
                 <div>
                     <h4 id="lbl-img-b" style="margin-bottom: 0.5rem; color: #1e293b;">Species B</h4>
                     <div class="img-container" onclick="openLightbox(this)">
-                        <div class="zoom-badge">🔍 Click to zoom sub-panels</div>
                         <img id="img-comp-b" src="" alt="Plot B">
+                        <div class="img-caption-bar">
+                            <span class="caption-text" id="caption-comp-b">Species B Plot</span>
+                            <span class="caption-action">🔍 Inspect & Zoom →</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -667,8 +675,11 @@
                         </div>
                     </div>
                     <div class="img-container" onclick="openLightbox(this)">
-                        <div class="zoom-badge">🔍 Click to zoom sub-panels</div>
                         <img id="deep-img" src="" alt="Deep dive plot">
+                        <div class="img-caption-bar">
+                            <span class="caption-text" id="caption-deep">Architecture & Distribution Plot</span>
+                            <span class="caption-action">🔍 Inspect & Zoom →</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -688,8 +699,11 @@
                 </div>
             </div>
             <div class="img-container" onclick="openLightbox(this)">
-                <div class="zoom-badge">🔍 Click to zoom sub-panels</div>
                 <img id="meta-img" src="meta_comparative_graph_clean.png" alt="Meta figure">
+                <div class="img-caption-bar">
+                    <span class="caption-text" id="caption-meta">Macroevolutionary Meta Analysis</span>
+                    <span class="caption-action">🔍 Inspect & Zoom →</span>
+                </div>
             </div>
         </div>
     </div>
@@ -827,8 +841,8 @@
             </div>
         </div>
         <div class="lightbox-footer">
-            <span>🖱️ <b>Interactive Zoom:</b> Click directly on any sub-panel to zoom in • Scroll wheel to zoom in/out • Drag to pan across figure</span>
-            <span>⌨️ <b>Shortcuts:</b> <code>Esc</code> Close • <code>0</code> Fit • <code>+</code>/<code>-</code> Zoom • <code>1</code>–<code>6</code> Panels A–F</span>
+            <span id="lightbox-mouse-help">🖱️ <b>Interactive Zoom:</b> Click to zoom in/out • Scroll wheel to zoom • Drag to pan</span>
+            <span id="lightbox-shortcuts">⌨️ <b>Shortcuts:</b> <code>Esc</code> Close • <code>0</code> Fit • <code>+</code>/<code>-</code> Zoom</span>
         </div>
     </div>
 
@@ -1067,6 +1081,14 @@
             renderGenesTable(genesData.slice(0, 100));
         }
 
+        function getViewDisplayName(viewType) {
+            if (viewType === 'chromosome') return 'Linear Chromosome Tracks';
+            if (viewType === 'inset') return 'Bivariate with Mini Inset';
+            if (viewType === 'diagnostic') return '6-Panel Diagnostic GC Distribution';
+            if (viewType === 'bivariate') return 'Standard Bivariate Plot';
+            return 'Visual Plot';
+        }
+
         function getPlotPath(species, plotType) {
             if (plotType === 'chromosome') return `chromosome_plots/chromosome_linear_${species}.png`;
             if (plotType === 'inset') return `bivariate_with_inset_plots/bivariate_with_inset_${species}.png`;
@@ -1089,6 +1111,12 @@
             document.getElementById('lbl-img-b').innerText = `${spB} (${speciesData[spB]?.common_name || ''})`;
             document.getElementById('img-comp-a').src = getPlotPath(spA, currentCompView);
             document.getElementById('img-comp-b').src = getPlotPath(spB, currentCompView);
+
+            const vName = getViewDisplayName(currentCompView);
+            const capA = document.getElementById('caption-comp-a');
+            const capB = document.getElementById('caption-comp-b');
+            if (capA) capA.innerText = `${spA.replace(/_/g, ' ')} • ${vName}`;
+            if (capB) capB.innerText = `${spB.replace(/_/g, ' ')} • ${vName}`;
         }
 
         function updateComparison() {
@@ -1127,6 +1155,8 @@
             event.target.classList.add('active');
             const sp = document.getElementById('deep-sp').value;
             document.getElementById('deep-img').src = getPlotPath(sp, currentDeepView);
+            const cap = document.getElementById('caption-deep');
+            if (cap) cap.innerText = `${sp.replace(/_/g, ' ')} • ${getViewDisplayName(currentDeepView)}`;
         }
 
         function updateDeepDive() {
@@ -1134,6 +1164,8 @@
             const d = speciesData[sp];
             document.getElementById('deep-title').innerText = `${sp} (${d.common_name}) Architecture & Distribution`;
             document.getElementById('deep-img').src = getPlotPath(sp, currentDeepView);
+            const cap = document.getElementById('caption-deep');
+            if (cap) cap.innerText = `${sp.replace(/_/g, ' ')} • ${getViewDisplayName(currentDeepView)}`;
 
             let globinHtml = '';
             if (d.alpha_gc) {
@@ -1161,10 +1193,13 @@
             document.querySelectorAll('#meta-view-btns button').forEach(b => b.classList.remove('active'));
             event.target.classList.add('active');
             const img = document.getElementById('meta-img');
-            if (figType === 'clean') img.src = 'meta_comparative_graph_clean.png';
-            if (figType === 'fig1') img.src = 'summary_figure1_locus_divergence.png';
-            if (figType === 'fig2') img.src = 'summary_figure2_mechanistic_drivers.png';
-            if (figType === 'fig3') img.src = 'summary_figure3_clade_heatmap.png';
+            let figName = 'Standardized Meta Graph';
+            if (figType === 'clean') { img.src = 'meta_comparative_graph_clean.png'; figName = 'Standardized Meta Graph'; }
+            if (figType === 'fig1') { img.src = 'summary_figure1_locus_divergence.png'; figName = 'Fig 1: Locus Divergence Across Clades'; }
+            if (figType === 'fig2') { img.src = 'summary_figure2_mechanistic_drivers.png'; figName = 'Fig 2: Mechanistic Drivers of GC Polarity'; }
+            if (figType === 'fig3') { img.src = 'summary_figure3_clade_heatmap.png'; figName = 'Fig 3: Clade Architectural Heatmap'; }
+            const cap = document.getElementById('caption-meta');
+            if (cap) cap.innerText = figName;
         }
 
         function renderGenesTable(data) {
@@ -1201,7 +1236,8 @@
 
         /* --- INTERACTIVE PAN & ZOOM LIGHTBOX LOGIC --- */
         let zoomScale = 1.0;
-        let fitScale = 1.0;
+        let baseWidth = 800;
+        let baseHeight = 800;
         let panX = 0;
         let panY = 0;
         let isDragging = false;
@@ -1219,6 +1255,8 @@
             const lbImg = document.getElementById('lightbox-img');
             const titleEl = document.getElementById('lightbox-title');
             const subpanelNav = document.getElementById('lightbox-subpanels');
+            const mouseHelp = document.getElementById('lightbox-mouse-help');
+            const shortcuts = document.getElementById('lightbox-shortcuts');
 
             // Find which species and view this image represents
             let sp = '';
@@ -1248,6 +1286,14 @@
             titleEl.innerHTML = titleHtml;
             subpanelNav.style.display = isDiagnostic ? 'flex' : 'none';
 
+            if (isDiagnostic) {
+                if (mouseHelp) mouseHelp.innerHTML = '🖱️ <b>Diagnostic View:</b> Click any panel to focus • Click again to return to full view • Drag to pan';
+                if (shortcuts) shortcuts.innerHTML = '⌨️ <b>Shortcuts:</b> <code>Esc</code> Close • <code>0</code> Fit • <code>+</code>/<code>-</code> Zoom • <code>1</code>–<code>6</code> Panels A–F';
+            } else {
+                if (mouseHelp) mouseHelp.innerHTML = '🖱️ <b>Interactive Zoom:</b> Click to zoom in/out • Scroll wheel to zoom • Drag to pan';
+                if (shortcuts) shortcuts.innerHTML = '⌨️ <b>Shortcuts:</b> <code>Esc</code> Close • <code>0</code> Fit • <code>+</code>/<code>-</code> Zoom';
+            }
+
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
 
@@ -1255,7 +1301,6 @@
             activePanel = 'all';
             updateSubpanelButtons();
 
-            // Perform fitToScreen after layout reflow
             const triggerFit = function() {
                 fitToScreen();
             };
@@ -1283,14 +1328,13 @@
             }
             wrapper.style.transform = `translate(${panX}px, ${panY}px) scale(${zoomScale})`;
 
-            const relZoom = fitScale > 0 ? (zoomScale / fitScale) : 1.0;
             let zoomText = '';
             if (activePanel && activePanel !== 'all') {
-                zoomText = `Panel ${activePanel} (${relZoom.toFixed(1)}x)`;
-            } else if (Math.abs(relZoom - 1.0) < 0.05) {
+                zoomText = `Panel ${activePanel} (${zoomScale.toFixed(1)}x)`;
+            } else if (Math.abs(zoomScale - 1.0) < 0.05) {
                 zoomText = 'Fit (1.0x)';
             } else {
-                zoomText = `${relZoom.toFixed(1)}x`;
+                zoomText = `${zoomScale.toFixed(1)}x`;
             }
             document.getElementById('zoom-level-text').innerText = zoomText;
         }
@@ -1300,13 +1344,20 @@
             const img = document.getElementById('lightbox-img');
             if (!body || !img) return;
 
-            const bw = Math.max(300, (body.clientWidth > 50 ? body.clientWidth : window.innerWidth) - 40);
-            const bh = Math.max(300, (body.clientHeight > 50 ? body.clientHeight : (window.innerHeight - 130)) - 40);
+            const bw = Math.max(300, (body.clientWidth > 50 ? body.clientWidth : window.innerWidth) - 50);
+            const bh = Math.max(300, (body.clientHeight > 50 ? body.clientHeight : (window.innerHeight - 130)) - 50);
             const iw = img.naturalWidth || 6600;
             const ih = img.naturalHeight || 6600;
 
-            fitScale = Math.min(bw / iw, bh / ih);
-            zoomScale = fitScale;
+            const ratio = Math.min(bw / iw, bh / ih);
+            baseWidth = Math.max(100, Math.round(iw * ratio));
+            baseHeight = Math.max(100, Math.round(ih * ratio));
+
+            // Setting explicit CSS width/height prevents GPU texture tiling artifacts & dropped corners
+            img.style.width = baseWidth + 'px';
+            img.style.height = baseHeight + 'px';
+
+            zoomScale = 1.0;
             panX = 0;
             panY = 0;
             activePanel = 'all';
@@ -1315,7 +1366,9 @@
         }
 
         function setZoom100() {
-            zoomScale = 1.0;
+            const img = document.getElementById('lightbox-img');
+            const iw = img?.naturalWidth || 6600;
+            zoomScale = baseWidth > 0 ? (iw / baseWidth) : 2.5;
             panX = 0;
             panY = 0;
             activePanel = '';
@@ -1325,8 +1378,7 @@
 
         function changeZoom(delta) {
             const factor = delta > 0 ? 1.25 : 0.8;
-            const newScale = Math.max(fitScale * 0.4, Math.min(fitScale * 12.0, zoomScale * factor));
-            zoomScale = newScale;
+            zoomScale = Math.max(0.6, Math.min(8.0, zoomScale * factor));
             applyTransform(true);
         }
 
@@ -1340,10 +1392,8 @@
             const img = document.getElementById('lightbox-img');
             if (!body || !img) return;
 
-            const bw = Math.max(300, (body.clientWidth > 50 ? body.clientWidth : window.innerWidth) - 40);
-            const bh = Math.max(300, (body.clientHeight > 50 ? body.clientHeight : (window.innerHeight - 130)) - 40);
-            const iw = img.naturalWidth || 6600;
-            const ih = img.naturalHeight || 6600;
+            const bw = Math.max(300, (body.clientWidth > 50 ? body.clientWidth : window.innerWidth) - 50);
+            const bh = Math.max(300, (body.clientHeight > 50 ? body.clientHeight : (window.innerHeight - 130)) - 50);
 
             // Accurate subpanel empirical centers
             let cx = 0.5, cy = 0.5;
@@ -1354,15 +1404,14 @@
             else if (panel === 'E') { cx = 0.262; cy = 0.795; }
             else if (panel === 'F') { cx = 0.753; cy = 0.795; }
 
-            // Panel occupies ~44% of image width and ~33% of image height
-            // Target scale comfortably fits the chosen panel to ~88% of screen
-            const targetScaleX = (bw * 0.88) / (iw * 0.44);
-            const targetScaleY = (bh * 0.88) / (ih * 0.33);
-            const targetScale = Math.min(targetScaleX, targetScaleY);
+            // Each panel occupies ~44% of baseWidth and ~33% of baseHeight
+            // Target zoom comfortably fits the chosen panel to ~88% of screen
+            const targetZoomX = (bw * 0.88) / (baseWidth * 0.44);
+            const targetZoomY = (bh * 0.88) / (baseHeight * 0.33);
+            zoomScale = Math.min(targetZoomX, targetZoomY);
 
-            zoomScale = targetScale;
-            panX = (0.5 - cx) * iw * zoomScale;
-            panY = (0.5 - cy) * ih * zoomScale;
+            panX = (0.5 - cx) * baseWidth * zoomScale;
+            panY = (0.5 - cy) * baseHeight * zoomScale;
             activePanel = panel;
             updateSubpanelButtons();
             applyTransform(true);
@@ -1380,9 +1429,7 @@
         function handleWheel(e) {
             e.preventDefault();
             const zoomFactor = e.deltaY < 0 ? 1.15 : 0.87;
-            const minScale = fitScale * 0.4;
-            const maxScale = fitScale * 15.0;
-            const newScale = Math.max(minScale, Math.min(maxScale, zoomScale * zoomFactor));
+            const newScale = Math.max(0.6, Math.min(10.0, zoomScale * zoomFactor));
 
             const rect = document.getElementById('lightbox-body').getBoundingClientRect();
             const mouseX = e.clientX - rect.left - rect.width / 2;
@@ -1420,7 +1467,7 @@
         }
 
         function handleImageClick(e) {
-            if (dragDistance > 6) return; // Ignore drag operations
+            if (dragDistance > 6) return; // User was dragging, not clicking
 
             const rect = e.target.getBoundingClientRect();
             const clickX = (e.clientX - rect.left) / rect.width;
@@ -1449,13 +1496,10 @@
             }
 
             // Standard plot zoom toggle (linear chromosome, bivariate, meta)
-            if (zoomScale <= fitScale * 1.3) {
-                const img = document.getElementById('lightbox-img');
-                const iw = img.naturalWidth || 2000;
-                const ih = img.naturalHeight || 2000;
-                zoomScale = fitScale * 2.2;
-                panX = (0.5 - clickX) * iw * zoomScale;
-                panY = (0.5 - clickY) * ih * zoomScale;
+            if (zoomScale <= 1.3) {
+                zoomScale = 2.2;
+                panX = (0.5 - clickX) * baseWidth * zoomScale;
+                panY = (0.5 - clickY) * baseHeight * zoomScale;
                 applyTransform(true);
             } else {
                 fitToScreen();
@@ -1469,12 +1513,16 @@
             if (e.key === '+' || e.key === '=') changeZoom(0.35);
             if (e.key === '-' || e.key === '_') changeZoom(-0.35);
             if (e.key === '0') fitToScreen();
-            if (e.key === '1') zoomToPanel('A');
-            if (e.key === '2') zoomToPanel('B');
-            if (e.key === '3') zoomToPanel('C');
-            if (e.key === '4') zoomToPanel('D');
-            if (e.key === '5') zoomToPanel('E');
-            if (e.key === '6') zoomToPanel('F');
+
+            // 1-6 shortcuts only active for diagnostic plots
+            if (currentLightboxType === 'diagnostic') {
+                if (e.key === '1') zoomToPanel('A');
+                if (e.key === '2') zoomToPanel('B');
+                if (e.key === '3') zoomToPanel('C');
+                if (e.key === '4') zoomToPanel('D');
+                if (e.key === '5') zoomToPanel('E');
+                if (e.key === '6') zoomToPanel('F');
+            }
         });
 
         window.onload = populateSpeciesDropdowns;
