@@ -21,6 +21,8 @@ class Visualizer:
         "eptatretus_burgeri",
         "petromyzon_marinus",
         "lampetra_fluviatilis",
+        # Cartilaginous Fish (Chondrichthyes: Ancestral Jawed Vertebrate Baseline)
+        "scyliorhinus_canicula",
         # Non-teleost Ray-finned Fish (Pre-3R Duplication)
         "lepisosteus_oculatus",
         # Teleost Fish (Post-3R Whole-Genome Duplication)
@@ -68,12 +70,16 @@ class Visualizer:
         # Marsupials
         "Monodelphis_domestica",
         # Eutherian Mammals
+        "loxodonta_africana",
         "Mus_musculus",
         "rattus_norvegicus",
+        "heterocephalus_glaber",
         "miniopterus_natalensis",
         "puma_concolor",
+        "zalophus_californianus",
         "Sus_scrofa",
         "Bos_taurus",
+        "tursiops_truncatus",
         "equus_asinus",
         "equus_caballus",
         "Homo_sapiens",
@@ -86,9 +92,13 @@ class Visualizer:
         "Bos_taurus": "Cattle (B. taurus)",
         "Sus_scrofa": "Pig (S. scrofa)",
         "puma_concolor": "Puma (P. concolor)",
+        "zalophus_californianus": "Sea Lion (Z. californianus)",
+        "tursiops_truncatus": "Dolphin (T. truncatus)",
         "miniopterus_natalensis": "Bat (M. natalensis)",
         "rattus_norvegicus": "Norway Rat (R. norvegicus)",
+        "heterocephalus_glaber": "Naked Mole-Rat (H. glaber)",
         "Mus_musculus": "Mouse (M. musculus)",
+        "loxodonta_africana": "Elephant (L. africana)",
         "Erinaceus_europaeus": "Hedgehog (E. europaeus)",
         "Monodelphis_domestica": "Opossum (M. domestica)",
         "ornithorhynchus_anatinus": "Platypus (O. anatinus)",
@@ -127,6 +137,7 @@ class Visualizer:
         "pimephales_promelas": "Minnow (P. promelas)",
         "danio_rerio": "Zebrafish (D. rerio)",
         "lepisosteus_oculatus": "Spotted Gar (L. oculatus)",
+        "scyliorhinus_canicula": "Catshark (S. canicula)",
         "petromyzon_marinus": "Sea Lamprey (P. marinus)",
         "lampetra_fluviatilis": "River Lamprey (L. fluviatilis)",
         "eptatretus_burgeri": "Inshore Hagfish (E. burgeri)",
@@ -3365,6 +3376,7 @@ class Visualizer:
         """Computes locus-level summary statistics and telomere distances for all species."""
         clade_display = {
             "cyclostome": "Agnatha",
+            "chondrichthyes": "Chondrichthyes",
             "non_teleost_fish": "Holostei",
             "teleost_fish": "Teleostei",
             "amphibian": "Amphibia",

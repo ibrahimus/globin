@@ -25,6 +25,8 @@ NC_081824.1	481500000	482800000	alligator_mississippiensis:beta_globin	0	+
 1	207030000	207120000	anas_platyrhynchos:beta_globin	0	+
 16	1480000	1650000	meleagris_gallopavo:alpha_globin	0	+
 1	189050000	189200000	meleagris_gallopavo:beta_globin	0	+
+NW_009271137.1	860000	1050000	struthio_camelus_australis:alpha_globin	0	-
+NW_009270861.1	1000	30000	struthio_camelus_australis:beta_globin	0	+
 NW_026943824.1	8000000	8200000	anolis_carolinensis:alpha_globin	0	+
 NC_085843.1	1800000	2000000	anolis_carolinensis:beta_globin	0	-
 NC_135795.1	21200000	21650000	pogona_vitticeps:alpha_globin	0	+
@@ -78,3 +80,12 @@ NC_142596.1	53200000	53660000	zootoca_vivipara:alpha_globin	0	-
 NC_142587.1	101690000	102850000	zootoca_vivipara:beta_globin	0	-
 NC_140977.1	52050000	52280000	eptatretus_burgeri:proto_globin	0	+
 NC_136297.1	11400000	12300000	lampetra_fluviatilis:proto_globin	0	+
+NC_047048.1	38080000	38200000	tursiops_truncatus:alpha_globin	0	-
+NC_047041.1	59880000	59940000	tursiops_truncatus:beta_globin	0	+
+NC_045604.1	69380000	69500000	zalophus_californianus:alpha_globin	0	-
+NC_045605.1	61010000	61060000	zalophus_californianus:beta_globin	0	+
+NC_087353.1	53580000	53720000	loxodonta_africana:alpha_globin	0	-
+NC_087348.1	82900000	82950000	loxodonta_africana:beta_globin	0	+
+NC_052160.1	73580000	73860000	scyliorhinus_canicula:alpha_beta_cluster	0	+
+NW_004624913.1	950000	1150000	heterocephalus_glaber:alpha_globin	0	-
+NW_004624817.1	6650000	6750000	heterocephalus_glaber:beta_globin	0	+

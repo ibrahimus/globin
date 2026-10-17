@@ -1,81 +1,92 @@
 species,common_name,clade_label,locus_id,chromosome,start,end,span_bp,distance_to_telomere_bp,distance_to_telomere_pct_arm,arm_position,num_coding_alpha_globins,num_coding_beta_globins,num_pseudogenes,num_flanking_syntenic_genes,alpha_mean_whole_gene_gc_pct,alpha_whole_gene_gc_zscore,alpha_mean_cds_gc_pct,alpha_cds_gc_zscore,beta_mean_whole_gene_gc_pct,beta_whole_gene_gc_zscore,beta_mean_cds_gc_pct,beta_cds_gc_zscore,flanker_mean_whole_gene_gc_pct,flanker_whole_gene_gc_zscore
-petromyzon_marinus,Sea Lamprey (P. marinus),Agnatha,proto_globin_cluster,GL478636,20000,150000,130001,35835,15.04,Interstitial (≥5% Arm),2,0,0,2,48.54,-0.07,62.26,0.43,,,,,44.04,-0.8
-lepisosteus_oculatus,Spotted Gar (L. oculatus),Holostei,alpha_beta_cluster,LG13,14650000,14900000,250001,2209385,12.91,Interstitial (≥5% Arm),3,1,0,8,51.08,1.02,61.45,1.09,51.59,1.09,62.39,1.22,51.46,1.07
-danio_rerio,Zebrafish (D. rerio),Teleostei,alpha_beta_locus_A,3,54891330,55219130,327801,7299941,11.66,Interstitial (≥5% Arm),12,0,0,7,44.85,1.91,52.44,0.61,,,,,37.0,-0.08
-danio_rerio,Zebrafish (D. rerio),Teleostei,alpha_beta_locus_B,12,20222000,20415000,193001,20227394,41.13,Interstitial (≥5% Arm),0,4,0,5,,,,,41.38,1.03,51.28,0.38,34.82,-0.63
-oryzias_latipes,Medaka (O. latipes),Teleostei,alpha_beta_locus_A,8,8150000,8255000,105001,8147535,31.05,Interstitial (≥5% Arm),8,0,0,10,41.83,-0.16,50.06,-0.43,,,,,45.12,0.49
-oryzias_latipes,Medaka (O. latipes),Teleostei,alpha_beta_locus_B,19,2970000,3050000,80001,2975780,11.68,Interstitial (≥5% Arm),0,2,0,5,,,,,36.11,-1.28,55.14,0.48,41.05,-0.31
-takifugu_rubripes,Fugu (T. rubripes),Teleostei,alpha_beta_locus_A,5,10460000,10525000,65001,4581352,30.33,Interstitial (≥5% Arm),1,0,0,7,49.68,0.52,55.1,0.28,,,,,48.74,0.33
-takifugu_rubripes,Fugu (T. rubripes),Teleostei,alpha_beta_locus_B,1,10330000,10375000,45001,4618056,30.78,Interstitial (≥5% Arm),0,4,0,3,,,,,42.98,-0.8,52.88,-0.16,41.74,-1.05
-gasterosteus_aculeatus,Stickleback (G. aculeatus),Teleostei,alpha_beta_cluster,NC_135699.1,15220000,15310000,90001,3399533,18.17,Interstitial (≥5% Arm),5,6,0,7,48.49,0.67,56.54,0.0,49.48,0.92,55.89,-0.12,48.12,0.57
-xenopus_tropicalis,Clawed Frog (X. tropicalis),Amphibia,alpha_beta_cluster,9,40315000,41265000,950001,40317122,44.2,Interstitial (≥5% Arm),4,2,0,7,35.16,-1.35,48.78,0.33,35.96,-1.2,47.64,0.13,39.78,-0.48
-bufo_bufo,Common Toad (B. bufo),Amphibia,alpha_beta_cluster,NC_053395.1,85080000,86800000,1720001,85025669,35.94,Interstitial (≥5% Arm),7,6,0,9,39.88,-1.26,50.82,0.6,41.07,-0.98,52.25,0.85,44.87,-0.08
-Chrysemys_picta_bellii,Painted Turtle (C. picta),Reptilia,alpha_globin,KK088206.1,1415000,1865000,450001,1420024,14.5,Interstitial (≥5% Arm),4,0,0,4,56.58,1.07,55.89,0.54,,,,,47.68,-0.04
-Chrysemys_picta_bellii,Painted Turtle (C. picta),Reptilia,beta_globin,KK083065.1,720000,800000,80001,731917,30.68,Interstitial (≥5% Arm),0,2,0,1,,,,,44.72,-0.4,46.11,-0.64,42.54,-0.68
-chelonia_mydas,Sea Turtle (C. mydas),Reptilia,alpha_globin,NC_051250.2,31200000,31380000,180001,31169941,37.08,Interstitial (≥5% Arm),3,0,0,4,59.5,1.56,59.85,1.0,,,,,45.33,-0.29
-chelonia_mydas,Sea Turtle (C. mydas),Reptilia,beta_globin,NC_057849.1,3540000,3690000,150001,3544771,1.02,Subtelomeric (<5% Arm),0,1,0,10,,,,,60.98,1.76,61.04,1.14,52.79,0.68
-pelodiscus_sinensis,Softshell Turtle (P. sinensis),Reptilia,alpha_globin,NC_134726.1,4640000,4940000,300001,4651098,11.13,Interstitial (≥5% Arm),3,0,0,4,61.08,1.29,58.73,0.67,,,,,47.19,-0.33
-pelodiscus_sinensis,Softshell Turtle (P. sinensis),Reptilia,beta_globin,NC_134711.1,331060000,331100000,40001,5647478,1.68,Subtelomeric (<5% Arm),0,3,0,1,,,,,66.59,1.93,64.26,1.27,52.09,0.24
-alligator_mississippiensis,Alligator (A. mississippiensis),Archosauria,alpha_globin,NC_081836.1,21200000,22900000,1700001,21217495,35.45,Interstitial (≥5% Arm),3,0,0,13,50.59,0.2,50.24,-0.21,,,,,49.21,0.03
-alligator_mississippiensis,Alligator (A. mississippiensis),Archosauria,beta_globin,NC_081824.1,481500000,482800000,1300001,3786821,0.78,Subtelomeric (<5% Arm),0,7,0,64,,,,,53.52,0.56,55.96,0.43,52.04,0.38
-Gallus_gallus,Chicken (G. gallus),Aves,alpha_globin,14,11950000,12180000,230001,3095252,20.19,Interstitial (≥5% Arm),3,0,0,10,55.85,0.79,56.87,0.43,,,,,51.08,0.28
-Gallus_gallus,Chicken (G. gallus),Aves,beta_globin,1,195940000,196060000,120001,405445,0.21,Subtelomeric (<5% Arm),0,2,0,4,,,,,56.44,0.85,59.28,0.72,50.55,0.22
-aquila_chrysaetos_chrysaetos,Golden Eagle (A. chrysaetos),Aves,alpha_globin,25,16560000,16910000,350001,2917808,14.7,Interstitial (≥5% Arm),2,0,0,16,54.43,0.58,60.36,0.9,,,,,56.8,0.8
-aquila_chrysaetos_chrysaetos,Golden Eagle (A. chrysaetos),Aves,beta_globin,19,27400000,27550000,150001,457753,1.64,Subtelomeric (<5% Arm),0,3,0,2,,,,,54.2,0.56,56.22,0.43,48.38,0.01
-anas_platyrhynchos,Mallard Duck (A. platyrhynchos),Aves,alpha_globin,15,11150000,11400000,250001,6765719,37.12,Interstitial (≥5% Arm),2,0,0,5,53.22,0.4,55.45,0.24,,,,,49.54,0.06
-anas_platyrhynchos,Mallard Duck (A. platyrhynchos),Aves,beta_globin,1,207030000,207120000,90001,1230643,0.59,Subtelomeric (<5% Arm),0,3,0,0,,,,,58.75,0.92,59.49,0.67,,
-meleagris_gallopavo,Turkey (M. gallopavo),Aves,alpha_globin,16,1480000,1650000,170001,1490927,10.02,Interstitial (≥5% Arm),3,0,0,5,53.97,0.84,55.69,0.66,,,,,45.98,-0.05
-meleagris_gallopavo,Turkey (M. gallopavo),Aves,beta_globin,1,189050000,189200000,150001,1447094,0.76,Subtelomeric (<5% Arm),0,5,0,1,,,,,57.57,1.25,58.66,1.03,48.68,0.25
-anolis_carolinensis,Anole (A. carolinensis),Reptilia,alpha_globin,NW_026943824.1,8000000,8200000,200001,7992578,39.3,Interstitial (≥5% Arm),3,0,0,18,52.21,2.76,60.29,1.24,,,,,53.22,3.02
-anolis_carolinensis,Anole (A. carolinensis),Reptilia,beta_globin,NC_085843.1,1800000,2000000,200001,1810021,0.63,Subtelomeric (<5% Arm),0,2,0,4,,,,,52.28,2.78,63.85,1.69,43.16,0.42
-pogona_vitticeps,Bearded Dragon (P. vitticeps),Reptilia,alpha_globin,NC_135795.1,21200000,21650000,450001,69119,0.32,Subtelomeric (<5% Arm),3,0,0,36,68.34,4.49,62.16,1.63,,,,,60.3,2.98
-pogona_vitticeps,Bearded Dragon (P. vitticeps),Reptilia,beta_globin,NC_135785.1,265500000,265750000,250001,472005,0.18,Subtelomeric (<5% Arm),0,2,0,17,,,,,66.69,4.18,61.48,1.54,60.65,3.05
-podarcis_muralis,Wall Lizard (P. muralis),Reptilia,alpha_globin,NC_135668.1,54840000,55060000,220001,1091392,1.94,Subtelomeric (<5% Arm),2,0,0,12,68.9,5.69,67.37,2.38,,,,,54.44,2.18
-podarcis_muralis,Wall Lizard (P. muralis),Reptilia,beta_globin,NC_135658.1,1515000,1750000,235001,1242943,1.16,Subtelomeric (<5% Arm),0,3,0,5,,,,,54.98,2.31,59.78,1.28,53.11,1.86
-thamnophis_elegans,Garter Snake (T. elegans),Reptilia,alpha_globin,NC_045554.1,75000,160000,85001,71506,0.14,Subtelomeric (<5% Arm),2,0,0,10,55.83,2.08,57.45,1.23,,,,,59.61,2.68
-thamnophis_elegans,Garter Snake (T. elegans),Reptilia,beta_globin,NC_045546.1,280000,625000,345001,275648,0.31,Subtelomeric (<5% Arm),0,2,0,29,,,,,67.46,3.93,63.62,2.05,57.63,2.36
-ornithorhynchus_anatinus,Platypus (O. anatinus),Monotremata,alpha_globin,21,15600000,15860000,260001,8660811,35.33,Interstitial (≥5% Arm),2,0,0,8,58.01,0.6,63.16,0.62,,,,,55.27,0.29
-ornithorhynchus_anatinus,Platypus (O. anatinus),Monotremata,beta_globin,2,139350000,139550000,200001,32282865,18.8,Interstitial (≥5% Arm),0,3,0,1,,,,,57.31,0.53,59.46,0.22,53.25,0.06
-Monodelphis_domestica,Opossum (M. domestica),Mammalia,alpha_globin,6,149100000,149530000,430001,142570840,48.81,Interstitial (≥5% Arm),4,0,0,6,52.46,1.32,55.44,0.88,,,,,40.88,-0.22
-Monodelphis_domestica,Opossum (M. domestica),Mammalia,beta_globin,4,352150000,352320000,170001,82887098,19.05,Interstitial (≥5% Arm),0,2,0,0,,,,,42.6,0.0,52.14,0.46,,
-Mus_musculus,Mouse (M. musculus),Mammalia,alpha_globin,11,32130000,32256929,126930,32137540,26.35,Interstitial (≥5% Arm),5,0,0,5,55.42,1.59,56.6,0.7,,,,,51.64,0.97
-Mus_musculus,Mouse (M. musculus),Mammalia,beta_globin,7,103420000,103570000,150001,41438542,28.58,Interstitial (≥5% Arm),0,5,0,6,,,,,43.0,-0.45,51.94,0.02,40.56,-0.85
-Sus_scrofa,Pig (S. scrofa),Mammalia,alpha_globin,3,41440000,41580000,140001,41449001,31.2,Interstitial (≥5% Arm),4,0,0,5,66.59,2.16,66.03,1.4,,,,,59.45,1.34
-Sus_scrofa,Pig (S. scrofa),Mammalia,beta_globin,9,4750000,4880000,130001,4790930,3.43,Subtelomeric (<5% Arm),0,2,0,2,,,,,47.29,-0.07,56.4,0.36,47.64,-0.03
-Bos_taurus,Cattle (B. taurus),Mammalia,alpha_globin,25,110000,270000,160001,115710,0.27,Subtelomeric (<5% Arm),4,0,0,6,64.55,2.13,64.3,1.2,,,,,56.54,1.14
-Bos_taurus,Cattle (B. taurus),Mammalia,beta_globin,15,48320000,48460000,140001,36557021,43.0,Interstitial (≥5% Arm),0,5,0,3,,,,,43.27,-0.5,52.36,-0.17,45.22,-0.26
-Homo_sapiens,Human (H. sapiens),Mammalia,alpha_globin,16,60000,275000,215001,53827,0.06,Subtelomeric (<5% Arm),5,0,0,7,68.53,2.75,65.87,1.46,,,,,55.88,1.15
-Homo_sapiens,Human (H. sapiens),Mammalia,beta_globin,11,5200000,5340000,140001,5199734,3.85,Subtelomeric (<5% Arm),0,5,0,4,,,,,43.38,-0.42,54.19,0.12,44.93,-0.23
-equus_asinus,Donkey (E. asinus),Mammalia,alpha_globin,NC_091803.1,49650000,49810000,160001,94685,0.19,Subtelomeric (<5% Arm),4,0,0,5,68.31,2.39,65.27,1.26,,,,,56.66,1.05
-equus_asinus,Donkey (E. asinus),Mammalia,beta_globin,NC_091809.1,88050000,88150000,100001,25177659,22.22,Interstitial (≥5% Arm),0,4,0,2,,,,,43.86,-0.43,53.4,-0.06,42.09,-0.63
-equus_caballus,Horse (E. caballus),Mammalia,alpha_globin,NC_091696.1,53720000,53890000,170001,57071,0.11,Subtelomeric (<5% Arm),3,0,0,6,67.38,2.26,64.26,1.12,,,,,55.66,0.91
-equus_caballus,Horse (E. caballus),Mammalia,beta_globin,NC_091690.1,76350000,76430000,80001,24555492,24.32,Interstitial (≥5% Arm),0,4,0,1,,,,,44.06,-0.42,53.29,-0.1,47.51,-0.03
-miniopterus_natalensis,Bat (M. natalensis),Mammalia,alpha_globin,NC_142083.1,95380000,95540000,160001,10369750,9.79,Interstitial (≥5% Arm),6,0,0,7,64.71,1.86,64.18,1.12,,,,,50.92,0.33
-miniopterus_natalensis,Bat (M. natalensis),Mammalia,beta_globin,NC_142091.1,41480000,41530000,50001,36723833,46.94,Interstitial (≥5% Arm),0,3,0,1,,,,,42.62,-0.6,52.78,-0.21,51.66,0.41
-puma_concolor,Puma (P. concolor),Mammalia,alpha_globin,NC_141682.1,42480000,42650000,170001,413399,0.96,Subtelomeric (<5% Arm),6,0,0,7,67.34,2.21,65.31,1.23,,,,,53.2,0.6
-puma_concolor,Puma (P. concolor),Mammalia,beta_globin,NC_141676.1,54430000,54550000,120001,54439137,46.5,Interstitial (≥5% Arm),0,4,0,4,,,,,45.06,-0.33,54.64,0.05,45.88,-0.24
-sturnus_vulgaris,Starling (S. vulgaris),Aves,alpha_globin,NC_142258.1,13450000,13760000,310001,2729812,16.55,Interstitial (≥5% Arm),3,0,0,13,56.51,0.95,59.91,0.66,,,,,54.46,0.72
-sturnus_vulgaris,Starling (S. vulgaris),Aves,beta_globin,NC_142244.1,118980000,119020000,40001,401415,0.34,Subtelomeric (<5% Arm),0,3,0,1,,,,,61.15,1.46,62.16,0.92,53.88,0.66
-anser_cygnoides,Swan Goose (A. cygnoides),Aves,alpha_globin,NC_089887.1,11130000,11490000,360001,7341865,38.95,Interstitial (≥5% Arm),3,0,0,14,55.3,0.46,56.39,0.16,,,,,55.47,0.48
-anser_cygnoides,Swan Goose (A. cygnoides),Aves,beta_globin,NC_089873.1,212350000,212380000,30001,427269,0.2,Subtelomeric (<5% Arm),0,4,0,1,,,,,56.14,0.54,60.21,0.53,52.11,0.18
-coturnix_japonica,Quail (C. japonica),Aves,alpha_globin,NC_140675.1,18630000,18870000,240001,1975653,9.47,Interstitial (≥5% Arm),3,0,0,17,55.4,0.9,56.54,0.45,,,,,53.92,0.72
-coturnix_japonica,Quail (C. japonica),Aves,beta_globin,NC_140663.1,178970000,179000000,30001,452301,0.25,Subtelomeric (<5% Arm),0,4,0,1,,,,,55.36,0.89,59.29,0.78,50.27,0.27
-rattus_norvegicus,Norway Rat (R. norvegicus),Mammalia,alpha_globin,NC_141543.1,21260000,21420000,160001,21263868,18.72,Interstitial (≥5% Arm),5,0,0,5,54.48,1.49,56.5,0.7,,,,,49.91,0.66
-rattus_norvegicus,Norway Rat (R. norvegicus),Mammalia,beta_globin,NC_141534.1,170780000,171100000,320001,102879163,37.55,Interstitial (≥5% Arm),0,9,0,13,,,,,43.04,-0.57,52.38,0.09,47.31,0.2
-pimephales_promelas,Minnow (P. promelas),Teleostei,alpha_beta_major,NC_142771.1,33650000,33750000,100001,16204759,32.44,Interstitial (≥5% Arm),6,7,0,3,41.77,0.83,51.85,0.32,45.15,1.76,53.13,0.57,37.18,-0.44
-pimephales_promelas,Minnow (P. promelas),Teleostei,alpha_beta_embryonic,NC_142785.1,7100000,7125000,25001,7105539,20.61,Interstitial (≥5% Arm),2,2,0,1,42.42,1.01,50.32,0.01,47.34,2.37,50.68,0.09,35.96,-0.78
-eretmochelys_imbricata,Hawksbill Turtle (E. imbricata),Reptilia,alpha_globin,NC_135581.1,31320000,32280000,960001,31314979,36.67,Interstitial (≥5% Arm),3,0,0,13,59.5,1.57,58.65,0.93,,,,,49.57,0.28
-eretmochelys_imbricata,Hawksbill Turtle (E. imbricata),Reptilia,beta_globin,NC_135572.1,3640000,3680000,40001,3651321,1.01,Subtelomeric (<5% Arm),0,3,0,0,,,,,59.13,1.52,59.53,1.04,,
-geotrypetes_seraphini,Gabon Caecilian (G. seraphini),Amphibia,alpha_beta_linked,NC_047094.1,46150000,46800000,650001,46152557,32.64,Interstitial (≥5% Arm),2,1,0,3,43.16,-0.24,48.54,0.29,41.31,-0.92,50.11,0.57,42.51,-0.48
-geotrypetes_seraphini,Gabon Caecilian (G. seraphini),Amphibia,beta_secondary,NC_047088.1,104650000,104680000,30001,104647350,38.39,Interstitial (≥5% Arm),0,1,0,1,,,,,40.51,-1.21,47.97,0.18,43.69,-0.05
-rhinatrema_bivittatum,Two-lined Caecilian (R. bivittatum),Amphibia,alpha_beta_linked,NC_042628.1,33350000,33860000,510001,33363421,40.36,Interstitial (≥5% Arm),2,2,0,3,39.75,-1.56,46.27,-0.45,41.77,-1.0,47.41,-0.27,43.45,-0.53
-microcaecilia_unicolor,Tiny Caecilian (M. unicolor),Amphibia,alpha_beta_linked,NC_044038.1,48220000,48920000,700001,48221111,19.47,Interstitial (≥5% Arm),3,1,0,4,42.88,-0.55,50.55,0.7,44.71,0.12,50.9,0.77,43.74,-0.24
-microcaecilia_unicolor,Tiny Caecilian (M. unicolor),Amphibia,beta_secondary,NC_044037.1,114500000,114510000,10001,114503096,36.78,Interstitial (≥5% Arm),0,1,0,0,,,,,41.06,-1.21,50.68,0.72,,
-ambystoma_mexicanum,Axolotl (A. mexicanum),Amphibia,alpha_beta_linked,NC_090924.1,681000000,689200000,8200001,681099374,45.59,Interstitial (≥5% Arm),15,2,0,6,47.15,0.04,60.03,1.79,45.82,-0.38,52.54,0.47,45.92,-0.35
-ambystoma_mexicanum,Axolotl (A. mexicanum),Amphibia,beta_secondary,NC_090925.1,788300000,789450000,1150001,484527084,38.03,Interstitial (≥5% Arm),0,12,0,0,,,,,48.16,0.37,59.99,1.78,,
-triturus_cristatus,Crested Newt (T. cristatus),Amphibia,alpha_beta_linked,NC_140593.1,817650000,822750000,5100001,426068324,34.12,Interstitial (≥5% Arm),20,2,0,3,46.06,0.09,60.69,1.91,42.95,-0.66,47.44,-0.32,46.1,0.1
-triturus_cristatus,Crested Newt (T. cristatus),Amphibia,beta_secondary,NC_140590.1,1210800000,1211850000,1050001,671012636,35.64,Interstitial (≥5% Arm),0,8,0,2,,,,,47.46,0.43,60.14,1.82,41.98,-0.9
-zootoca_vivipara,Viviparous Lizard (Z. vivipara),Reptilia,alpha_globin,NC_142596.1,53200000,53660000,460001,403404,0.75,Subtelomeric (<5% Arm),6,0,0,19,63.08,4.5,62.48,1.76,,,,,54.6,2.36
-zootoca_vivipara,Viviparous Lizard (Z. vivipara),Reptilia,beta_globin,NC_142587.1,101690000,102850000,1160001,537940,0.52,Subtelomeric (<5% Arm),0,4,0,73,,,,,58.64,3.38,61.48,1.61,50.68,1.38
-eptatretus_burgeri,Inshore Hagfish (E. burgeri),Agnatha,proto_globin,NC_140977.1,52050000,52280000,230001,8976746,14.66,Interstitial (≥5% Arm),3,0,0,3,45.13,0.36,50.76,0.18,,,,,43.84,-0.01
-lampetra_fluviatilis,River Lamprey (L. fluviatilis),Agnatha,proto_globin,NC_136297.1,11400000,12300000,900001,1353600,9.9,Interstitial (≥5% Arm),10,0,0,20,50.3,-0.03,60.3,-0.36,,,,,53.92,0.62
+petromyzon_marinus,Sea Lamprey (P. marinus),Agnatha,proto_globin_cluster,GL478636,20000,150000,130001,35835.0,15.04,Interstitial (≥5% Arm),2,0,0,2,48.54,-0.07,62.26,0.43,,,,,44.04,-0.8
+lepisosteus_oculatus,Spotted Gar (L. oculatus),Holostei,alpha_beta_cluster,LG13,14650000,14900000,250001,2209385.0,12.91,Interstitial (≥5% Arm),3,1,0,8,51.08,1.02,61.45,1.09,51.59,1.09,62.39,1.22,51.46,1.07
+danio_rerio,Zebrafish (D. rerio),Teleostei,alpha_beta_locus_A,3,54891330,55219130,327801,7299941.0,11.66,Interstitial (≥5% Arm),12,0,0,7,44.85,1.91,52.44,0.61,,,,,37.0,-0.08
+danio_rerio,Zebrafish (D. rerio),Teleostei,alpha_beta_locus_B,12,20222000,20415000,193001,20227394.0,41.13,Interstitial (≥5% Arm),0,4,0,5,,,,,41.38,1.03,51.28,0.38,34.82,-0.63
+oryzias_latipes,Medaka (O. latipes),Teleostei,alpha_beta_locus_A,8,8150000,8255000,105001,8147535.0,31.05,Interstitial (≥5% Arm),8,0,0,10,41.83,-0.16,50.06,-0.43,,,,,45.12,0.49
+oryzias_latipes,Medaka (O. latipes),Teleostei,alpha_beta_locus_B,19,2970000,3050000,80001,2975780.0,11.68,Interstitial (≥5% Arm),0,2,0,5,,,,,36.11,-1.28,55.14,0.48,41.05,-0.31
+takifugu_rubripes,Fugu (T. rubripes),Teleostei,alpha_beta_locus_A,5,10460000,10525000,65001,4581352.0,30.33,Interstitial (≥5% Arm),1,0,0,7,49.68,0.52,55.1,0.28,,,,,48.74,0.33
+takifugu_rubripes,Fugu (T. rubripes),Teleostei,alpha_beta_locus_B,1,10330000,10375000,45001,4618056.0,30.78,Interstitial (≥5% Arm),0,4,0,3,,,,,42.98,-0.8,52.88,-0.16,41.74,-1.05
+gasterosteus_aculeatus,Stickleback (G. aculeatus),Teleostei,alpha_beta_cluster,NC_135699.1,15220000,15310000,90001,3399533.0,18.17,Interstitial (≥5% Arm),5,6,0,7,48.49,0.67,56.54,0.0,49.48,0.92,55.89,-0.12,48.12,0.57
+xenopus_tropicalis,Clawed Frog (X. tropicalis),Amphibia,alpha_beta_cluster,9,40315000,41265000,950001,40317122.0,44.2,Interstitial (≥5% Arm),4,2,0,7,35.16,-1.35,48.78,0.33,35.96,-1.2,47.64,0.13,39.78,-0.48
+bufo_bufo,Common Toad (B. bufo),Amphibia,alpha_beta_cluster,NC_053395.1,85080000,86800000,1720001,85025669.0,35.94,Interstitial (≥5% Arm),7,6,0,9,39.88,-1.26,50.82,0.6,41.07,-0.98,52.25,0.85,44.87,-0.08
+Chrysemys_picta_bellii,Painted Turtle (C. picta),Reptilia,alpha_globin,KK088206.1,1415000,1865000,450001,1420024.0,14.5,Interstitial (≥5% Arm),4,0,0,4,56.58,1.07,55.89,0.54,,,,,47.68,-0.04
+Chrysemys_picta_bellii,Painted Turtle (C. picta),Reptilia,beta_globin,KK083065.1,720000,800000,80001,731917.0,30.68,Interstitial (≥5% Arm),0,2,0,1,,,,,44.72,-0.4,46.11,-0.64,42.54,-0.68
+chelonia_mydas,Sea Turtle (C. mydas),Reptilia,alpha_globin,NC_051250.2,31200000,31380000,180001,31169941.0,37.08,Interstitial (≥5% Arm),3,0,0,4,59.5,1.56,59.85,1.0,,,,,45.33,-0.29
+chelonia_mydas,Sea Turtle (C. mydas),Reptilia,beta_globin,NC_057849.1,3540000,3690000,150001,3544771.0,1.02,Subtelomeric (<5% Arm),0,1,0,10,,,,,60.98,1.76,61.04,1.14,52.79,0.68
+pelodiscus_sinensis,Softshell Turtle (P. sinensis),Reptilia,alpha_globin,NC_134726.1,4640000,4940000,300001,4651098.0,11.13,Interstitial (≥5% Arm),3,0,0,4,61.08,1.29,58.73,0.67,,,,,47.19,-0.33
+pelodiscus_sinensis,Softshell Turtle (P. sinensis),Reptilia,beta_globin,NC_134711.1,331060000,331100000,40001,5647478.0,1.68,Subtelomeric (<5% Arm),0,3,0,1,,,,,66.59,1.93,64.26,1.27,52.09,0.24
+alligator_mississippiensis,Alligator (A. mississippiensis),Archosauria,alpha_globin,NC_081836.1,21200000,22900000,1700001,21217495.0,35.45,Interstitial (≥5% Arm),3,0,0,13,50.59,0.2,50.24,-0.21,,,,,49.21,0.03
+alligator_mississippiensis,Alligator (A. mississippiensis),Archosauria,beta_globin,NC_081824.1,481500000,482800000,1300001,3786821.0,0.78,Subtelomeric (<5% Arm),0,7,0,64,,,,,53.52,0.56,55.96,0.43,52.04,0.38
+Gallus_gallus,Chicken (G. gallus),Aves,alpha_globin,14,11950000,12180000,230001,3095252.0,20.19,Interstitial (≥5% Arm),3,0,0,10,55.85,0.79,56.87,0.43,,,,,51.08,0.28
+Gallus_gallus,Chicken (G. gallus),Aves,beta_globin,1,195940000,196060000,120001,405445.0,0.21,Subtelomeric (<5% Arm),0,2,0,4,,,,,56.44,0.85,59.28,0.72,50.55,0.22
+aquila_chrysaetos_chrysaetos,Golden Eagle (A. chrysaetos),Aves,alpha_globin,25,16560000,16910000,350001,2917808.0,14.7,Interstitial (≥5% Arm),2,0,0,16,54.43,0.58,60.36,0.9,,,,,56.8,0.8
+aquila_chrysaetos_chrysaetos,Golden Eagle (A. chrysaetos),Aves,beta_globin,19,27400000,27550000,150001,457753.0,1.64,Subtelomeric (<5% Arm),0,3,0,2,,,,,54.2,0.56,56.22,0.43,48.38,0.01
+anas_platyrhynchos,Mallard Duck (A. platyrhynchos),Aves,alpha_globin,15,11150000,11400000,250001,6765719.0,37.12,Interstitial (≥5% Arm),2,0,0,5,53.22,0.4,55.45,0.24,,,,,49.54,0.06
+anas_platyrhynchos,Mallard Duck (A. platyrhynchos),Aves,beta_globin,1,207030000,207120000,90001,1230643.0,0.59,Subtelomeric (<5% Arm),0,3,0,0,,,,,58.75,0.92,59.49,0.67,,
+meleagris_gallopavo,Turkey (M. gallopavo),Aves,alpha_globin,16,1480000,1650000,170001,1490927.0,10.02,Interstitial (≥5% Arm),3,0,0,5,53.97,0.84,55.69,0.66,,,,,45.98,-0.05
+meleagris_gallopavo,Turkey (M. gallopavo),Aves,beta_globin,1,189050000,189200000,150001,1447094.0,0.76,Subtelomeric (<5% Arm),0,5,0,1,,,,,57.57,1.25,58.66,1.03,48.68,0.25
+struthio_camelus_australis,Ostrich (S. camelus),Aves,alpha_globin,NW_009271137.1,860000,1050000,190001,226800.0,17.07,Interstitial (≥5% Arm),3,0,0,4,55.84,1.51,57.32,1.24,,,,,44.8,0.07
+struthio_camelus_australis,Ostrich (S. camelus),Aves,beta_globin,NW_009270861.1,1000,30000,29001,4.0,0.0,Subtelomeric (<5% Arm),0,4,0,2,,,,,54.62,1.35,59.64,1.58,49.98,0.74
+anolis_carolinensis,Anole (A. carolinensis),Reptilia,alpha_globin,NW_026943824.1,8000000,8200000,200001,7992578.0,39.3,Interstitial (≥5% Arm),3,0,0,18,52.21,2.76,60.29,1.24,,,,,53.22,3.02
+anolis_carolinensis,Anole (A. carolinensis),Reptilia,beta_globin,NC_085843.1,1800000,2000000,200001,1810021.0,0.63,Subtelomeric (<5% Arm),0,2,0,4,,,,,52.28,2.78,63.85,1.69,43.16,0.42
+pogona_vitticeps,Bearded Dragon (P. vitticeps),Reptilia,alpha_globin,NC_135795.1,21200000,21650000,450001,69119.0,0.32,Subtelomeric (<5% Arm),3,0,0,36,68.34,4.49,62.16,1.63,,,,,60.3,2.98
+pogona_vitticeps,Bearded Dragon (P. vitticeps),Reptilia,beta_globin,NC_135785.1,265500000,265750000,250001,472005.0,0.18,Subtelomeric (<5% Arm),0,2,0,17,,,,,66.69,4.18,61.48,1.54,60.65,3.05
+podarcis_muralis,Wall Lizard (P. muralis),Reptilia,alpha_globin,NC_135668.1,54840000,55060000,220001,1091392.0,1.94,Subtelomeric (<5% Arm),2,0,0,12,68.9,5.69,67.37,2.38,,,,,54.44,2.18
+podarcis_muralis,Wall Lizard (P. muralis),Reptilia,beta_globin,NC_135658.1,1515000,1750000,235001,1242943.0,1.16,Subtelomeric (<5% Arm),0,3,0,5,,,,,54.98,2.31,59.78,1.28,53.11,1.86
+thamnophis_elegans,Garter Snake (T. elegans),Reptilia,alpha_globin,NC_045554.1,75000,160000,85001,71506.0,0.14,Subtelomeric (<5% Arm),2,0,0,10,55.83,2.08,57.45,1.23,,,,,59.61,2.68
+thamnophis_elegans,Garter Snake (T. elegans),Reptilia,beta_globin,NC_045546.1,280000,625000,345001,275648.0,0.31,Subtelomeric (<5% Arm),0,2,0,29,,,,,67.46,3.93,63.62,2.05,57.63,2.36
+ornithorhynchus_anatinus,Platypus (O. anatinus),Monotremata,alpha_globin,21,15600000,15860000,260001,8660811.0,35.33,Interstitial (≥5% Arm),2,0,0,8,58.01,0.6,63.16,0.62,,,,,55.27,0.29
+ornithorhynchus_anatinus,Platypus (O. anatinus),Monotremata,beta_globin,2,139350000,139550000,200001,32282865.0,18.8,Interstitial (≥5% Arm),0,3,0,1,,,,,57.31,0.53,59.46,0.22,53.25,0.06
+Monodelphis_domestica,Opossum (M. domestica),Mammalia,alpha_globin,6,149100000,149530000,430001,142570840.0,48.81,Interstitial (≥5% Arm),4,0,0,6,52.46,1.32,55.44,0.88,,,,,40.88,-0.22
+Monodelphis_domestica,Opossum (M. domestica),Mammalia,beta_globin,4,352150000,352320000,170001,82887098.0,19.05,Interstitial (≥5% Arm),0,2,0,0,,,,,42.6,0.0,52.14,0.46,,
+Mus_musculus,Mouse (M. musculus),Mammalia,alpha_globin,11,32130000,32256929,126930,32137540.0,26.35,Interstitial (≥5% Arm),5,0,0,5,55.42,1.59,56.6,0.7,,,,,51.64,0.97
+Mus_musculus,Mouse (M. musculus),Mammalia,beta_globin,7,103420000,103570000,150001,41438542.0,28.58,Interstitial (≥5% Arm),0,5,0,6,,,,,43.0,-0.45,51.94,0.02,40.56,-0.85
+Sus_scrofa,Pig (S. scrofa),Mammalia,alpha_globin,3,41440000,41580000,140001,41449001.0,31.2,Interstitial (≥5% Arm),4,0,0,5,66.59,2.16,66.03,1.4,,,,,59.45,1.34
+Sus_scrofa,Pig (S. scrofa),Mammalia,beta_globin,9,4750000,4880000,130001,4790930.0,3.43,Subtelomeric (<5% Arm),0,2,0,2,,,,,47.29,-0.07,56.4,0.36,47.64,-0.03
+Bos_taurus,Cattle (B. taurus),Mammalia,alpha_globin,25,110000,270000,160001,115710.0,0.27,Subtelomeric (<5% Arm),4,0,0,6,64.55,2.13,64.3,1.2,,,,,56.54,1.14
+Bos_taurus,Cattle (B. taurus),Mammalia,beta_globin,15,48320000,48460000,140001,36557021.0,43.0,Interstitial (≥5% Arm),0,5,0,3,,,,,43.27,-0.5,52.36,-0.17,45.22,-0.26
+Homo_sapiens,Human (H. sapiens),Mammalia,alpha_globin,16,60000,275000,215001,53827.0,0.06,Subtelomeric (<5% Arm),5,0,0,7,68.53,2.75,65.87,1.46,,,,,55.88,1.15
+Homo_sapiens,Human (H. sapiens),Mammalia,beta_globin,11,5200000,5340000,140001,5199734.0,3.85,Subtelomeric (<5% Arm),0,5,0,4,,,,,43.38,-0.42,54.19,0.12,44.93,-0.23
+equus_asinus,Donkey (E. asinus),Mammalia,alpha_globin,NC_091803.1,49650000,49810000,160001,,,Interstitial (≥5% Arm),4,0,0,5,68.31,2.39,65.27,1.26,,,,,56.66,1.05
+equus_asinus,Donkey (E. asinus),Mammalia,beta_globin,NC_091809.1,88050000,88150000,100001,,,Interstitial (≥5% Arm),0,4,0,2,,,,,43.86,-0.43,53.4,-0.06,42.09,-0.63
+equus_caballus,Horse (E. caballus),Mammalia,alpha_globin,NC_091696.1,53720000,53890000,170001,,,Interstitial (≥5% Arm),3,0,0,6,67.38,2.26,64.26,1.12,,,,,55.66,0.91
+equus_caballus,Horse (E. caballus),Mammalia,beta_globin,NC_091690.1,76350000,76430000,80001,,,Interstitial (≥5% Arm),0,4,0,1,,,,,44.06,-0.42,53.29,-0.1,47.51,-0.03
+miniopterus_natalensis,Bat (M. natalensis),Mammalia,alpha_globin,NC_142083.1,95380000,95540000,160001,,,Interstitial (≥5% Arm),6,0,0,7,64.71,1.86,64.18,1.12,,,,,50.92,0.33
+miniopterus_natalensis,Bat (M. natalensis),Mammalia,beta_globin,NC_142091.1,41480000,41530000,50001,,,Interstitial (≥5% Arm),0,3,0,1,,,,,42.62,-0.6,52.78,-0.21,51.66,0.41
+puma_concolor,Puma (P. concolor),Mammalia,alpha_globin,NC_141682.1,42480000,42650000,170001,,,Interstitial (≥5% Arm),6,0,0,7,67.34,2.21,65.31,1.23,,,,,53.2,0.6
+puma_concolor,Puma (P. concolor),Mammalia,beta_globin,NC_141676.1,54430000,54550000,120001,,,Interstitial (≥5% Arm),0,4,0,4,,,,,45.06,-0.33,54.64,0.05,45.88,-0.24
+sturnus_vulgaris,Starling (S. vulgaris),Aves,alpha_globin,NC_142258.1,13450000,13760000,310001,,,Interstitial (≥5% Arm),3,0,0,13,56.51,0.95,59.91,0.66,,,,,54.46,0.72
+sturnus_vulgaris,Starling (S. vulgaris),Aves,beta_globin,NC_142244.1,118980000,119020000,40001,,,Interstitial (≥5% Arm),0,3,0,1,,,,,61.15,1.46,62.16,0.92,53.88,0.66
+anser_cygnoides,Swan Goose (A. cygnoides),Aves,alpha_globin,NC_089887.1,11130000,11490000,360001,,,Interstitial (≥5% Arm),3,0,0,14,55.3,0.46,56.39,0.16,,,,,55.47,0.48
+anser_cygnoides,Swan Goose (A. cygnoides),Aves,beta_globin,NC_089873.1,212350000,212380000,30001,,,Interstitial (≥5% Arm),0,4,0,1,,,,,56.14,0.54,60.21,0.53,52.11,0.18
+coturnix_japonica,Quail (C. japonica),Aves,alpha_globin,NC_140675.1,18630000,18870000,240001,,,Interstitial (≥5% Arm),3,0,0,17,55.4,0.9,56.54,0.45,,,,,53.92,0.72
+coturnix_japonica,Quail (C. japonica),Aves,beta_globin,NC_140663.1,178970000,179000000,30001,,,Interstitial (≥5% Arm),0,4,0,1,,,,,55.36,0.89,59.29,0.78,50.27,0.27
+rattus_norvegicus,Norway Rat (R. norvegicus),Mammalia,alpha_globin,NC_141543.1,21260000,21420000,160001,,,Interstitial (≥5% Arm),5,0,0,5,54.48,1.49,56.5,0.7,,,,,49.91,0.66
+rattus_norvegicus,Norway Rat (R. norvegicus),Mammalia,beta_globin,NC_141534.1,170780000,171100000,320001,,,Interstitial (≥5% Arm),0,9,0,13,,,,,43.04,-0.57,52.38,0.09,47.31,0.2
+pimephales_promelas,Minnow (P. promelas),Teleostei,alpha_beta_major,NC_142771.1,33650000,33750000,100001,,,Interstitial (≥5% Arm),6,7,0,3,41.77,0.83,51.85,0.32,45.15,1.76,53.13,0.57,37.18,-0.44
+pimephales_promelas,Minnow (P. promelas),Teleostei,alpha_beta_embryonic,NC_142785.1,7100000,7125000,25001,,,Interstitial (≥5% Arm),2,2,0,1,42.42,1.01,50.32,0.01,47.34,2.37,50.68,0.09,35.96,-0.78
+eretmochelys_imbricata,Hawksbill Turtle (E. imbricata),Reptilia,alpha_globin,NC_135581.1,31320000,32280000,960001,,,Interstitial (≥5% Arm),3,0,0,13,59.5,1.57,58.65,0.93,,,,,49.57,0.28
+eretmochelys_imbricata,Hawksbill Turtle (E. imbricata),Reptilia,beta_globin,NC_135572.1,3640000,3680000,40001,,,Interstitial (≥5% Arm),0,3,0,0,,,,,59.13,1.52,59.53,1.04,,
+geotrypetes_seraphini,Gabon Caecilian (G. seraphini),Amphibia,alpha_beta_linked,NC_047094.1,46150000,46800000,650001,,,Interstitial (≥5% Arm),2,1,0,3,43.16,-0.24,48.54,0.29,41.31,-0.92,50.11,0.57,42.51,-0.48
+geotrypetes_seraphini,Gabon Caecilian (G. seraphini),Amphibia,beta_secondary,NC_047088.1,104650000,104680000,30001,,,Interstitial (≥5% Arm),0,1,0,1,,,,,40.51,-1.21,47.97,0.18,43.69,-0.05
+rhinatrema_bivittatum,Two-lined Caecilian (R. bivittatum),Amphibia,alpha_beta_linked,NC_042628.1,33350000,33860000,510001,,,Interstitial (≥5% Arm),2,2,0,3,39.75,-1.56,46.27,-0.45,41.77,-1.0,47.41,-0.27,43.45,-0.53
+microcaecilia_unicolor,Tiny Caecilian (M. unicolor),Amphibia,alpha_beta_linked,NC_044038.1,48220000,48920000,700001,,,Interstitial (≥5% Arm),3,1,0,4,42.88,-0.55,50.55,0.7,44.71,0.12,50.9,0.77,43.74,-0.24
+microcaecilia_unicolor,Tiny Caecilian (M. unicolor),Amphibia,beta_secondary,NC_044037.1,114500000,114510000,10001,,,Interstitial (≥5% Arm),0,1,0,0,,,,,41.06,-1.21,50.68,0.72,,
+ambystoma_mexicanum,Axolotl (A. mexicanum),Amphibia,alpha_beta_linked,NC_090924.1,681000000,689200000,8200001,,,Interstitial (≥5% Arm),15,2,0,6,47.15,0.04,60.03,1.79,45.82,-0.38,52.54,0.47,45.92,-0.35
+ambystoma_mexicanum,Axolotl (A. mexicanum),Amphibia,beta_secondary,NC_090925.1,788300000,789450000,1150001,,,Interstitial (≥5% Arm),0,12,0,0,,,,,48.16,0.37,59.99,1.78,,
+triturus_cristatus,Crested Newt (T. cristatus),Amphibia,alpha_beta_linked,NC_140593.1,817650000,822750000,5100001,,,Interstitial (≥5% Arm),20,2,0,3,46.06,0.09,60.69,1.91,42.95,-0.66,47.44,-0.32,46.1,0.1
+triturus_cristatus,Crested Newt (T. cristatus),Amphibia,beta_secondary,NC_140590.1,1210800000,1211850000,1050001,,,Interstitial (≥5% Arm),0,8,0,2,,,,,47.46,0.43,60.14,1.82,41.98,-0.9
+zootoca_vivipara,Viviparous Lizard (Z. vivipara),Reptilia,alpha_globin,NC_142596.1,53200000,53660000,460001,403404.0,0.75,Subtelomeric (<5% Arm),6,0,0,19,63.08,4.5,62.48,1.76,,,,,54.6,2.36
+zootoca_vivipara,Viviparous Lizard (Z. vivipara),Reptilia,beta_globin,NC_142587.1,101690000,102850000,1160001,537940.0,0.52,Subtelomeric (<5% Arm),0,4,0,73,,,,,58.64,3.38,61.48,1.61,50.68,1.38
+eptatretus_burgeri,Inshore Hagfish (E. burgeri),Agnatha,proto_globin,NC_140977.1,52050000,52280000,230001,8976746.0,14.66,Interstitial (≥5% Arm),3,0,0,3,45.13,0.36,50.76,0.18,,,,,43.84,-0.01
+lampetra_fluviatilis,River Lamprey (L. fluviatilis),Agnatha,proto_globin,NC_136297.1,11400000,12300000,900001,1353600.0,9.9,Interstitial (≥5% Arm),10,0,0,20,50.3,-0.03,60.3,-0.36,,,,,53.92,0.62
+tursiops_truncatus,Dolphin (T. truncatus),Mammalia,alpha_globin,NC_047048.1,38080000,38200000,120001,38047508.0,44.09,Interstitial (≥5% Arm),5,0,0,7,65.24,2.03,63.63,1.04,,,,,54.77,0.83
+tursiops_truncatus,Dolphin (T. truncatus),Mammalia,beta_globin,NC_047041.1,59880000,59940000,60001,48509418.0,44.74,Interstitial (≥5% Arm),0,4,0,0,,,,,45.14,-0.28,53.8,-0.07,,
+zalophus_californianus,Sea Lion (Z. californianus),Mammalia,alpha_globin,NC_045604.1,69380000,69500000,120001,44719682.0,39.14,Interstitial (≥5% Arm),6,0,0,6,66.34,2.1,64.53,1.21,,,,,55.32,0.84
+zalophus_californianus,Sea Lion (Z. californianus),Mammalia,beta_globin,NC_045605.1,61010000,61060000,50001,52543330.0,46.26,Interstitial (≥5% Arm),0,5,0,0,,,,,45.03,-0.33,54.95,0.14,,
+loxodonta_africana,Elephant (L. africana),Mammalia,alpha_globin,NC_087353.1,53580000,53720000,140001,53206144.0,49.75,Interstitial (≥5% Arm),6,0,0,4,61.37,2.08,62.09,1.17,,,,,53.36,1.01
+loxodonta_africana,Elephant (L. africana),Mammalia,beta_globin,NC_087348.1,82900000,82950000,50001,53978058.0,39.42,Interstitial (≥5% Arm),0,4,0,0,,,,,43.34,-0.33,52.83,0.08,,
+scyliorhinus_canicula,Catshark (S. canicula),Chondrichthyes,alpha_beta_cluster,NC_052160.1,73580000,73860000,280001,73212200.0,49.79,Interstitial (≥5% Arm),2,2,0,0,40.14,-1.85,49.54,0.23,37.9,-2.44,45.53,-0.46,,
+heterocephalus_glaber,Naked Mole-Rat (H. glaber),Mammalia,alpha_globin,NW_004624913.1,950000,1150000,200001,937483.0,42.62,Interstitial (≥5% Arm),4,0,0,9,56.9,1.19,59.26,0.68,,,,,52.15,0.63
+heterocephalus_glaber,Naked Mole-Rat (H. glaber),Mammalia,beta_globin,NW_004624817.1,6650000,6750000,100001,2972471.0,30.6,Interstitial (≥5% Arm),0,3,0,1,,,,,46.29,-0.05,53.7,0.04,47.33,0.07

@@ -183,6 +183,82 @@ class GeneAnnotator:
         "LOC100174873": {"category": "beta_globin", "subtype": "hbb", "name": "hbb_6"},
         # Fugu (Takifugu rubripes) Ensembl (fTakRub1.2)
         "ENSTRUG00000016923": {"category": "beta_globin", "subtype": "hbb", "name": "hbb_dup"},
+        # Small-spotted Catshark (Scyliorhinus canicula) NCBI RefSeq (sScyCan1.1)
+        "GeneID:119978771": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA_like_1"},
+        "LOC119978771": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA_like_1"},
+        "GeneID:119978759": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA_like_2"},
+        "LOC119978759": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA_like_2"},
+        "GeneID:119978731": {"category": "beta_globin", "subtype": "HBB", "name": "HBB_like_1"},
+        "LOC119978731": {"category": "beta_globin", "subtype": "HBB", "name": "HBB_like_1"},
+        "GeneID:119978783": {"category": "beta_globin", "subtype": "HBB", "name": "HBB_like_2"},
+        "LOC119978783": {"category": "beta_globin", "subtype": "HBB", "name": "HBB_like_2"},
+        # Common Ostrich (Struthio camelus australis) NCBI RefSeq (StrCam1 / ASM69896v1)
+        "GeneID:104143901": {"category": "alpha_globin", "subtype": "HBAA", "name": "HBAA_like"},
+        "LOC104143901": {"category": "alpha_globin", "subtype": "HBAA", "name": "HBAA_like"},
+        "GeneID:104143902": {"category": "alpha_globin", "subtype": "HBAD", "name": "HBAD_like"},
+        "LOC104143902": {"category": "alpha_globin", "subtype": "HBAD", "name": "HBAD_like"},
+        "GeneID:104143903": {"category": "alpha_globin", "subtype": "HBZ", "name": "HBZ_like"},
+        "LOC104143903": {"category": "alpha_globin", "subtype": "HBZ", "name": "HBZ_like"},
+        "GeneID:104141513": {"category": "beta_globin", "subtype": "HBE", "name": "HBE_like_fragment"},
+        "LOC104141513": {"category": "beta_globin", "subtype": "HBE", "name": "HBE_like_fragment"},
+        "GeneID:104141507": {"category": "beta_globin", "subtype": "HBE", "name": "HBE_like"},
+        "LOC104141507": {"category": "beta_globin", "subtype": "HBE", "name": "HBE_like"},
+        "GeneID:104141505": {"category": "beta_globin", "subtype": "HBB", "name": "HBB_like"},
+        "LOC104141505": {"category": "beta_globin", "subtype": "HBB", "name": "HBB_like"},
+        "GeneID:104141514": {"category": "beta_globin", "subtype": "HBB", "name": "HBBA_like"},
+        "LOC104141514": {"category": "beta_globin", "subtype": "HBB", "name": "HBBA_like"},
+        # Naked Mole-Rat (Heterocephalus glaber) NCBI RefSeq (HetGla_female_1.0)
+        "GeneID:101705305": {"category": "alpha_globin", "subtype": "HBZ", "name": "HBZ_like"},
+        "LOC101705305": {"category": "alpha_globin", "subtype": "HBZ", "name": "HBZ_like"},
+        "GeneID:101704937": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA1_like"},
+        "LOC101704937": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA1_like"},
+        "GeneID:101704581": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA2_like"},
+        "LOC101704581": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA2_like"},
+        "GeneID:101724100": {"category": "alpha_globin", "subtype": "HBQ", "name": "HBQ_like"},
+        "LOC101724100": {"category": "alpha_globin", "subtype": "HBQ", "name": "HBQ_like"},
+        "GeneID:101696428": {"category": "beta_globin", "subtype": "HBB", "name": "HBB_like"},
+        "LOC101696428": {"category": "beta_globin", "subtype": "HBB", "name": "HBB_like"},
+        "GeneID:101718185": {"category": "beta_globin", "subtype": "HBE", "name": "HBE_like"},
+        "LOC101718185": {"category": "beta_globin", "subtype": "HBE", "name": "HBE_like"},
+        "GeneID:101718529": {"category": "beta_globin", "subtype": "HBG", "name": "HBG_like"},
+        "LOC101718529": {"category": "beta_globin", "subtype": "HBG", "name": "HBG_like"},
+        # California Sea Lion (Zalophus californianus) NCBI RefSeq (mZalCal1.pri.v2)
+        "GeneID:113933389": {"category": "alpha_globin", "subtype": "HBZ", "name": "HBZ2_like"},
+        "LOC113933389": {"category": "alpha_globin", "subtype": "HBZ", "name": "HBZ2_like"},
+        "GeneID:113933387": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA2_like"},
+        "LOC113933387": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA2_like"},
+        "GeneID:113914335": {"category": "beta_globin", "subtype": "HBG", "name": "HBG_like"},
+        "LOC113914335": {"category": "beta_globin", "subtype": "HBG", "name": "HBG_like"},
+        "GeneID:113914336": {"category": "beta_globin", "subtype": "HBD", "name": "HBD_like"},
+        "LOC113914336": {"category": "beta_globin", "subtype": "HBD", "name": "HBD_like"},
+        "GeneID:118355949": {"category": "beta_globin", "subtype": "HBB", "name": "HBB_like_1"},
+        "LOC118355949": {"category": "beta_globin", "subtype": "HBB", "name": "HBB_like_1"},
+        "GeneID:113914337": {"category": "beta_globin", "subtype": "HBB", "name": "HBB_like_2"},
+        "LOC113914337": {"category": "beta_globin", "subtype": "HBB", "name": "HBB_like_2"},
+        # Bottlenose Dolphin (Tursiops truncatus) NCBI RefSeq (mTurTru1.mat.Y)
+        "GeneID:117308132": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA1_like"},
+        "LOC117308132": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA1_like"},
+        "GeneID:117308133": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA2_like"},
+        "LOC117308133": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA2_like"},
+        "GeneID:117313420": {"category": "beta_globin", "subtype": "HBB", "name": "HBB_like"},
+        "LOC117313420": {"category": "beta_globin", "subtype": "HBB", "name": "HBB_like"},
+        "GeneID:101335834": {"category": "beta_globin", "subtype": "HBD", "name": "HBD_like"},
+        "LOC101335834": {"category": "beta_globin", "subtype": "HBD", "name": "HBD_like"},
+        "GeneID:101336124": {"category": "beta_globin", "subtype": "HBG", "name": "HBG_like"},
+        "LOC101336124": {"category": "beta_globin", "subtype": "HBG", "name": "HBG_like"},
+        "GeneID:101315568": {"category": "beta_globin", "subtype": "HBE", "name": "HBE1_like"},
+        "LOC101315568": {"category": "beta_globin", "subtype": "HBE", "name": "HBE1_like"},
+        # African Savanna Elephant (Loxodonta africana) NCBI RefSeq (mLoxAfr1.hap2)
+        "GeneID:100657757": {"category": "alpha_globin", "subtype": "HBZ", "name": "HBZ_like"},
+        "LOC100657757": {"category": "alpha_globin", "subtype": "HBZ", "name": "HBZ_like"},
+        "GeneID:135232945": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA_like"},
+        "LOC135232945": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA_like"},
+        "GeneID:100677792": {"category": "beta_globin", "subtype": "HBE", "name": "HBE1_like"},
+        "LOC100677792": {"category": "beta_globin", "subtype": "HBE", "name": "HBE1_like"},
+        "GeneID:100677510": {"category": "beta_globin", "subtype": "HBG", "name": "HBG_like"},
+        "LOC100677510": {"category": "beta_globin", "subtype": "HBG", "name": "HBG_like"},
+        "GeneID:135232176": {"category": "beta_globin", "subtype": "HBD", "name": "HBD_like"},
+        "LOC135232176": {"category": "beta_globin", "subtype": "HBD", "name": "HBD_like"},
     }
 
     FLANKING_MARKERS = {
@@ -200,6 +276,7 @@ class GeneAnnotator:
         "trim68",
         "ifitm1", "ifitm2", "ifitm3",
         "folh1",
+        "fam234a", "rgs11", "arhgdig", "pdia2", "axin1", "pgap6", "rrm1",
     }
 
     def __init__(self, data_manager: Optional[DataManager] = None):
@@ -261,7 +338,7 @@ class GeneAnnotator:
             or "heparin-binding egf" in desc
             or any(w in desc or w in name_lower for w in ["cytoglobin", "neuroglobin", "myoglobin"])
             or name_lower in self.FLANKING_MARKERS
-            or any(name_lower.startswith(m) for m in ["rhbdf1", "kank2", "lcmt1", "nprl3", "luc7l", "mpg", "capn1", "trim68", "or51", "or52", "olfr"])
+            or any(name_lower.startswith(m) for m in ["rhbdf1", "kank2", "lcmt1", "nprl3", "luc7l", "mpg", "capn1", "trim68", "or51", "or52", "olfr", "fam234", "rgs11", "arhgdig", "pdia2", "axin1", "pgap6", "rrm1"])
         ):
             sub_type = "CYGB" if ("cyto" in desc or "cyto" in name_lower) else gene_name.upper()
             return {"category": "cluster_non_globin", "subtype": sub_type, "display_symbol": gene_name, "is_globin": "False"}
@@ -269,7 +346,7 @@ class GeneAnnotator:
         # 4. Check Alpha Globins
         # HBA, HBA1, HBA2, HBAD, HBZ, HBM, HBQ, hbae1, hbae3, hbae4, hbaa1, pi, etc.
         alpha_patterns = [
-            r"^hb[azmq]$", r"^hba[1-4]$", r"^hbad.*", r"^hba-", r"^hbae[1-5]$", r"^hbaa[1-2]$", r"^ba1l$",
+            r"^hb[azmq][1-5]?$", r"^hba[1-4]$", r"^hbad.*", r"^hba-", r"^hbae[1-5]$", r"^hbaa[1-2]$", r"^ba1l$",
             r"hemoglobin.*alpha", r"hemoglobin.*zeta", r"hemoglobin.*mu", r"hemoglobin.*theta", r"hemoglobin.*pi"
         ]
         for pat in alpha_patterns:

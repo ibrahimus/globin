@@ -26,6 +26,8 @@ anas_platyrhynchos,Mallard Duck (A. platyrhynchos),amniote_bird,alpha_globin,15,
 anas_platyrhynchos,Mallard Duck (A. platyrhynchos),amniote_bird,beta_globin,1,207030000,207120000,90000,54.94,59.68,54.79,59.49,77.73,59.49,77.73,54.94,47.93,60.06,54.94,54.94,54.94,3,3
 meleagris_gallopavo,Turkey (M. gallopavo),amniote_bird,alpha_globin,16,1480000,1650000,170000,47.06,51.05,46.75,52.29,61.74,55.69,72.21,47.06,38.08,53.91,46.83,46.24,47.77,3,8
 meleagris_gallopavo,Turkey (M. gallopavo),amniote_bird,beta_globin,1,189050000,189200000,150000,51.29,54.12,51.14,57.28,63.22,58.66,62.85,51.36,45.13,56.46,51.04,51.02,51.06,5,6
+struthio_camelus_australis,African Ostrich (S. camelus),amniote_bird,alpha_globin,NW_009271137.1,860000,1050000,190001,46.99,48.84,46.82,52.74,50.21,57.32,57.64,47.15,41.13,58.7,46.18,44.43,48.54,3,7
+struthio_camelus_australis,African Ostrich (S. camelus),amniote_bird,beta_globin,NW_009270861.1,1000,30000,29001,49.42,54.34,48.65,56.56,48.96,59.64,51.34,50.4,46.43,53.14,49.42,49.42,49.42,4,6
 anolis_carolinensis,Green Anole (A. carolinensis),amniote_reptile,alpha_globin,NW_026943824.1,8000000,8200000,200000,51.59,58.92,48.71,62.23,78.88,60.29,84.04,51.73,43.77,57.94,52.14,51.41,52.99,3,21
 anolis_carolinensis,Green Anole (A. carolinensis),amniote_reptile,beta_globin,NC_085843.1,1800000,2000000,200000,42.74,51.81,42.15,62.99,86.62,63.85,93.92,43.02,33.55,49.78,42.83,42.43,43.41,2,6
 pogona_vitticeps,Bearded Dragon (P. vitticeps),amniote_reptile,alpha_globin,NC_135795.1,21200000,21650000,450000,59.59,61.84,58.84,62.35,79.58,62.16,89.97,59.68,48.46,66.86,60.04,56.54,62.01,3,39
@@ -79,3 +81,12 @@ zootoca_vivipara,Viviparous Lizard (Z. vivipara),amniote_reptile,alpha_globin,NC
 zootoca_vivipara,Viviparous Lizard (Z. vivipara),amniote_reptile,beta_globin,NC_142587.1,101690000,102850000,1160001,47.14,49.95,46.61,53.49,46.83,61.48,54.56,47.1,38.99,62.33,46.92,44.88,50.5,4,77
 eptatretus_burgeri,Inshore Hagfish (E. burgeri),cyclostome,proto_globin,NC_140977.1,52050000,52280000,230001,44.32,47.42,44.19,50.38,40.71,50.76,37.23,44.26,29.44,55.74,45.24,42.72,47.35,3,6
 lampetra_fluviatilis,River Lamprey (L. fluviatilis),cyclostome,proto_globin,NC_136297.1,11400000,12300000,900001,54.14,60.45,53.47,63.66,53.21,60.3,41.98,54.18,40.78,63.17,54.59,48.96,57.83,10,30
+tursiops_truncatus,Bottlenose Dolphin (T. truncatus),amniote_mammal,alpha_globin,NC_047048.1,38080000,38200000,120001,54.86,53.24,55.47,61.25,58.09,63.63,63.18,54.89,41.31,63.57,55.66,54.87,56.44,5,12
+tursiops_truncatus,Bottlenose Dolphin (T. truncatus),amniote_mammal,beta_globin,NC_047041.1,59880000,59940000,60001,38.74,50.25,38.18,53.8,60.22,53.8,60.22,39.13,34.32,42.43,38.74,38.74,38.74,4,4
+zalophus_californianus,California Sea Lion (Z. californianus),amniote_mammal,alpha_globin,NC_045604.1,69380000,69500000,120001,55.0,63.12,54.01,61.64,48.37,64.53,42.82,55.3,45.55,63.76,55.08,54.27,55.88,6,12
+zalophus_californianus,California Sea Lion (Z. californianus),amniote_mammal,beta_globin,NC_045605.1,61010000,61060000,50001,41.22,53.06,40.48,54.95,61.22,54.95,61.22,41.5,38.8,42.75,41.22,41.22,41.22,5,5
+loxodonta_africana,African Savanna Elephant (L. africana),amniote_mammal,alpha_globin,NC_087353.1,53580000,53720000,140001,49.87,60.36,48.16,61.49,49.02,62.09,42.46,49.64,38.87,61.7,48.0,46.53,49.9,6,10
+loxodonta_africana,African Savanna Elephant (L. africana),amniote_mammal,beta_globin,NC_087348.1,82900000,82950000,50001,39.59,50.2,38.9,52.83,35.09,52.83,35.09,39.79,37.77,42.85,39.59,39.59,39.59,4,4
+scyliorhinus_canicula,Small-spotted Catshark (S. canicula),chondrichthyes,alpha_beta_cluster,NC_052160.1,73580000,73860000,280001,49.67,42.47,49.75,47.53,46.4,47.53,46.4,49.64,42.98,57.3,49.64,48.45,51.1,4,4
+heterocephalus_glaber,Naked Mole-Rat (H. glaber),amniote_mammal,alpha_globin,NW_004624913.1,950000,1150000,200001,48.01,55.97,46.96,58.3,50.65,59.27,41.26,47.77,41.14,60.73,46.56,45.22,48.59,4,13
+heterocephalus_glaber,Naked Mole-Rat (H. glaber),amniote_mammal,beta_globin,NW_004624817.1,6650000,6750000,100001,36.23,49.66,35.91,52.11,56.88,53.7,59.7,36.33,33.68,39.24,36.23,36.23,36.23,3,4

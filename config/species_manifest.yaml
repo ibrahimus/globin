@@ -448,28 +448,26 @@ species:
   struthio_camelus_australis:
     common_name: African Ostrich (S. camelus)
     clade: amniote_bird
-    division: EnsemblVertebrates
+    division: NCBI_RefSeq
     assembly: ASM69896v1
-    status: excluded
+    status: active
     loci:
     - locus_id: alpha_globin
-      chromosome: KL206308.1
-      start: 630000
+      chromosome: NW_009271137.1
+      start: 860000
       end: 1050000
-      strand: +
-      left_gene: LUC7L
-      right_gene: RHBDF1
-      notes: 'Palaeognathae ratite basal avian alpha locus on KL206308.1: LUC7L -
-        AXIN1 - PGAP6 - HBA1_like - HBAD_like - HBZ - NPRL3 - MPG - RHBDF1'
+      strand: '-'
+      left_gene: RHBDF1
+      right_gene: LOC104143901
+      notes: 'Palaeognathae basal avian alpha locus on NW_009271137.1: GTF3C1 - RHBDF1 - MPG - NPRL3 - LOC104143903 (HBZ) - LOC104143902 (HBAD) - LOC104143901 (HBAA)'
     - locus_id: beta_globin
-      chromosome: KL206138.1
-      start: 2000
-      end: 185000
-      strand: +
-      left_gene: HBE1
-      right_gene: RRM1
-      notes: 'Basal avian beta-globin locus on KL206138.1: HBE1 (5.7 kb, ENSSCUG00000005227)
-        to RRM1 (172 kb, ENSSCUG00000005251)'
+      chromosome: NW_009270861.1
+      start: 1000
+      end: 30000
+      strand: '+'
+      left_gene: LOC104141507
+      right_gene: LOC104141514
+      notes: 'Palaeognathae basal avian beta locus on NW_009270861.1: LOC104141513 - LOC104141507 (HBE) - LOC104141505 (HBB) - LOC104141514 (HBBA)'
   anolis_carolinensis:
     common_name: Green Anole (A. carolinensis)
     clade: amniote_reptile
@@ -1143,3 +1141,111 @@ species:
       left_gene: NPRL3
       right_gene: LOC144940938
       notes: 'European river lamprey ancestral proto-globin locus on chr23: NPRL3 adjacent to tandem globin clusters'
+  tursiops_truncatus:
+    common_name: Bottlenose Dolphin (T. truncatus)
+    clade: amniote_mammal
+    division: NCBI_RefSeq
+    assembly: mTurTru1.mat.Y
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_047048.1
+      start: 38080000
+      end: 38200000
+      strand: '-'
+      left_gene: RHBDF1
+      right_gene: HBQ1
+      notes: 'Cetacean marine diver alpha locus on chr16 (NC_047048.1): POLR3K - SNRNP25 - RHBDF1 - MPG - NPRL3 - HBZ - HBM - LOC117308133 (HBA2) - LOC117308132 (HBA1) - HBQ1 - LUC7L'
+    - locus_id: beta_globin
+      chromosome: NC_047041.1
+      start: 59880000
+      end: 59940000
+      strand: '+'
+      left_gene: LOC117313420
+      right_gene: LOC101315568
+      notes: 'Cetacean marine diver beta locus on chr9 (NC_047041.1): LOC117313420 (HBB) - LOC101335834 (HBD) - LOC101336124 (HBG) - LOC101315568 (HBE)'
+  zalophus_californianus:
+    common_name: California Sea Lion (Z. californianus)
+    clade: amniote_mammal
+    division: NCBI_RefSeq
+    assembly: mZalCal1.pri.v2
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_045604.1
+      start: 69380000
+      end: 69500000
+      strand: '-'
+      left_gene: RHBDF1
+      right_gene: HBQ1
+      notes: 'Pinniped marine diver alpha locus on chr11 (NC_045604.1): POLR3K - SNRNP25 - RHBDF1 - MPG - NPRL3 - HBZ - LOC113933389 - HBM - LOC113933387 - HBA1 - HBQ1 - LUC7L'
+    - locus_id: beta_globin
+      chromosome: NC_045605.1
+      start: 61010000
+      end: 61060000
+      strand: '+'
+      left_gene: LOC113914337
+      right_gene: HBE1
+      notes: 'Pinniped marine diver beta locus on chr12 (NC_045605.1): LOC113914337 (HBB2) - LOC118355949 (HBB1) - LOC113914336 (HBD) - LOC113914335 (HBG) - HBE1'
+  loxodonta_africana:
+    common_name: African Savanna Elephant (L. africana)
+    clade: amniote_mammal
+    division: NCBI_RefSeq
+    assembly: mLoxAfr1.hap2
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_087353.1
+      start: 53580000
+      end: 53720000
+      strand: '-'
+      left_gene: RHBDF1
+      right_gene: HBQ1
+      notes: 'Afrotherian baseline alpha locus on chr6 (NC_087353.1): RHBDF1 - MPG - NPRL3 - HBZ - LOC100657757 - HBM - LOC135232945 - HBA2 - HBQ1 - LUC7L'
+    - locus_id: beta_globin
+      chromosome: NC_087348.1
+      start: 82900000
+      end: 82950000
+      strand: '+'
+      left_gene: LOC100677792
+      right_gene: HBB/D
+      notes: 'Afrotherian baseline beta locus on chr1 (NC_087348.1): LOC100677792 (HBE1) - LOC100677510 (HBG) - LOC135232176 (HBD) - HBB/D'
+  scyliorhinus_canicula:
+    common_name: Small-spotted Catshark (S. canicula)
+    clade: chondrichthyes
+    division: NCBI_RefSeq
+    assembly: sScyCan1.1
+    status: active
+    loci:
+    - locus_id: alpha_beta_cluster
+      chromosome: NC_052160.1
+      start: 73580000
+      end: 73860000
+      strand: '+'
+      left_gene: LOC119978731
+      right_gene: LOC119978783
+      notes: 'Cartilaginous fish ancestral jawed vertebrate linked cluster on chr15 (NC_052160.1): LOC119978731 (beta) - LOC119978771 (alpha) - LOC119978759 (alpha) - LOC119978783 (beta)'
+  heterocephalus_glaber:
+    common_name: Naked Mole-Rat (H. glaber)
+    clade: amniote_mammal
+    division: NCBI_RefSeq
+    assembly: HetGla_female_1.0
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NW_004624913.1
+      start: 950000
+      end: 1150000
+      strand: '-'
+      left_gene: Rhbdf1
+      right_gene: LOC101724100
+      notes: 'Subterranean hypoxia extremophile alpha locus on NW_004624913.1: Rhbdf1 - Mpg - Nprl3 - LOC101705305 (HBZ) - LOC101704937 (HBA1) - LOC101704581 (HBA2) - LOC101724100 (HBQ) - Luc7l'
+    - locus_id: beta_globin
+      chromosome: NW_004624817.1
+      start: 6650000
+      end: 6750000
+      strand: '+'
+      left_gene: LOC101696428
+      right_gene: LOC101718529
+      notes: 'Subterranean hypoxia extremophile beta locus on NW_004624817.1: LOC101696428 (HBB) - LOC101718185 (HBE) - LOC101718529 (HBG)'
+

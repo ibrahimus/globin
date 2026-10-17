@@ -12,7 +12,7 @@ lepisosteus_oculatus,non_teleost_fish,alpha_beta_cluster,LG13,ENSLOCG00000007756
 lepisosteus_oculatus,non_teleost_fish,alpha_beta_cluster,LG13,ENSLOCG00000007770,hbae4,hbae4,protein_coding,alpha_globin,hbae4,True,14782602,14784580,1978,+,hemoglobin alpha embryonic-4 [Source:ZFIN;Acc:ZDB-GENE-980526-286]
 lepisosteus_oculatus,non_teleost_fish,alpha_beta_cluster,LG13,ENSLOCG00000007843,HBE1,HBE1,protein_coding,beta_globin,HBE1,True,14817610,14819054,1444,+,hemoglobin subunit epsilon 1 [Source:HGNC Symbol;Acc:HGNC:4830]
 lepisosteus_oculatus,non_teleost_fish,alpha_beta_cluster,LG13,ENSLOCG00000007877,luc7l,luc7l,protein_coding,cluster_non_globin,LUC7L,False,14836974,14850522,13548,-,LUC7-like (S. cerevisiae) [Source:ZFIN;Acc:ZDB-GENE-040625-111]
-lepisosteus_oculatus,non_teleost_fish,alpha_beta_cluster,LG13,ENSLOCG00000007887,fam234a,fam234a,protein_coding,cluster_non_globin,intervening_gene,False,14859624,14868140,8516,+,family with sequence similarity 234 member A [Source:ZFIN;Acc:ZDB-GENE-091204-17]
+lepisosteus_oculatus,non_teleost_fish,alpha_beta_cluster,LG13,ENSLOCG00000007887,fam234a,fam234a,protein_coding,cluster_non_globin,FAM234A,False,14859624,14868140,8516,+,family with sequence similarity 234 member A [Source:ZFIN;Acc:ZDB-GENE-091204-17]
 lepisosteus_oculatus,non_teleost_fish,alpha_beta_cluster,LG13,ENSLOCG00000007921,KATNIP,KATNIP,protein_coding,cluster_non_globin,intervening_gene,False,14882922,14905667,22745,-,katanin interacting protein [Source:HGNC Symbol;Acc:HGNC:29068]
 lepisosteus_oculatus,non_teleost_fish,alpha_beta_cluster,LG13,ENSLOCG00000007947,cox6b1,cox6b1,protein_coding,cluster_non_globin,intervening_gene,False,14883441,14884496,1055,+,cytochrome c oxidase subunit 6B1 [Source:ZFIN;Acc:ZDB-GENE-040718-448]
 danio_rerio,teleost_fish,alpha_beta_locus_A,3,ENSDARG00000079802,aanat2,aanat2,protein_coding,cluster_non_globin,intervening_gene,False,54887781,54893706,5925,+,arylalkylamine N-acetyltransferase 2 [Source:ZFIN;Acc:ZDB-GENE-991019-6]
@@ -113,8 +113,8 @@ xenopus_tropicalis,amphibian,alpha_beta_cluster,9,ENSXETG00000010691,mpg,mpg,pro
 xenopus_tropicalis,amphibian,alpha_beta_cluster,9,ENSXETG00000031617,rhbdf1,rhbdf1,protein_coding,cluster_non_globin,RHBDF1,False,40769421,40820086,50665,+,rhomboid 5 homolog 1 [Source:HGNC Symbol;Acc:HGNC:20561]
 xenopus_tropicalis,amphibian,alpha_beta_cluster,9,ENSXETG00000045178,hbe1.2,hbe1.2,protein_coding,beta_globin,hbe1.2,True,40908046,40911404,3358,+,hemoglobin subunit gamma 2 [Source:NCBI gene (formerly Entrezgene);Acc:448249]
 xenopus_tropicalis,amphibian,alpha_beta_cluster,9,ENSXETG00000011562,luc7l,luc7l,protein_coding,cluster_non_globin,LUC7L,False,41163978,41211232,47254,-,LUC7-like [Source:Xenbase;Acc:XB-GENE-6085956]
-xenopus_tropicalis,amphibian,alpha_beta_cluster,9,ENSXETG00000011563,fam234a,fam234a,protein_coding,cluster_non_globin,intervening_gene,False,41223523,41255848,32325,+,family with sequence similarity 234 member A [Source:Xenbase;Acc:XB-GENE-5891978]
-bufo_bufo,amphibian,alpha_beta_cluster,NC_053395.1,GeneID:121008637,FAM234A,FAM234A,protein_coding,cluster_non_globin,intervening_gene,False,85025669,85090472,64803,-,FAM234A
+xenopus_tropicalis,amphibian,alpha_beta_cluster,9,ENSXETG00000011563,fam234a,fam234a,protein_coding,cluster_non_globin,FAM234A,False,41223523,41255848,32325,+,family with sequence similarity 234 member A [Source:Xenbase;Acc:XB-GENE-5891978]
+bufo_bufo,amphibian,alpha_beta_cluster,NC_053395.1,GeneID:121008637,FAM234A,FAM234A,protein_coding,cluster_non_globin,FAM234A,False,85025669,85090472,64803,-,FAM234A
 bufo_bufo,amphibian,alpha_beta_cluster,NC_053395.1,GeneID:121008638,LUC7L,LUC7L,protein_coding,cluster_non_globin,LUC7L,False,85090514,85107916,17402,+,LUC7L
 bufo_bufo,amphibian,alpha_beta_cluster,NC_053395.1,GeneID:121008069,LOC121008069,HBB_like_1,protein_coding,beta_globin,HBB,True,85122968,85124785,1817,-,LOC121008069
 bufo_bufo,amphibian,alpha_beta_cluster,NC_053395.1,GeneID:121008018,LOC121008018,HBB_like_2,protein_coding,beta_globin,HBB,True,85240484,85242058,1574,-,LOC121008018
@@ -152,7 +152,7 @@ chelonia_mydas,amniote_reptile,alpha_globin,NC_051250.2,GeneID:102946270,NPRL3,N
 chelonia_mydas,amniote_reptile,alpha_globin,NC_051250.2,GeneID:102945818,LOC102945818,HBZ_like,protein_coding,alpha_globin,HBZ,True,31332079,31335183,3104,+,LOC102945818
 chelonia_mydas,amniote_reptile,alpha_globin,NC_051250.2,GeneID:102945589,LOC102945589,HBAD_like,protein_coding,alpha_globin,HBAD,True,31340497,31342608,2111,+,LOC102945589
 chelonia_mydas,amniote_reptile,alpha_globin,NC_051250.2,GeneID:102946728,LOC102946728,HBAA_like,protein_coding,alpha_globin,HBAA,True,31349757,31350715,958,+,LOC102946728
-chelonia_mydas,amniote_reptile,alpha_globin,NC_051250.2,GeneID:102929407,PGAP6,PGAP6,protein_coding,cluster_non_globin,intervening_gene,False,31389030,31433232,44202,+,PGAP6
+chelonia_mydas,amniote_reptile,alpha_globin,NC_051250.2,GeneID:102929407,PGAP6,PGAP6,protein_coding,cluster_non_globin,PGAP6,False,31389030,31433232,44202,+,PGAP6
 chelonia_mydas,amniote_reptile,alpha_globin,NC_051250.2,GeneID:102946497,LOC102946497,LOC102946497,protein_coding,cluster_non_globin,intervening_gene,False,31363540,31370480,6940,-,LOC102946497
 chelonia_mydas,amniote_reptile,beta_globin,NC_057849.1,GeneID:102941826,LOC102941826,LOC102941826,protein_coding,cluster_non_globin,intervening_gene,False,3544771,3550109,5338,-,LOC102941826
 chelonia_mydas,amniote_reptile,beta_globin,NC_057849.1,GeneID:119563550,LOC119563550,HBB_like,protein_coding,beta_globin,HBB,True,3596301,3598423,2122,+,LOC119563550
@@ -184,17 +184,17 @@ alligator_mississippiensis,amniote_crocodylian,alpha_globin,NC_081836.1,GeneID:1
 alligator_mississippiensis,amniote_crocodylian,alpha_globin,NC_081836.1,GeneID:102559155,LOC102559155,HBZ_like,protein_coding,alpha_globin,HBZ,True,21786717,21789977,3260,+,hemoglobin subunit pi
 alligator_mississippiensis,amniote_crocodylian,alpha_globin,NC_081836.1,GeneID:102559387,LOC102559387,HBA_like,protein_coding,alpha_globin,HBA,True,21815463,21816353,890,+,hemoglobin subunit alpha
 alligator_mississippiensis,amniote_crocodylian,alpha_globin,NC_081836.1,GeneID:102559610,LOC102559610,HBAD_like,protein_coding,alpha_globin,HBAD,True,21857555,21875047,17492,-,hemoglobin subunit alpha-1
-alligator_mississippiensis,amniote_crocodylian,alpha_globin,NC_081836.1,GeneID:102560228,PGAP6,PGAP6,protein_coding,cluster_non_globin,intervening_gene,False,21934927,22005015,70088,+,post-GPI attachment to proteins 6
+alligator_mississippiensis,amniote_crocodylian,alpha_globin,NC_081836.1,GeneID:102560228,PGAP6,PGAP6,protein_coding,cluster_non_globin,PGAP6,False,21934927,22005015,70088,+,post-GPI attachment to proteins 6
 alligator_mississippiensis,amniote_crocodylian,alpha_globin,NC_081836.1,GeneID:102559997,MRPL28,MRPL28,protein_coding,cluster_non_globin,intervening_gene,False,22037231,22047087,9856,+,mitochondrial ribosomal protein L28
-alligator_mississippiensis,amniote_crocodylian,alpha_globin,NC_081836.1,GeneID:102566966,AXIN1,AXIN1,protein_coding,cluster_non_globin,intervening_gene,False,22321590,22548988,227398,+,axin 1
-alligator_mississippiensis,amniote_crocodylian,alpha_globin,NC_081836.1,GeneID:102567187,PDIA2,PDIA2,protein_coding,cluster_non_globin,intervening_gene,False,22549323,22569714,20391,-,protein disulfide isomerase family A member 2
-alligator_mississippiensis,amniote_crocodylian,alpha_globin,NC_081836.1,GeneID:102566733,ARHGDIG,ARHGDIG,protein_coding,cluster_non_globin,intervening_gene,False,22569820,22616955,47135,-,Rho GDP dissociation inhibitor gamma
-alligator_mississippiensis,amniote_crocodylian,alpha_globin,NC_081836.1,GeneID:102559098,RGS11,RGS11,protein_coding,cluster_non_globin,intervening_gene,False,22723476,22749521,26045,+,regulator of G protein signaling 11
-alligator_mississippiensis,amniote_crocodylian,alpha_globin,NC_081836.1,GeneID:102558558,FAM234A,FAM234A,protein_coding,cluster_non_globin,intervening_gene,False,22758616,22820187,61571,-,family with sequence similarity 234 member A
+alligator_mississippiensis,amniote_crocodylian,alpha_globin,NC_081836.1,GeneID:102566966,AXIN1,AXIN1,protein_coding,cluster_non_globin,AXIN1,False,22321590,22548988,227398,+,axin 1
+alligator_mississippiensis,amniote_crocodylian,alpha_globin,NC_081836.1,GeneID:102567187,PDIA2,PDIA2,protein_coding,cluster_non_globin,PDIA2,False,22549323,22569714,20391,-,protein disulfide isomerase family A member 2
+alligator_mississippiensis,amniote_crocodylian,alpha_globin,NC_081836.1,GeneID:102566733,ARHGDIG,ARHGDIG,protein_coding,cluster_non_globin,ARHGDIG,False,22569820,22616955,47135,-,Rho GDP dissociation inhibitor gamma
+alligator_mississippiensis,amniote_crocodylian,alpha_globin,NC_081836.1,GeneID:102559098,RGS11,RGS11,protein_coding,cluster_non_globin,RGS11,False,22723476,22749521,26045,+,regulator of G protein signaling 11
+alligator_mississippiensis,amniote_crocodylian,alpha_globin,NC_081836.1,GeneID:102558558,FAM234A,FAM234A,protein_coding,cluster_non_globin,FAM234A,False,22758616,22820187,61571,-,family with sequence similarity 234 member A
 alligator_mississippiensis,amniote_crocodylian,alpha_globin,NC_081836.1,GeneID:102563595,LUC7L,LUC7L,protein_coding,cluster_non_globin,LUC7L,False,22820582,22865711,45129,-,LUC7 like
 alligator_mississippiensis,amniote_crocodylian,beta_globin,NC_081824.1,GeneID:102569606,STIM1,STIM1,protein_coding,cluster_non_globin,STIM1,False,481428632,481565009,136377,+,stromal interaction molecule 1
 alligator_mississippiensis,amniote_crocodylian,beta_globin,NC_081824.1,GeneID:132249049,LOC132249049,LOC132249049,protein_coding,cluster_non_globin,intervening_gene,False,481556366,481563260,6894,-,uncharacterized LOC132249049
-alligator_mississippiensis,amniote_crocodylian,beta_globin,NC_081824.1,GeneID:102570766,RRM1,RRM1,protein_coding,cluster_non_globin,intervening_gene,False,481578829,481602153,23324,+,ribonucleotide reductase catalytic subunit M1
+alligator_mississippiensis,amniote_crocodylian,beta_globin,NC_081824.1,GeneID:102570766,RRM1,RRM1,protein_coding,cluster_non_globin,RRM1,False,481578829,481602153,23324,+,ribonucleotide reductase catalytic subunit M1
 alligator_mississippiensis,amniote_crocodylian,beta_globin,NC_081824.1,GeneID:102570990,LOC102570990,LOC102570990,protein_coding,cluster_non_globin,intervening_gene,False,481610398,481611413,1015,-,olfactory receptor 52K1
 alligator_mississippiensis,amniote_crocodylian,beta_globin,NC_081824.1,GeneID:102571229,LOC102571229,LOC102571229,protein_coding,cluster_non_globin,intervening_gene,False,481618882,481624727,5845,-,major histocompatibility complex class I-related gene protein
 alligator_mississippiensis,amniote_crocodylian,beta_globin,NC_081824.1,GeneID:132249558,LOC132249558,LOC132249558,protein_coding,cluster_non_globin,intervening_gene,False,481658767,481659721,954,-,olfactory receptor 52M1-like
@@ -275,7 +275,7 @@ Gallus_gallus,amniote_bird,alpha_globin,14,ENSGALG00010019253,HBAD,HBAD,protein_
 Gallus_gallus,amniote_bird,alpha_globin,14,ENSGALG00010019732,HBA1,HBA1,protein_coding,alpha_globin,HBA1,True,12117173,12119420,2247,+,hemoglobin subunit alpha 1 [Source:NCBI gene (formerly Entrezgene);Acc:416652]
 Gallus_gallus,amniote_bird,alpha_globin,14,ENSGALG00010019298,TMEM8A,TMEM8A,protein_coding,cluster_non_globin,intervening_gene,False,12125529,12141729,16200,+,post-GPI attachment to proteins 6 [Source:HGNC Symbol;Acc:HGNC:17205]
 Gallus_gallus,amniote_bird,alpha_globin,14,ENSGALG00010019313,MRPL28,MRPL28,protein_coding,cluster_non_globin,intervening_gene,False,12142970,12146143,3173,+,mitochondrial ribosomal protein L28 [Source:NCBI gene (formerly Entrezgene);Acc:426121]
-Gallus_gallus,amniote_bird,alpha_globin,14,ENSGALG00010016911,AXIN1,AXIN1,protein_coding,cluster_non_globin,intervening_gene,False,12167176,12235936,68760,+,axin 1 [Source:NCBI gene (formerly Entrezgene);Acc:395786]
+Gallus_gallus,amniote_bird,alpha_globin,14,ENSGALG00010016911,AXIN1,AXIN1,protein_coding,cluster_non_globin,AXIN1,False,12167176,12235936,68760,+,axin 1 [Source:NCBI gene (formerly Entrezgene);Acc:395786]
 Gallus_gallus,amniote_bird,beta_globin,1,ENSGALG00010003320,OR51E2,OR51E2,protein_coding,cluster_non_globin,OR51E2,False,195942064,195954820,12756,+,olfactory receptor family 51 subfamily E member 2 [Source:HGNC Symbol;Acc:HGNC:15195]
 Gallus_gallus,amniote_bird,beta_globin,1,ENSGALG00010003544,OR52R1,OR52R1,protein_coding,cluster_non_globin,OR52R1,False,195985862,195986810,948,+,"olfactory receptor, family 52, subfamily R, member 1 [Source:NCBI gene (formerly Entrezgene);Acc:428117]"
 Gallus_gallus,amniote_bird,beta_globin,1,ENSGALG00010003349,OR51M1,OR51M1,protein_coding,cluster_non_globin,OR51M1,False,195990995,195996161,5166,-,"olfactory receptor, family 51, subfamily M, member 1 [Source:NCBI gene (formerly Entrezgene);Acc:428116]"
@@ -290,17 +290,17 @@ aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013257,MPG
 aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013284,NPRL3,NPRL3,protein_coding,cluster_non_globin,NPRL3,False,16648664,16696826,48162,-,"NPR3 like, GATOR1 complex subunit [Source:HGNC Symbol;Acc:HGNC:14124]"
 aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013308,HBZ,HBZ,protein_coding,alpha_globin,HBZ,True,16702865,16704927,2062,+,hemoglobin subunit zeta [Source:HGNC Symbol;Acc:HGNC:4835]
 aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013324,ENSACCG00020013324,HBA1_like,protein_coding,alpha_globin,HBA1,True,16706985,16712181,5196,-,
-aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013363,PGAP6,PGAP6,protein_coding,cluster_non_globin,intervening_gene,False,16720145,16738333,18188,+,post-GPI attachment to proteins 6 [Source:HGNC Symbol;Acc:HGNC:17205]
+aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013363,PGAP6,PGAP6,protein_coding,cluster_non_globin,PGAP6,False,16720145,16738333,18188,+,post-GPI attachment to proteins 6 [Source:HGNC Symbol;Acc:HGNC:17205]
 aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013380,MRPL28,MRPL28,protein_coding,cluster_non_globin,intervening_gene,False,16738453,16741879,3426,+,mitochondrial ribosomal protein L28 [Source:HGNC Symbol;Acc:HGNC:14484]
-aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013395,AXIN1,AXIN1,protein_coding,cluster_non_globin,intervening_gene,False,16768870,16839859,70989,+,axin 1 [Source:HGNC Symbol;Acc:HGNC:903]
-aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013412,PDIA2,PDIA2,protein_coding,cluster_non_globin,intervening_gene,False,16841143,16845507,4364,-,protein disulfide isomerase family A member 2 [Source:HGNC Symbol;Acc:HGNC:14180]
-aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013431,ARHGDIG,ARHGDIG,protein_coding,cluster_non_globin,intervening_gene,False,16845729,16850005,4276,-,Rho GDP dissociation inhibitor gamma [Source:HGNC Symbol;Acc:HGNC:680]
-aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013455,RGS11,RGS11,protein_coding,cluster_non_globin,intervening_gene,False,16851520,16855813,4293,+,regulator of G protein signaling 11 [Source:HGNC Symbol;Acc:HGNC:9993]
-aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013482,FAM234A,FAM234A,protein_coding,cluster_non_globin,intervening_gene,False,16857360,16872239,14879,-,family with sequence similarity 234 member A [Source:HGNC Symbol;Acc:HGNC:14163]
+aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013395,AXIN1,AXIN1,protein_coding,cluster_non_globin,AXIN1,False,16768870,16839859,70989,+,axin 1 [Source:HGNC Symbol;Acc:HGNC:903]
+aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013412,PDIA2,PDIA2,protein_coding,cluster_non_globin,PDIA2,False,16841143,16845507,4364,-,protein disulfide isomerase family A member 2 [Source:HGNC Symbol;Acc:HGNC:14180]
+aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013431,ARHGDIG,ARHGDIG,protein_coding,cluster_non_globin,ARHGDIG,False,16845729,16850005,4276,-,Rho GDP dissociation inhibitor gamma [Source:HGNC Symbol;Acc:HGNC:680]
+aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013455,RGS11,RGS11,protein_coding,cluster_non_globin,RGS11,False,16851520,16855813,4293,+,regulator of G protein signaling 11 [Source:HGNC Symbol;Acc:HGNC:9993]
+aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013482,FAM234A,FAM234A,protein_coding,cluster_non_globin,FAM234A,False,16857360,16872239,14879,-,family with sequence similarity 234 member A [Source:HGNC Symbol;Acc:HGNC:14163]
 aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013518,LUC7L,LUC7L,protein_coding,cluster_non_globin,LUC7L,False,16881915,16899048,17133,-,LUC7 like [Source:HGNC Symbol;Acc:HGNC:6723]
 aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013545,PERCC1,PERCC1,protein_coding,cluster_non_globin,intervening_gene,False,16903335,16904040,705,+,proline and glutamate rich with coiled coil 1 [Source:HGNC Symbol;Acc:HGNC:52293]
 aquila_chrysaetos_chrysaetos,amniote_bird,alpha_globin,25,ENSACCG00020013565,CLCN7,CLCN7,protein_coding,cluster_non_globin,intervening_gene,False,16905453,16926565,21112,-,chloride voltage-gated channel 7 [Source:HGNC Symbol;Acc:HGNC:2025]
-aquila_chrysaetos_chrysaetos,amniote_bird,beta_globin,19,ENSACCG00020010420,RRM1,RRM1,protein_coding,cluster_non_globin,intervening_gene,False,27410143,27428722,18579,+,ribonucleotide reductase catalytic subunit M1 [Source:HGNC Symbol;Acc:HGNC:10451]
+aquila_chrysaetos_chrysaetos,amniote_bird,beta_globin,19,ENSACCG00020010420,RRM1,RRM1,protein_coding,cluster_non_globin,RRM1,False,27410143,27428722,18579,+,ribonucleotide reductase catalytic subunit M1 [Source:HGNC Symbol;Acc:HGNC:10451]
 aquila_chrysaetos_chrysaetos,amniote_bird,beta_globin,19,ENSACCG00020010446,ENSACCG00020010446,HBE1_like,protein_coding,beta_globin,HBE,True,27464588,27467451,2863,-,
 aquila_chrysaetos_chrysaetos,amniote_bird,beta_globin,19,ENSACCG00020010456,ENSACCG00020010456,HBB_like,protein_coding,beta_globin,HBB,True,27471518,27472834,1316,-,
 aquila_chrysaetos_chrysaetos,amniote_bird,beta_globin,19,ENSACCG00020010465,ENSACCG00020010465,HBRHO_like,protein_coding,beta_globin,HBB,True,27487132,27488453,1321,+,
@@ -309,13 +309,13 @@ anas_platyrhynchos,amniote_bird,alpha_globin,15,ENSAPLG00020018279,RHBDF1,RHBDF1
 anas_platyrhynchos,amniote_bird,alpha_globin,15,ENSAPLG00020018287,NPRL3,NPRL3,protein_coding,cluster_non_globin,NPRL3,False,11263086,11312775,49689,-,
 anas_platyrhynchos,amniote_bird,alpha_globin,15,ENSAPLG00020018293,ENSAPLG00020018293,HBA_like,protein_coding,alpha_globin,HBA_like,True,11317194,11319511,2317,+,
 anas_platyrhynchos,amniote_bird,alpha_globin,15,ENSAPLG00020018296,HBA2,HBA2,protein_coding,alpha_globin,HBA2,True,11322301,11323323,1022,+,
-anas_platyrhynchos,amniote_bird,alpha_globin,15,ENSAPLG00020018298,PGAP6,PGAP6,protein_coding,cluster_non_globin,intervening_gene,False,11339828,11355075,15247,+,
+anas_platyrhynchos,amniote_bird,alpha_globin,15,ENSAPLG00020018298,PGAP6,PGAP6,protein_coding,cluster_non_globin,PGAP6,False,11339828,11355075,15247,+,
 anas_platyrhynchos,amniote_bird,alpha_globin,15,ENSAPLG00020018300,MRPL28,MRPL28,protein_coding,cluster_non_globin,intervening_gene,False,11355209,11357809,2600,+,
-anas_platyrhynchos,amniote_bird,alpha_globin,15,ENSAPLG00020018301,AXIN1,AXIN1,protein_coding,cluster_non_globin,intervening_gene,False,11386202,11461827,75625,+,
+anas_platyrhynchos,amniote_bird,alpha_globin,15,ENSAPLG00020018301,AXIN1,AXIN1,protein_coding,cluster_non_globin,AXIN1,False,11386202,11461827,75625,+,
 anas_platyrhynchos,amniote_bird,beta_globin,1,ENSAPLG00020006106,ENSAPLG00020006106,HBB_like_2,protein_coding,beta_globin,HBB_like,True,207049416,207051261,1845,-,
 anas_platyrhynchos,amniote_bird,beta_globin,1,ENSAPLG00020006112,ENSAPLG00020006112,HBB_like_1,protein_coding,beta_globin,HBB,True,207059485,207060616,1131,+,
 anas_platyrhynchos,amniote_bird,beta_globin,1,ENSAPLG00020006120,ENSAPLG00020006120,HBE_like,protein_coding,beta_globin,HBE,True,207094118,207095786,1668,+,
-meleagris_gallopavo,amniote_bird,alpha_globin,16,ENSMGAG00000008833,PGAP6,PGAP6,protein_coding,cluster_non_globin,intervening_gene,False,1490927,1502271,11344,+,
+meleagris_gallopavo,amniote_bird,alpha_globin,16,ENSMGAG00000008833,PGAP6,PGAP6,protein_coding,cluster_non_globin,PGAP6,False,1490927,1502271,11344,+,
 meleagris_gallopavo,amniote_bird,alpha_globin,16,ENSMGAG00000008793,ENSMGAG00000008793,HBA1_like,protein_coding,alpha_globin,HBA1,True,1508310,1509774,1464,+,
 meleagris_gallopavo,amniote_bird,alpha_globin,16,ENSMGAG00000008803,ENSMGAG00000008803,HBAD_like,protein_coding,alpha_globin,HBAD,True,1511954,1512904,950,+,
 meleagris_gallopavo,amniote_bird,alpha_globin,16,ENSMGAG00000008823,ENSMGAG00000008823,HBZ_like,protein_coding,alpha_globin,HBZ,True,1514979,1515790,811,+,
@@ -328,7 +328,32 @@ meleagris_gallopavo,amniote_bird,beta_globin,1,ENSMGAG00000014944,ENSMGAG0000001
 meleagris_gallopavo,amniote_bird,beta_globin,1,ENSMGAG00000014945,ENSMGAG00000014945,HBB_like_2,protein_coding,beta_globin,HBB,True,189094115,189095161,1046,-,
 meleagris_gallopavo,amniote_bird,beta_globin,1,ENSMGAG00000021241,ENSMGAG00000021241,HBE_like_2,protein_coding,beta_globin,HBE,True,189096591,189098344,1753,-,
 meleagris_gallopavo,amniote_bird,beta_globin,1,ENSMGAG00000014964,ENSMGAG00000014964,HBBA_like,protein_coding,beta_globin,HBB,True,189100901,189102430,1529,-,
-meleagris_gallopavo,amniote_bird,beta_globin,1,ENSMGAG00000010749,RRM1,RRM1,protein_coding,cluster_non_globin,intervening_gene,False,189186279,189204608,18329,-,ribonucleotide reductase catalytic subunit M1 [Source:HGNC Symbol;Acc:HGNC:10451]
+meleagris_gallopavo,amniote_bird,beta_globin,1,ENSMGAG00000010749,RRM1,RRM1,protein_coding,cluster_non_globin,RRM1,False,189186279,189204608,18329,-,ribonucleotide reductase catalytic subunit M1 [Source:HGNC Symbol;Acc:HGNC:10451]
+struthio_camelus_australis,amniote_bird,alpha_globin,NW_009271137.1,GeneID:104143901,LOC104143901,HBAA_like,"protein_coding
+",alpha_globin,HBAA,True,872788,873691,903,-,LOC104143901
+struthio_camelus_australis,amniote_bird,alpha_globin,NW_009271137.1,GeneID:104143902,LOC104143902,HBAD_like,"protein_coding
+",alpha_globin,HBAD,True,877325,877762,437,-,LOC104143902
+struthio_camelus_australis,amniote_bird,alpha_globin,NW_009271137.1,GeneID:104143903,LOC104143903,HBZ_like,"protein_coding
+",alpha_globin,HBZ,True,880559,882949,2390,-,LOC104143903
+struthio_camelus_australis,amniote_bird,alpha_globin,NW_009271137.1,GeneID:104143905,NPRL3,NPRL3,"protein_coding
+",cluster_non_globin,NPRL3,False,897062,943126,46064,+,NPRL3
+struthio_camelus_australis,amniote_bird,alpha_globin,NW_009271137.1,GeneID:104143904,MPG,MPG,"protein_coding
+",cluster_non_globin,MPG,False,943124,966767,23643,-,MPG
+struthio_camelus_australis,amniote_bird,alpha_globin,NW_009271137.1,GeneID:104143906,RHBDF1,RHBDF1,"protein_coding
+",cluster_non_globin,RHBDF1,False,1007378,1037049,29671,+,RHBDF1
+struthio_camelus_australis,amniote_bird,alpha_globin,NW_009271137.1,GeneID:104143924,GTF3C1,GTF3C1,"protein_coding
+",cluster_non_globin,GTF3C1,False,1042075,1101884,59809,-,GTF3C1
+struthio_camelus_australis,amniote_bird,beta_globin,NW_009270861.1,GeneID:104141513,LOC104141513,HBE_like_fragment,protein_coding,beta_globin,HBE,True,4,1330,1326,+,LOC104141513
+struthio_camelus_australis,amniote_bird,beta_globin,NW_009270861.1,GeneID:104141507,LOC104141507,HBE_like,"protein_coding
+",beta_globin,HBE,True,5905,7462,1557,+,LOC104141507
+struthio_camelus_australis,amniote_bird,beta_globin,NW_009270861.1,GeneID:104141505,LOC104141505,HBB_like,"protein_coding
+",beta_globin,HBB,True,9338,11212,1874,+,LOC104141505
+struthio_camelus_australis,amniote_bird,beta_globin,NW_009270861.1,GeneID:104141514,LOC104141514,HBBA_like,"protein_coding
+",beta_globin,HBB,True,12447,16299,3852,+,LOC104141514
+struthio_camelus_australis,amniote_bird,beta_globin,NW_009270861.1,GeneID:104141515,LOC104141515,LOC104141515,"protein_coding
+",cluster_non_globin,intervening_gene,False,24676,25656,980,+,LOC104141515
+struthio_camelus_australis,amniote_bird,beta_globin,NW_009270861.1,GeneID:104141510,LOC104141510,LOC104141510,"protein_coding
+",cluster_non_globin,intervening_gene,False,28214,29230,1016,-,LOC104141510
 anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:100555634,srl,srl,protein_coding,cluster_non_globin,intervening_gene,False,7992578,8008814,16236,+,sarcalumenin
 anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:100556223,adcy9,adcy9,protein_coding,cluster_non_globin,intervening_gene,False,8013195,8027006,13811,+,adenylate cyclase 9
 anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:134294182,LOC134294182,HBZ_like,protein_coding,alpha_globin,HBZ,True,8030455,8031773,1318,+,hemoglobin subunit alpha-1-like
@@ -342,12 +367,12 @@ anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:100557008
 anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:100556815,nprl3,nprl3,protein_coding,cluster_non_globin,NPRL3,False,8112137,8122062,9925,-,NPR3 like%2C GATOR1 complex subunit
 anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:100556620,LOC100556620,HBAD_like,protein_coding,alpha_globin,HBAD,True,8122152,8123520,1368,+,hemoglobin subunit alpha-D
 anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:103282340,LOC103282340,HBA1_like,protein_coding,alpha_globin,HBA1,True,8123784,8126719,2935,-,hemoglobin subunit alpha-1
-anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:100561675,pgap6,pgap6,protein_coding,cluster_non_globin,intervening_gene,False,8126836,8136423,9587,+,post-GPI attachment to proteins 6
+anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:100561675,pgap6,pgap6,protein_coding,cluster_non_globin,PGAP6,False,8126836,8136423,9587,+,post-GPI attachment to proteins 6
 anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:100561478,mrpl28,mrpl28,protein_coding,cluster_non_globin,intervening_gene,False,8137959,8141513,3554,+,mitochondrial ribosomal protein L28
-anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:100561864,axin1,axin1,protein_coding,cluster_non_globin,intervening_gene,False,8145602,8154925,9323,+,axin 1
-anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:100562059,pdia2,pdia2,protein_coding,cluster_non_globin,intervening_gene,False,8155045,8161531,6486,-,protein disulfide isomerase family A member 2
-anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:100565263,rgs11,rgs11,protein_coding,cluster_non_globin,intervening_gene,False,8166900,8173596,6696,+,regulator of G protein signaling 11
-anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:103280803,fam234a,fam234a,protein_coding,cluster_non_globin,intervening_gene,False,8175222,8179911,4689,-,family with sequence similarity 234 member A
+anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:100561864,axin1,axin1,protein_coding,cluster_non_globin,AXIN1,False,8145602,8154925,9323,+,axin 1
+anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:100562059,pdia2,pdia2,protein_coding,cluster_non_globin,PDIA2,False,8155045,8161531,6486,-,protein disulfide isomerase family A member 2
+anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:100565263,rgs11,rgs11,protein_coding,cluster_non_globin,RGS11,False,8166900,8173596,6696,+,regulator of G protein signaling 11
+anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:103280803,fam234a,fam234a,protein_coding,cluster_non_globin,FAM234A,False,8175222,8179911,4689,-,family with sequence similarity 234 member A
 anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:100565069,trap1,trap1,protein_coding,cluster_non_globin,intervening_gene,False,8184152,8195194,11042,+,TNF receptor associated protein 1
 anolis_carolinensis,amniote_reptile,alpha_globin,NW_026943824.1,GeneID:103280801,slx4,slx4,protein_coding,cluster_non_globin,intervening_gene,False,8195287,8202914,7627,+,SLX4 structure-specific endonuclease subunit
 anolis_carolinensis,amniote_reptile,beta_globin,NC_085843.1,GeneID:100553092,LOC100553092,LOC100553092,protein_coding,cluster_non_globin,intervening_gene,False,1810021,1828496,18475,-,leukocyte cysteine proteinase inhibitor 1
@@ -386,18 +411,18 @@ pogona_vitticeps,amniote_reptile,alpha_globin,NC_135795.1,GeneID:110089143,MPG,M
 pogona_vitticeps,amniote_reptile,alpha_globin,NC_135795.1,GeneID:110089111,NPRL3,NPRL3,protein_coding,cluster_non_globin,NPRL3,False,21542591,21555398,12807,-,NPR3 like%2C GATOR1 complex subunit
 pogona_vitticeps,amniote_reptile,alpha_globin,NC_135795.1,GeneID:110089112,LOC110089112,HBAD_like,protein_coding,alpha_globin,HBAD,True,21557210,21558180,970,+,hemoglobin subunit alpha-D
 pogona_vitticeps,amniote_reptile,alpha_globin,NC_135795.1,GeneID:110089114,LOC110089114,LOC110089114,protein_coding,cluster_non_globin,CYGB,False,21558807,21561290,2483,-,cytoglobin-2
-pogona_vitticeps,amniote_reptile,alpha_globin,NC_135795.1,GeneID:110089139,PGAP6,PGAP6,protein_coding,cluster_non_globin,intervening_gene,False,21563059,21572763,9704,+,post-GPI attachment to proteins 6
+pogona_vitticeps,amniote_reptile,alpha_globin,NC_135795.1,GeneID:110089139,PGAP6,PGAP6,protein_coding,cluster_non_globin,PGAP6,False,21563059,21572763,9704,+,post-GPI attachment to proteins 6
 pogona_vitticeps,amniote_reptile,alpha_globin,NC_135795.1,GeneID:110089140,MRPL28,MRPL28,protein_coding,cluster_non_globin,intervening_gene,False,21574864,21577443,2579,+,mitochondrial ribosomal protein L28
-pogona_vitticeps,amniote_reptile,alpha_globin,NC_135795.1,GeneID:110089118,AXIN1,AXIN1,protein_coding,cluster_non_globin,intervening_gene,False,21585883,21599731,13848,+,axin 1
-pogona_vitticeps,amniote_reptile,alpha_globin,NC_135795.1,GeneID:110089141,PDIA2,PDIA2,protein_coding,cluster_non_globin,intervening_gene,False,21600049,21606750,6701,-,protein disulfide isomerase family A member 2
-pogona_vitticeps,amniote_reptile,alpha_globin,NC_135795.1,GeneID:110089123,RGS11,RGS11,protein_coding,cluster_non_globin,intervening_gene,False,21608495,21616058,7563,+,regulator of G protein signaling 11
-pogona_vitticeps,amniote_reptile,alpha_globin,NC_135795.1,GeneID:110089126,FAM234A,FAM234A,protein_coding,cluster_non_globin,intervening_gene,False,21617152,21626181,9029,-,family with sequence similarity 234 member A
+pogona_vitticeps,amniote_reptile,alpha_globin,NC_135795.1,GeneID:110089118,AXIN1,AXIN1,protein_coding,cluster_non_globin,AXIN1,False,21585883,21599731,13848,+,axin 1
+pogona_vitticeps,amniote_reptile,alpha_globin,NC_135795.1,GeneID:110089141,PDIA2,PDIA2,protein_coding,cluster_non_globin,PDIA2,False,21600049,21606750,6701,-,protein disulfide isomerase family A member 2
+pogona_vitticeps,amniote_reptile,alpha_globin,NC_135795.1,GeneID:110089123,RGS11,RGS11,protein_coding,cluster_non_globin,RGS11,False,21608495,21616058,7563,+,regulator of G protein signaling 11
+pogona_vitticeps,amniote_reptile,alpha_globin,NC_135795.1,GeneID:110089126,FAM234A,FAM234A,protein_coding,cluster_non_globin,FAM234A,False,21617152,21626181,9029,-,family with sequence similarity 234 member A
 pogona_vitticeps,amniote_reptile,alpha_globin,NC_135795.1,GeneID:110089142,TRAP1,TRAP1,protein_coding,cluster_non_globin,intervening_gene,False,21626246,21635333,9087,+,TNF receptor associated protein 1
 pogona_vitticeps,amniote_reptile,alpha_globin,NC_135795.1,GeneID:110089100,SLX4,SLX4,protein_coding,cluster_non_globin,intervening_gene,False,21635479,21645836,10357,+,SLX4 structure-specific endonuclease subunit
 pogona_vitticeps,amniote_reptile,alpha_globin,NC_135795.1,GeneID:110089145,CREBBP,CREBBP,protein_coding,cluster_non_globin,intervening_gene,False,21648124,21691179,43055,-,CREB binding lysine acetyltransferase
 pogona_vitticeps,amniote_reptile,beta_globin,NC_135785.1,GeneID:110078125,STIM1,STIM1,protein_coding,cluster_non_globin,STIM1,False,265403649,265511374,107725,+,stromal interaction molecule 1
 pogona_vitticeps,amniote_reptile,beta_globin,NC_135785.1,GeneID:110078099,LOC110078099,LOC110078099,protein_coding,cluster_non_globin,intervening_gene,False,265512039,265527730,15691,-,sodium-dependent proline transporter
-pogona_vitticeps,amniote_reptile,beta_globin,NC_135785.1,GeneID:110078155,RRM1,RRM1,protein_coding,cluster_non_globin,intervening_gene,False,265531167,265550997,19830,+,ribonucleotide reductase catalytic subunit M1
+pogona_vitticeps,amniote_reptile,beta_globin,NC_135785.1,GeneID:110078155,RRM1,RRM1,protein_coding,cluster_non_globin,RRM1,False,265531167,265550997,19830,+,ribonucleotide reductase catalytic subunit M1
 pogona_vitticeps,amniote_reptile,beta_globin,NC_135785.1,GeneID:110078154,LOC110078154,LOC110078154,protein_coding,cluster_non_globin,intervening_gene,False,265572251,265574480,2229,-,olfactory receptor 51E2-like
 pogona_vitticeps,amniote_reptile,beta_globin,NC_135785.1,GeneID:110078160,LOC110078160,LOC110078160,protein_coding,cluster_non_globin,intervening_gene,False,265583417,265591446,8029,+,olfactory receptor 51G2
 pogona_vitticeps,amniote_reptile,beta_globin,NC_135785.1,GeneID:110078100,RPS11,RPS11,protein_coding,cluster_non_globin,intervening_gene,False,265596645,265600274,3629,+,ribosomal protein S11
@@ -427,7 +452,7 @@ podarcis_muralis,amniote_reptile,alpha_globin,NC_135668.1,GeneID:114584145,MPG,M
 podarcis_muralis,amniote_reptile,alpha_globin,NC_135668.1,GeneID:114584144,NPRL3,NPRL3,protein_coding,cluster_non_globin,NPRL3,False,55006816,55024961,18145,-,"NPR3 like, GATOR1 complex subunit"
 podarcis_muralis,amniote_reptile,alpha_globin,NC_135668.1,GeneID:114584593,LOC114584593,LOC114584593,protein_coding,cluster_non_globin,intervening_gene,False,55033128,55038947,5819,+,uncharacterized LOC114584593
 podarcis_muralis,amniote_reptile,alpha_globin,NC_135668.1,GeneID:114584272,LOC114584272,LOC114584272,protein_coding,cluster_non_globin,intervening_gene,False,55041318,55050272,8954,-,uncharacterized LOC114584272
-podarcis_muralis,amniote_reptile,alpha_globin,NC_135668.1,GeneID:114584271,PGAP6,PGAP6,protein_coding,cluster_non_globin,intervening_gene,False,55050131,55058328,8197,+,post-GPI attachment to proteins 6
+podarcis_muralis,amniote_reptile,alpha_globin,NC_135668.1,GeneID:114584271,PGAP6,PGAP6,protein_coding,cluster_non_globin,PGAP6,False,55050131,55058328,8197,+,post-GPI attachment to proteins 6
 podarcis_muralis,amniote_reptile,beta_globin,NC_135658.1,GeneID:114589664,LOC114589664,LOC114589664,protein_coding,cluster_non_globin,intervening_gene,False,1242943,1466030,223087,-,uncharacterized LOC114589664
 podarcis_muralis,amniote_reptile,beta_globin,NC_135658.1,GeneID:114595380,LOC114595380,LOC114595380,protein_coding,cluster_non_globin,intervening_gene,False,1517433,1518576,1143,+,olfactory receptor 51G2-like
 podarcis_muralis,amniote_reptile,beta_globin,NC_135658.1,GeneID:114595198,CDCA8,CDCA8,protein_coding,cluster_non_globin,intervening_gene,False,1519436,1537894,18458,-,cell division cycle associated 8
@@ -436,10 +461,10 @@ podarcis_muralis,amniote_reptile,beta_globin,NC_135658.1,GeneID:144327399,LOC144
 podarcis_muralis,amniote_reptile,beta_globin,NC_135658.1,GeneID:114595212,LOC114595212,HBB2_like,protein_coding,beta_globin,HBB,True,1727845,1730193,2348,+,hemoglobin subunit beta-2-like
 podarcis_muralis,amniote_reptile,beta_globin,NC_135658.1,GeneID:144327603,LOC144327603,LOC144327603,protein_coding,cluster_non_globin,intervening_gene,False,1738317,1739556,1239,+,olfactory receptor 51I1-like
 podarcis_muralis,amniote_reptile,beta_globin,NC_135658.1,GeneID:114595190,LOC114595190,LOC114595190,protein_coding,cluster_non_globin,intervening_gene,False,1744728,1746632,1904,+,olfactory receptor 51I2-like
-thamnophis_elegans,amniote_reptile,alpha_globin,NC_045554.1,GeneID:116517798,PDIA2,PDIA2,protein_coding,cluster_non_globin,intervening_gene,False,71506,76817,5311,+,PDIA2
-thamnophis_elegans,amniote_reptile,alpha_globin,NC_045554.1,GeneID:116517495,AXIN1,AXIN1,protein_coding,cluster_non_globin,intervening_gene,False,77222,86893,9671,-,AXIN1
+thamnophis_elegans,amniote_reptile,alpha_globin,NC_045554.1,GeneID:116517798,PDIA2,PDIA2,protein_coding,cluster_non_globin,PDIA2,False,71506,76817,5311,+,PDIA2
+thamnophis_elegans,amniote_reptile,alpha_globin,NC_045554.1,GeneID:116517495,AXIN1,AXIN1,protein_coding,cluster_non_globin,AXIN1,False,77222,86893,9671,-,AXIN1
 thamnophis_elegans,amniote_reptile,alpha_globin,NC_045554.1,GeneID:116517502,MRPL28,MRPL28,protein_coding,cluster_non_globin,intervening_gene,False,88176,90192,2016,-,MRPL28
-thamnophis_elegans,amniote_reptile,alpha_globin,NC_045554.1,GeneID:116517494,PGAP6,PGAP6,protein_coding,cluster_non_globin,intervening_gene,False,90294,96209,5915,-,PGAP6
+thamnophis_elegans,amniote_reptile,alpha_globin,NC_045554.1,GeneID:116517494,PGAP6,PGAP6,protein_coding,cluster_non_globin,PGAP6,False,90294,96209,5915,-,PGAP6
 thamnophis_elegans,amniote_reptile,alpha_globin,NC_045554.1,GeneID:116517500,LOC116517500,HBA_like,protein_coding,alpha_globin,HBA,True,97148,101329,4181,+,LOC116517500
 thamnophis_elegans,amniote_reptile,alpha_globin,NC_045554.1,GeneID:116517505,LOC116517505,HBAA_like,protein_coding,alpha_globin,HBAA,True,103067,103874,807,-,LOC116517505
 thamnophis_elegans,amniote_reptile,alpha_globin,NC_045554.1,GeneID:116517497,NPRL3,NPRL3,protein_coding,cluster_non_globin,NPRL3,False,106993,122802,15809,+,NPRL3
@@ -475,12 +500,12 @@ thamnophis_elegans,amniote_reptile,beta_globin,NC_045546.1,GeneID:116510056,LOC1
 thamnophis_elegans,amniote_reptile,beta_globin,NC_045546.1,GeneID:116510055,LOC116510055,LOC116510055,protein_coding,cluster_non_globin,intervening_gene,False,500297,501698,1401,+,LOC116510055
 thamnophis_elegans,amniote_reptile,beta_globin,NC_045546.1,GeneID:116510201,LOC116510201,LOC116510201,protein_coding,cluster_non_globin,intervening_gene,False,505897,506311,414,-,LOC116510201
 thamnophis_elegans,amniote_reptile,beta_globin,NC_045546.1,GeneID:116510202,LOC116510202,LOC116510202,protein_coding,cluster_non_globin,intervening_gene,False,514868,515804,936,+,LOC116510202
-thamnophis_elegans,amniote_reptile,beta_globin,NC_045546.1,GeneID:116510051,RRM1,RRM1,protein_coding,cluster_non_globin,intervening_gene,False,521037,540187,19150,-,RRM1
+thamnophis_elegans,amniote_reptile,beta_globin,NC_045546.1,GeneID:116510051,RRM1,RRM1,protein_coding,cluster_non_globin,RRM1,False,521037,540187,19150,-,RRM1
 thamnophis_elegans,amniote_reptile,beta_globin,NC_045546.1,GeneID:116510204,LOC116510204,LOC116510204,protein_coding,cluster_non_globin,intervening_gene,False,540692,556674,15982,+,LOC116510204
 thamnophis_elegans,amniote_reptile,beta_globin,NC_045546.1,GeneID:116509871,STIM1,STIM1,protein_coding,cluster_non_globin,STIM1,False,558342,621058,62716,-,STIM1
 thamnophis_elegans,amniote_reptile,beta_globin,NC_045546.1,GeneID:116509872,RHOG,RHOG,protein_coding,cluster_non_globin,intervening_gene,False,623947,636887,12940,+,RHOG
-ornithorhynchus_anatinus,amniote_monotreme,alpha_globin,21,ENSOANG00000011294,RGS11,RGS11,protein_coding,cluster_non_globin,intervening_gene,False,15586978,15604329,17351,+,regulator of G protein signaling 11 [Source:HGNC Symbol;Acc:HGNC:9993]
-ornithorhynchus_anatinus,amniote_monotreme,alpha_globin,21,ENSOANG00000011296,FAM234A,FAM234A,protein_coding,cluster_non_globin,intervening_gene,False,15606896,15625028,18132,-,
+ornithorhynchus_anatinus,amniote_monotreme,alpha_globin,21,ENSOANG00000011294,RGS11,RGS11,protein_coding,cluster_non_globin,RGS11,False,15586978,15604329,17351,+,regulator of G protein signaling 11 [Source:HGNC Symbol;Acc:HGNC:9993]
+ornithorhynchus_anatinus,amniote_monotreme,alpha_globin,21,ENSOANG00000011296,FAM234A,FAM234A,protein_coding,cluster_non_globin,FAM234A,False,15606896,15625028,18132,-,
 ornithorhynchus_anatinus,amniote_monotreme,alpha_globin,21,ENSOANG00000008741,LUC7L,LUC7L,protein_coding,cluster_non_globin,LUC7L,False,15639302,15673328,34026,+,LUC7 like [Source:HGNC Symbol;Acc:HGNC:6723]
 ornithorhynchus_anatinus,amniote_monotreme,alpha_globin,21,ENSOANG00000040250,HBA,HBA,protein_coding,alpha_globin,HBA,True,15706645,15707978,1333,-,
 ornithorhynchus_anatinus,amniote_monotreme,alpha_globin,21,ENSOANG00000045830,HBM,HBM,protein_coding,alpha_globin,HBM,True,15712474,15715967,3493,-,hemoglobin subunit mu [Source:HGNC Symbol;Acc:HGNC:4826]
@@ -567,8 +592,8 @@ Homo_sapiens,amniote_mammal,alpha_globin,16,ENSG00000188536,HBA2,HBA2,protein_co
 Homo_sapiens,amniote_mammal,alpha_globin,16,ENSG00000206172,HBA1,HBA1,protein_coding,alpha_globin,HBA1,True,176679,177522,843,+,hemoglobin subunit alpha 1 [Source:HGNC Symbol;Acc:HGNC:4823]
 Homo_sapiens,amniote_mammal,alpha_globin,16,ENSG00000086506,HBQ1,HBQ1,protein_coding,alpha_globin,HBQ1,True,180458,181179,721,+,hemoglobin subunit theta 1 [Source:HGNC Symbol;Acc:HGNC:4833]
 Homo_sapiens,amniote_mammal,alpha_globin,16,ENSG00000007392,LUC7L,LUC7L,protein_coding,cluster_non_globin,LUC7L,False,188989,229449,40460,-,LUC7 like [Source:HGNC Symbol;Acc:HGNC:6723]
-Homo_sapiens,amniote_mammal,alpha_globin,16,ENSG00000167930,FAM234A,FAM234A,protein_coding,cluster_non_globin,intervening_gene,False,234820,266096,31276,+,family with sequence similarity 234 member A [Source:HGNC Symbol;Acc:HGNC:14163]
-Homo_sapiens,amniote_mammal,alpha_globin,16,ENSG00000076344,RGS11,RGS11,protein_coding,cluster_non_globin,intervening_gene,False,268306,275944,7638,-,regulator of G protein signaling 11 [Source:HGNC Symbol;Acc:HGNC:9993]
+Homo_sapiens,amniote_mammal,alpha_globin,16,ENSG00000167930,FAM234A,FAM234A,protein_coding,cluster_non_globin,FAM234A,False,234820,266096,31276,+,family with sequence similarity 234 member A [Source:HGNC Symbol;Acc:HGNC:14163]
+Homo_sapiens,amniote_mammal,alpha_globin,16,ENSG00000076344,RGS11,RGS11,protein_coding,cluster_non_globin,RGS11,False,268306,275944,7638,-,regulator of G protein signaling 11 [Source:HGNC Symbol;Acc:HGNC:9993]
 Homo_sapiens,amniote_mammal,beta_globin,11,ENSG00000176742,OR51V1,OR51V1,protein_coding,cluster_non_globin,OR51V1,False,5199734,5200682,948,-,olfactory receptor family 51 subfamily V member 1 [Source:HGNC Symbol;Acc:HGNC:19597]
 Homo_sapiens,amniote_mammal,beta_globin,11,ENSG00000244734,HBB,HBB,protein_coding,beta_globin,HBB,True,5225463,5227071,1608,-,hemoglobin subunit beta [Source:HGNC Symbol;Acc:HGNC:4827]
 Homo_sapiens,amniote_mammal,beta_globin,11,ENSG00000223609,HBD,HBD,protein_coding,beta_globin,HBD,True,5232837,5234483,1646,-,hemoglobin subunit delta [Source:HGNC Symbol;Acc:HGNC:4829]
@@ -607,7 +632,7 @@ equus_caballus,amniote_mammal,beta_globin,NC_091690.1,GeneID:100054109,HBB,HBB,p
 equus_caballus,amniote_mammal,beta_globin,NC_091690.1,GeneID:100054161,LOC100054161,LOC100054161,protein_coding,beta_globin,LOC100054161,True,76387481,76388945,1464,-,hemoglobin subunit beta-like
 equus_caballus,amniote_mammal,beta_globin,NC_091690.1,GeneID:100068895,LOC100068895,LOC100068895,protein_coding,beta_globin,LOC100068895,True,76392372,76393950,1578,-,hemoglobin subunit epsilon-4
 equus_caballus,amniote_mammal,beta_globin,NC_091690.1,GeneID:100068926,LOC100068926,LOC100068926,protein_coding,beta_globin,LOC100068926,True,76409203,76410930,1727,-,hemoglobin subunit epsilon
-miniopterus_natalensis,amniote_mammal,alpha_globin,NC_142083.1,GeneID:107539666,FAM234A,FAM234A,protein_coding,cluster_non_globin,intervening_gene,False,95358773,95382756,23983,-,family with sequence similarity 234 member A
+miniopterus_natalensis,amniote_mammal,alpha_globin,NC_142083.1,GeneID:107539666,FAM234A,FAM234A,protein_coding,cluster_non_globin,FAM234A,False,95358773,95382756,23983,-,family with sequence similarity 234 member A
 miniopterus_natalensis,amniote_mammal,alpha_globin,NC_142083.1,GeneID:107539658,LUC7L,LUC7L,protein_coding,cluster_non_globin,LUC7L,False,95389532,95421385,31853,+,LUC7 like
 miniopterus_natalensis,amniote_mammal,alpha_globin,NC_142083.1,GeneID:107539650,HBQ1,HBQ1,protein_coding,alpha_globin,HBQ1,True,95430451,95431132,681,-,hemoglobin subunit theta 1
 miniopterus_natalensis,amniote_mammal,alpha_globin,NC_142083.1,GeneID:107539672,LOC107539672,LOC107539672,protein_coding,alpha_globin,LOC107539672,True,95433047,95433942,895,-,hemoglobin subunit alpha
@@ -624,7 +649,7 @@ miniopterus_natalensis,amniote_mammal,beta_globin,NC_142091.1,GeneID:107538704,L
 miniopterus_natalensis,amniote_mammal,beta_globin,NC_142091.1,GeneID:107538661,LOC107538661,LOC107538661,protein_coding,beta_globin,LOC107538661,True,41491229,41492520,1291,-,hemoglobin subunit beta
 miniopterus_natalensis,amniote_mammal,beta_globin,NC_142091.1,GeneID:107538664,LOC107538664,LOC107538664,protein_coding,beta_globin,LOC107538664,True,41501455,41503073,1618,-,hemoglobin subunit epsilon-2
 miniopterus_natalensis,amniote_mammal,beta_globin,NC_142091.1,GeneID:107538662,HBE1,HBE1,protein_coding,beta_globin,HBE1,True,41510456,41512050,1594,-,hemoglobin subunit epsilon 1
-puma_concolor,amniote_mammal,alpha_globin,NC_141682.1,GeneID:112860006,FAM234A,FAM234A,protein_coding,cluster_non_globin,intervening_gene,False,42461066,42483516,22450,-,family with sequence similarity 234 member A
+puma_concolor,amniote_mammal,alpha_globin,NC_141682.1,GeneID:112860006,FAM234A,FAM234A,protein_coding,cluster_non_globin,FAM234A,False,42461066,42483516,22450,-,family with sequence similarity 234 member A
 puma_concolor,amniote_mammal,alpha_globin,NC_141682.1,GeneID:112859989,LUC7L,LUC7L,protein_coding,cluster_non_globin,LUC7L,False,42483606,42528828,45222,+,LUC7 like
 puma_concolor,amniote_mammal,alpha_globin,NC_141682.1,GeneID:112860018,HBQ1,HBQ1,protein_coding,alpha_globin,HBQ1,True,42539609,42540444,835,-,hemoglobin subunit theta 1
 puma_concolor,amniote_mammal,alpha_globin,NC_141682.1,GeneID:112860016,LOC112860016,LOC112860016,protein_coding,alpha_globin,LOC112860016,True,42542276,42543111,835,-,hemoglobin subunit alpha
@@ -652,13 +677,13 @@ sturnus_vulgaris,amniote_bird,alpha_globin,NC_142258.1,GeneID:106862127,NPRL3,NP
 sturnus_vulgaris,amniote_bird,alpha_globin,NC_142258.1,GeneID:106862114,LOC106862114,LOC106862114,protein_coding,alpha_globin,LOC106862114,True,13571901,13576593,4692,+,hemoglobin subunit pi
 sturnus_vulgaris,amniote_bird,alpha_globin,NC_142258.1,GeneID:106862144,LOC106862144,LOC106862144,protein_coding,alpha_globin,LOC106862144,True,13576742,13577794,1052,+,hemoglobin subunit alpha-D
 sturnus_vulgaris,amniote_bird,alpha_globin,NC_142258.1,GeneID:106862145,LOC106862145,LOC106862145,protein_coding,alpha_globin,LOC106862145,True,13580003,13580844,841,+,hemoglobin subunit alpha-A
-sturnus_vulgaris,amniote_bird,alpha_globin,NC_142258.1,GeneID:106862146,PGAP6,PGAP6,protein_coding,cluster_non_globin,intervening_gene,False,13588145,13605649,17504,+,post-GPI attachment to proteins 6
+sturnus_vulgaris,amniote_bird,alpha_globin,NC_142258.1,GeneID:106862146,PGAP6,PGAP6,protein_coding,cluster_non_globin,PGAP6,False,13588145,13605649,17504,+,post-GPI attachment to proteins 6
 sturnus_vulgaris,amniote_bird,alpha_globin,NC_142258.1,GeneID:106862123,MRPL28,MRPL28,protein_coding,cluster_non_globin,intervening_gene,False,13606261,13609455,3194,+,mitochondrial ribosomal protein L28
-sturnus_vulgaris,amniote_bird,alpha_globin,NC_142258.1,GeneID:106862122,AXIN1,AXIN1,protein_coding,cluster_non_globin,intervening_gene,False,13629697,13701803,72106,+,axin 1
-sturnus_vulgaris,amniote_bird,alpha_globin,NC_142258.1,GeneID:106862147,PDIA2,PDIA2,protein_coding,cluster_non_globin,intervening_gene,False,13702308,13705722,3414,-,protein disulfide isomerase family A member 2
-sturnus_vulgaris,amniote_bird,alpha_globin,NC_142258.1,GeneID:106862149,ARHGDIG,ARHGDIG,protein_coding,cluster_non_globin,intervening_gene,False,13705860,13709707,3847,-,Rho GDP dissociation inhibitor gamma
-sturnus_vulgaris,amniote_bird,alpha_globin,NC_142258.1,GeneID:106862148,RGS11,RGS11,protein_coding,cluster_non_globin,intervening_gene,False,13710513,13715650,5137,+,regulator of G protein signaling 11
-sturnus_vulgaris,amniote_bird,alpha_globin,NC_142258.1,GeneID:106862124,FAM234A,FAM234A,protein_coding,cluster_non_globin,intervening_gene,False,13716849,13734233,17384,-,family with sequence similarity 234 member A
+sturnus_vulgaris,amniote_bird,alpha_globin,NC_142258.1,GeneID:106862122,AXIN1,AXIN1,protein_coding,cluster_non_globin,AXIN1,False,13629697,13701803,72106,+,axin 1
+sturnus_vulgaris,amniote_bird,alpha_globin,NC_142258.1,GeneID:106862147,PDIA2,PDIA2,protein_coding,cluster_non_globin,PDIA2,False,13702308,13705722,3414,-,protein disulfide isomerase family A member 2
+sturnus_vulgaris,amniote_bird,alpha_globin,NC_142258.1,GeneID:106862149,ARHGDIG,ARHGDIG,protein_coding,cluster_non_globin,ARHGDIG,False,13705860,13709707,3847,-,Rho GDP dissociation inhibitor gamma
+sturnus_vulgaris,amniote_bird,alpha_globin,NC_142258.1,GeneID:106862148,RGS11,RGS11,protein_coding,cluster_non_globin,RGS11,False,13710513,13715650,5137,+,regulator of G protein signaling 11
+sturnus_vulgaris,amniote_bird,alpha_globin,NC_142258.1,GeneID:106862124,FAM234A,FAM234A,protein_coding,cluster_non_globin,FAM234A,False,13716849,13734233,17384,-,family with sequence similarity 234 member A
 sturnus_vulgaris,amniote_bird,alpha_globin,NC_142258.1,GeneID:106862125,LUC7L,LUC7L,protein_coding,cluster_non_globin,LUC7L,False,13738511,13756539,18028,-,LUC7 like
 sturnus_vulgaris,amniote_bird,alpha_globin,NC_142258.1,GeneID:106862112,PERCC1,PERCC1,protein_coding,cluster_non_globin,intervening_gene,False,13759380,13761575,2195,+,proline and glutamate rich with coiled coil 1
 sturnus_vulgaris,amniote_bird,beta_globin,NC_142244.1,GeneID:106861774,LOC106861774,LOC106861774,protein_coding,cluster_non_globin,intervening_gene,False,118979323,118986390,7067,+,olfactory receptor 51E2-like
@@ -672,13 +697,13 @@ anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:106033420,NPRL3,NPR
 anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:106033590,LOC106033590,LOC106033590,protein_coding,alpha_globin,LOC106033590,True,11269319,11271885,2566,+,hemoglobin subunit pi
 anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:106033591,LOC106033591,LOC106033591,protein_coding,alpha_globin,LOC106033591,True,11274743,11275745,1002,+,hemoglobin subunit alpha-D
 anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:106033601,LOC106033601,LOC106033601,protein_coding,alpha_globin,LOC106033601,True,11277904,11278752,848,+,hemoglobin subunit alpha-A
-anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:106033562,PGAP6,PGAP6,protein_coding,cluster_non_globin,intervening_gene,False,11287962,11305300,17338,+,post-GPI attachment to proteins 6
+anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:106033562,PGAP6,PGAP6,protein_coding,cluster_non_globin,PGAP6,False,11287962,11305300,17338,+,post-GPI attachment to proteins 6
 anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:106033587,MRPL28,MRPL28,protein_coding,cluster_non_globin,intervening_gene,False,11308536,11311736,3200,+,mitochondrial ribosomal protein L28
-anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:106033419,AXIN1,AXIN1,protein_coding,cluster_non_globin,intervening_gene,False,11342211,11423947,81736,+,axin 1
-anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:106033366,PDIA2,PDIA2,protein_coding,cluster_non_globin,intervening_gene,False,11426447,11431366,4919,-,protein disulfide isomerase family A member 2
-anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:106033390,ARHGDIG,ARHGDIG,protein_coding,cluster_non_globin,intervening_gene,False,11431500,11435228,3728,-,Rho GDP dissociation inhibitor gamma
-anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:106033365,RGS11,RGS11,protein_coding,cluster_non_globin,intervening_gene,False,11435422,11440490,5068,+,regulator of G protein signaling 11
-anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:106033417,FAM234A,FAM234A,protein_coding,cluster_non_globin,intervening_gene,False,11442034,11456993,14959,-,family with sequence similarity 234 member A
+anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:106033419,AXIN1,AXIN1,protein_coding,cluster_non_globin,AXIN1,False,11342211,11423947,81736,+,axin 1
+anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:106033366,PDIA2,PDIA2,protein_coding,cluster_non_globin,PDIA2,False,11426447,11431366,4919,-,protein disulfide isomerase family A member 2
+anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:106033390,ARHGDIG,ARHGDIG,protein_coding,cluster_non_globin,ARHGDIG,False,11431500,11435228,3728,-,Rho GDP dissociation inhibitor gamma
+anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:106033365,RGS11,RGS11,protein_coding,cluster_non_globin,RGS11,False,11435422,11440490,5068,+,regulator of G protein signaling 11
+anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:106033417,FAM234A,FAM234A,protein_coding,cluster_non_globin,FAM234A,False,11442034,11456993,14959,-,family with sequence similarity 234 member A
 anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:106033364,LUC7L,LUC7L,protein_coding,cluster_non_globin,LUC7L,False,11463322,11482097,18775,-,LUC7 like
 anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:125182674,PERCC1,PERCC1,protein_coding,cluster_non_globin,intervening_gene,False,11484209,11486542,2333,+,proline and glutamate rich with coiled coil 1
 anser_cygnoides,amniote_bird,alpha_globin,NC_089887.1,GeneID:106033363,CLCN7,CLCN7,protein_coding,cluster_non_globin,intervening_gene,False,11487009,11508973,21964,-,chloride voltage-gated channel 7
@@ -696,14 +721,14 @@ coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320937,NPRL3,N
 coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320994,LOC107320994,LOC107320994,protein_coding,alpha_globin,LOC107320994,True,18719951,18721331,1380,+,hemoglobin subunit pi
 coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320986,LOC107320986,LOC107320986,protein_coding,alpha_globin,LOC107320986,True,18723185,18724136,951,+,hemoglobin subunit alpha-D
 coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320982,LOC107320982,LOC107320982,protein_coding,alpha_globin,LOC107320982,True,18726044,18726853,809,+,hemoglobin subunit alpha-A
-coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320947,PGAP6,PGAP6,protein_coding,cluster_non_globin,intervening_gene,False,18731441,18746583,15142,+,post-GPI attachment to proteins 6
+coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320947,PGAP6,PGAP6,protein_coding,cluster_non_globin,PGAP6,False,18731441,18746583,15142,+,post-GPI attachment to proteins 6
 coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320949,MRPL28,MRPL28,protein_coding,cluster_non_globin,intervening_gene,False,18746726,18748947,2221,+,mitochondrial ribosomal protein L28
-coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320950,AXIN1,AXIN1,protein_coding,cluster_non_globin,intervening_gene,False,18760773,18816235,55462,+,axin 1
-coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320992,PDIA2,PDIA2,protein_coding,cluster_non_globin,intervening_gene,False,18818418,18821316,2898,-,protein disulfide isomerase family A member 2
-coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320991,ARHGDIG,ARHGDIG,protein_coding,cluster_non_globin,intervening_gene,False,18821456,18824451,2995,-,Rho GDP dissociation inhibitor gamma
-coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320953,RGS11,RGS11,protein_coding,cluster_non_globin,intervening_gene,False,18825048,18828997,3949,+,regulator of G protein signaling 11
+coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320950,AXIN1,AXIN1,protein_coding,cluster_non_globin,AXIN1,False,18760773,18816235,55462,+,axin 1
+coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320992,PDIA2,PDIA2,protein_coding,cluster_non_globin,PDIA2,False,18818418,18821316,2898,-,protein disulfide isomerase family A member 2
+coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320991,ARHGDIG,ARHGDIG,protein_coding,cluster_non_globin,ARHGDIG,False,18821456,18824451,2995,-,Rho GDP dissociation inhibitor gamma
+coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320953,RGS11,RGS11,protein_coding,cluster_non_globin,RGS11,False,18825048,18828997,3949,+,regulator of G protein signaling 11
 coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:146758709,LOC146758709,LOC146758709,protein_coding,cluster_non_globin,intervening_gene,False,18829217,18830225,1008,-,uncharacterized LOC146758709
-coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320952,FAM234A,FAM234A,protein_coding,cluster_non_globin,intervening_gene,False,18830238,18844021,13783,-,family with sequence similarity 234 member A
+coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320952,FAM234A,FAM234A,protein_coding,cluster_non_globin,FAM234A,False,18830238,18844021,13783,-,family with sequence similarity 234 member A
 coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320954,LUC7L,LUC7L,protein_coding,cluster_non_globin,LUC7L,False,18848723,18863055,14332,-,LUC7 like
 coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320912,PERCC1,PERCC1,protein_coding,cluster_non_globin,intervening_gene,False,18865103,18867404,2301,+,proline and glutamate rich with coiled coil 1
 coturnix_japonica,amniote_bird,alpha_globin,NC_140675.1,GeneID:107320979,CLCN7,CLCN7,protein_coding,cluster_non_globin,intervening_gene,False,18868079,18884001,15922,-,Cl-/H+ antiporter 7
@@ -772,14 +797,14 @@ eretmochelys_imbricata,amniote_reptile,alpha_globin,NC_135581.1,GeneID:144271268
 eretmochelys_imbricata,amniote_reptile,alpha_globin,NC_135581.1,GeneID:144271080,LOC144271080,LOC144271080,protein_coding,alpha_globin,LOC144271080,True,31683931,31688453,4522,+,hemoglobin subunit pi
 eretmochelys_imbricata,amniote_reptile,alpha_globin,NC_135581.1,GeneID:144271092,LOC144271092,LOC144271092,protein_coding,alpha_globin,LOC144271092,True,31692505,31694789,2284,+,hemoglobin subunit alpha-D-like
 eretmochelys_imbricata,amniote_reptile,alpha_globin,NC_135581.1,GeneID:144270767,LOC144270767,LOC144270767,protein_coding,alpha_globin,LOC144270767,True,31705523,31706473,950,+,hemoglobin subunit alpha-A
-eretmochelys_imbricata,amniote_reptile,alpha_globin,NC_135581.1,GeneID:144270766,PGAP6,PGAP6,protein_coding,cluster_non_globin,intervening_gene,False,31747474,31792757,45283,+,post-GPI attachment to proteins 6
+eretmochelys_imbricata,amniote_reptile,alpha_globin,NC_135581.1,GeneID:144270766,PGAP6,PGAP6,protein_coding,cluster_non_globin,PGAP6,False,31747474,31792757,45283,+,post-GPI attachment to proteins 6
 eretmochelys_imbricata,amniote_reptile,alpha_globin,NC_135581.1,GeneID:144271439,LOC144271439,LOC144271439,protein_coding,cluster_non_globin,CYGB,False,31719883,31726895,7012,-,cytoglobin-1-like
 eretmochelys_imbricata,amniote_reptile,alpha_globin,NC_135581.1,GeneID:144271062,MRPL28,MRPL28,protein_coding,cluster_non_globin,intervening_gene,False,31795814,31808606,12792,+,mitochondrial ribosomal protein L28
-eretmochelys_imbricata,amniote_reptile,alpha_globin,NC_135581.1,GeneID:144270828,AXIN1,AXIN1,protein_coding,cluster_non_globin,intervening_gene,False,31900410,32073026,172616,+,axin 1
-eretmochelys_imbricata,amniote_reptile,alpha_globin,NC_135581.1,GeneID:144271440,PDIA2,PDIA2,protein_coding,cluster_non_globin,intervening_gene,False,32086239,32096663,10424,-,protein disulfide isomerase family A member 2
-eretmochelys_imbricata,amniote_reptile,alpha_globin,NC_135581.1,GeneID:144271575,ARHGDIG,ARHGDIG,protein_coding,cluster_non_globin,intervening_gene,False,32099740,32121805,22065,-,Rho GDP dissociation inhibitor gamma
-eretmochelys_imbricata,amniote_reptile,alpha_globin,NC_135581.1,GeneID:144271202,RGS11,RGS11,protein_coding,cluster_non_globin,intervening_gene,False,32134114,32161597,27483,-,regulator of G protein signaling 11
-eretmochelys_imbricata,amniote_reptile,alpha_globin,NC_135581.1,GeneID:144270951,FAM234A,FAM234A,protein_coding,cluster_non_globin,intervening_gene,False,32174923,32229084,54161,-,family with sequence similarity 234 member A
+eretmochelys_imbricata,amniote_reptile,alpha_globin,NC_135581.1,GeneID:144270828,AXIN1,AXIN1,protein_coding,cluster_non_globin,AXIN1,False,31900410,32073026,172616,+,axin 1
+eretmochelys_imbricata,amniote_reptile,alpha_globin,NC_135581.1,GeneID:144271440,PDIA2,PDIA2,protein_coding,cluster_non_globin,PDIA2,False,32086239,32096663,10424,-,protein disulfide isomerase family A member 2
+eretmochelys_imbricata,amniote_reptile,alpha_globin,NC_135581.1,GeneID:144271575,ARHGDIG,ARHGDIG,protein_coding,cluster_non_globin,ARHGDIG,False,32099740,32121805,22065,-,Rho GDP dissociation inhibitor gamma
+eretmochelys_imbricata,amniote_reptile,alpha_globin,NC_135581.1,GeneID:144271202,RGS11,RGS11,protein_coding,cluster_non_globin,RGS11,False,32134114,32161597,27483,-,regulator of G protein signaling 11
+eretmochelys_imbricata,amniote_reptile,alpha_globin,NC_135581.1,GeneID:144270951,FAM234A,FAM234A,protein_coding,cluster_non_globin,FAM234A,False,32174923,32229084,54161,-,family with sequence similarity 234 member A
 eretmochelys_imbricata,amniote_reptile,alpha_globin,NC_135581.1,GeneID:144270794,LUC7L,LUC7L,protein_coding,cluster_non_globin,LUC7L,False,32233491,32270068,36577,-,LUC7 like
 eretmochelys_imbricata,amniote_reptile,beta_globin,NC_135572.1,GeneID:144262686,LOC144262686,LOC144262686,protein_coding,beta_globin,LOC144262686,True,3651321,3654185,2864,+,hemoglobin subunit beta
 eretmochelys_imbricata,amniote_reptile,beta_globin,NC_135572.1,GeneID:144262803,LOC144262803,LOC144262803,protein_coding,beta_globin,LOC144262803,True,3663787,3666048,2261,+,hemoglobin subunit beta
@@ -901,7 +926,7 @@ zootoca_vivipara,amniote_reptile,alpha_globin,NC_142596.1,GeneID:118092872,NPRL3
 zootoca_vivipara,amniote_reptile,alpha_globin,NC_142596.1,GeneID:118092498,LOC118092498,LOC118092498,protein_coding,alpha_globin,LOC118092498,True,53618358,53619123,765,+,hemoglobin subunit alpha-D
 zootoca_vivipara,amniote_reptile,alpha_globin,NC_142596.1,GeneID:118092499,LOC118092499,LOC118092499,protein_coding,alpha_globin,LOC118092499,True,53625093,53625835,742,+,hemoglobin subunit alpha-A
 zootoca_vivipara,amniote_reptile,alpha_globin,NC_142596.1,GeneID:118092497,LOC118092497,LOC118092497,protein_coding,alpha_globin,LOC118092497,True,53628396,53638762,10366,-,hemoglobin subunit pi-like
-zootoca_vivipara,amniote_reptile,alpha_globin,NC_142596.1,GeneID:118092496,PGAP6,PGAP6,protein_coding,cluster_non_globin,intervening_gene,False,53638828,53647050,8222,+,post-GPI attachment to proteins 6
+zootoca_vivipara,amniote_reptile,alpha_globin,NC_142596.1,GeneID:118092496,PGAP6,PGAP6,protein_coding,cluster_non_globin,PGAP6,False,53638828,53647050,8222,+,post-GPI attachment to proteins 6
 zootoca_vivipara,amniote_reptile,alpha_globin,NC_142596.1,GeneID:118092495,MRPL28,MRPL28,protein_coding,cluster_non_globin,intervening_gene,False,53649137,53652403,3266,+,mitochondrial ribosomal protein L28
 zootoca_vivipara,amniote_reptile,beta_globin,NC_142587.1,GeneID:118085582,LOC118085582,LOC118085582,protein_coding,cluster_non_globin,intervening_gene,False,101656277,101850246,193969,+,uncharacterized LOC118085582
 zootoca_vivipara,amniote_reptile,beta_globin,NC_142587.1,GeneID:148686090,LOC148686090,LOC148686090,protein_coding,cluster_non_globin,intervening_gene,False,101686008,101703463,17455,+,uncharacterized LOC148686090
@@ -1016,3 +1041,136 @@ lampetra_fluviatilis,cyclostome,proto_globin,NC_136297.1,GeneID:144940813,LOC144
 lampetra_fluviatilis,cyclostome,proto_globin,NC_136297.1,GeneID:144940874,LOC144940874,LOC144940874,protein_coding,cluster_non_globin,intervening_gene,False,12240927,12274846,33919,+,myosin-16-like
 lampetra_fluviatilis,cyclostome,proto_globin,NC_136297.1,GeneID:144940938,LOC144940938,LOC144940938,protein_coding,other_globin,globin_family,True,12278311,12281071,2760,-,globin-like
 lampetra_fluviatilis,cyclostome,proto_globin,NC_136297.1,GeneID:144940814,INTS1,INTS1,protein_coding,cluster_non_globin,intervening_gene,False,12285598,12318676,33078,+,integrator complex subunit 1
+tursiops_truncatus,amniote_mammal,alpha_globin,NC_047048.1,GeneID:101338562,LUC7L,LUC7L,"protein_coding
+",cluster_non_globin,LUC7L,False,38047508,38098049,50541,+,LUC7 like
+tursiops_truncatus,amniote_mammal,alpha_globin,NC_047048.1,GeneID:101339198,HBQ1,HBQ1,"protein_coding
+",alpha_globin,HBQ1,True,38095370,38096070,700,-,hemoglobin subunit theta 1
+tursiops_truncatus,amniote_mammal,alpha_globin,NC_047048.1,GeneID:117308132,LOC117308132,HBA1_like,"protein_coding
+",alpha_globin,HBA,True,38097946,38098734,788,-,hemoglobin subunit alpha
+tursiops_truncatus,amniote_mammal,alpha_globin,NC_047048.1,GeneID:117308133,LOC117308133,HBA2_like,"protein_coding
+",alpha_globin,HBA,True,38100779,38101599,820,-,hemoglobin subunit alpha
+tursiops_truncatus,amniote_mammal,alpha_globin,NC_047048.1,GeneID:101340058,HBM,HBM,"protein_coding
+",alpha_globin,HBM,True,38103241,38104051,810,-,hemoglobin subunit mu
+tursiops_truncatus,amniote_mammal,alpha_globin,NC_047048.1,GeneID:101315622,HBZ,HBZ,"protein_coding
+",alpha_globin,HBZ,True,38104668,38106198,1530,-,hemoglobin subunit zeta
+tursiops_truncatus,amniote_mammal,alpha_globin,NC_047048.1,GeneID:101317091,NPRL3,NPRL3,"protein_coding
+",cluster_non_globin,NPRL3,False,38117740,38150922,33182,+,"NPR3 like, GATOR1 complex subunit"
+tursiops_truncatus,amniote_mammal,alpha_globin,NC_047048.1,GeneID:117308047,MPG,MPG,"protein_coding
+",cluster_non_globin,MPG,False,38150865,38159025,8160,-,N-methylpurine DNA glycosylase
+tursiops_truncatus,amniote_mammal,alpha_globin,NC_047048.1,GeneID:101316210,RHBDF1,RHBDF1,"protein_coding
+",cluster_non_globin,RHBDF1,False,38172447,38179875,7428,+,rhomboid 5 homolog 1
+tursiops_truncatus,amniote_mammal,alpha_globin,NC_047048.1,GeneID:101317380,SNRNP25,SNRNP25,"protein_coding
+",cluster_non_globin,SNRNP25,False,38180491,38183312,2821,-,small nuclear ribonucleoprotein U11/U12 subunit 25
+tursiops_truncatus,amniote_mammal,alpha_globin,NC_047048.1,GeneID:101316499,POLR3K,POLR3K,"protein_coding
+",cluster_non_globin,POLR3K,False,38183500,38186556,3056,+,RNA polymerase III subunit K
+tursiops_truncatus,amniote_mammal,alpha_globin,NC_047048.1,GeneID:117308046,LOC117308046,LOC117308046,"protein_coding
+",cluster_non_globin,intervening_gene,False,38186867,38199817,12950,+,uncharacterized LOC117308046
+tursiops_truncatus,amniote_mammal,beta_globin,NC_047041.1,GeneID:117313420,LOC117313420,HBB_like,"protein_coding
+",beta_globin,HBB,True,59897167,59898551,1384,-,hemoglobin subunit beta
+tursiops_truncatus,amniote_mammal,beta_globin,NC_047041.1,GeneID:101335834,LOC101335834,HBD_like,"protein_coding
+",beta_globin,HBD,True,59904766,59906368,1602,-,hemoglobin subunit beta-like
+tursiops_truncatus,amniote_mammal,beta_globin,NC_047041.1,GeneID:101336124,LOC101336124,HBG_like,"protein_coding
+",beta_globin,HBG,True,59910086,59911505,1419,-,hemoglobin subunit epsilon-4-like
+tursiops_truncatus,amniote_mammal,beta_globin,NC_047041.1,GeneID:101315568,LOC101315568,HBE1_like,"protein_coding
+",beta_globin,HBE,True,59918655,59920717,2062,-,hemoglobin subunit epsilon-1
+zalophus_californianus,amniote_mammal,alpha_globin,NC_045604.1,GeneID:113933449,POLR3K,POLR3K,"protein_coding
+",cluster_non_globin,POLR3K,False,69381017,69385180,4163,-,POLR3K
+zalophus_californianus,amniote_mammal,alpha_globin,NC_045604.1,GeneID:113932575,SNRNP25,SNRNP25,"protein_coding
+",cluster_non_globin,SNRNP25,False,69385328,69388019,2691,+,SNRNP25
+zalophus_californianus,amniote_mammal,alpha_globin,NC_045604.1,GeneID:113933446,RHBDF1,RHBDF1,"protein_coding
+",cluster_non_globin,RHBDF1,False,69388658,69406286,17628,-,RHBDF1
+zalophus_californianus,amniote_mammal,alpha_globin,NC_045604.1,GeneID:113933448,MPG,MPG,"protein_coding
+",cluster_non_globin,MPG,False,69408337,69415293,6956,+,MPG
+zalophus_californianus,amniote_mammal,alpha_globin,NC_045604.1,GeneID:113933447,NPRL3,NPRL3,"protein_coding
+",cluster_non_globin,NPRL3,False,69415446,69453176,37730,-,NPRL3
+zalophus_californianus,amniote_mammal,alpha_globin,NC_045604.1,GeneID:113932574,HBZ,HBZ,"protein_coding
+",alpha_globin,HBZ,True,69461905,69462967,1062,+,HBZ
+zalophus_californianus,amniote_mammal,alpha_globin,NC_045604.1,GeneID:113933389,LOC113933389,HBZ2_like,"protein_coding
+",alpha_globin,HBZ,True,69473793,69474863,1070,+,LOC113933389
+zalophus_californianus,amniote_mammal,alpha_globin,NC_045604.1,GeneID:113933388,HBM,HBM,"protein_coding
+",alpha_globin,HBM,True,69475615,69476396,781,+,HBM
+zalophus_californianus,amniote_mammal,alpha_globin,NC_045604.1,GeneID:113933387,LOC113933387,HBA2_like,"protein_coding
+",alpha_globin,HBA,True,69478054,69478841,787,+,LOC113933387
+zalophus_californianus,amniote_mammal,alpha_globin,NC_045604.1,GeneID:113933465,HBA1,HBA1,"protein_coding
+",alpha_globin,HBA1,True,69482105,69482919,814,+,HBA1
+zalophus_californianus,amniote_mammal,alpha_globin,NC_045604.1,GeneID:113931751,HBQ1,HBQ1,"protein_coding
+",alpha_globin,HBQ1,True,69485147,69486286,1139,+,HBQ1
+zalophus_californianus,amniote_mammal,alpha_globin,NC_045604.1,GeneID:113932210,LUC7L,LUC7L,"protein_coding
+",cluster_non_globin,LUC7L,False,69499706,69536408,36702,-,LUC7L
+zalophus_californianus,amniote_mammal,beta_globin,NC_045605.1,GeneID:113914337,LOC113914337,HBB_like_2,"protein_coding
+",beta_globin,HBB,True,61020559,61021879,1320,-,LOC113914337
+zalophus_californianus,amniote_mammal,beta_globin,NC_045605.1,GeneID:118355949,LOC118355949,HBB_like_1,"protein_coding
+",beta_globin,HBB,True,61023179,61024845,1666,-,LOC118355949
+zalophus_californianus,amniote_mammal,beta_globin,NC_045605.1,GeneID:113914336,LOC113914336,HBD_like,"protein_coding
+",beta_globin,HBD,True,61029152,61030820,1668,-,LOC113914336
+zalophus_californianus,amniote_mammal,beta_globin,NC_045605.1,GeneID:113914335,LOC113914335,HBG_like,"protein_coding
+",beta_globin,HBG,True,61034646,61036121,1475,-,LOC113914335
+zalophus_californianus,amniote_mammal,beta_globin,NC_045605.1,GeneID:113914334,HBE1,HBE1,"protein_coding
+",beta_globin,HBE1,True,61041897,61043313,1416,-,HBE1
+loxodonta_africana,amniote_mammal,alpha_globin,NC_087353.1,GeneID:100658328,RHBDF1,RHBDF1,"protein_coding
+",cluster_non_globin,RHBDF1,False,53580378,53592819,12441,-,rhomboid 5 homolog 1
+loxodonta_africana,amniote_mammal,alpha_globin,NC_087353.1,GeneID:100653678,MPG,MPG,"protein_coding
+",cluster_non_globin,MPG,False,53597753,53607384,9631,+,N-methylpurine DNA glycosylase
+loxodonta_africana,amniote_mammal,alpha_globin,NC_087353.1,GeneID:100677668,NPRL3,NPRL3,"protein_coding
+",cluster_non_globin,NPRL3,False,53606481,53635260,28779,-,"NPR3 like, GATOR1 complex subunit"
+loxodonta_africana,amniote_mammal,alpha_globin,NC_087353.1,GeneID:100658044,HBZ,HBZ,"protein_coding
+",alpha_globin,HBZ,True,53646371,53648280,1909,+,hemoglobin subunit zeta
+loxodonta_africana,amniote_mammal,alpha_globin,NC_087353.1,GeneID:100657757,LOC100657757,HBZ_like,"protein_coding
+",alpha_globin,HBZ,True,53690508,53693069,2561,+,hemoglobin subunit zeta-like
+loxodonta_africana,amniote_mammal,alpha_globin,NC_087353.1,GeneID:100657470,HBM,HBM,"protein_coding
+",alpha_globin,HBM,True,53693155,53694593,1438,+,hemoglobin subunit mu
+loxodonta_africana,amniote_mammal,alpha_globin,NC_087353.1,GeneID:135232945,LOC135232945,HBA_like,"protein_coding
+",alpha_globin,HBA,True,53696129,53696971,842,+,hemoglobin subunit alpha-like
+loxodonta_africana,amniote_mammal,alpha_globin,NC_087353.1,GeneID:100568296,HBA2,HBA2,protein_coding,alpha_globin,HBA2,True,53700828,53701686,858,+,hemoglobin subunit alpha 2
+loxodonta_africana,amniote_mammal,alpha_globin,NC_087353.1,GeneID:100656617,HBQ1,HBQ1,"protein_coding
+",alpha_globin,HBQ1,True,53703468,53704953,1485,+,hemoglobin subunit theta 1
+loxodonta_africana,amniote_mammal,alpha_globin,NC_087353.1,GeneID:100656334,LUC7L,LUC7L,"protein_coding
+",cluster_non_globin,LUC7L,False,53709401,53738863,29462,-,LUC7 like
+loxodonta_africana,amniote_mammal,beta_globin,NC_087348.1,GeneID:100677792,LOC100677792,HBE1_like,"protein_coding
+",beta_globin,HBE,True,82906980,82908812,1832,+,hemoglobin subunit epsilon-1
+loxodonta_africana,amniote_mammal,beta_globin,NC_087348.1,GeneID:100677510,LOC100677510,HBG_like,"protein_coding
+",beta_globin,HBG,True,82911037,82913123,2086,+,hemoglobin subunit gamma
+loxodonta_africana,amniote_mammal,beta_globin,NC_087348.1,GeneID:135232176,LOC135232176,HBD_like,"protein_coding
+",beta_globin,HBD,True,82927752,82935411,7659,+,hemoglobin subunit beta-like
+loxodonta_africana,amniote_mammal,beta_globin,NC_087348.1,GeneID:100568295,HBB/D,HBB/D,protein_coding,beta_globin,HBB/D,True,82939059,82940403,1344,+,hemoglobin subunit beta/delta hybrid
+scyliorhinus_canicula,chondrichthyes,alpha_beta_cluster,NC_052160.1,GeneID:119978731,LOC119978731,HBB_like_1,"protein_coding
+",beta_globin,HBB,True,73608108,73609373,1265,-,LOC119978731
+scyliorhinus_canicula,chondrichthyes,alpha_beta_cluster,NC_052160.1,GeneID:119978771,LOC119978771,HBA_like_1,"protein_coding
+",alpha_globin,HBA,True,73638736,73640158,1422,-,LOC119978771
+scyliorhinus_canicula,chondrichthyes,alpha_beta_cluster,NC_052160.1,GeneID:119978759,LOC119978759,HBA_like_2,"protein_coding
+",alpha_globin,HBA,True,73731496,73732902,1406,+,LOC119978759
+scyliorhinus_canicula,chondrichthyes,alpha_beta_cluster,NC_052160.1,GeneID:119978783,LOC119978783,HBB_like_2,"protein_coding
+",beta_globin,HBB,True,73822523,73824145,1622,+,LOC119978783
+heterocephalus_glaber,amniote_mammal,alpha_globin,NW_004624913.1,GeneID:101707862,Rhbdf1,Rhbdf1,"protein_coding
+",cluster_non_globin,RHBDF1,False,937483,954449,16966,-,Rhbdf1
+heterocephalus_glaber,amniote_mammal,alpha_globin,NW_004624913.1,GeneID:101707491,Mpg,Mpg,"protein_coding
+",cluster_non_globin,MPG,False,959537,967503,7966,+,Mpg
+heterocephalus_glaber,amniote_mammal,alpha_globin,NW_004624913.1,GeneID:101705932,Nprl3,Nprl3,"protein_coding
+",cluster_non_globin,NPRL3,False,968092,1013990,45898,-,Nprl3
+heterocephalus_glaber,amniote_mammal,alpha_globin,NW_004624913.1,GeneID:101705305,LOC101705305,HBZ_like,"protein_coding
+",alpha_globin,HBZ,True,1028787,1030715,1928,+,LOC101705305
+heterocephalus_glaber,amniote_mammal,alpha_globin,NW_004624913.1,GeneID:101704937,LOC101704937,HBA1_like,"protein_coding
+",alpha_globin,HBA,True,1036428,1037330,902,+,LOC101704937
+heterocephalus_glaber,amniote_mammal,alpha_globin,NW_004624913.1,GeneID:101704581,LOC101704581,HBA2_like,"protein_coding
+",alpha_globin,HBA,True,1043430,1044234,804,+,LOC101704581
+heterocephalus_glaber,amniote_mammal,alpha_globin,NW_004624913.1,GeneID:101724100,LOC101724100,HBQ_like,"protein_coding
+",alpha_globin,HBQ,True,1045925,1047093,1168,+,LOC101724100
+heterocephalus_glaber,amniote_mammal,alpha_globin,NW_004624913.1,GeneID:101703753,Luc7l,Luc7l,"protein_coding
+",cluster_non_globin,LUC7L,False,1051127,1075587,24460,-,Luc7l
+heterocephalus_glaber,amniote_mammal,alpha_globin,NW_004624913.1,GeneID:101702921,Fam234a,Fam234a,"protein_coding
+",cluster_non_globin,FAM234A,False,1103428,1120595,17167,+,Fam234a
+heterocephalus_glaber,amniote_mammal,alpha_globin,NW_004624913.1,GeneID:101702566,Rgs11,Rgs11,"protein_coding
+",cluster_non_globin,RGS11,False,1121986,1132313,10327,-,Rgs11
+heterocephalus_glaber,amniote_mammal,alpha_globin,NW_004624913.1,GeneID:101702221,Arhgdig,Arhgdig,"protein_coding
+",cluster_non_globin,ARHGDIG,False,1133380,1135386,2006,+,Arhgdig
+heterocephalus_glaber,amniote_mammal,alpha_globin,NW_004624913.1,GeneID:101701648,Pdia2,Pdia2,"protein_coding
+",cluster_non_globin,PDIA2,False,1135497,1138900,3403,+,Pdia2
+heterocephalus_glaber,amniote_mammal,alpha_globin,NW_004624913.1,GeneID:101700795,Axin1,Axin1,"protein_coding
+",cluster_non_globin,AXIN1,False,1139164,1195186,56022,-,Axin1
+heterocephalus_glaber,amniote_mammal,beta_globin,NW_004624817.1,GeneID:101696428,LOC101696428,HBB_like,protein_coding,beta_globin,HBB,True,6691100,6691222,122,-,hemoglobin subunit beta
+heterocephalus_glaber,amniote_mammal,beta_globin,NW_004624817.1,GeneID:101718185,LOC101718185,HBE_like,"protein_coding
+",beta_globin,HBE,True,6707523,6709012,1489,-,LOC101718185
+heterocephalus_glaber,amniote_mammal,beta_globin,NW_004624817.1,GeneID:101718529,LOC101718529,HBG_like,"protein_coding
+",beta_globin,HBG,True,6713412,6714951,1539,-,LOC101718529
+heterocephalus_glaber,amniote_mammal,beta_globin,NW_004624817.1,GeneID:101718875,LOC101718875,LOC101718875,"protein_coding
+",cluster_non_globin,intervening_gene,False,6741866,6742802,936,-,LOC101718875

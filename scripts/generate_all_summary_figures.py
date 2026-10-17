@@ -22,7 +22,10 @@ from adjustText import adjust_text
 
 from globin_pipeline.visualizer import Visualizer
 
-def build_datasets(base_dir="/Users/ibrahim/Documents/globin_project"):
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+RESULTS_DIR = os.path.join(BASE_DIR, "results")
+
+def build_datasets(base_dir=BASE_DIR):
     df_genes = pd.read_csv(os.path.join(base_dir, "results/gene_zscores.csv"))
     viz = Visualizer()
     df_sum = viz.build_cross_species_summary(df_genes)
@@ -32,13 +35,13 @@ def build_datasets(base_dir="/Users/ibrahim/Documents/globin_project"):
 # =====================================================================
 # FIGURE 1: Macroevolutionary Locus Divergence (Phylogenetic Dumbbell)
 # =====================================================================
-def plot_figure1_publication(df_summary, out_dir="results"):
+def plot_figure1_publication(df_summary, out_dir=RESULTS_DIR):
     os.makedirs(out_dir, exist_ok=True)
     png_path = os.path.join(out_dir, "summary_figure1_locus_divergence.png")
     pdf_path = os.path.join(out_dir, "summary_figure1_locus_divergence.pdf")
 
     n_sp = len(df_summary)
-    fig, (ax_fg, ax_cds) = plt.subplots(1, 2, figsize=(22, 19), sharey=True, dpi=300)
+    fig, (ax_fg, ax_cds) = plt.subplots(1, 2, figsize=(22, max(19, n_sp * 0.44)), sharey=True, dpi=300)
     y_indices = np.arange(n_sp)
 
     def style_dumbbell_axis(ax, title, xlabel, xlim):
@@ -72,6 +75,7 @@ def plot_figure1_publication(df_summary, out_dir="results"):
     clades = df_summary['clade_label'].tolist()
     clade_colors = {
         "Agnatha": "#f5f5f5",
+        "Chondrichthyes": "#e0f7fa",
         "Holostei": "#ffffff",
         "Teleostei": "#f0f4f8",
         "Amphibia": "#ffffff",
@@ -200,7 +204,7 @@ def plot_figure1_publication(df_summary, out_dir="results"):
     return png_path, pdf_path
 
 
-def plot_figure1_interactive(df_summary, out_dir="results"):
+def plot_figure1_interactive(df_summary, out_dir=RESULTS_DIR):
     html_path = os.path.join(out_dir, "summary_figure1_locus_divergence.html")
     n_sp = len(df_summary)
 
@@ -234,6 +238,7 @@ def plot_figure1_interactive(df_summary, out_dir="results"):
     clades = df_summary['clade_label'].tolist()
     clade_colors = {
         "Agnatha": "rgba(245, 245, 245, 0.4)",
+        "Chondrichthyes": "rgba(224, 247, 250, 0.45)",
         "Holostei": "rgba(255, 255, 255, 0.4)",
         "Teleostei": "rgba(240, 244, 248, 0.45)",
         "Amphibia": "rgba(255, 255, 255, 0.4)",
@@ -399,7 +404,7 @@ def plot_figure1_interactive(df_summary, out_dir="results"):
 
     fig.update_layout(
         title=f"<b>Figure 1: Macroevolutionary Locus Divergence Across Vertebrates (n={n_sp} Species)</b>",
-        height=1200, width=1400,
+        height=max(1200, n_sp * 28), width=1400,
         showlegend=False,
         template="plotly_white"
     )
@@ -411,7 +416,7 @@ def plot_figure1_interactive(df_summary, out_dir="results"):
 # =====================================================================
 # FIGURE 2: Mechanistic Drivers (Isochore Coupling & Telomeric Proximity)
 # =====================================================================
-def plot_figure2_publication(df_summary, out_dir="results"):
+def plot_figure2_publication(df_summary, out_dir=RESULTS_DIR):
     os.makedirs(out_dir, exist_ok=True)
     png_path = os.path.join(out_dir, "summary_figure2_mechanistic_drivers.png")
     pdf_path = os.path.join(out_dir, "summary_figure2_mechanistic_drivers.pdf")
@@ -561,7 +566,7 @@ def plot_figure2_publication(df_summary, out_dir="results"):
     return png_path, pdf_path
 
 
-def plot_figure2_interactive(df_summary, out_dir="results"):
+def plot_figure2_interactive(df_summary, out_dir=RESULTS_DIR):
     html_path = os.path.join(out_dir, "summary_figure2_mechanistic_drivers.html")
 
     fig = make_subplots(
@@ -694,7 +699,7 @@ def plot_figure2_interactive(df_summary, out_dir="results"):
 # =====================================================================
 # FIGURE 3: Clade-Structured Heatmap Matrix
 # =====================================================================
-def plot_figure3_publication(df_summary, out_dir="results"):
+def plot_figure3_publication(df_summary, out_dir=RESULTS_DIR):
     os.makedirs(out_dir, exist_ok=True)
     png_path = os.path.join(out_dir, "summary_figure3_clade_heatmap.png")
     pdf_path = os.path.join(out_dir, "summary_figure3_clade_heatmap.pdf")
@@ -763,7 +768,7 @@ def plot_figure3_publication(df_summary, out_dir="results"):
     return png_path, pdf_path
 
 
-def plot_figure3_interactive(df_summary, out_dir="results"):
+def plot_figure3_interactive(df_summary, out_dir=RESULTS_DIR):
     html_path = os.path.join(out_dir, "summary_figure3_clade_heatmap.html")
 
     metrics = [
@@ -847,7 +852,7 @@ def synchronize_all_results(base_dir="/Users/ibrahim/Documents/globin_project",
 
 if __name__ == "__main__":
     df_genes, df_sum, viz = build_datasets()
-    df_sum.to_csv("results/cross_species_summary_table.csv", index=False)
+    df_sum.to_csv(os.path.join(RESULTS_DIR, "cross_species_summary_table.csv"), index=False)
     print(f"Cross-species summary built for {len(df_sum)} species.")
 
     plot_figure1_publication(df_sum)

@@ -7,18 +7,21 @@ import shutil
 import pandas as pd
 from globin_pipeline.visualizer import Visualizer
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 def main():
     print("Initializing Visualizer...")
     viz = Visualizer()
-    df_genes = pd.read_csv("results/gene_zscores.csv")
-    df_intervals = pd.read_csv("results/curated_intervals.csv")
+    results_dir = os.path.join(BASE_DIR, "results")
+    df_genes = pd.read_csv(os.path.join(results_dir, "gene_zscores.csv"))
+    df_intervals = pd.read_csv(os.path.join(results_dir, "curated_intervals.csv"))
 
     species_list = sorted(df_genes["species"].unique())
     print(f"Loaded {len(species_list)} species.")
 
-    chr_out_dir = "results/chromosome_plots"
-    inset_out_dir = "results/bivariate_with_inset_plots"
-    biv_out_dir = "results/bivariate_length_gc_plots"
+    chr_out_dir = os.path.join(results_dir, "chromosome_plots")
+    inset_out_dir = os.path.join(results_dir, "bivariate_with_inset_plots")
+    biv_out_dir = os.path.join(results_dir, "bivariate_length_gc_plots")
     os.makedirs(chr_out_dir, exist_ok=True)
     os.makedirs(inset_out_dir, exist_ok=True)
     os.makedirs(biv_out_dir, exist_ok=True)
@@ -36,12 +39,12 @@ def main():
         # 3. Generate bivariate_with_chromosome_inset (without other features / pseudogenes)
         inset_res = viz.plot_bivariate_with_chromosome_inset(sp, df_genes, df_intervals, output_dir=inset_out_dir)
 
-    print("\nAll 20 species successfully processed!")
+    print(f"\nAll {len(species_list)} species successfully processed!")
 
     # Synchronize to 1_data_from_mike/results/
-    target_chr = "1_data_from_mike/results/chromosome_plots"
-    target_inset = "1_data_from_mike/results/bivariate_with_inset_plots"
-    target_biv = "1_data_from_mike/results/bivariate_length_gc_plots"
+    target_chr = os.path.join(BASE_DIR, "1_data_from_mike/results/chromosome_plots")
+    target_inset = os.path.join(BASE_DIR, "1_data_from_mike/results/bivariate_with_inset_plots")
+    target_biv = os.path.join(BASE_DIR, "1_data_from_mike/results/bivariate_length_gc_plots")
     
     print(f"Synchronizing {chr_out_dir} -> {target_chr}...")
     shutil.copytree(chr_out_dir, target_chr, dirs_exist_ok=True)

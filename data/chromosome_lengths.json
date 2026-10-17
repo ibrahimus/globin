@@ -80,5 +80,16 @@
   "zootoca_vivipara::NC_142596.1": 54055807,
   "zootoca_vivipara::NC_142587.1": 103385105,
   "eptatretus_burgeri::NC_140977.1": 61238283,
-  "lampetra_fluviatilis::NC_136297.1": 13672276
+  "lampetra_fluviatilis::NC_136297.1": 13672276,
+  "tursiops_truncatus::NC_047048.1": 86293990,
+  "tursiops_truncatus::NC_047041.1": 108430135,
+  "zalophus_californianus::NC_045604.1": 114256090,
+  "zalophus_californianus::NC_045605.1": 113586643,
+  "loxodonta_africana::NC_087353.1": 106945007,
+  "loxodonta_africana::NC_087348.1": 136918461,
+  "scyliorhinus_canicula::NC_052160.1": 147036345,
+  "struthio_camelus_australis::NW_009271137.1": 1328684,
+  "struthio_camelus_australis::NW_009270861.1": 330425,
+  "heterocephalus_glaber::NW_004624913.1": 2199788,
+  "heterocephalus_glaber::NW_004624817.1": 9715273
 }
