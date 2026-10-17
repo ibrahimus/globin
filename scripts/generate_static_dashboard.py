@@ -983,23 +983,53 @@ def main():
                 }}
             }});
 
+            optionsContainer.innerHTML = '';
+
             if (matched.length === 0) {{
-                optionsContainer.innerHTML = '<div class="combobox-no-results">No species match "' + query + '"</div>';
+                const noRes = document.createElement('div');
+                noRes.className = 'combobox-no-results';
+                noRes.textContent = 'No species match "' + query + '"';
+                optionsContainer.appendChild(noRes);
                 return;
             }}
 
-            let html = '';
             matched.forEach(function(item, idx) {{
-                const isSelected = item.sp === currentVal;
-                html += '<div class="combobox-item' + (isSelected ? ' selected' : '') + (idx === 0 ? ' highlighted' : '') + '" data-value="' + item.sp + '" onclick="selectSpecies(\'' + id + '\', \'' + item.sp + '\')">';
-                html += '<div class="combobox-item-left">';
-                html += '<span class="combobox-item-sp">' + item.sciName + ' <span style="font-weight: normal; color: #94a3b8; font-size: 0.78rem;">(' + item.shortName + ')</span></span>';
-                html += '<span class="combobox-item-common">' + (item.d.common_name || item.sp) + '</span>';
-                html += '</div>';
-                html += '<span class="combobox-item-clade">' + (item.d.clade || '') + '</span>';
-                html += '</div>';
+                const itemEl = document.createElement('div');
+                itemEl.className = 'combobox-item' + (item.sp === currentVal ? ' selected' : '') + (idx === 0 ? ' highlighted' : '');
+                itemEl.setAttribute('data-value', item.sp);
+                itemEl.onclick = function() {{
+                    selectSpecies(id, item.sp);
+                }};
+
+                const leftDiv = document.createElement('div');
+                leftDiv.className = 'combobox-item-left';
+
+                const spSpan = document.createElement('span');
+                spSpan.className = 'combobox-item-sp';
+                spSpan.textContent = item.sciName + ' ';
+
+                const shortSpan = document.createElement('span');
+                shortSpan.style.fontWeight = 'normal';
+                shortSpan.style.color = '#94a3b8';
+                shortSpan.style.fontSize = '0.78rem';
+                shortSpan.textContent = '(' + item.shortName + ')';
+                spSpan.appendChild(shortSpan);
+
+                const commonSpan = document.createElement('span');
+                commonSpan.className = 'combobox-item-common';
+                commonSpan.textContent = item.d.common_name || item.sp;
+
+                leftDiv.appendChild(spSpan);
+                leftDiv.appendChild(commonSpan);
+
+                const cladeSpan = document.createElement('span');
+                cladeSpan.className = 'combobox-item-clade';
+                cladeSpan.textContent = item.d.clade || '';
+
+                itemEl.appendChild(leftDiv);
+                itemEl.appendChild(cladeSpan);
+                optionsContainer.appendChild(itemEl);
             }});
-            optionsContainer.innerHTML = html;
         }}
 
         function selectSpecies(id, sp, triggerUpdate) {{
@@ -1011,10 +1041,24 @@ def main():
             const d = speciesData[sp];
             const displayEl = document.getElementById('display-' + id);
             if (displayEl && d) {{
+                displayEl.innerHTML = '';
                 const sciName = sp.replace(/_/g, ' ');
-                displayEl.innerHTML = '<span class="combobox-name">' + sciName + '</span>' +
-                                      '<span class="combobox-common">(' + d.common_name + ')</span>' +
-                                      '<span class="combobox-clade">' + d.clade + '</span>';
+
+                const nameSpan = document.createElement('span');
+                nameSpan.className = 'combobox-name';
+                nameSpan.textContent = sciName;
+
+                const commonSpan = document.createElement('span');
+                commonSpan.className = 'combobox-common';
+                commonSpan.textContent = '(' + (d.common_name || sp) + ')';
+
+                const cladeSpan = document.createElement('span');
+                cladeSpan.className = 'combobox-clade';
+                cladeSpan.textContent = d.clade || '';
+
+                displayEl.appendChild(nameSpan);
+                displayEl.appendChild(commonSpan);
+                displayEl.appendChild(cladeSpan);
             }}
 
             closeAllComboboxes();
