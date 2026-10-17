@@ -14,10 +14,11 @@ from globin_pipeline.baseline_manager import BaselineManager
 from globin_pipeline.zscore_analyzer import ZScoreAnalyzer
 from globin_pipeline.visualizer import Visualizer
 from globin_pipeline.reporter import Reporter
+from globin_pipeline import __version__
 
 
 @click.group()
-@click.version_option(version="0.2.0")
+@click.version_option(version=__version__)
 def main():
     """Globin Pipeline: Comparative genomics analysis for vertebrate globin loci."""
     pass
