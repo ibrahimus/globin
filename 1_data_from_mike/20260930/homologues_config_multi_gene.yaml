@@ -1,0 +1,25 @@
+
+query_species: Homo_sapiens
+query_genes: 
+    - RHBDF1
+    - MPG
+    - NPRL3
+    - HBA2
+    - LUC7L
+    - KANK2
+    - LCMT1
+    - DCHS1
+    - STIM1
+target_species: 
+    - Mus_musculus
+    - Bos_taurus
+    - Sus_scrofa
+    - Erinaceus_europaeus
+    - Monodelphis_domestica
+    - Gallus_gallus
+    - Chrysemys_picta_bellii
+    - xenopus_tropicalis
+    - takifugu_rubripes
+    - oryzias_latipes
+    - danio_rerio
+    - petromyzon_marinus

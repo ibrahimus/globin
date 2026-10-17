@@ -1,0 +1,12 @@
+target_species,species_common_name,assembly_name,Chromosome,Start,End,Strand,left_gene_name,right_gene_name,location
+Bos_taurus,cattle,ARS-UCD2.0,25,116330,268921,-,RHBDF1,LUC7L,"25:116,331-268,921 - @ARS-UCD2.0 = RHBDF1-LUC7L"
+Erinaceus_europaeus,western European hedgehog,HEDGEHOG,GeneScaffold_103,0,129753,-,RHBDF1,Fixed endpoint,"GeneScaffold_103:1-129,753 - @HEDGEHOG = RHBDF1-Fixed endpoint"
+Gallus_gallus,chicken,bGalGal1.mat.broiler.GRCg7b,14,11990048,12291524,-,RHBDF1,LUC7L,"14:11,990,049-12,291,524 - @bGalGal1.mat.broiler.GRCg7b = RHBDF1-LUC7L"
+Monodelphis_domestica,gray short-tailed opossum,ASM229v1,6,149110594,149525896,-,RHBDF1,LUC7L,"6:149,110,595-149,525,896 - @ASM229v1 = RHBDF1-LUC7L"
+Mus_musculus,mouse,GRCm39,11,32153699,32280628,-,Rhbdf1,Fixed endpoint,"11:32,153,700-32,280,628 - @GRCm39 = Rhbdf1-Fixed endpoint"
+Sus_scrofa,pig,Sscrofa11.1,3,41444001,41572593,+,RHBDF1,LUC7L,"3:41,444,002-41,572,593 + @Sscrofa11.1 = RHBDF1-LUC7L"
+danio_rerio,zebrafish,GRCz11,3,54891330,55219130,-,rhbdf1a,kank2,"3:54,891,331-55,219,130 - @GRCz11 = rhbdf1a-kank2"
+oryzias_latipes,Japanese medaka HdrR,ASM223467v1,8,8154621,8254440,-,rhbdf1a,kank2,"8:8,154,622-8,254,440 - @ASM223467v1 = rhbdf1a-kank2"
+petromyzon_marinus,sea lamprey,Pmarinus_7.0,GL478636,20361,150362,-,Fixed endpoint,Fixed endpoint,"GL478636:20,362-150,362 - @Pmarinus_7.0 = Fixed endpoint-Fixed endpoint"
+takifugu_rubripes,fugu,fTakRub1.2,5,10460162,10520033,+,rhbdf1a,kank2,"5:10,460,163-10,520,033 + @fTakRub1.2 = rhbdf1a-kank2"
+xenopus_tropicalis,tropical clawed frog,UCB_Xtro_10.0,9,40707133,41216821,+,rhbdf1,luc7l,"9:40,707,134-41,216,821 + @UCB_Xtro_10.0 = rhbdf1-luc7l"

@@ -1,0 +1,45 @@
+species,common_name,clade,clade_label,assembly_name,assembly_accession,num_whole_genes_annotated,empirical_mean_whole_gene_gc_pct,empirical_std_whole_gene_gc_pct,num_cds_genes_analyzed,empirical_mean_cds_gc_pct,empirical_std_cds_gc_pct,empirical_mean_gc3_pct,empirical_std_gc3_pct,chromosome_scale_genomic_gc_pct
+eptatretus_burgeri,Inshore Hagfish (E. burgeri),cyclostome,Agnatha,Ebu_testis_v1,Ebu_testis_v1,6,43.887462411944064,3.496064339311216,,49.88028756177058,4.90977336684724,52.397416675428445,8.033694242143456,42.67
+petromyzon_marinus,Sea Lamprey (P. marinus),cyclostome,Agnatha,Pmarinus_7.0,Pmarinus_7.0,10415,48.99,6.14,10415.0,59.66,6.1,75.96,11.49,45.0
+lampetra_fluviatilis,River Lamprey (L. fluviatilis),cyclostome,Agnatha,kcLamFluv1.1,kcLamFluv1.1,30,50.44760525389938,5.640239100333352,,62.52812243461945,6.192428968100686,78.18957898440247,10.735358144957473,49.25
+lepisosteus_oculatus,Spotted Gar (L. oculatus),non_teleost_fish,Holostei,LepOcu1,LepOcu1,18341,43.73,7.22,18341.0,53.5,7.29,63.97,14.63,39.5
+danio_rerio,Zebrafish (D. rerio),teleost_fish,Teleostei,GRCz11,GRCz11,25432,37.31,3.94,25432.0,49.37,5.0,54.67,9.6,36.5
+pimephales_promelas,Minnow (P. promelas),teleost_fish,Teleostei,RefSeq,NCBI/Ensembl,21,38.76692014770367,3.6146946415785948,,50.2464874221094,5.021159487452086,56.08933994922686,10.17235199546165,41.0
+oryzias_latipes,Medaka (O. latipes),teleost_fish,Teleostei,ASM223467v1,ASM223467v1,23600,42.65,5.08,23600.0,52.46,5.64,61.22,11.51,40.5
+takifugu_rubripes,Fugu (T. rubripes),teleost_fish,Teleostei,fTakRub1.2,fTakRub1.2,21383,47.06,5.07,21383.0,53.7,4.97,63.94,10.56,45.0
+gasterosteus_aculeatus,Stickleback (G. aculeatus),teleost_fish,Teleostei,NC_135691.1,NC_135691.1,22929,45.87,3.94,22929.0,56.53,5.33,69.99,10.97,44.71
+geotrypetes_seraphini,Gabon Caecilian (G. seraphini),amphibian,Amphibia,RefSeq,NCBI/Ensembl,8,43.8134273690773,2.724071203450142,,47.01661263507897,5.387974904079216,49.553037718204486,10.475259490617978,41.0
+rhinatrema_bivittatum,Two-lined Caecilian (R. bivittatum),amphibian,Amphibia,RefSeq,NCBI/Ensembl,7,45.35451969816212,3.5817246818233808,,49.15330308782001,6.428419353933879,54.2456779778714,12.60699354909955,41.0
+microcaecilia_unicolor,Tiny Caecilian (M. unicolor),amphibian,Amphibia,RefSeq,NCBI/Ensembl,9,44.37962003536778,2.734400124991974,,47.0288739664484,5.057540213740793,49.80947713043063,9.899739291050636,41.0
+ambystoma_mexicanum,Axolotl (A. mexicanum),amphibian,Amphibia,UKY_AmexF1_1,UKY_AmexF1_1,24121,47.01,3.11,24121.0,49.86,5.68,55.13,11.76,46.5
+triturus_cristatus,Crested Newt (T. cristatus),amphibian,Amphibia,aTriCri1.1,aTriCri1.1,26680,45.69,4.16,26680.0,49.31,5.97,54.09,11.86,45.5
+xenopus_tropicalis,Clawed Frog (X. tropicalis),amphibian,Amphibia,UCB_Xtro_10.0,UCB_Xtro_10.0,22102,42.31,5.31,22102.0,46.89,5.65,48.66,10.82,40.0
+bufo_bufo,Common Toad (B. bufo),amphibian,Amphibia,aBufBuf1.1,aBufBuf1.1,21564,45.21,4.24,21564.0,47.34,5.81,50.29,12.04,41.5
+Chrysemys_picta_bellii,Painted Turtle (C. picta),amniote_reptile,Reptilia,Chrysemys_picta_bellii-3.0.3,Chrysemys_picta_bellii-3.0.3,21176,47.99,8.02,21176.0,51.37,8.29,57.49,16.21,44.0
+chelonia_mydas,Sea Turtle (C. mydas),amniote_reptile,Reptilia,NC_051254.2,NC_051254.2,19937,47.56,7.64,19937.0,51.57,8.31,58.14,16.52,44.01
+eretmochelys_imbricata,Hawksbill Turtle (E. imbricata),amniote_reptile,Reptilia,RefSeq,NCBI/Ensembl,19,47.39645815811606,7.703901713498425,,51.09715517241379,8.08178275717628,57.58481865012616,16.314722125059046,41.0
+pelodiscus_sinensis,Softshell Turtle (P. sinensis),amniote_reptile,Reptilia,ASM4963464v1,ASM4963464v1,11,50.00592326583569,8.590741293112949,,52.61967100690423,9.171681239007413,60.058837866641944,17.741426105120524,45.7
+anolis_carolinensis,Anole (A. carolinensis),amniote_reptile,Reptilia,rAnoCar3.1.pri,rAnoCar3.1.pri,20481,41.52,3.87,20481.0,50.49,7.89,55.65,15.82,40.5
+pogona_vitticeps,Bearded Dragon (P. vitticeps),amniote_reptile,Reptilia,PviZW2.1,PviZW2.1,19785,44.38,5.34,19785.0,50.23,7.32,54.99,14.42,41.5
+podarcis_muralis,Wall Lizard (P. muralis),amniote_reptile,Reptilia,NC_135655.1,NC_135655.1,20972,45.42,4.13,20972.0,50.93,6.9,57.24,13.63,44.23
+zootoca_vivipara,Viviparous Lizard (Z. vivipara),amniote_reptile,Reptilia,rZooViv2.hap1.1,rZooViv2.hap1.1,102,45.204031436262255,3.9736560812060766,,50.62717794654874,6.740150032390088,56.574089598154195,13.344235892184566,43.99
+thamnophis_elegans,Garter Snake (T. elegans),amniote_reptile,Reptilia,NC_045541.1,NC_045541.1,19034,42.84,6.26,19034.0,48.3,7.45,51.97,14.82,40.95
+alligator_mississippiensis,Alligator (A. mississippiensis),amniote_crocodylian,Archosauria,rAllMis1,rAllMis1,20433,48.99,8.15,20446.0,52.12,8.89,58.93,16.9,44.0
+anser_cygnoides,Swan Goose (A. cygnoides),amniote_bird,Aves,RefSeq,NCBI/Ensembl,22,50.08864659585007,11.264631971107905,,54.79657878804557,10.182712214625111,63.43065441136001,19.108710849049583,41.0
+anas_platyrhynchos,Mallard Duck (A. platyrhynchos),amniote_bird,Aves,ASM874695v1,ASM874695v1,16765,48.92,10.75,16765.0,53.25,9.34,60.78,17.82,41.5
+meleagris_gallopavo,Turkey (M. gallopavo),amniote_bird,Aves,Turkey_5.1,Turkey_5.1,16226,46.43,8.93,16226.0,50.51,7.93,55.72,15.4,41.8
+coturnix_japonica,Quail (C. japonica),amniote_bird,Aves,RefSeq,NCBI/Ensembl,25,48.010034056852234,8.253725259433505,,52.847424847879395,8.200882956776493,58.882620561256914,14.920698170898769,41.0
+Gallus_gallus,Chicken (G. gallus),amniote_bird,Aves,bGalGal1.mat.broiler.GRCg7b,bGalGal1.mat.broiler.GRCg7b,17007,48.48,9.35,17007.0,53.12,8.59,59.7,16.03,42.0
+aquila_chrysaetos_chrysaetos,Golden Eagle (A. chrysaetos),amniote_bird,Aves,bAquChr1.2,bAquChr1.2,16118,48.33,10.54,16118.0,52.27,9.08,58.75,17.32,42.0
+sturnus_vulgaris,Starling (S. vulgaris),amniote_bird,Aves,RefSeq,NCBI/Ensembl,20,47.89527925609684,9.097977789388931,,54.2524533598456,8.634291475518864,63.06205626060002,16.3934137643689,41.0
+ornithorhynchus_anatinus,Platypus (O. anatinus),amniote_monotreme,Monotremata,mOrnAna1.p.v1,mOrnAna1.p.v1,17417,52.71,8.71,17417.0,57.47,9.11,69.16,16.15,45.5
+Monodelphis_domestica,Opossum (M. domestica),amniote_mammal,Mammalia,ASM229v1,ASM229v1,21380,42.54,7.51,21380.0,48.46,7.91,51.96,13.86,38.0
+Mus_musculus,Mouse (M. musculus),amniote_mammal,Mammalia,GRCm39,GRCm39,21807,45.74,6.08,21801.0,51.76,6.97,58.32,11.72,42.0
+rattus_norvegicus,Norway Rat (R. norvegicus),amniote_mammal,Mammalia,RefSeq,NCBI/Ensembl,32,46.22316668078976,5.554642875005362,,51.7669455978307,6.742402979418638,58.589166172358276,11.148041443782773,41.0
+miniopterus_natalensis,Bat (M. natalensis),amniote_mammal,Mammalia,RefSeq,NCBI/Ensembl,17,47.96973855156493,8.987363917231525,,54.555920974928874,8.570349988786631,63.54087507381758,16.15233541606669,41.0
+puma_concolor,Puma (P. concolor),amniote_mammal,Mammalia,RefSeq,NCBI/Ensembl,21,47.950799531782785,8.782148232194626,,54.1391622983358,9.0503060184424,62.27163316199298,16.20674559287979,41.0
+Sus_scrofa,Pig (S. scrofa),amniote_mammal,Mammalia,Sscrofa11.1,Sscrofa11.1,22018,47.87,8.67,22018.0,53.08,9.28,61.25,16.48,41.5
+Bos_taurus,Cattle (B. taurus),amniote_mammal,Mammalia,ARS-UCD2.0,ARS-UCD2.0,20601,47.31,8.11,20601.0,53.8,8.71,61.89,15.92,42.0
+equus_asinus,Donkey (E. asinus),amniote_mammal,Mammalia,RefSeq,NCBI/Ensembl,15,47.5704465865698,8.695663366579133,,53.96617677191021,8.969231973062422,62.19812517462979,15.848295750546285,41.0
+equus_caballus,Horse (E. caballus),amniote_mammal,Mammalia,RefSeq,NCBI/Ensembl,14,47.730078722138316,8.691069884491784,,54.21892855508262,8.927915332333734,62.33447480433887,15.72771636697548,41.0
+Homo_sapiens,Human (H. sapiens),amniote_mammal,Mammalia,GRCh38,GRCh38,20120,46.72,7.93,20118.0,53.1,8.75,59.7,16.01,41.0

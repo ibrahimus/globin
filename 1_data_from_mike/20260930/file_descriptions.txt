@@ -1,0 +1,5 @@
+Attachments:
+
+- List of species and genes for which homologues have been extracted
+- Csv file of the homologue data from Ensembl Compara (genes name, assembly, genomic location, match type)
+- Csv file of the genomic intervals which span the alpha globin genes as defined by selected flanking genes (Western painted turtle removed)

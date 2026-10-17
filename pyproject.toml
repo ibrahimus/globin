@@ -1,0 +1,52 @@
+[project]
+name = "globin-pipeline"
+version = "1.0.0"
+description = "Comparative genomics analysis pipeline and reference atlas for vertebrate globin loci"
+readme = "README.md"
+license = { file = "LICENSE" }
+keywords = ["genomics", "globin", "comparative-genomics", "evolution", "isochores", "gBGC", "bioinformatics"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+authors = [
+    { name = "Globin Project Team" }
+]
+dependencies = [
+    "pyyaml>=6.0",
+    "requests>=2.28.0",
+    "biopython>=1.80",
+    "pandas>=1.5.0",
+    "numpy>=1.23.0",
+    "click>=8.1.0",
+    "tabulate>=0.9.0",
+    "matplotlib>=3.6.0",
+    "seaborn>=0.12.0",
+    "scipy>=1.9.0",
+    "plotly>=5.15.0",
+    "adjustText>=0.8",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+]
+
+[project.scripts]
+globin-pipeline = "globin_pipeline.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["globin_pipeline*"]
+
+[tool.setuptools.package-data]
+globin_pipeline = ["data/*"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

@@ -1,0 +1,1145 @@
+species:
+  petromyzon_marinus:
+    common_name: Sea Lamprey (P. marinus)
+    clade: cyclostome
+    division: EnsemblVertebrates
+    assembly: Pmarinus_7.0
+    status: active
+    loci:
+    - locus_id: proto_globin_cluster
+      chromosome: GL478636
+      start: 20000
+      end: 150000
+      strand: +
+      left_gene: UBE2I
+      right_gene: nprl3
+      notes: 'Single ancestral proto-globin cluster on GL478636: UBE2I - globin (ENSPMAG00000001587)
+        - globin (ENSPMAG00000001592) - nprl3'
+  lepisosteus_oculatus:
+    common_name: Spotted Gar (L. oculatus)
+    clade: non_teleost_fish
+    division: EnsemblVertebrates
+    assembly: LepOcu1
+    status: active
+    loci:
+    - locus_id: alpha_beta_cluster
+      chromosome: LG13
+      start: 14650000
+      end: 14900000
+      strand: +
+      left_gene: rhbdf1a
+      right_gene: luc7l
+      notes: 'Unduplicated basal ray-finned fish reference: linked alpha+beta globins
+        (HBA2, hbae5, hbae4, HBE1) flanked by rhbdf1a, mpg, nprl3 and luc7l on LG13'
+  danio_rerio:
+    common_name: Zebrafish (D. rerio)
+    clade: teleost_fish
+    division: EnsemblVertebrates
+    assembly: GRCz11
+    status: active
+    loci:
+    - locus_id: alpha_beta_locus_A
+      chromosome: '3'
+      start: 54891330
+      end: 55219130
+      strand: +
+      left_gene: rhbdf1a
+      right_gene: kank2
+      notes: 'Teleost 3R paralog A (major cluster): linked alpha + beta pairs (hbaa1,
+        hbba1, hbae1, hbbe1)'
+    - locus_id: alpha_beta_locus_B
+      chromosome: '12'
+      start: 20222000
+      end: 20415000
+      strand: '-'
+      left_gene: rhbdf1b
+      right_gene: lcmt1
+      notes: 'Teleost 3R paralog B (minor cluster): linked alpha + beta pairs (hbae4,
+        hbbe3, hbae5, hbbe2)'
+  oryzias_latipes:
+    common_name: Medaka (O. latipes)
+    clade: teleost_fish
+    division: EnsemblVertebrates
+    assembly: ASM223467v1
+    status: active
+    loci:
+    - locus_id: alpha_beta_locus_A
+      chromosome: '8'
+      start: 8150000
+      end: 8255000
+      strand: +
+      left_gene: rhbdf1a
+      right_gene: kank2
+      notes: 'Medaka 3R paralog A (major cluster on chr8): rhbdf1a - mpg - nprl3 -
+        hbba1 - Gb-alpha4 - Gb-beta4 - Gb-beta3 - Gb-alpha1 - Gb - kank2'
+    - locus_id: alpha_beta_locus_B
+      chromosome: '19'
+      start: 2970000
+      end: 3050000
+      strand: '-'
+      left_gene: rhbdf1b
+      right_gene: lcmt1
+      notes: 'Medaka 3R paralog B (minor cluster): shifted into higher-GC compartment'
+  takifugu_rubripes:
+    common_name: Fugu (T. rubripes)
+    clade: teleost_fish
+    division: EnsemblVertebrates
+    assembly: fTakRub1.2
+    status: active
+    loci:
+    - locus_id: alpha_beta_locus_A
+      chromosome: '5'
+      start: 10460000
+      end: 10525000
+      strand: +
+      left_gene: kank2
+      right_gene: rhbdf1a
+      notes: 'Fugu 3R paralog A (compact cluster on chr5): kank2 - hbae1.1 - mpg -
+        rhbdf1a'
+    - locus_id: alpha_beta_locus_B
+      chromosome: '1'
+      start: 10330000
+      end: 10375000
+      strand: '-'
+      left_gene: rhbdf1b
+      right_gene: lcmt1
+      notes: Fugu 3R paralog B (compact minor cluster)
+  gasterosteus_aculeatus:
+    common_name: Stickleback (G. aculeatus)
+    clade: teleost_fish
+    division: NCBI_RefSeq
+    assembly: fGasAcu3.hap1.1
+    status: active
+    loci:
+    - locus_id: alpha_beta_cluster
+      chromosome: NC_135699.1
+      start: 15220000
+      end: 15310000
+      strand: +
+      left_gene: kank2
+      right_gene: mgrn1b
+      notes: 'Stickleback linked alpha+beta cluster on chr11: kank2 - alternating
+        alpha (LOC120827429, LOC120827725, LOC120827724, LOC120827726, LOC120827727)
+        and beta (LOC120828497, LOC120827721, LOC120827723, LOC120827722, LOC120827720,
+        LOC100174873) - nprl3 - rhbdf1a - mpg - aanat2 - mgrn1b'
+  xenopus_tropicalis:
+    common_name: Clawed Frog (X. tropicalis)
+    clade: amphibian
+    division: EnsemblVertebrates
+    assembly: UCB_Xtro_10.0
+    status: active
+    loci:
+    - locus_id: alpha_beta_cluster
+      chromosome: '9'
+      start: 40315000
+      end: 41265000
+      strand: +
+      left_gene: snrnp25/hba1
+      right_gene: fam234a
+      notes: 'Contiguous ancestral tetrapod linked cluster: hba1, hba3, hba4, hbg1,
+        hbe1.2 flanked by rhbdf1 and fam234a'
+  bufo_bufo:
+    common_name: Common Toad (B. bufo)
+    clade: amphibian
+    division: NCBI_RefSeq
+    assembly: aBufBuf1.1
+    status: active
+    loci:
+    - locus_id: alpha_beta_cluster
+      chromosome: NC_053395.1
+      start: 85080000
+      end: 86800000
+      strand: +
+      left_gene: LUC7L
+      right_gene: LOC121007737
+      notes: 'Intact ancestral tetrapod linked cluster on chr7: LUC7L - 6 beta-globins
+        - RHBDF1 - MPG - NPRL3 - 7 alpha-globins - distal beta-globin'
+  Chrysemys_picta_bellii:
+    common_name: Western Painted Turtle (C. picta)
+    clade: amniote_reptile
+    division: EnsemblVertebrates
+    assembly: Chrysemys_picta_bellii-3.0.3
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: KK088206.1
+      start: 1415000
+      end: 1865000
+      strand: +
+      left_gene: HBA
+      right_gene: RHBDF1
+      notes: Turtle alpha-globin locus syntenic with MPG, NPRL3, RHBDF1
+    - locus_id: beta_globin
+      chromosome: KK083065.1
+      start: 720000
+      end: 800000
+      strand: +
+      left_gene: ENSCPBG00000021825
+      right_gene: ENSCPBG00000021826
+  chelonia_mydas:
+    common_name: Green Sea Turtle (C. mydas)
+    clade: amniote_reptile
+    division: NCBI_RefSeq
+    assembly: rCheMyd1.pri.v2
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_051250.2
+      start: 31200000
+      end: 31380000
+      strand: +
+      left_gene: NPRL3
+      right_gene: PGAP6
+      notes: 'Green sea turtle alpha locus on chr10: NPRL3 - LOC102945818 (HBZ_like)
+        - LOC102945589 (HBAD_like) - LOC102946728 (HBAA_like) - PGAP6'
+    - locus_id: beta_globin
+      chromosome: NC_057849.1
+      start: 3540000
+      end: 3690000
+      strand: +
+      left_gene: LOC119563550
+      right_gene: LUC7L2
+      notes: 'Green sea turtle beta locus on chr1: LOC119563550 (HBB_like) flanked
+        by olfactory receptors and LUC7L2 synteny'
+  pelodiscus_sinensis:
+    common_name: Softshell Turtle (P. sinensis)
+    clade: amniote_reptile
+    division: NCBI_RefSeq
+    assembly: ASM4963464v1
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_134726.1
+      start: 4640000
+      end: 4940000
+      strand: '-'
+      left_gene: LOC102454060
+      right_gene: RHBDF1
+      notes: 'Chinese softshell turtle alpha-globin locus on chr16: LOC102454060 (HBAA) - LOC102460110 (HBAD) - LOC102459869 (pi) - NPRL3 - MPG - RHBDF1'
+    - locus_id: beta_globin
+      chromosome: NC_134711.1
+      start: 331060000
+      end: 331100000
+      strand: '-'
+      left_gene: LOC142826610
+      right_gene: LOC102453687
+      notes: 'Chinese softshell turtle beta-globin locus on chr1: 3 tandem beta globins (LOC142826610, LOC142818157, LOC102453687)'
+  gopherus_evgoodei:
+    common_name: Goode's Thornscrub Tortoise (G. evgoodei)
+    clade: amniote_reptile
+    division: EnsemblVertebrates
+    assembly: rGopEvg1_v1.p
+    status: excluded
+    loci:
+    - locus_id: alpha_globin
+      chromosome: '10'
+      start: 54300000
+      end: 54750000
+      strand: +
+      left_gene: HBZ
+      right_gene: RHBDF1
+      notes: 'Land tortoise chromosome-scale alpha locus: HBZ (54.30 Mb) - RHBDF1
+        (54.65 Mb)'
+    - locus_id: beta_globin
+      chromosome: VHHN01000334.1
+      start: 620000
+      end: 680000
+      strand: +
+      left_gene: HBE1
+      right_gene: HBE1
+      notes: Land tortoise beta-globin locus on scaffold VHHN01000334.1 (HBE1 / ENSGEVG00005020819)
+  terrapene_carolina_triunguis:
+    common_name: Three-Toed Box Turtle (T. carolina)
+    clade: amniote_reptile
+    division: EnsemblVertebrates
+    assembly: T_m_triunguis-2.0
+    status: excluded
+    loci:
+    - locus_id: alpha_globin
+      chromosome: PRFB02000094.1
+      start: 31200000
+      end: 31800000
+      strand: +
+      left_gene: RHBDF1
+      right_gene: PGAP6
+      notes: 'Box turtle alpha locus on PRFB02000094.1: RHBDF1 - MPG - NPRL3 - HBZ
+        - HBA_like_1 - HBA_like_2 - PGAP6'
+    - locus_id: beta_globin
+      chromosome: PRFB02001019.1
+      start: 440000
+      end: 550000
+      strand: +
+      left_gene: ENSTMTG00000010826
+      right_gene: LUC7L2
+      notes: 'Box turtle beta locus on PRFB02001019.1: ENSTMTG00000010826 (HBB_like,
+        456 bp CDS) adjacent to LUC7L2 (502 kb)'
+  crocodylus_porosus:
+    common_name: Saltwater Crocodile (C. porosus)
+    clade: amniote_crocodylian
+    division: EnsemblVertebrates
+    assembly: CroPor_comp1
+    status: excluded
+    loci:
+    - locus_id: alpha_globin
+      chromosome: MDVP01000043.1
+      start: 7350000
+      end: 8500000
+      strand: +
+      left_gene: LUC7L
+      right_gene: NPRL3
+      notes: 'Saltwater crocodile alpha locus: LUC7L - HBZ - NPRL3'
+    - locus_id: beta_globin
+      chromosome: MDVP01000050.1
+      start: 61480000
+      end: 61650000
+      strand: +
+      left_gene: LUC7L2
+      right_gene: POLDIP3
+      notes: Saltwater crocodile beta locus syntenic with LUC7L2 on MDVP01000050.1
+        (61.5 Mb)
+  alligator_mississippiensis:
+    common_name: American Alligator (A. mississippiensis)
+    clade: amniote_crocodylian
+    division: NCBI_RefSeq
+    assembly: rAllMis1
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_081836.1
+      start: 21200000
+      end: 22900000
+      strand: '-'
+      left_gene: RHBDF1
+      right_gene: LUC7L
+      notes: 'NCBI RefSeq (rAllMis1) chromosome 13: RHBDF1 - MPG - NPRL3 - LOC102559155
+        - LOC102559387 - LOC102559610 - LUC7L'
+    - locus_id: beta_globin
+      chromosome: NC_081824.1
+      start: 481500000
+      end: 482800000
+      strand: +
+      left_gene: RRM1
+      right_gene: LOC102559498
+      notes: 'NCBI RefSeq (rAllMis1) chromosome 1: RRM1 through 7 tandem beta globins
+        (LOC102563321 to LOC102559498)'
+  Gallus_gallus:
+    common_name: Chicken (G. gallus)
+    clade: amniote_bird
+    division: EnsemblVertebrates
+    assembly: bGalGal1.mat.broiler.GRCg7b
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: '14'
+      start: 11950000
+      end: 12180000
+      strand: '-'
+      left_gene: RHBDF1
+      right_gene: HBA1
+      notes: 'Avian microchromosome 14 alpha locus: GTF3C1 - SNRNP25 - RHBDF1 - MPG
+        - NPRL3 - HBZ - HBAD - HBA1'
+    - locus_id: beta_globin
+      chromosome: '1'
+      start: 195940000
+      end: 196060000
+      strand: +
+      left_gene: HBE1
+      right_gene: HBBA
+      notes: 'Avian beta locus (chr1): HBE1 - HBE - HBB - HBBA'
+  aquila_chrysaetos_chrysaetos:
+    common_name: Golden Eagle (A. chrysaetos)
+    clade: amniote_bird
+    division: EnsemblVertebrates
+    assembly: bAquChr1.2
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: '25'
+      start: 16560000
+      end: 16910000
+      strand: +
+      left_gene: RHBDF1
+      right_gene: LUC7L
+      notes: 'Neoavian raptor alpha-globin locus on chr25: RHBDF1 - MPG - NPRL3 -
+        HBZ - HBA1_like - LUC7L'
+    - locus_id: beta_globin
+      chromosome: '19'
+      start: 27400000
+      end: 27550000
+      strand: +
+      left_gene: RRM1
+      right_gene: OR52R1
+      notes: 'Neoavian raptor beta-globin locus on chr19: RRM1 - HBE1_like - HBB_like
+        - HBRHO_like - OR52R1'
+  taeniopygia_guttata:
+    common_name: Zebra Finch (T. guttata)
+    clade: amniote_bird
+    division: EnsemblVertebrates
+    assembly: bTaeGut1_v1.p
+    status: excluded
+    loci:
+    - locus_id: alpha_globin
+      chromosome: '14'
+      start: 13650000
+      end: 13970000
+      strand: '-'
+      left_gene: RHBDF1
+      right_gene: LUC7L
+      notes: 'Passerine songbird alpha locus: RHBDF1 (13.65 Mb) - MPG - HBAA (13.78
+        Mb) - LUC7L (13.94 Mb)'
+    - locus_id: beta_globin
+      chromosome: '1'
+      start: 114200000
+      end: 114350000
+      strand: +
+      left_gene: HBE1
+      right_gene: HBBA
+      notes: 'Passerine songbird beta locus: HBE1 cluster (114.23 Mb)'
+  anas_platyrhynchos:
+    common_name: Mallard Duck (A. platyrhynchos)
+    clade: amniote_bird
+    division: EnsemblVertebrates
+    assembly: ASM874695v1
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: '15'
+      start: 11150000
+      end: 11400000
+      strand: '-'
+      left_gene: RHBDF1
+      right_gene: AXIN1
+      notes: 'Avian microchromosome 15 alpha locus: RHBDF1 - NPRL3 - HBA_like - HBA2'
+    - locus_id: beta_globin
+      chromosome: '1'
+      start: 207030000
+      end: 207120000
+      strand: +
+      left_gene: HBE_like
+      right_gene: HBB_like
+      notes: 'Avian macrochromosome 1 beta locus: ENSAPLG00020006106 - ENSAPLG00020006112
+        - ENSAPLG00020006120'
+  meleagris_gallopavo:
+    common_name: Turkey (M. gallopavo)
+    clade: amniote_bird
+    division: EnsemblVertebrates
+    assembly: Turkey_5.1
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: '16'
+      start: 1480000
+      end: 1650000
+      strand: +
+      left_gene: PGAP6
+      right_gene: RHBDF1
+      notes: 'Galliform turkey alpha-globin locus on chr16: PGAP6 - HBA1_like - HBAD_like
+        - HBZ_like - MPG - NPRL3 - RHBDF1'
+    - locus_id: beta_globin
+      chromosome: '1'
+      start: 189050000
+      end: 189200000
+      strand: +
+      left_gene: ENSMGAG00000014946
+      right_gene: RRM1
+      notes: 'Avian macrochromosome 1 beta locus: ENSMGAG00000014946, ENSMGAG00000014945,
+        ENSMGAG00000014964 beta cluster (189.08-189.10 Mb) flanked by RRM1 (189.18
+        Mb)'
+  struthio_camelus_australis:
+    common_name: African Ostrich (S. camelus)
+    clade: amniote_bird
+    division: EnsemblVertebrates
+    assembly: ASM69896v1
+    status: excluded
+    loci:
+    - locus_id: alpha_globin
+      chromosome: KL206308.1
+      start: 630000
+      end: 1050000
+      strand: +
+      left_gene: LUC7L
+      right_gene: RHBDF1
+      notes: 'Palaeognathae ratite basal avian alpha locus on KL206308.1: LUC7L -
+        AXIN1 - PGAP6 - HBA1_like - HBAD_like - HBZ - NPRL3 - MPG - RHBDF1'
+    - locus_id: beta_globin
+      chromosome: KL206138.1
+      start: 2000
+      end: 185000
+      strand: +
+      left_gene: HBE1
+      right_gene: RRM1
+      notes: 'Basal avian beta-globin locus on KL206138.1: HBE1 (5.7 kb, ENSSCUG00000005227)
+        to RRM1 (172 kb, ENSSCUG00000005251)'
+  anolis_carolinensis:
+    common_name: Green Anole (A. carolinensis)
+    clade: amniote_reptile
+    division: NCBI_RefSeq
+    assembly: rAnoCar3.1.pri
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NW_026943824.1
+      start: 8000000
+      end: 8200000
+      strand: +
+      left_gene: rhbdf1
+      right_gene: fam234a
+      notes: 'NCBI RefSeq (rAnoCar3.1.pri) scaffold NW_026943824.1: LOC134294182 (HBZ_like),
+        rhbdf1, mpg, nprl3, LOC100556620 (HBAD_like), LOC103282340 (HBA1_like)'
+    - locus_id: beta_globin
+      chromosome: NC_085843.1
+      start: 1800000
+      end: 2000000
+      strand: '-'
+      left_gene: LOC134297303
+      right_gene: LOC100552694
+      notes: 'NCBI RefSeq (rAnoCar3.1.pri) chromosome 3: LOC134297303 (beta-2) and
+        LOC100552694 (beta-1)'
+  pogona_vitticeps:
+    common_name: Bearded Dragon (P. vitticeps)
+    clade: amniote_reptile
+    division: NCBI_RefSeq
+    assembly: PviZW2.1
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_135795.1
+      start: 21200000
+      end: 21650000
+      strand: +
+      left_gene: RHBDF1
+      right_gene: FAM234A
+      notes: 'NCBI RefSeq (PviZW2.1) chromosome 13: LOC140702511 (HBZ_like), LOC110089136
+        (HBA1_like), LOC110089112 (HBAD_like) bounded by RHBDF1, MPG, NPRL3, FAM234A'
+    - locus_id: beta_globin
+      chromosome: NC_135785.1
+      start: 265500000
+      end: 265750000
+      strand: +
+      left_gene: RRM1
+      right_gene: FHIP1B
+      notes: 'NCBI RefSeq (PviZW2.1) chromosome 3: RRM1 through LOC110078124 (HBE_like)
+        and LOC140701279 (HBB_like)'
+  podarcis_muralis:
+    common_name: Common Wall Lizard (P. muralis)
+    clade: amniote_reptile
+    division: NCBI_RefSeq
+    assembly: rPodMur119.hap1.1
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_135668.1
+      start: 54840000
+      end: 55060000
+      strand: +
+      left_gene: LOC114584330
+      right_gene: PGAP6
+      notes: 'Wall lizard alpha locus on chr14: LOC114584330 (HBA_like) - LOC114584329
+        (HBAA_like) - KATNIP - GTF3C1 - POLR3K - SNRNP25 - RHBDF1 - MPG - NPRL3 -
+        PGAP6'
+    - locus_id: beta_globin
+      chromosome: NC_135658.1
+      start: 1515000
+      end: 1750000
+      strand: +
+      left_gene: CDCA8
+      right_gene: LOC144327603
+      notes: 'Wall lizard beta locus on chr4: CDCA8 - LOC114595222 (HBB1_like) - LOC144327399
+        (HBB1_like) - LOC114595212 (HBB2_like) flanked by olfactory receptors'
+  thamnophis_elegans:
+    common_name: Western Garter Snake (T. elegans)
+    clade: amniote_reptile
+    division: NCBI_RefSeq
+    assembly: rThaEle1.pri
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_045554.1
+      start: 75000
+      end: 160000
+      strand: +
+      left_gene: AXIN1
+      right_gene: GTF3C1
+      notes: 'Garter snake alpha locus on chr14: AXIN1 - MRPL28 - PGAP6 - LOC116517500
+        (HBA_like) - LOC116517505 (HBAA_like) - NPRL3 - MPG - RHBDF1 - SNRNP25 - POLR3K
+        - GTF3C1'
+    - locus_id: beta_globin
+      chromosome: NC_045546.1
+      start: 280000
+      end: 625000
+      strand: +
+      left_gene: CNGA4
+      right_gene: STIM1
+      notes: 'Garter snake beta locus on chr6: CNGA4 - CDCA8 - LOC116510062 (HBB_like)
+        - LOC116510063 (HBB_like) - RRM1 - STIM1'
+  ornithorhynchus_anatinus:
+    common_name: Platypus (O. anatinus)
+    clade: amniote_monotreme
+    division: EnsemblVertebrates
+    assembly: mOrnAna1.p.v1
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: '21'
+      start: 15600000
+      end: 15860000
+      strand: +
+      left_gene: LUC7L
+      right_gene: RHBDF1
+      notes: 'Monotreme mammal alpha-globin locus on Chr 21: LUC7L - HBA - HBM - NPRL3
+        - MPG - RHBDF1'
+    - locus_id: beta_globin
+      chromosome: '2'
+      start: 139350000
+      end: 139550000
+      strand: +
+      left_gene: OR52D1
+      right_gene: OR51E1
+      notes: 'Monotreme mammal beta-globin locus on Chr 2: OR52D1 - HBE (ENSOANG00000043521)
+        - HBB (ENSOANG00000049640) - OR51V1 - OR51E1'
+  Monodelphis_domestica:
+    common_name: Gray Short-tailed Opossum (M. domestica)
+    clade: amniote_mammal
+    division: EnsemblVertebrates
+    assembly: ASM229v1
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: '6'
+      start: 149100000
+      end: 149530000
+      strand: +
+      left_gene: RHBDF1
+      right_gene: LUC7L
+      notes: 'Marsupial alpha-globin locus on chr6: SNRNP25 - RHBDF1 - MPG - NPRL3
+        - HBA_like - LUC7L'
+    - locus_id: beta_globin
+      chromosome: '4'
+      start: 352150000
+      end: 352320000
+      strand: +
+      left_gene: HBE1
+      right_gene: HBE1_dup
+      notes: Marsupial beta-globin locus
+  Erinaceus_europaeus:
+    common_name: European Hedgehog (E. europaeus)
+    clade: amniote_mammal
+    division: EnsemblVertebrates
+    assembly: HEDGEHOG
+    status: excluded
+    loci:
+    - locus_id: alpha_flanking_only
+      chromosome: GeneScaffold_103
+      start: 0
+      end: 129753
+      strand: '-'
+      left_gene: RHBDF1
+      right_gene: Fixed endpoint
+      notes: 'Fragmented assembly: GeneScaffold_103 contains NPRL3/RHBDF1 but alpha
+        globins reside on scaffold_235869'
+  Mus_musculus:
+    common_name: Mouse (M. musculus)
+    clade: amniote_mammal
+    division: EnsemblVertebrates
+    assembly: GRCm39
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: '11'
+      start: 32130000
+      end: 32256929
+      strand: +
+      left_gene: Rhbdf1
+      right_gene: Luc7l
+      notes: Murine alpha-globin locus
+    - locus_id: beta_globin
+      chromosome: '7'
+      start: 103420000
+      end: 103570000
+      strand: +
+      left_gene: Hbb-y
+      right_gene: Hbb-bs
+      notes: Murine beta-globin locus
+  Sus_scrofa:
+    common_name: Pig (S. scrofa)
+    clade: amniote_mammal
+    division: EnsemblVertebrates
+    assembly: Sscrofa11.1
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: '3'
+      start: 41440000
+      end: 41580000
+      strand: +
+      left_gene: LUC7L
+      right_gene: RHBDF1
+      notes: 'Porcine alpha-globin locus on chr3: LUC7L - NPRL3 - HBZ - HBM - HBA
+        - RHBDF1'
+    - locus_id: beta_globin
+      chromosome: '9'
+      start: 4750000
+      end: 4880000
+      strand: '-'
+      left_gene: HBE1
+      right_gene: HBB
+      notes: Porcine beta-globin locus
+  Bos_taurus:
+    common_name: Cattle (B. taurus)
+    clade: amniote_mammal
+    division: EnsemblVertebrates
+    assembly: ARS-UCD2.0
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: '25'
+      start: 110000
+      end: 270000
+      strand: +
+      left_gene: RHBDF1
+      right_gene: LUC7L
+      notes: 'Bovine alpha-globin locus on chr25: RHBDF1 - MPG - NPRL3 - HBZ - HBM
+        - HBA - HBQ1 - LUC7L'
+    - locus_id: beta_globin
+      chromosome: '15'
+      start: 48320000
+      end: 48460000
+      strand: +
+      left_gene: HBE1
+      right_gene: HBB
+      notes: Bovine beta-globin locus
+  Homo_sapiens:
+    common_name: Human (H. sapiens)
+    clade: amniote_mammal
+    division: EnsemblVertebrates
+    assembly: GRCh38
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: '16'
+      start: 60000
+      end: 275000
+      strand: '-'
+      left_gene: RHBDF1
+      right_gene: LUC7L
+      notes: 'Human alpha-globin locus (16p13.3): RHBDF1 - MPG - NPRL3 - HBZ - HBM
+        - HBZP1 - HBAP1 - HBA2 - HBA1 - HBQ1 - LUC7L'
+    - locus_id: beta_globin
+      chromosome: '11'
+      start: 5200000
+      end: 5340000
+      strand: '-'
+      left_gene: HBE1
+      right_gene: HBB
+      notes: 'Human beta-globin locus (11p15.4): HBE1 - HBG2 - HBG1 - HBBP1 - HBD
+        - HBB flanked by OR51 cluster'
+  equus_asinus:
+    common_name: Donkey (E. asinus)
+    clade: amniote_mammal
+    division: NCBI_RefSeq
+    assembly: EquAss-T2T_v2
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_091803.1
+      start: 49650000
+      end: 49810000
+      strand: +
+      left_gene: LUC7L
+      right_gene: RHBDF1
+      notes: 'Donkey (E. asinus T2T) alpha-globin locus on chr14: LUC7L - HBQ1 - HBA1
+        - HBA - HBZ - NPRL3 - MPG - RHBDF1'
+    - locus_id: beta_globin
+      chromosome: NC_091809.1
+      start: 88050000
+      end: 88150000
+      strand: '-'
+      left_gene: OR51V1
+      right_gene: HBE1
+      notes: 'Donkey (E. asinus T2T) beta-globin locus on chr20: OR51V1 - HBB - HBB_like
+        - HBE2 - HBE_like - HBE1'
+  equus_caballus:
+    common_name: Horse (E. caballus)
+    clade: amniote_mammal
+    division: NCBI_RefSeq
+    assembly: TB-T2T
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_091696.1
+      start: 53720000
+      end: 53890000
+      strand: +
+      left_gene: LUC7L
+      right_gene: RHBDF1
+      notes: 'Horse (E. caballus T2T) alpha-globin locus on chr13: LUC7L - HBQ1 -
+        HBA - HBA2 - HBZ - NPRL3 - MPG - RHBDF1'
+    - locus_id: beta_globin
+      chromosome: NC_091690.1
+      start: 76350000
+      end: 76430000
+      strand: '-'
+      left_gene: OR51V1
+      right_gene: HBE1
+      notes: 'Horse (E. caballus T2T) beta-globin locus on chr7: OR51V1 - HBB - HBB_like
+        - HBE4 - HBE'
+  miniopterus_natalensis:
+    common_name: Bat (M. natalensis)
+    clade: amniote_mammal
+    division: NCBI_RefSeq
+    assembly: mMinNat1.hap1
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_142083.1
+      start: 95380000
+      end: 95540000
+      strand: +
+      left_gene: LUC7L
+      right_gene: RHBDF1
+      notes: 'Natal long-fingered bat alpha-globin locus on chr3: LUC7L - HBQ1 - HBA
+        - HBM - HBZ - NPRL3 - MPG - RHBDF1'
+    - locus_id: beta_globin
+      chromosome: NC_142091.1
+      start: 41480000
+      end: 41530000
+      strand: '-'
+      left_gene: LOC107538704
+      right_gene: HBE1
+      notes: 'Natal long-fingered bat beta-globin locus on chr11: OR51V1_like - HBB
+        - HBE2 - HBE1'
+  puma_concolor:
+    common_name: Puma (P. concolor)
+    clade: amniote_mammal
+    division: NCBI_RefSeq
+    assembly: mPumCon1.1.hap2
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_141682.1
+      start: 42480000
+      end: 42650000
+      strand: '-'
+      left_gene: LUC7L
+      right_gene: RHBDF1
+      notes: 'Puma (P. concolor) alpha-globin locus on chrE3: LUC7L - HBQ1 - HBA -
+        HBM - HBZ - NPRL3 - MPG - RHBDF1'
+    - locus_id: beta_globin
+      chromosome: NC_141676.1
+      start: 54430000
+      end: 54550000
+      strand: +
+      left_gene: OR51B2
+      right_gene: OR51V1
+      notes: 'Puma (P. concolor) beta-globin locus on chrD1: OR51B2 - HBE - HBE4 -
+        HBB - HBB_like - OR51V1'
+  sturnus_vulgaris:
+    common_name: Starling (S. vulgaris)
+    clade: amniote_bird
+    division: NCBI_RefSeq
+    assembly: bStuVul1.hap1
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_142258.1
+      start: 13450000
+      end: 13760000
+      strand: +
+      left_gene: RHBDF1
+      right_gene: LUC7L
+      notes: 'Common starling alpha-globin locus on chr16: RHBDF1 - MPG - NPRL3 -
+        pi - alpha_D - alpha_A - LUC7L'
+    - locus_id: beta_globin
+      chromosome: NC_142244.1
+      start: 118980000
+      end: 119020000
+      strand: '-'
+      left_gene: LOC106861759
+      right_gene: LOC106861745
+      notes: 'Common starling beta-globin locus on chr2: HBB - HBB_like - rho'
+  anser_cygnoides:
+    common_name: Swan Goose (A. cygnoides)
+    clade: amniote_bird
+    division: NCBI_RefSeq
+    assembly: Taihu_goose_T2T_genome
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_089887.1
+      start: 11130000
+      end: 11490000
+      strand: +
+      left_gene: RHBDF1
+      right_gene: LUC7L
+      notes: 'Swan goose (A. cygnoides T2T) alpha-globin locus on chr15: RHBDF1 -
+        MPG - NPRL3 - pi - alpha_D - alpha_A - LUC7L'
+    - locus_id: beta_globin
+      chromosome: NC_089873.1
+      start: 212350000
+      end: 212380000
+      strand: '-'
+      left_gene: LOC125180866
+      right_gene: LOC106048579
+      notes: 'Swan goose (A. cygnoides T2T) beta-globin locus on chr1: HBE - HBB -
+        HBB_like - rho'
+  coturnix_japonica:
+    common_name: Quail (C. japonica)
+    clade: amniote_bird
+    division: NCBI_RefSeq
+    assembly: WE-NBRP24
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_140675.1
+      start: 18630000
+      end: 18870000
+      strand: +
+      left_gene: RHBDF1
+      right_gene: LUC7L
+      notes: 'Japanese quail alpha-globin locus on chr13: RHBDF1 - MPG - NPRL3 - pi
+        - alpha_D - alpha_A - LUC7L'
+    - locus_id: beta_globin
+      chromosome: NC_140663.1
+      start: 178970000
+      end: 179000000
+      strand: '-'
+      left_gene: LOC107306765
+      right_gene: LOC107306759
+      notes: 'Japanese quail beta-globin locus on chr1: HBE - HBB - HBB_like - rho'
+  rattus_norvegicus:
+    common_name: Norway Rat (R. norvegicus)
+    clade: amniote_mammal
+    division: NCBI_RefSeq
+    assembly: SHRSP_T2T
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_141543.1
+      start: 21260000
+      end: 21420000
+      strand: +
+      left_gene: Luc7l1
+      right_gene: Snrnp25
+      notes: 'Norway rat (R. norvegicus T2T) alpha-globin locus on chr10: Luc7l1 -
+        Hba_a3 - Hba_a2 - Hbq1b - Hba_a1 - Hbz - Nprl3 - Mpg - Rhbdf1'
+    - locus_id: beta_globin
+      chromosome: NC_141534.1
+      start: 170780000
+      end: 171100000
+      strand: +
+      left_gene: Or52z1
+      right_gene: Or51i2
+      notes: 'Norway rat (R. norvegicus T2T) beta-globin locus on chr1: Or52z1 - Hbb_bt
+        - Hbb_bs - Hbbl1 - Hbb_b2 - Hbb_b1 - Hbg1 - Hbe2 - Hbe1 - Or51 cluster'
+  pimephales_promelas:
+    common_name: Minnow (P. promelas)
+    clade: teleost_fish
+    division: NCBI_RefSeq
+    assembly: fPimPro1.hap1.1
+    status: active
+    loci:
+    - locus_id: alpha_beta_major
+      chromosome: NC_142771.1
+      start: 33650000
+      end: 33750000
+      strand: +
+      left_gene: hbae3
+      right_gene: mpg
+      notes: 'Fathead minnow major linked alpha+beta cluster on chr3: 13 alternating
+        alpha and beta globins flanked by nprl3 and mpg'
+    - locus_id: alpha_beta_embryonic
+      chromosome: NC_142785.1
+      start: 7100000
+      end: 7125000
+      strand: +
+      left_gene: hbae4
+      right_gene: hbae5
+      notes: 'Fathead minnow embryonic cluster on chr17: hbae4 - 2 beta globins -
+        hbae5'
+  eretmochelys_imbricata:
+    common_name: Hawksbill Turtle (E. imbricata)
+    clade: amniote_reptile
+    division: NCBI_RefSeq
+    assembly: rEreImb1.hap1
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_135581.1
+      start: 31320000
+      end: 32280000
+      strand: +
+      left_gene: RHBDF1
+      right_gene: LUC7L
+      notes: 'Hawksbill sea turtle alpha-globin locus on chr10: RHBDF1 - MPG - NPRL3
+        - pi - alpha_D - alpha_A - LUC7L'
+    - locus_id: beta_globin
+      chromosome: NC_135572.1
+      start: 3640000
+      end: 3680000
+      strand: +
+      left_gene: LOC144262686
+      right_gene: LOC144262856
+      notes: 'Hawksbill sea turtle beta-globin locus on chr1: 3 tandem beta globins'
+  geotrypetes_seraphini:
+    common_name: Gabon Caecilian (G. seraphini)
+    clade: amphibian
+    division: NCBI_RefSeq
+    assembly: aGeoSer1.2
+    status: active
+    loci:
+    - locus_id: alpha_beta_linked
+      chromosome: NC_047094.1
+      start: 46150000
+      end: 46800000
+      strand: +
+      left_gene: RHBDF1
+      right_gene: LUC7L
+      notes: 'Gabon caecilian linked alpha+beta locus on chr11: RHBDF1 - MPG - NPRL3
+        - HBZ - alpha_A_like - beta_like - LUC7L'
+    - locus_id: beta_secondary
+      chromosome: NC_047088.1
+      start: 104650000
+      end: 104680000
+      strand: '-'
+      left_gene: LOC117361346
+      right_gene: PPIL3
+      notes: Gabon caecilian secondary adult beta locus on chr5
+  rhinatrema_bivittatum:
+    common_name: Two-lined Caecilian (R. bivittatum)
+    clade: amphibian
+    division: NCBI_RefSeq
+    assembly: aRhiBiv1.2
+    status: active
+    loci:
+    - locus_id: alpha_beta_linked
+      chromosome: NC_042628.1
+      start: 33350000
+      end: 33860000
+      strand: +
+      left_gene: RHBDF1
+      right_gene: LUC7L
+      notes: 'Two-lined caecilian linked alpha+beta locus on chr14: RHBDF1 - MPG -
+        NPRL3 - alpha_1 - beta - alpha_1_like - beta_like - LUC7L'
+  microcaecilia_unicolor:
+    common_name: Tiny Caecilian (M. unicolor)
+    clade: amphibian
+    division: NCBI_RefSeq
+    assembly: aMicUni1.2
+    status: active
+    loci:
+    - locus_id: alpha_beta_linked
+      chromosome: NC_044038.1
+      start: 48220000
+      end: 48920000
+      strand: +
+      left_gene: RHBDF1
+      right_gene: LUC7L
+      notes: 'Tiny Cayenne caecilian linked alpha+beta locus on chr8: RHBDF1 - MPG
+        - NPRL3 - HBZ - pi - alpha_like - beta_2 - LUC7L'
+    - locus_id: beta_secondary
+      chromosome: NC_044037.1
+      start: 114500000
+      end: 114510000
+      strand: '-'
+      left_gene: LOC115474766
+      right_gene: intergenic
+      notes: Tiny Cayenne caecilian secondary adult beta locus on chr7
+  ambystoma_mexicanum:
+    common_name: Axolotl (A. mexicanum)
+    clade: amphibian
+    division: NCBI_RefSeq
+    assembly: UKY_AmexF1_1
+    status: active
+    loci:
+    - locus_id: alpha_beta_linked
+      chromosome: NC_090924.1
+      start: 681000000
+      end: 689200000
+      strand: +
+      left_gene: LOC138569676
+      right_gene: RHBDF1
+      notes: 'Axolotl ancestral linked alpha+beta cluster on chr2q: 2 beta globins, 14 alpha globins, NPRL3, and RHBDF1'
+    - locus_id: beta_secondary
+      chromosome: NC_090925.1
+      start: 788300000
+      end: 789450000
+      strand: +
+      left_gene: LOC138579605
+      right_gene: LOC138580890
+      notes: 'Axolotl secondary tandem beta-globin array on chr3p: 12 tandem beta-like globins'
+  triturus_cristatus:
+    common_name: Crested Newt (T. cristatus)
+    clade: amphibian
+    division: NCBI_RefSeq
+    assembly: aTriCri1.1
+    status: active
+    loci:
+    - locus_id: alpha_beta_linked
+      chromosome: NC_140593.1
+      start: 817650000
+      end: 822750000
+      strand: +
+      left_gene: RHBDF1
+      right_gene: LOC146790088
+      notes: 'Great crested newt ancestral linked alpha+beta locus on chr10: RHBDF1, NPRL3, 18 alpha globins, and 2 beta globins'
+    - locus_id: beta_secondary
+      chromosome: NC_140590.1
+      start: 1210800000
+      end: 1211850000
+      strand: +
+      left_gene: TTC5
+      right_gene: LOC146811624
+      notes: 'Great crested newt secondary adult beta-globin locus on chr7: TTC5 - 7 tandem beta globins'
+  zootoca_vivipara:
+    common_name: Viviparous Lizard (Z. vivipara)
+    clade: amniote_reptile
+    division: NCBI_RefSeq
+    assembly: rZooViv2.hap1.1
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_142596.1
+      start: 53200000
+      end: 53660000
+      strand: '-'
+      left_gene: LOC118093251
+      right_gene: LOC118092497
+      notes: 'Viviparous lizard alpha-globin locus on chr13: LOC118093251 (alpha_D) - LOC118093266 (alpha) - LOC118093265 (alpha_2) - RHBDF1 - MPG - NPRL3 - LOC118092498 (alpha_D) - LOC118092499 (alpha_A) - LOC118092497 (pi)'
+    - locus_id: beta_globin
+      chromosome: NC_142587.1
+      start: 101690000
+      end: 102850000
+      strand: '-'
+      left_gene: LOC118085062
+      right_gene: LOC118085601
+      notes: 'Viviparous lizard beta-globin locus on chr4: 6 tandem beta globins flanked by olfactory receptor cluster'
+  eptatretus_burgeri:
+    common_name: Inshore Hagfish (E. burgeri)
+    clade: cyclostome
+    division: NCBI_RefSeq
+    assembly: Ebu_testis_v1
+    status: active
+    loci:
+    - locus_id: proto_globin
+      chromosome: NC_140977.1
+      start: 52050000
+      end: 52280000
+      strand: '+'
+      left_gene: NPRL3
+      right_gene: LOC147010100
+      notes: 'Inshore hagfish ancestral proto-globin locus on chr17: NPRL3 adjacent to tandem globin cluster'
+  lampetra_fluviatilis:
+    common_name: River Lamprey (L. fluviatilis)
+    clade: cyclostome
+    division: NCBI_RefSeq
+    assembly: kcLamFluv1.1
+    status: active
+    loci:
+    - locus_id: proto_globin
+      chromosome: NC_136297.1
+      start: 11400000
+      end: 12300000
+      strand: '+'
+      left_gene: NPRL3
+      right_gene: LOC144940938
+      notes: 'European river lamprey ancestral proto-globin locus on chr23: NPRL3 adjacent to tandem globin clusters'

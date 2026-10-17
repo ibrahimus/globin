@@ -1,0 +1,74 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# macOS / OS metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Large downloaded genome cache and raw assemblies
+data/cache/
+data/genome_baselines/
+data/urodela_annotations/
+data/test_baselines/
+1_data_from_mike/results/
+1_data_from_mike/docs/
+1_data_from_mike/data/cache
+1_data_from_mike/data/genome_baselines
+scratch/
+
+# Large generated per-species plot galleries (regenerated on demand via CLI)
+results/diagnostic_plots/
+results/bivariate_with_inset_plots/
+results/bivariate_length_gc_plots/
+results/chromosome_plots/
+results/*.html
