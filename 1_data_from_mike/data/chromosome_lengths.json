@@ -62,5 +62,13 @@
   "struthio_camelus_australis::NW_009271137.1": 1328684,
   "struthio_camelus_australis::NW_009270861.1": 330425,
   "heterocephalus_glaber::NW_004624913.1": 2199788,
-  "heterocephalus_glaber::NW_004624817.1": 9715273
+  "heterocephalus_glaber::NW_004624817.1": 9715273,
+  "vipera_berus::NC_138216.1": 19917953,
+  "vipera_berus::NC_138206.1": 123508217,
+  "candoia_aspera::NC_086166.1": 20477136,
+  "candoia_aspera::NC_086157.1": 117631150,
+  "notechis_scutatus::NC_142020.1": 17375881,
+  "notechis_scutatus::NC_142013.1": 116680770,
+  "pantherophis_guttatus::NC_142076.1": 23141676,
+  "pantherophis_guttatus::NC_142067.1": 131708010
 }

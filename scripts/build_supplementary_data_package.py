@@ -361,14 +361,17 @@ def build_data_package(
     print(f"  Wrote Table S4: {len(df_s4)} statistical tests -> {s4_path}")
 
     # Synchronize to 1_data_from_mike/results and artifact dir
-    for fname in [
+    sync_files = [
         "Supplementary_Table_S1_Species_Baselines.csv",
         "Supplementary_Table_S2_Globin_Loci_Summary.csv",
         "Supplementary_Table_S3_All_739_Genes_Annotations_ZScores.csv",
         "Supplementary_Table_S3_All_798_Genes_Annotations_ZScores.csv",
         "Supplementary_Table_S3_All_1017_Genes_Annotations_ZScores.csv",
+        "Supplementary_Table_S3_All_1098_Genes_Annotations_ZScores.csv",
+        f"Supplementary_Table_S3_All_{len(df_s3)}_Genes_Annotations_ZScores.csv",
         "Supplementary_Table_S4_Statistical_Contrasts.csv"
-    ]:
+    ]
+    for fname in sync_files:
         s = os.path.join(out_dir, fname)
         if os.path.exists(s):
             d_mike = os.path.join(base_dir, "1_data_from_mike/results", fname)

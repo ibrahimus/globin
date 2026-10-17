@@ -161,3 +161,22 @@ sequenceDiagram
 3. **Locus Annotation & Z-Standardization**: Calculate $Z$-scores across globin paralogs and flanking non-globin control genes.
 4. **Statistical Table Synchronization**: Update Supplementary Tables S1 (Species Baselines), S2 (Globin Loci Summary), S3 (All Genes Database), and S4 (Hypothesis Tests).
 5. **Dashboard Compilation**: Regenerate `results/dashboard.html` with expanded species options and updated macroevolutionary figures.
+
+---
+
+## 6. Serpentes Radiation: Subunit Polarity Inversion & Extreme Subtelomeric GC Elevation
+
+With the addition of 4 strategic snake genomes, the atlas now covers the full breadth of the snake radiation (5 species across 4 major families: Boidae/Candoiidae, Viperidae, Elapidae, and Colubridae):
+1. **`candoia_aspera` (New Guinea Ground Boa, Boidae/Candoiidae)** — Basal constrictor (Henophidia)
+2. **`vipera_berus` (Common European Adder, Viperidae)** — Solenoglyphous venomous viper
+3. **`notechis_scutatus` (Mainland Tiger Snake, Elapidae)** — Proteroglyphous neurotoxic elapid
+4. **`pantherophis_guttatus` (Corn Snake, Colubridae)** — Premier squamate genetics model
+5. **`thamnophis_elegans` (Western Garter Snake, Colubridae: Natricinae)** — Semi-aquatic colubrid
+
+### Key Comparative Findings:
+- **Universal Subunit Polarity Inversion ($\beta > \alpha$)**: While mammals maintain canonical $\alpha \gg \beta$ divergence ($\Delta Z \approx +2.39\sigma$), all five snakes exhibit profound inverted polarity ($\Delta Z = -1.08\sigma$ to $-2.31\sigma$).
+- **Evolutionary Escalation from Henophidia to Caenophidia**:
+  - In the basal boa (*Candoia aspera*), the $\beta$-locus whole-gene Z-score is $+3.25\sigma$ ($\Delta Z = -1.08\sigma$).
+  - In advanced caenophidian snakes, the $\beta$-locus reaches extraordinary GC elevation: Viperidae (*Vipera berus*, $+3.80\sigma, \Delta Z = -2.00\sigma$), Elapidae (*Notechis scutatus*, $+4.09\sigma, \Delta Z = -1.89\sigma$), and Colubridae (*Pantherophis guttatus*, $+4.20\sigma, \Delta Z = -2.31\sigma$; *Thamnophis elegans*, $+3.93\sigma, \Delta Z = -1.85\sigma$).
+- **Mechanistic Driver (Terminal Subtelomeric Insertion)**: Both $\alpha$ and $\beta$ loci in all snakes are localized within $<0.01$ (the terminal 1%) of the chromosome arm, embedded in dense olfactory receptor clusters and flanked by $RRM1$/$STIM1$ ($\beta$) and $RHBDF1$/$MPG$/$NPRL3$ ($\alpha$), subjecting the $\beta$-globin cluster to the most extreme continuous GC-biased gene conversion (gBGC) observed among non-avian vertebrates.
+

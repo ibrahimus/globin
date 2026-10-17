@@ -1174,3 +1174,275 @@ heterocephalus_glaber,amniote_mammal,beta_globin,NW_004624817.1,GeneID:101718529
 ",beta_globin,HBG,True,6713412,6714951,1539,-,LOC101718529
 heterocephalus_glaber,amniote_mammal,beta_globin,NW_004624817.1,GeneID:101718875,LOC101718875,LOC101718875,"protein_coding
 ",cluster_non_globin,intervening_gene,False,6741866,6742802,936,-,LOC101718875
+vipera_berus,amniote_reptile,alpha_globin,NC_138216.1,GeneID:308674117,LOC308674117,LOC308674117,protein_coding,cluster_non_globin,intervening_gene,False,98267,106025,7758,-,histone-lysine N-methyltransferase EHMT2-like
+vipera_berus,amniote_reptile,alpha_globin,NC_138216.1,GeneID:308673892,PDIA2,PDIA2,protein_coding,cluster_non_globin,PDIA2,False,106145,110856,4711,+,protein disulfide isomerase family A member 2
+vipera_berus,amniote_reptile,alpha_globin,NC_138216.1,GeneID:308674116,AXIN1,AXIN1,protein_coding,cluster_non_globin,AXIN1,False,111861,121469,9608,-,axin 1
+vipera_berus,amniote_reptile,alpha_globin,NC_138216.1,GeneID:308674187,MRPL28,MRPL28,protein_coding,cluster_non_globin,intervening_gene,False,123336,126694,3358,-,mitochondrial ribosomal protein L28
+vipera_berus,amniote_reptile,alpha_globin,NC_138216.1,GeneID:308674186,PGAP6,PGAP6,protein_coding,cluster_non_globin,PGAP6,False,126696,132582,5886,-,post-GPI attachment to proteins 6
+vipera_berus,amniote_reptile,alpha_globin,NC_138216.1,GeneID:308674188,LOC308674188,HBA_like,protein_coding,alpha_globin,HBA,True,132624,136816,4192,+,myoglobin-like
+vipera_berus,amniote_reptile,alpha_globin,NC_138216.1,GeneID:308674198,LOC308674198,HBAD_like,protein_coding,alpha_globin,HBAD,True,138784,139656,872,-,hemoglobin subunit alpha-D
+vipera_berus,amniote_reptile,alpha_globin,NC_138216.1,GeneID:308674196,NPRL3,NPRL3,protein_coding,cluster_non_globin,NPRL3,False,141858,155475,13617,+,"NPR3 like, GATOR1 complex subunit"
+vipera_berus,amniote_reptile,alpha_globin,NC_138216.1,GeneID:308674197,MPG,MPG,protein_coding,cluster_non_globin,MPG,False,155528,156826,1298,-,N-methylpurine DNA glycosylase
+vipera_berus,amniote_reptile,alpha_globin,NC_138216.1,GeneID:308673936,RHBDF1,RHBDF1,protein_coding,cluster_non_globin,RHBDF1,False,159671,171652,11981,+,rhomboid 5 homolog 1
+vipera_berus,amniote_reptile,alpha_globin,NC_138216.1,GeneID:308673938,SNRNP25,SNRNP25,protein_coding,cluster_non_globin,SNRNP25,False,172164,173547,1383,-,small nuclear ribonucleoprotein U11/U12 subunit 25
+vipera_berus,amniote_reptile,alpha_globin,NC_138216.1,GeneID:308673939,POLR3K,POLR3K,protein_coding,cluster_non_globin,POLR3K,False,173417,174066,649,+,RNA polymerase III subunit K
+vipera_berus,amniote_reptile,alpha_globin,NC_138216.1,GeneID:308673935,GTF3C1,GTF3C1,protein_coding,cluster_non_globin,GTF3C1,False,174037,194853,20816,-,general transcription factor IIIC subunit 1
+vipera_berus,amniote_reptile,alpha_globin,NC_138216.1,GeneID:308674121,KATNIP,KATNIP,protein_coding,cluster_non_globin,intervening_gene,False,194957,214354,19397,+,katanin interacting protein
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308667837,LOC308667837,LOC308667837,protein_coding,cluster_non_globin,intervening_gene,False,414441,421237,6796,-,borealin-like
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308667846,LOC308667846,HBB1_like,protein_coding,beta_globin,HBB,True,425437,426538,1101,+,hemoglobin subunit beta-1
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308667833,LOC308667833,HBB2_like,protein_coding,beta_globin,HBB,True,439145,440141,996,+,hemoglobin subunit beta-2
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308667836,LOC308667836,LOC308667836,protein_coding,cluster_non_globin,intervening_gene,False,447485,449022,1537,+,olfactory receptor 51I2-like
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308667830,LOC308667830,LOC308667830,protein_coding,cluster_non_globin,intervening_gene,False,456598,458566,1968,-,ubiquilin-1-like
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308668020,LOC308668020,LOC308668020,protein_coding,cluster_non_globin,intervening_gene,False,462097,463474,1377,-,ubiquilin-1-like
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308667842,LOC308667842,LOC308667842,protein_coding,cluster_non_globin,intervening_gene,False,481924,483532,1608,-,LOC308667842
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308667831,LOC308667831,LOC308667831,protein_coding,cluster_non_globin,intervening_gene,False,507700,509392,1692,-,ubiquilin-1-like
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308667849,LOC308667849,HBE_like,protein_coding,beta_globin,HBE,True,520990,521998,1008,+,hemoglobin subunit epsilon-like
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308667845,LOC308667845,LOC308667845,protein_coding,cluster_non_globin,intervening_gene,False,548258,550361,2103,+,LOC308667845
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308667835,LOC308667835,LOC308667835,protein_coding,cluster_non_globin,intervening_gene,False,557229,558183,954,-,olfactory receptor 52B2-like
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308668021,LOC308668021,LOC308668021,protein_coding,cluster_non_globin,intervening_gene,False,571921,572707,786,+,olfactory receptor 52P1-like
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308668022,LOC308668022,LOC308668022,protein_coding,cluster_non_globin,intervening_gene,False,577610,578561,951,+,olfactory receptor 51B6-like
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308667844,RPS11,RPS11,protein_coding,cluster_non_globin,intervening_gene,False,586539,590059,3520,-,ribosomal protein S11
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308668023,LOC308668023,LOC308668023,protein_coding,cluster_non_globin,intervening_gene,False,592054,593005,951,-,olfactory receptor 52P1-like
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308668024,LOC308668024,LOC308668024,protein_coding,cluster_non_globin,intervening_gene,False,598690,599689,999,+,olfactory receptor 51G2-like
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308667843,LOC308667843,LOC308667843,protein_coding,cluster_non_globin,intervening_gene,False,601991,606777,4786,+,borealin-like
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308668025,LOC308668025,LOC308668025,protein_coding,cluster_non_globin,intervening_gene,False,606089,614463,8374,+,olfactory receptor 51H1-like
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308668026,LOC308668026,LOC308668026,protein_coding,cluster_non_globin,intervening_gene,False,623612,639242,15630,+,LOC308668026
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308668027,LOC308668027,LOC308668027,protein_coding,cluster_non_globin,intervening_gene,False,639634,640591,957,+,olfactory receptor 52D1-like
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308668028,LOC308668028,LOC308668028,protein_coding,cluster_non_globin,intervening_gene,False,645322,646300,978,-,olfactory receptor 52K1-like
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308668030,LOC308668030,LOC308668030,protein_coding,cluster_non_globin,intervening_gene,False,664746,665703,957,+,olfactory receptor OR51C1-like
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308667565,RRM1,RRM1,protein_coding,cluster_non_globin,RRM1,False,680227,706117,25890,-,ribonucleotide reductase catalytic subunit M1
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308667131,LOC308667131,LOC308667131,protein_coding,cluster_non_globin,intervening_gene,False,708291,723861,15570,+,sodium-dependent proline transporter-like
+vipera_berus,amniote_reptile,beta_globin,NC_138206.1,GeneID:308667829,STIM1,STIM1,protein_coding,cluster_non_globin,STIM1,False,724118,793265,69147,-,stromal interaction molecule 1
+candoia_aspera,amniote_reptile,alpha_globin,NC_086166.1,GeneID:134505104,PDIA2,PDIA2,"protein_coding
+",cluster_non_globin,PDIA2,False,102931,108983,6052,+,protein disulfide isomerase family A member 2
+candoia_aspera,amniote_reptile,alpha_globin,NC_086166.1,GeneID:134505101,AXIN1,AXIN1,"protein_coding
+",cluster_non_globin,AXIN1,False,109577,123843,14266,-,axin 1
+candoia_aspera,amniote_reptile,alpha_globin,NC_086166.1,GeneID:134505105,MRPL28,MRPL28,"protein_coding
+",cluster_non_globin,intervening_gene,False,126260,128953,2693,-,mitochondrial ribosomal protein L28
+candoia_aspera,amniote_reptile,alpha_globin,NC_086166.1,GeneID:134505102,PGAP6,PGAP6,"protein_coding
+",cluster_non_globin,PGAP6,False,135851,143212,7361,-,post-GPI attachment to proteins 6
+candoia_aspera,amniote_reptile,alpha_globin,NC_086166.1,GeneID:134505371,LOC134505371,HBA_like,"protein_coding
+",alpha_globin,HBA,True,143821,150039,6218,+,cytoglobin-1-like
+candoia_aspera,amniote_reptile,alpha_globin,NC_086166.1,GeneID:134505464,LOC134505464,HBAD_like,"protein_coding
+",alpha_globin,HBAD,True,151355,152216,861,-,hemoglobin subunit alpha-D-like
+candoia_aspera,amniote_reptile,alpha_globin,NC_086166.1,GeneID:134505443,NPRL3,NPRL3,"protein_coding
+",cluster_non_globin,NPRL3,False,155477,170701,15224,+,"NPR3 like, GATOR1 complex subunit"
+candoia_aspera,amniote_reptile,alpha_globin,NC_086166.1,GeneID:134505444,MPG,MPG,"protein_coding
+",cluster_non_globin,MPG,False,171046,172534,1488,-,N-methylpurine DNA glycosylase
+candoia_aspera,amniote_reptile,alpha_globin,NC_086166.1,GeneID:134505423,RHBDF1,RHBDF1,"protein_coding
+",cluster_non_globin,RHBDF1,False,185939,193135,7196,+,rhomboid 5 homolog 1
+candoia_aspera,amniote_reptile,alpha_globin,NC_086166.1,GeneID:134505424,SNRNP25,SNRNP25,"protein_coding
+",cluster_non_globin,SNRNP25,False,193465,194814,1349,-,small nuclear ribonucleoprotein U11/U12 subunit 25
+candoia_aspera,amniote_reptile,alpha_globin,NC_086166.1,GeneID:134505425,POLR3K,POLR3K,"protein_coding
+",cluster_non_globin,POLR3K,False,194862,195407,545,+,RNA polymerase III subunit K
+candoia_aspera,amniote_reptile,alpha_globin,NC_086166.1,GeneID:134505337,GTF3C1,GTF3C1,"protein_coding
+",cluster_non_globin,GTF3C1,False,195471,220451,24980,-,general transcription factor IIIC subunit 1
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134499363,RHOG,RHOG,"protein_coding
+",cluster_non_globin,intervening_gene,False,116443351,116457048,13697,-,ras homolog family member G
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134499351,STIM1,STIM1,"protein_coding
+",cluster_non_globin,STIM1,False,116458975,116555290,96315,+,stromal interaction molecule 1
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134498610,LOC134498610,LOC134498610,"protein_coding
+",cluster_non_globin,intervening_gene,False,116556387,116572742,16355,-,sodium-dependent proline transporter-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134499350,RRM1,RRM1,"protein_coding
+",cluster_non_globin,RRM1,False,116574879,116592144,17265,+,ribonucleotide reductase catalytic subunit M1
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134498612,LOC134498612,LOC134498612,"protein_coding
+",cluster_non_globin,intervening_gene,False,116616653,116617619,966,+,olfactory receptor 52M1-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134498613,LOC134498613,LOC134498613,"protein_coding
+",cluster_non_globin,intervening_gene,False,116621295,116651529,30234,-,olfactory receptor 52D1-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134498268,LOC134498268,LOC134498268,"protein_coding
+",cluster_non_globin,intervening_gene,False,116624574,116625543,969,+,olfactory receptor 52N4-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134498269,LOC134498269,LOC134498269,"protein_coding
+",cluster_non_globin,intervening_gene,False,116631037,116632067,1030,+,olfactory receptor 52K1-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134499358,LOC134499358,LOC134499358,"protein_coding
+",cluster_non_globin,intervening_gene,False,116653029,116654481,1452,-,olfactory receptor 51E2-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134498614,LOC134498614,LOC134498614,"protein_coding
+",cluster_non_globin,intervening_gene,False,116677824,116682970,5146,-,olfactory receptor 51H1-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134499359,LOC134499359,LOC134499359,"protein_coding
+",cluster_non_globin,intervening_gene,False,116689961,116690964,1003,-,olfactory receptor 51G2-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134498615,LOC134498615,LOC134498615,"protein_coding
+",cluster_non_globin,intervening_gene,False,116703239,116706068,2829,+,olfactory receptor 52D1-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134498616,LOC134498616,LOC134498616,protein_coding,cluster_non_globin,intervening_gene,False,116714419,116722051,7632,-,olfactory receptor 52P1-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134499362,LOC134499362,LOC134499362,"protein_coding
+",cluster_non_globin,intervening_gene,False,116728308,116733876,5568,-,olfactory receptor 52K1-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134498617,LOC134498617,LOC134498617,"protein_coding
+",cluster_non_globin,intervening_gene,False,116747884,116748832,948,+,olfactory receptor 52P1-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134498618,LOC134498618,LOC134498618,"protein_coding
+",cluster_non_globin,intervening_gene,False,116764764,116766289,1525,+,olfactory receptor 52K1-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134498619,LOC134498619,LOC134498619,"protein_coding
+",cluster_non_globin,intervening_gene,False,116768490,116769482,992,+,olfactory receptor 51G2-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134498620,LOC134498620,LOC134498620,"protein_coding
+",cluster_non_globin,intervening_gene,False,116776889,116777888,999,+,olfactory receptor 51G2-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134498621,LOC134498621,LOC134498621,"protein_coding
+",cluster_non_globin,intervening_gene,False,116781773,116784144,2371,-,olfactory receptor 52K2-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134499354,LOC134499354,LOC134499354,"protein_coding
+",cluster_non_globin,intervening_gene,False,116790456,116798421,7965,+,small ribosomal subunit protein uS17
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134499357,LOC134499357,LOC134499357,"protein_coding
+",cluster_non_globin,intervening_gene,False,116803681,116804644,963,+,olfactory receptor 52P1-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134498622,LOC134498622,LOC134498622,"protein_coding
+",cluster_non_globin,intervening_gene,False,116811166,116812115,949,+,olfactory receptor 51V1-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134499360,LOC134499360,LOC134499360,"protein_coding
+",cluster_non_globin,intervening_gene,False,116830216,116831326,1110,+,olfactory receptor 52B2-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134499353,LOC134499353,LOC134499353,"protein_coding
+",cluster_non_globin,intervening_gene,False,116832787,116834296,1509,+,ubiquilin-1-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134498624,LOC134498624,LOC134498624,"protein_coding
+",cluster_non_globin,intervening_gene,False,116850724,116852113,1389,+,ubiquilin-1-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134499352,LOC134499352,LOC134499352,"protein_coding
+",cluster_non_globin,intervening_gene,False,116860319,116862146,1827,+,ubiquilin-1-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134498625,LOC134498625,LOC134498625,"protein_coding
+",cluster_non_globin,intervening_gene,False,116870348,116872067,1719,+,ubiquilin-1-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134498626,LOC134498626,LOC134498626,"protein_coding
+",cluster_non_globin,intervening_gene,False,116876369,116878016,1647,-,olfactory receptor 51I2-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134499366,LOC134499366,HBB2_like,"protein_coding
+",beta_globin,HBB,True,116893064,116894217,1153,-,hemoglobin subunit beta-2-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134499367,LOC134499367,HBB1_like,"protein_coding
+",beta_globin,HBB,True,116905353,116906308,955,-,hemoglobin subunit beta-1-like
+candoia_aspera,amniote_reptile,beta_globin,NC_086157.1,GeneID:134499361,CDCA8,CDCA8,"protein_coding
+",cluster_non_globin,intervening_gene,False,116916350,116921614,5264,+,cell division cycle associated 8
+notechis_scutatus,amniote_reptile,alpha_globin,NC_142020.1,GeneID:113422390,KATNIP,KATNIP,"protein_coding
+",cluster_non_globin,intervening_gene,False,17146494,17165986,19492,-,katanin interacting protein
+notechis_scutatus,amniote_reptile,alpha_globin,NC_142020.1,GeneID:113422389,GTF3C1,GTF3C1,"protein_coding
+",cluster_non_globin,GTF3C1,False,17166007,17186771,20764,+,general transcription factor IIIC subunit 1
+notechis_scutatus,amniote_reptile,alpha_globin,NC_142020.1,GeneID:113422395,POLR3K,POLR3K,"protein_coding
+",cluster_non_globin,POLR3K,False,17186739,17187311,572,-,RNA polymerase III subunit K
+notechis_scutatus,amniote_reptile,alpha_globin,NC_142020.1,GeneID:113422394,SNRNP25,SNRNP25,"protein_coding
+",cluster_non_globin,SNRNP25,False,17187340,17188708,1368,+,small nuclear ribonucleoprotein U11/U12 subunit 25
+notechis_scutatus,amniote_reptile,alpha_globin,NC_142020.1,GeneID:113422391,RHBDF1,RHBDF1,"protein_coding
+",cluster_non_globin,RHBDF1,False,17188826,17200502,11676,-,rhomboid 5 homolog 1
+notechis_scutatus,amniote_reptile,alpha_globin,NC_142020.1,GeneID:113422424,MPG,MPG,"protein_coding
+",cluster_non_globin,MPG,False,17203519,17205130,1611,+,N-methylpurine DNA glycosylase
+notechis_scutatus,amniote_reptile,alpha_globin,NC_142020.1,GeneID:113422422,NPRL3,NPRL3,"protein_coding
+",cluster_non_globin,NPRL3,False,17205076,17218808,13732,-,"NPR3 like, GATOR1 complex subunit"
+notechis_scutatus,amniote_reptile,alpha_globin,NC_142020.1,GeneID:113422343,LOC113422343,HBAD_like,"protein_coding
+",alpha_globin,HBAD,True,17221352,17222575,1223,+,hemoglobin subunit alpha-D
+notechis_scutatus,amniote_reptile,alpha_globin,NC_142020.1,GeneID:113422342,LOC113422342,HBA_like,"protein_coding
+",alpha_globin,HBA,True,17224418,17226766,2348,-,myoglobin-like
+notechis_scutatus,amniote_reptile,alpha_globin,NC_142020.1,GeneID:113422341,PGAP6,PGAP6,"protein_coding
+",cluster_non_globin,PGAP6,False,17227011,17233510,6499,+,post-GPI attachment to proteins 6
+notechis_scutatus,amniote_reptile,alpha_globin,NC_142020.1,GeneID:113422419,MRPL28,MRPL28,"protein_coding
+",cluster_non_globin,intervening_gene,False,17233772,17235667,1895,+,mitochondrial ribosomal protein L28
+notechis_scutatus,amniote_reptile,alpha_globin,NC_142020.1,GeneID:113422418,AXIN1,AXIN1,"protein_coding
+",cluster_non_globin,AXIN1,False,17238464,17248583,10119,+,axin 1
+notechis_scutatus,amniote_reptile,alpha_globin,NC_142020.1,GeneID:113422420,PDIA2,PDIA2,"protein_coding
+",cluster_non_globin,PDIA2,False,17249182,17254426,5244,-,protein disulfide isomerase family A member 2
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113427596,LOC113427596,LOC113427596,"protein_coding
+",cluster_non_globin,intervening_gene,False,203342,204293,951,-,olfactory receptor 52B2-like
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113427603,LOC113427603,LOC113427603,"protein_coding
+",cluster_non_globin,intervening_gene,False,208500,213149,4649,-,borealin
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113430661,LOC113430661,HBB1_like,"protein_coding
+",beta_globin,HBB,True,221830,222956,1126,+,hemoglobin subunit beta-1
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113427597,LOC113427597,HBB_like,"protein_coding
+",beta_globin,HBB,True,233885,235062,1177,+,hemoglobin subunit beta
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113427593,LOC113427593,LOC113427593,"protein_coding
+",cluster_non_globin,intervening_gene,False,254553,256329,1776,-,ubiquilin-1-like
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113427598,LOC113427598,LOC113427598,"protein_coding
+",cluster_non_globin,intervening_gene,False,258754,260038,1284,-,ubiquilin-1-like
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113427594,LOC113427594,LOC113427594,"protein_coding
+",cluster_non_globin,intervening_gene,False,262063,263575,1512,-,ubiquilin-1-like
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113427595,LOC113427595,LOC113427595,"protein_coding
+",cluster_non_globin,intervening_gene,False,267175,268712,1537,-,olfactory receptor 52B2-like
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113429390,LOC113429390,LOC113429390,"protein_coding
+",cluster_non_globin,intervening_gene,False,292054,293014,960,+,olfactory receptor 52P1-like
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113429623,LOC113429623,LOC113429623,"protein_coding
+",cluster_non_globin,intervening_gene,False,302062,303022,960,+,olfactory receptor 52P1-like
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113427605,LOC113427605,LOC113427605,"protein_coding
+",cluster_non_globin,intervening_gene,False,307276,308225,949,+,olfactory receptor 51G2-like
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113427604,RPS11,RPS11,"protein_coding
+",cluster_non_globin,intervening_gene,False,313804,316681,2877,-,ribosomal protein S11
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113429028,LOC113429028,LOC113429028,"protein_coding
+",cluster_non_globin,intervening_gene,False,318693,319913,1220,-,olfactory receptor 52P1-like
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113429738,LOC113429738,LOC113429738,"protein_coding
+",cluster_non_globin,intervening_gene,False,343295,346541,3246,+,olfactory receptor 51E2-like
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113427616,LOC113427616,LOC113427616,"protein_coding
+",cluster_non_globin,intervening_gene,False,350440,353051,2611,+,olfactory receptor 52D1-like
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113427611,LOC113427611,LOC113427611,"protein_coding
+",cluster_non_globin,intervening_gene,False,365879,366926,1047,+,olfactory receptor 52K1-like
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113427614,RRM1,RRM1,"protein_coding
+",cluster_non_globin,RRM1,False,369405,387502,18097,-,ribonucleotide reductase catalytic subunit M1
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113431408,LOC113431408,LOC113431408,"protein_coding
+",cluster_non_globin,intervening_gene,False,389798,405960,16162,+,sodium-dependent proline transporter-like
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113427612,STIM1,STIM1,"protein_coding
+",cluster_non_globin,STIM1,False,406183,470102,63919,-,stromal interaction molecule 1
+notechis_scutatus,amniote_reptile,beta_globin,NC_142013.1,GeneID:113429832,RHOG,RHOG,"protein_coding
+",cluster_non_globin,intervening_gene,False,473745,489021,15276,+,ras homolog family member G
+pantherophis_guttatus,amniote_reptile,alpha_globin,NC_142076.1,GeneID:117679453,KATNIP,KATNIP,"protein_coding
+",cluster_non_globin,intervening_gene,False,22916689,22937604,20915,-,katanin interacting protein
+pantherophis_guttatus,amniote_reptile,alpha_globin,NC_142076.1,GeneID:117679445,GTF3C1,GTF3C1,"protein_coding
+",cluster_non_globin,GTF3C1,False,22937452,22962273,24821,+,general transcription factor IIIC subunit 1
+pantherophis_guttatus,amniote_reptile,alpha_globin,NC_142076.1,GeneID:117679452,POLR3K,POLR3K,"protein_coding
+",cluster_non_globin,POLR3K,False,22962245,22962846,601,-,RNA polymerase III subunit K
+pantherophis_guttatus,amniote_reptile,alpha_globin,NC_142076.1,GeneID:117679450,SNRNP25,SNRNP25,"protein_coding
+",cluster_non_globin,SNRNP25,False,22962879,22964317,1438,+,small nuclear ribonucleoprotein U11/U12 subunit 25
+pantherophis_guttatus,amniote_reptile,alpha_globin,NC_142076.1,GeneID:117679446,RHBDF1,RHBDF1,"protein_coding
+",cluster_non_globin,RHBDF1,False,22964714,22976680,11966,-,rhomboid 5 homolog 1
+pantherophis_guttatus,amniote_reptile,alpha_globin,NC_142076.1,GeneID:148112128,LOC148112128,LOC148112128,"protein_coding
+",cluster_non_globin,intervening_gene,False,22976023,22978310,2287,+,uncharacterized LOC148112128
+pantherophis_guttatus,amniote_reptile,alpha_globin,NC_142076.1,GeneID:117679448,MPG,MPG,"protein_coding
+",cluster_non_globin,MPG,False,22980102,22981558,1456,+,N-methylpurine DNA glycosylase
+pantherophis_guttatus,amniote_reptile,alpha_globin,NC_142076.1,GeneID:117679447,NPRL3,NPRL3,"protein_coding
+",cluster_non_globin,NPRL3,False,22981501,22997115,15614,-,"NPR3 like, GATOR1 complex subunit"
+pantherophis_guttatus,amniote_reptile,alpha_globin,NC_142076.1,GeneID:117679451,LOC117679451,HBAD_like,"protein_coding
+",alpha_globin,HBAD,True,22999886,23001026,1140,+,hemoglobin subunit alpha-D
+pantherophis_guttatus,amniote_reptile,alpha_globin,NC_142076.1,GeneID:117679444,LOC117679444,HBA_like,"protein_coding
+",alpha_globin,HBA,True,23007270,23010271,3001,-,myoglobin-like
+pantherophis_guttatus,amniote_reptile,alpha_globin,NC_142076.1,GeneID:117679435,PGAP6,PGAP6,"protein_coding
+",cluster_non_globin,PGAP6,False,23012550,23021005,8455,+,post-GPI attachment to proteins 6
+pantherophis_guttatus,amniote_reptile,alpha_globin,NC_142076.1,GeneID:117679442,MRPL28,MRPL28,"protein_coding
+",cluster_non_globin,intervening_gene,False,23021178,23023270,2092,+,mitochondrial ribosomal protein L28
+pantherophis_guttatus,amniote_reptile,alpha_globin,NC_142076.1,GeneID:117679434,AXIN1,AXIN1,"protein_coding
+",cluster_non_globin,AXIN1,False,23024986,23035429,10443,+,axin 1
+pantherophis_guttatus,amniote_reptile,alpha_globin,NC_142076.1,GeneID:117679439,PDIA2,PDIA2,"protein_coding
+",cluster_non_globin,PDIA2,False,23035966,23042665,6699,-,protein disulfide isomerase family A member 2
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117656762,LOC117656762,LOC117656762,"protein_coding
+",cluster_non_globin,intervening_gene,False,634308,640763,6455,-,olfactory receptor 52Z1P-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117656767,CDCA8,CDCA8,"protein_coding
+",cluster_non_globin,intervening_gene,False,646710,652615,5905,-,cell division cycle associated 8
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117656765,LOC117656765,HBB1_like,"protein_coding
+",beta_globin,HBB,True,656852,658656,1804,+,hemoglobin subunit beta-1
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117656766,LOC117656766,HBB2_like,"protein_coding
+",beta_globin,HBB,True,667972,669732,1760,+,hemoglobin subunit beta-2
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117656763,LOC117656763,LOC117656763,"protein_coding
+",cluster_non_globin,intervening_gene,False,676782,677739,957,+,olfactory receptor 51G1-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117656764,LOC117656764,LOC117656764,"protein_coding
+",cluster_non_globin,intervening_gene,False,680679,681603,924,+,olfactory receptor 51I2-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117676457,LOC117676457,LOC117676457,"protein_coding
+",cluster_non_globin,intervening_gene,False,697946,703344,5398,-,ubiquilin-1-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117676460,LOC117676460,LOC117676460,"protein_coding
+",cluster_non_globin,intervening_gene,False,701533,703344,1811,-,ubiquilin-1-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117676461,LOC117676461,LOC117676461,"protein_coding
+",cluster_non_globin,intervening_gene,False,705445,712965,7520,-,olfactory receptor 52B2-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117676458,LOC117676458,LOC117676458,"protein_coding
+",cluster_non_globin,intervening_gene,False,705445,707307,1862,-,ubiquilin-1-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117676476,LOC117676476,LOC117676476,"protein_coding
+",cluster_non_globin,intervening_gene,False,717244,719018,1774,+,olfactory receptor 52P1-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117676475,LOC117676475,LOC117676475,"protein_coding
+",cluster_non_globin,intervening_gene,False,722041,722992,951,+,olfactory receptor 51V1-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117676456,LOC117676456,LOC117676456,"protein_coding
+",cluster_non_globin,intervening_gene,False,729878,732783,2905,-,small ribosomal subunit protein uS17
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:148113268,LOC148113268,LOC148113268,"protein_coding
+",cluster_non_globin,intervening_gene,False,734817,735768,951,-,olfactory receptor 52P1-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117676473,LOC117676473,LOC117676473,"protein_coding
+",cluster_non_globin,intervening_gene,False,745661,746707,1046,+,olfactory receptor 52P1-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117676415,LOC117676415,LOC117676415,"protein_coding
+",cluster_non_globin,intervening_gene,False,752744,756656,3912,+,olfactory receptor 51G2-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117676414,LOC117676414,LOC117676414,"protein_coding
+",cluster_non_globin,intervening_gene,False,760336,761710,1374,+,olfactory receptor 51G2-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117676453,LOC117676453,LOC117676453,"protein_coding
+",cluster_non_globin,intervening_gene,False,765633,770884,5251,+,olfactory receptor 51H1-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117676452,LOC117676452,LOC117676452,"protein_coding
+",cluster_non_globin,intervening_gene,False,774947,779163,4216,+,olfactory receptor 51E2-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117676455,LOC117676455,LOC117676455,"protein_coding
+",cluster_non_globin,intervening_gene,False,774963,785931,10968,+,olfactory receptor 52D1-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117676454,LOC117676454,LOC117676454,"protein_coding
+",cluster_non_globin,intervening_gene,False,789164,790358,1194,-,olfactory receptor 52K1-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117660131,LOC117660131,LOC117660131,"protein_coding
+",cluster_non_globin,intervening_gene,False,822880,823912,1032,+,olfactory receptor 52K1-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117676450,LOC117676450,LOC117676450,"protein_coding
+",cluster_non_globin,intervening_gene,False,825518,829735,4217,+,olfactory receptor 52K1-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117676449,RRM1,RRM1,"protein_coding
+",cluster_non_globin,RRM1,False,830919,849241,18322,-,ribonucleotide reductase catalytic subunit M1
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117676448,LOC117676448,LOC117676448,"protein_coding
+",cluster_non_globin,intervening_gene,False,851214,867665,16451,+,sodium-dependent proline transporter-like
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117676472,STIM1,STIM1,"protein_coding
+",cluster_non_globin,STIM1,False,867935,924609,56674,-,stromal interaction molecule 1
+pantherophis_guttatus,amniote_reptile,beta_globin,NC_142067.1,GeneID:117676447,RHOG,RHOG,"protein_coding
+",cluster_non_globin,intervening_gene,False,927638,941579,13941,+,ras homolog family member G

@@ -15,7 +15,7 @@ This report summarizes the comparative genomic and composition analysis of verte
 | amniote_crocodylian |             1 |          2 |            1.5e+06     |           48.44 |            50.39 |                48.28 |                53.1  |             67.94 |                    10 |
 | amniote_mammal      |            14 |         28 |       147570           |           45.08 |            53.68 |                44.36 |                57.93 |             61.37 |                   126 |
 | amniote_monotreme   |             1 |          2 |       230000           |           50.56 |            59.6  |                50.19 |                61.31 |             78.06 |                     5 |
-| amniote_reptile     |             9 |         18 |       322501           |           51.02 |            55.88 |                50.34 |                60.22 |             58.24 |                    51 |
+| amniote_reptile     |            13 |         26 |       294616           |           51.2  |            56.27 |                50.3  |                59.61 |             53.88 |                    68 |
 | amphibian           |             7 |         11 |            1.82455e+06 |           44.03 |            47.97 |                43.94 |                53.08 |             49.69 |                    91 |
 | chondrichthyes      |             1 |          1 |       280001           |           49.67 |            42.47 |                49.75 |                47.53 |             46.4  |                     4 |
 | cyclostome          |             3 |          3 |       420001           |           47.52 |            55.23 |                47.01 |                57.78 |             56.75 |                    15 |
@@ -117,6 +117,14 @@ This report summarizes the comparative genomic and composition analysis of verte
 | scyliorhinus_canicula        | Small-spotted Catshark (S. canicula)     | chondrichthyes      | alpha_beta_cluster   | NC_052160.1    |      280001 |        49.67 |                47.53 |             46.4  |             4 |
 | heterocephalus_glaber        | Naked Mole-Rat (H. glaber)               | amniote_mammal      | alpha_globin         | NW_004624913.1 |      200001 |        48.01 |                59.27 |             41.26 |             4 |
 | heterocephalus_glaber        | Naked Mole-Rat (H. glaber)               | amniote_mammal      | beta_globin          | NW_004624817.1 |      100001 |        36.23 |                53.7  |             59.7  |             3 |
+| vipera_berus                 | Adder (V. berus)                         | amniote_reptile     | alpha_globin         | NC_138216.1    |      100001 |        51.98 |                54.02 |             48.26 |             2 |
+| vipera_berus                 | Adder (V. berus)                         | amniote_reptile     | beta_globin          | NC_138206.1    |      385001 |        50.85 |                63.77 |             37.99 |             3 |
+| candoia_aspera               | Ground Boa (C. aspera)                   | amniote_reptile     | alpha_globin         | NC_086166.1    |      115001 |        53.45 |                56.52 |             49.72 |             2 |
+| candoia_aspera               | Ground Boa (C. aspera)                   | amniote_reptile     | beta_globin          | NC_086157.1    |      480001 |        51.11 |                59.46 |             55.07 |             2 |
+| notechis_scutatus            | Tiger Snake (N. scutatus)                | amniote_reptile     | alpha_globin         | NC_142020.1    |       95001 |        52.98 |                53.8  |             43.9  |             2 |
+| notechis_scutatus            | Tiger Snake (N. scutatus)                | amniote_reptile     | beta_globin          | NC_142013.1    |      280001 |        52.95 |                63.74 |             37.16 |             2 |
+| pantherophis_guttatus        | Corn Snake (P. guttatus)                 | amniote_reptile     | alpha_globin         | NC_142076.1    |      110001 |        50.05 |                51.25 |             42.27 |             2 |
+| pantherophis_guttatus        | Corn Snake (P. guttatus)                 | amniote_reptile     | beta_globin          | NC_142067.1    |      290001 |        49.27 |                63.17 |             38.17 |             2 |
 
 ## 3. Key Biological Insights
 

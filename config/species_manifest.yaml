@@ -1248,4 +1248,96 @@ species:
       left_gene: LOC101696428
       right_gene: LOC101718529
       notes: 'Subterranean hypoxia extremophile beta locus on NW_004624817.1: LOC101696428 (HBB) - LOC101718185 (HBE) - LOC101718529 (HBG)'
+  vipera_berus:
+    common_name: Adder (V. berus)
+    clade: amniote_reptile
+    division: NCBI_RefSeq
+    assembly: rVipBer3.hap1.1
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_138216.1
+      start: 100000
+      end: 200000
+      strand: '+'
+      left_gene: AXIN1
+      right_gene: GTF3C1
+      notes: 'European adder alpha-globin locus on chr13 (NC_138216.1): AXIN1 - MRPL28 - PGAP6 - LOC308674188 (HBA_like) - LOC308674198 (HBAD_like) - NPRL3 - MPG - RHBDF1 - SNRNP25 - POLR3K - GTF3C1'
+    - locus_id: beta_globin
+      chromosome: NC_138206.1
+      start: 410000
+      end: 795000
+      strand: '+'
+      left_gene: LOC308667846
+      right_gene: STIM1
+      notes: 'European adder beta-globin locus on chr4 (NC_138206.1): LOC308667846 (HBB1) - LOC308667833 (HBB2) - OR cluster - LOC308667849 (HBE_like) - RRM1 - STIM1'
+  candoia_aspera:
+    common_name: Ground Boa (C. aspera)
+    clade: amniote_reptile
+    division: NCBI_RefSeq
+    assembly: rCanAsp1.hap2
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_086166.1
+      start: 105000
+      end: 220000
+      strand: '+'
+      left_gene: AXIN1
+      right_gene: GTF3C1
+      notes: 'New Guinea ground boa (basal constrictor Henophidia) alpha-globin locus on chr14 (NC_086166.1): AXIN1 - MRPL28 - PGAP6 - LOC134505371 (HBA_like) - LOC134505464 (HBAD_like) - NPRL3 - MPG - RHBDF1 - SNRNP25 - POLR3K - GTF3C1'
+    - locus_id: beta_globin
+      chromosome: NC_086157.1
+      start: 116450000
+      end: 116930000
+      strand: '-'
+      left_gene: STIM1
+      right_gene: CDCA8
+      notes: 'New Guinea ground boa (basal constrictor Henophidia) beta-globin locus on chr5 (NC_086157.1): STIM1 - RRM1 - OR cluster - LOC134499366 (HBB2) - LOC134499367 (HBB1) - CDCA8'
+  notechis_scutatus:
+    common_name: Tiger Snake (N. scutatus)
+    clade: amniote_reptile
+    division: NCBI_RefSeq
+    assembly: rNotScu1.2
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_142020.1
+      start: 17160000
+      end: 17255000
+      strand: '-'
+      left_gene: GTF3C1
+      right_gene: AXIN1
+      notes: 'Mainland tiger snake (neurotoxic elapid) alpha-globin locus on chr12 (NC_142020.1): GTF3C1 - POLR3K - SNRNP25 - RHBDF1 - MPG - NPRL3 - LOC113422343 (HBAD_like) - LOC113422342 (HBA_like) - PGAP6 - MRPL28 - AXIN1'
+    - locus_id: beta_globin
+      chromosome: NC_142013.1
+      start: 200000
+      end: 480000
+      strand: '+'
+      left_gene: LOC113430661
+      right_gene: STIM1
+      notes: 'Mainland tiger snake (neurotoxic elapid) beta-globin locus on chr5 (NC_142013.1): LOC113430661 (HBB1) - LOC113427597 (HBB_like) - OR cluster - RRM1 - STIM1'
+  pantherophis_guttatus:
+    common_name: Corn Snake (P. guttatus)
+    clade: amniote_reptile
+    division: NCBI_RefSeq
+    assembly: ASM5975653v1
+    status: active
+    loci:
+    - locus_id: alpha_globin
+      chromosome: NC_142076.1
+      start: 22930000
+      end: 23040000
+      strand: '-'
+      left_gene: GTF3C1
+      right_gene: AXIN1
+      notes: 'Corn snake (squamate genetics model) alpha-globin locus on chr14 (NC_142076.1): GTF3C1 - POLR3K - SNRNP25 - RHBDF1 - MPG - NPRL3 - LOC117679451 (HBAD_like) - LOC117679444 (HBA_like) - PGAP6 - MRPL28 - AXIN1'
+    - locus_id: beta_globin
+      chromosome: NC_142067.1
+      start: 640000
+      end: 930000
+      strand: '+'
+      left_gene: CDCA8
+      right_gene: STIM1
+      notes: 'Corn snake (squamate genetics model) beta-globin locus on chr5 (NC_142067.1): CDCA8 - LOC117656765 (HBB1) - LOC117656766 (HBB2) - OR cluster - RRM1 - STIM1'
 

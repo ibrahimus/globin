@@ -90,3 +90,11 @@ loxodonta_africana,African Savanna Elephant (L. africana),amniote_mammal,beta_gl
 scyliorhinus_canicula,Small-spotted Catshark (S. canicula),chondrichthyes,alpha_beta_cluster,NC_052160.1,73580000,73860000,280001,49.67,42.47,49.75,47.53,46.4,47.53,46.4,49.64,42.98,57.3,49.64,48.45,51.1,4,4
 heterocephalus_glaber,Naked Mole-Rat (H. glaber),amniote_mammal,alpha_globin,NW_004624913.1,950000,1150000,200001,48.01,55.97,46.96,58.3,50.65,59.27,41.26,47.77,41.14,60.73,46.56,45.22,48.59,4,13
 heterocephalus_glaber,Naked Mole-Rat (H. glaber),amniote_mammal,beta_globin,NW_004624817.1,6650000,6750000,100001,36.23,49.66,35.91,52.11,56.88,53.7,59.7,36.33,33.68,39.24,36.23,36.23,36.23,3,4
+vipera_berus,Adder (V. berus),amniote_reptile,alpha_globin,NC_138216.1,100000,200000,100001,51.98,56.82,49.81,58.33,55.68,54.02,48.26,52.39,46.44,58.5,51.98,51.98,51.98,2,14
+vipera_berus,Adder (V. berus),amniote_reptile,beta_globin,NC_138206.1,410000,795000,385001,50.85,60.08,49.93,59.66,49.5,63.77,37.99,50.71,31.93,61.21,50.11,47.71,53.65,3,25
+candoia_aspera,Ground Boa (C. aspera),amniote_reptile,alpha_globin,NC_086166.1,105000,220000,115001,53.45,57.25,52.24,59.68,57.47,56.52,49.72,53.86,47.28,61.98,54.34,54.34,54.34,2,12
+candoia_aspera,Ground Boa (C. aspera),amniote_reptile,beta_globin,NC_086157.1,116450000,116930000,480001,51.11,54.58,50.8,53.83,45.72,59.46,55.07,51.1,38.93,62.96,51.05,48.46,54.88,2,31
+notechis_scutatus,Tiger Snake (N. scutatus),amniote_reptile,alpha_globin,NC_142020.1,17160000,17255000,95001,52.98,56.83,51.32,58.08,49.31,53.8,43.9,53.37,46.09,59.48,52.98,52.98,52.98,2,13
+notechis_scutatus,Tiger Snake (N. scutatus),amniote_reptile,beta_globin,NC_142013.1,200000,480000,280001,52.95,60.57,52.06,60.78,51.84,63.74,37.16,52.9,39.64,62.67,52.4,49.53,55.26,2,20
+pantherophis_guttatus,Corn Snake (P. guttatus),amniote_reptile,alpha_globin,NC_142076.1,22930000,23040000,110001,50.05,55.27,47.51,58.54,50.74,51.25,42.27,50.2,40.42,56.99,49.86,49.86,49.86,2,14
+pantherophis_guttatus,Corn Snake (P. guttatus),amniote_reptile,beta_globin,NC_142067.1,640000,930000,290001,49.27,55.75,47.94,56.49,49.05,63.17,38.17,49.18,34.48,59.53,48.28,45.6,52.58,2,27

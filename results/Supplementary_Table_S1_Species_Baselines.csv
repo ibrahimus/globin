@@ -24,6 +24,10 @@ anolis_carolinensis,Anole (A. carolinensis),amniote_reptile,Reptilia,rAnoCar3.1.
 pogona_vitticeps,Bearded Dragon (P. vitticeps),amniote_reptile,Reptilia,PviZW2.1,PviZW2.1,19785,44.38,5.34,19785.0,50.23,7.32,54.99,14.42,41.5
 podarcis_muralis,Wall Lizard (P. muralis),amniote_reptile,Reptilia,rPodMur119.hap1.1,rPodMur119.hap1.1,20972,45.42,4.13,20972.0,50.93,6.9,57.24,13.63,44.23
 zootoca_vivipara,Viviparous Lizard (Z. vivipara),amniote_reptile,Reptilia,rZooViv2.hap1.1,rZooViv2.hap1.1,102,45.204031436262255,3.9736560812060766,,50.62717794654874,6.740150032390088,56.574089598154195,13.344235892184566,43.99
+candoia_aspera,Ground Boa (C. aspera),amniote_reptile,Reptilia,rCanAsp1.hap2,rCanAsp1.hap2,43,43.330411758348646,6.244923742202798,,48.74162271695666,7.278632300723343,52.279001404949746,13.907214103294947,41.0
+vipera_berus,Adder (V. berus),amniote_reptile,Reptilia,rVipBer3.hap1.1,rVipBer3.hap1.1,39,43.27307441810805,6.187770377928862,,48.709821695494334,7.656467075539773,52.39278507367072,14.956723238701628,41.0
+notechis_scutatus,Tiger Snake (N. scutatus),amniote_reptile,Reptilia,rNotScu1.2,rNotScu1.2,33,42.10764043126685,6.191268433047721,,48.324495417789755,7.530876444188614,51.756914824797846,14.838245653507268,41.0
+pantherophis_guttatus,Corn Snake (P. guttatus),amniote_reptile,Reptilia,ASM5975653v1,ASM5975653v1,41,42.2112354880321,5.639310191736063,,48.08352634847834,7.238582994336443,51.415545841096936,13.966537773336855,41.0
 thamnophis_elegans,Garter Snake (T. elegans),amniote_reptile,Reptilia,rThaEle1.pri,rThaEle1.pri,19034,42.84,6.26,19034.0,48.3,7.45,51.97,14.82,40.95
 alligator_mississippiensis,Alligator (A. mississippiensis),amniote_crocodylian,Archosauria,rAllMis1,rAllMis1,20433,48.99,8.15,20446.0,52.12,8.89,58.93,16.9,44.0
 struthio_camelus_australis,Ostrich (S. camelus),amniote_bird,Aves,ASM69896v1,ASM69896v1,13,44.231286545703526,7.703120912796682,,48.77627593289969,6.8785185938752855,52.69405888394385,14.701848229780438,42.0
