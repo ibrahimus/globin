@@ -67,6 +67,9 @@ globin-pipeline add-genome \
 
 # 3. Export publication-ready supplementary tables:
 globin-pipeline export-tables --output-dir results/supplementary_tables/
+
+# 4. Generate all plot galleries (diagnostic, chromosome tracks, bivariate with insets):
+globin-pipeline generate-plots --output-dir results/
 ```
 
 ### Python API Usage

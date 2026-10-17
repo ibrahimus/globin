@@ -86,7 +86,37 @@ globin-pipeline export-tables --output-dir results/supplementary_tables/
 
 ---
 
-### 2.3 Running Batch Manifest Pipelines (`run-manifest`)
+### 2.3 Generating Publication Plot Galleries (`generate-plots`)
+Generates high-resolution publication plot galleries in PNG, vector PDF, and interactive Plotly HTML formats. If input files are omitted, it automatically falls back to the bundled 44-species reference datasets.
+
+```bash
+# Generate all 4 gallery types across all 44 species:
+globin-pipeline generate-plots --output-dir results/
+
+# Generate plots for a specific species only:
+globin-pipeline generate-plots --species Homo_sapiens --output-dir results/
+
+# Generate only specific plot types (e.g. chromosome linear tracks and bivariate insets):
+globin-pipeline generate-plots --plot-type chromosome --output-dir results/
+globin-pipeline generate-plots --plot-type bivariate-inset --output-dir results/
+```
+
+**Generated Gallery Directories in `output-dir`:**
+1. `diagnostic_plots/`: Multi-panel diagnostic figures showing whole-chromosome GC distributions, standard deviations ($\pm 1\sigma, \pm 2\sigma$), and individual globin gene percentiles.
+2. `chromosome_plots/`: High-resolution linear chromosome tracks displaying full chromosome arm length, centromere marks, telomeric distances, and zoomed locus architectures.
+3. `bivariate_length_gc_plots/`: Bivariate log10(Coding-Span Length) vs. GC Content scatter plots with density contours.
+4. `bivariate_with_inset_plots/`: High-impact bivariate plots featuring an exaggerated mini chromosome linear inset in the top-right corner.
+
+**Options:**
+- `--species <TEXT>`: Target species (e.g. `Homo_sapiens` or `danio_rerio`). Defaults to all 44 species.
+- `--plot-type [all|diagnostic|chromosome|bivariate|bivariate-inset|meta]`: Specific gallery type to generate (defaults to `all`).
+- `--zscores <PATH>`: Custom Z-scores CSV (defaults to `results/gene_zscores.csv` or bundled data).
+- `--intervals <PATH>`: Custom curated intervals CSV (defaults to `results/curated_intervals.csv` or bundled data).
+- `--output-dir <PATH>`: Destination directory for galleries (defaults to `results`).
+
+---
+
+### 2.4 Running Batch Manifest Pipelines (`run-manifest`)
 Executes end-to-end data processing across all species defined in a YAML manifest:
 
 ```bash

@@ -98,32 +98,94 @@ def zscore(genes, gene_gc, output, stats_output):
     click.echo(f"Statistical comparisons saved to: {stats_output}")
 
 
-@main.command(name="plot-diagnostic")
-@click.option("--zscores", "-z", default="results/gene_zscores.csv", help="Path to gene Z-scores CSV.")
-@click.option("--output-dir", "-o", default="results/diagnostic_plots", help="Directory for plots.")
-def plot_diagnostic(zscores, output_dir):
-    """Generates per-species diagnostic graphs, linear chromosome tracks, and Cell Fig. 6E bivariate plots."""
-    click.echo(f"Generating diagnostic and architectural plots in: {output_dir}...")
-    df_genes = pd.read_csv(zscores)
+@main.command(name="generate-plots")
+@click.option("--species", "-s", default=None, help="Target species (e.g. 'Homo_sapiens'). Defaults to all.")
+@click.option("--zscores", "-z", default=None, help="Path to gene Z-scores CSV (defaults to results/gene_zscores.csv or bundled dataset).")
+@click.option("--intervals", "-i", default=None, help="Path to curated intervals CSV (defaults to results/curated_intervals.csv or bundled dataset).")
+@click.option("--output-dir", "-o", default="results", help="Base output directory for generated galleries.")
+@click.option("--plot-type", "-t", type=click.Choice(["all", "diagnostic", "chromosome", "bivariate", "bivariate-inset", "meta"]), default="all", help="Type of plot to generate.")
+def generate_plots(species, zscores, intervals, output_dir, plot_type):
+    """Generates publication plot galleries: diagnostic_plots, chromosome_plots, bivariate_length_gc_plots, bivariate_with_inset_plots."""
+    import importlib.resources as pkg_resources
+
+    # 1. Resolve Z-scores
+    if zscores and os.path.exists(zscores):
+        df_genes = pd.read_csv(zscores)
+    elif os.path.exists("results/gene_zscores.csv"):
+        df_genes = pd.read_csv("results/gene_zscores.csv")
+    elif os.path.exists("../results/gene_zscores.csv"):
+        df_genes = pd.read_csv("../results/gene_zscores.csv")
+    else:
+        ref_file = pkg_resources.files("globin_pipeline.data") / "gene_zscores.csv"
+        df_genes = pd.read_csv(ref_file)
+
+    # 2. Resolve Curated Intervals
+    if intervals and os.path.exists(intervals):
+        df_intervals = pd.read_csv(intervals)
+    elif os.path.exists("results/curated_intervals.csv"):
+        df_intervals = pd.read_csv("results/curated_intervals.csv")
+    elif os.path.exists("../results/curated_intervals.csv"):
+        df_intervals = pd.read_csv("../results/curated_intervals.csv")
+    else:
+        ref_int = pkg_resources.files("globin_pipeline.data") / "curated_intervals.csv"
+        df_intervals = pd.read_csv(ref_int)
+
     viz = Visualizer()
+    diag_dir = os.path.join(output_dir, "diagnostic_plots")
+    chr_dir = os.path.join(output_dir, "chromosome_plots")
+    biv_dir = os.path.join(output_dir, "bivariate_length_gc_plots")
+    inset_dir = os.path.join(output_dir, "bivariate_with_inset_plots")
 
-    chr_dir = os.path.join(os.path.dirname(output_dir), "chromosome_plots")
-    biv_dir = os.path.join(os.path.dirname(output_dir), "bivariate_length_gc_plots")
-    os.makedirs(chr_dir, exist_ok=True)
-    os.makedirs(biv_dir, exist_ok=True)
+    if plot_type in ["all", "diagnostic"]:
+        os.makedirs(diag_dir, exist_ok=True)
+    if plot_type in ["all", "chromosome"]:
+        os.makedirs(chr_dir, exist_ok=True)
+    if plot_type in ["all", "bivariate"]:
+        os.makedirs(biv_dir, exist_ok=True)
+    if plot_type in ["all", "bivariate-inset"]:
+        os.makedirs(inset_dir, exist_ok=True)
 
-    species_list = df_genes["species"].unique()
-    for sp in species_list:
-        click.echo(f"  Plotting visualizations for {sp}...")
-        path = viz.plot_diagnostic(sp, df_genes, output_dir=output_dir)
-        html_path = viz.plot_diagnostic_interactive(sp, df_genes, output_dir=output_dir)
-        chr_res = viz.plot_chromosome_linear(sp, df_genes, output_dir=chr_dir)
-        cell_res = viz.plot_length_vs_gc(sp, df_genes, output_dir=biv_dir)
-        click.echo(f"    ✓ Diagnostic: {path} and {html_path}")
-        if chr_res:
-            click.echo(f"    ✓ Linear Chr: {chr_res.get('png')} and {chr_res.get('html')}")
-        if cell_res:
-            click.echo(f"    ✓ Bivariate Length vs GC: {cell_res.get('png')} and {cell_res.get('html')}")
+    if species and species.lower() != "all":
+        target_species = [s for s in df_genes["species"].unique() if s.lower() == species.lower()]
+        if not target_species:
+            raise click.ClickException(f"Species '{species}' not found in dataset ({len(df_genes['species'].unique())} available).")
+    else:
+        target_species = sorted(df_genes["species"].unique())
+
+    click.echo(f"=== Generating {plot_type} plots for {len(target_species)} species in '{output_dir}' ===")
+    for idx, sp in enumerate(target_species, 1):
+        click.echo(f"  [{idx:02d}/{len(target_species)}] {sp}...")
+        if plot_type in ["all", "diagnostic"]:
+            viz.plot_diagnostic(sp, df_genes, output_dir=diag_dir)
+            viz.plot_diagnostic_interactive(sp, df_genes, output_dir=diag_dir)
+        if plot_type in ["all", "chromosome"]:
+            viz.plot_chromosome_linear(sp, df_genes, df_intervals=df_intervals, output_dir=chr_dir)
+        if plot_type in ["all", "bivariate"]:
+            viz.plot_length_vs_gc(sp, df_genes, output_dir=biv_dir)
+        if plot_type in ["all", "bivariate-inset"]:
+            viz.plot_bivariate_with_chromosome_inset(sp, df_genes, df_intervals=df_intervals, output_dir=inset_dir)
+
+    if plot_type in ["all", "meta"] and (species is None or species.lower() == "all"):
+        click.echo("  Generating cross-species meta-graphs...")
+        meta_png = os.path.join(output_dir, "meta_comparative_graph.png")
+        clean_png = os.path.join(output_dir, "meta_comparative_graph_clean.png")
+        viz.plot_meta_comparative(df_genes, output_path=meta_png, clean_mode=False)
+        viz.plot_meta_interactive(df_genes, output_path=meta_png.replace(".png", ".html"), clean_mode=False)
+        viz.plot_meta_comparative(df_genes, output_path=clean_png, clean_mode=True)
+        viz.plot_meta_interactive(df_genes, output_path=clean_png.replace(".png", ".html"), clean_mode=True)
+
+    click.echo(f"✓ All requested plots successfully generated in '{output_dir}/'!")
+
+
+@main.command(name="plot-diagnostic")
+@click.option("--species", "-s", default=None, help="Target species (e.g. 'Homo_sapiens'). Defaults to all.")
+@click.option("--zscores", "-z", default=None, help="Path to gene Z-scores CSV.")
+@click.option("--intervals", "-i", default=None, help="Path to curated intervals CSV.")
+@click.option("--output-dir", "-o", default="results", help="Directory for plots.")
+@click.pass_context
+def plot_diagnostic(ctx, species, zscores, intervals, output_dir):
+    """Alias for generate-plots."""
+    ctx.invoke(generate_plots, species=species, zscores=zscores, intervals=intervals, output_dir=output_dir, plot_type="all")
 
 
 @main.command(name="plot-meta")
