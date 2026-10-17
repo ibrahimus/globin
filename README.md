@@ -95,6 +95,58 @@ print(f"Human baseline CDS GC: {baseline.mean_cds_gc:.2f}% (std = {baseline.std_
 
 ---
 
+## Generating Plot Galleries & Visualizations
+
+The package provides a built-in visualization engine to generate all 4 core publication plot galleries across all 44 species in static **PNG**, publication **PDF**, and interactive **Plotly HTML** formats:
+
+### Command-Line Usage
+
+```bash
+# Generate all 4 galleries across all 44 species:
+globin-pipeline generate-plots --output-dir results/
+
+# Generate for a single species:
+globin-pipeline generate-plots --species Homo_sapiens --output-dir results/
+
+# Generate specific gallery types:
+globin-pipeline generate-plots --plot-type chromosome --output-dir results/
+globin-pipeline generate-plots --plot-type bivariate-inset --output-dir results/
+```
+
+### Gallery Structure & Formats
+
+| Directory | Plot Type | Key Features | Formats |
+| :--- | :--- | :--- | :--- |
+| `results/diagnostic_plots/` | **Genome Distributions** | Whole-chromosome GC distributions, $\pm 1\sigma, \pm 2\sigma$ standard deviations, and individual globin percentiles. | PNG, HTML |
+| `results/chromosome_plots/` | **Linear Chromosome Tracks** | Full chromosome arm length, centromere annotations, telomeric distances, and zoomed locus gene architecture. | PNG, PDF, HTML |
+| `results/bivariate_length_gc_plots/` | **Bivariate Length vs. GC** | Bivariate $\log_{10}(\text{Coding-Span Length})$ vs. GC Content scatter with 2D density contours. | PNG, PDF, HTML |
+| `results/bivariate_with_inset_plots/` | **Bivariate with Mini Inset** | Exaggerated mini chromosome linear inset in the top-right corner showing chromosome position alongside bivariate distribution. | PNG, PDF, HTML |
+
+### Python API Usage
+
+```python
+import pandas as pd
+from globin_pipeline.visualizer import Visualizer
+
+viz = Visualizer()
+df_genes = pd.read_csv("results/gene_zscores.csv")
+df_intervals = pd.read_csv("results/curated_intervals.csv")
+
+# Diagnostic distribution plot
+viz.plot_diagnostic("Homo_sapiens", df_genes, output_dir="results/diagnostic_plots")
+
+# Linear chromosome track with centromere & telomere margins
+viz.plot_chromosome_linear("Homo_sapiens", df_genes, df_intervals=df_intervals, output_dir="results/chromosome_plots")
+
+# Bivariate log10(Length) vs GC
+viz.plot_length_vs_gc("Homo_sapiens", df_genes, output_dir="results/bivariate_length_gc_plots")
+
+# Bivariate with mini chromosome linear inset
+viz.plot_bivariate_with_chromosome_inset("Homo_sapiens", df_genes, df_intervals=df_intervals, output_dir="results/bivariate_with_inset_plots")
+```
+
+---
+
 ## Primary Results & Visualizations
 
 - **Supplementary Tables**:

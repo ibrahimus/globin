@@ -193,6 +193,40 @@ print(f"Calculated Z-Score: {z_score:+.2f} sigma")
 
 ---
 
+### Recipe 4: Generating Publication Plot Galleries
+```python
+import pandas as pd
+from globin_pipeline.visualizer import Visualizer
+
+# Initialize visualizer
+viz = Visualizer()
+
+# Load datasets
+df_genes = pd.read_csv("results/gene_zscores.csv")
+df_intervals = pd.read_csv("results/curated_intervals.csv")
+
+sp = "Homo_sapiens"
+
+# 1. Multi-panel diagnostic distribution plot (PNG + interactive HTML)
+viz.plot_diagnostic(sp, df_genes, output_dir="results/diagnostic_plots")
+viz.plot_diagnostic_interactive(sp, df_genes, output_dir="results/diagnostic_plots")
+
+# 2. Linear chromosome arm track with centromeres and telomeric margins (PNG, PDF + HTML)
+viz.plot_chromosome_linear(
+    sp, df_genes, df_intervals=df_intervals, output_dir="results/chromosome_plots"
+)
+
+# 3. Bivariate log10(Length) vs GC scatter plot (PNG, PDF + HTML)
+viz.plot_length_vs_gc(sp, df_genes, output_dir="results/bivariate_length_gc_plots")
+
+# 4. High-impact bivariate plot with mini chromosome linear inset (PNG, PDF + HTML)
+viz.plot_bivariate_with_chromosome_inset(
+    sp, df_genes, df_intervals=df_intervals, output_dir="results/bivariate_with_inset_plots"
+)
+```
+
+---
+
 ## 4. Error Handling & Diagnostics
 
 The package implements a comprehensive hierarchy of domain-specific exceptions in `globin_pipeline.exceptions` to provide clear, actionable diagnostics:
