@@ -97,6 +97,158 @@
         }
         select:focus, input:focus { outline: none; border-color: var(--primary); }
 
+        /* COMBOBOX DYNAMIC SEARCH */
+        .combobox-wrapper {
+            position: relative;
+            width: 100%;
+            margin-bottom: 0.8rem;
+        }
+        .combobox-trigger {
+            width: 100%;
+            padding: 0.55rem 0.8rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+            user-select: none;
+        }
+        .combobox-trigger:hover, .combobox-trigger:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+            outline: none;
+        }
+        .combobox-selection {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 0.92rem;
+        }
+        .combobox-name {
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .combobox-common {
+            color: #475569;
+            font-size: 0.86rem;
+        }
+        .combobox-clade {
+            background: #e2e8f0;
+            color: #334155;
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .combobox-arrow {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            transition: transform 0.2s;
+            margin-left: 0.5rem;
+        }
+        .combobox-wrapper.open .combobox-arrow {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+        .combobox-dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            width: 100%;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            overflow: hidden;
+            animation: fadeInDown 0.15s ease-out;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .combobox-wrapper.open .combobox-dropdown {
+            display: block;
+        }
+        .combobox-search-box {
+            padding: 0.6rem;
+            border-bottom: 1px solid var(--border);
+            background: #f8fafc;
+        }
+        .combobox-search-box input {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            background: white;
+            margin-bottom: 0;
+        }
+        .combobox-search-box input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+        }
+        .combobox-options {
+            max-height: 280px;
+            overflow-y: auto;
+            padding: 0.3rem 0;
+        }
+        .combobox-item {
+            padding: 0.55rem 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: background 0.1s;
+            font-size: 0.88rem;
+        }
+        .combobox-item:hover, .combobox-item.highlighted {
+            background: #eff6ff;
+        }
+        .combobox-item.selected {
+            background: #dbeafe;
+            font-weight: 600;
+        }
+        .combobox-item-left {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+        }
+        .combobox-item-sp {
+            font-weight: 600;
+            color: #0f172a;
+        }
+        .combobox-item-common {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+        .combobox-item-clade {
+            font-size: 0.72rem;
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            background: #f1f5f9;
+            color: #475569;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .combobox-no-results {
+            padding: 1.5rem;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.88rem;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -375,12 +527,40 @@
             <h3>⚖️ Configure 1-on-1 Species Contrast</h3>
             <div class="grid-2">
                 <div>
-                    <label style="font-size: 0.85rem; font-weight: 600; color: #475569;">SPECIES A</label>
-                    <select id="comp-sp-a" onchange="updateComparison()"></select>
+                    <label style="font-size: 0.85rem; font-weight: 600; color: #475569; display: block; margin-bottom: 0.35rem;">SPECIES A</label>
+                    <div class="combobox-wrapper" id="wrapper-comp-sp-a">
+                        <div class="combobox-trigger" onclick="toggleCombobox('comp-sp-a')" tabindex="0" onkeydown="handleComboboxTriggerKey(event, 'comp-sp-a')">
+                            <div class="combobox-selection" id="display-comp-sp-a">
+                                <span>Loading species...</span>
+                            </div>
+                            <div class="combobox-arrow">▼</div>
+                        </div>
+                        <div class="combobox-dropdown" id="dropdown-comp-sp-a">
+                            <div class="combobox-search-box">
+                                <input type="text" id="search-comp-sp-a" placeholder="🔍 Search species, common name, clade, short name..." oninput="filterCombobox('comp-sp-a', this.value)" onkeydown="handleSearchInputKey(event, 'comp-sp-a')">
+                            </div>
+                            <div class="combobox-options" id="options-comp-sp-a"></div>
+                        </div>
+                        <select id="comp-sp-a" style="display: none;" onchange="updateComparison()"></select>
+                    </div>
                 </div>
                 <div>
-                    <label style="font-size: 0.85rem; font-weight: 600; color: #475569;">SPECIES B</label>
-                    <select id="comp-sp-b" onchange="updateComparison()"></select>
+                    <label style="font-size: 0.85rem; font-weight: 600; color: #475569; display: block; margin-bottom: 0.35rem;">SPECIES B</label>
+                    <div class="combobox-wrapper" id="wrapper-comp-sp-b">
+                        <div class="combobox-trigger" onclick="toggleCombobox('comp-sp-b')" tabindex="0" onkeydown="handleComboboxTriggerKey(event, 'comp-sp-b')">
+                            <div class="combobox-selection" id="display-comp-sp-b">
+                                <span>Loading species...</span>
+                            </div>
+                            <div class="combobox-arrow">▼</div>
+                        </div>
+                        <div class="combobox-dropdown" id="dropdown-comp-sp-b">
+                            <div class="combobox-search-box">
+                                <input type="text" id="search-comp-sp-b" placeholder="🔍 Search species, common name, clade, short name..." oninput="filterCombobox('comp-sp-b', this.value)" onkeydown="handleSearchInputKey(event, 'comp-sp-b')">
+                            </div>
+                            <div class="combobox-options" id="options-comp-sp-b"></div>
+                        </div>
+                        <select id="comp-sp-b" style="display: none;" onchange="updateComparison()"></select>
+                    </div>
                 </div>
             </div>
         </div>
@@ -438,7 +618,21 @@
             <div>
                 <div class="card">
                     <h3>Select Species</h3>
-                    <select id="deep-sp" onchange="updateDeepDive()"></select>
+                    <div class="combobox-wrapper" id="wrapper-deep-sp" style="margin-top: 0.5rem;">
+                        <div class="combobox-trigger" onclick="toggleCombobox('deep-sp')" tabindex="0" onkeydown="handleComboboxTriggerKey(event, 'deep-sp')">
+                            <div class="combobox-selection" id="display-deep-sp">
+                                <span>Loading species...</span>
+                            </div>
+                            <div class="combobox-arrow">▼</div>
+                        </div>
+                        <div class="combobox-dropdown" id="dropdown-deep-sp">
+                            <div class="combobox-search-box">
+                                <input type="text" id="search-deep-sp" placeholder="🔍 Search species, common name, clade, short name..." oninput="filterCombobox('deep-sp', this.value)" onkeydown="handleSearchInputKey(event, 'deep-sp')">
+                            </div>
+                            <div class="combobox-options" id="options-deep-sp"></div>
+                        </div>
+                        <select id="deep-sp" style="display: none;" onchange="updateDeepDive()"></select>
+                    </div>
                     
                     <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; font-size: 0.95rem; color: #334155;">Species Profile</h4>
                     <div id="deep-profile" style="font-size: 0.88rem; line-height: 1.7; color: #475569;"></div>
@@ -634,6 +828,155 @@
             event.target.classList.add('active');
         }
 
+        /* COMBOBOX CONTROLLER & DYNAMIC SEARCH */
+        function toggleCombobox(id) {
+            const wrapper = document.getElementById('wrapper-' + id);
+            if (!wrapper) return;
+            const isOpen = wrapper.classList.contains('open');
+            closeAllComboboxes();
+            if (!isOpen) {
+                wrapper.classList.add('open');
+                const searchInput = document.getElementById('search-' + id);
+                if (searchInput) {
+                    searchInput.value = '';
+                    filterCombobox(id, '');
+                    setTimeout(function() {
+                        searchInput.focus();
+                    }, 40);
+                }
+            }
+        }
+
+        function closeAllComboboxes() {
+            document.querySelectorAll('.combobox-wrapper').forEach(function(w) {
+                w.classList.remove('open');
+            });
+        }
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.combobox-wrapper')) {
+                closeAllComboboxes();
+            }
+        });
+
+        function filterCombobox(id, query) {
+            const optionsContainer = document.getElementById('options-' + id);
+            if (!optionsContainer) return;
+            const currentVal = document.getElementById(id).value;
+            const q = (query || '').toLowerCase().trim();
+            const words = q ? q.split(/\s+/) : [];
+            const spKeys = Object.keys(speciesData).sort();
+
+            let matched = [];
+            spKeys.forEach(function(sp) {
+                const d = speciesData[sp];
+                const sciName = sp.replace(/_/g, ' ');
+                const parts = sp.split('_');
+                const shortName = parts.length > 1 ? (parts[0][0] + '. ' + parts.slice(1).join(' ')) : sp;
+                const searchCorpus = (sp + ' ' + sciName + ' ' + shortName + ' ' + (d.common_name || '') + ' ' + (d.clade || '')).toLowerCase();
+
+                let isMatch = true;
+                for (let i = 0; i < words.length; i++) {
+                    if (!searchCorpus.includes(words[i])) {
+                        isMatch = false;
+                        break;
+                    }
+                }
+                if (isMatch) {
+                    matched.push({ sp: sp, d: d, shortName: shortName, sciName: sciName });
+                }
+            });
+
+            if (matched.length === 0) {
+                optionsContainer.innerHTML = '<div class="combobox-no-results">No species match "' + query + '"</div>';
+                return;
+            }
+
+            let html = '';
+            matched.forEach(function(item, idx) {
+                const isSelected = item.sp === currentVal;
+                html += '<div class="combobox-item' + (isSelected ? ' selected' : '') + (idx === 0 ? ' highlighted' : '') + '" data-value="' + item.sp + '" onclick="selectSpecies('' + id + '', '' + item.sp + '')">';
+                html += '<div class="combobox-item-left">';
+                html += '<span class="combobox-item-sp">' + item.sciName + ' <span style="font-weight: normal; color: #94a3b8; font-size: 0.78rem;">(' + item.shortName + ')</span></span>';
+                html += '<span class="combobox-item-common">' + (item.d.common_name || item.sp) + '</span>';
+                html += '</div>';
+                html += '<span class="combobox-item-clade">' + (item.d.clade || '') + '</span>';
+                html += '</div>';
+            });
+            optionsContainer.innerHTML = html;
+        }
+
+        function selectSpecies(id, sp, triggerUpdate) {
+            if (triggerUpdate === undefined) triggerUpdate = true;
+            const selectEl = document.getElementById(id);
+            if (!selectEl) return;
+            selectEl.value = sp;
+
+            const d = speciesData[sp];
+            const displayEl = document.getElementById('display-' + id);
+            if (displayEl && d) {
+                const sciName = sp.replace(/_/g, ' ');
+                displayEl.innerHTML = '<span class="combobox-name">' + sciName + '</span>' +
+                                      '<span class="combobox-common">(' + d.common_name + ')</span>' +
+                                      '<span class="combobox-clade">' + d.clade + '</span>';
+            }
+
+            closeAllComboboxes();
+
+            if (triggerUpdate) {
+                if (id === 'comp-sp-a' || id === 'comp-sp-b') {
+                    updateComparison();
+                } else if (id === 'deep-sp') {
+                    updateDeepDive();
+                }
+            }
+        }
+
+        function handleComboboxTriggerKey(e, id) {
+            if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                toggleCombobox(id);
+            }
+        }
+
+        function handleSearchInputKey(e, id) {
+            const optionsContainer = document.getElementById('options-' + id);
+            if (!optionsContainer) return;
+            const items = optionsContainer.querySelectorAll('.combobox-item');
+            if (!items.length) return;
+
+            let curIndex = -1;
+            items.forEach(function(item, idx) {
+                if (item.classList.contains('highlighted')) curIndex = idx;
+            });
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (curIndex >= 0) items[curIndex].classList.remove('highlighted');
+                curIndex = (curIndex + 1) % items.length;
+                items[curIndex].classList.add('highlighted');
+                items[curIndex].scrollIntoView({ block: 'nearest' });
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (curIndex >= 0) items[curIndex].classList.remove('highlighted');
+                curIndex = (curIndex - 1 + items.length) % items.length;
+                items[curIndex].classList.add('highlighted');
+                items[curIndex].scrollIntoView({ block: 'nearest' });
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                const target = curIndex >= 0 ? items[curIndex] : items[0];
+                if (target) {
+                    const val = target.getAttribute('data-value');
+                    selectSpecies(id, val);
+                }
+            } else if (e.key === 'Escape') {
+                e.preventDefault();
+                closeAllComboboxes();
+                const trigger = document.getElementById('wrapper-' + id).querySelector('.combobox-trigger');
+                if (trigger) trigger.focus();
+            }
+        }
+
         function populateSpeciesDropdowns() {
             const spKeys = Object.keys(speciesData).sort();
             const selA = document.getElementById('comp-sp-a');
@@ -650,9 +993,13 @@
                 selDeep.add(optDeep);
             });
 
-            selA.value = 'Homo_sapiens';
-            selB.value = 'Gallus_gallus';
-            selDeep.value = 'Homo_sapiens';
+            selectSpecies('comp-sp-a', 'Homo_sapiens', false);
+            selectSpecies('comp-sp-b', 'Gallus_gallus', false);
+            selectSpecies('deep-sp', 'Homo_sapiens', false);
+
+            filterCombobox('comp-sp-a', '');
+            filterCombobox('comp-sp-b', '');
+            filterCombobox('deep-sp', '');
 
             updateComparison();
             updateDeepDive();
