@@ -686,6 +686,7 @@ def main():
                     <button class="btn" onclick="setMetaView('fig1b')">🌐 Fig 1B: All 68 Species</button>
                     <button class="btn" onclick="setMetaView('fig2')">🔬 Fig 2: Mechanistic Drivers</button>
                     <button class="btn" onclick="setMetaView('fig3')">🗺️ Fig 3: Clade Heatmap</button>
+                    <button class="btn" onclick="setMetaView('fig4')">🧬 Fig 4: Phylogenetic Synteny & Codon Map</button>
                     <button class="btn" onclick="setMetaView('clean')">🌌 Standardized Meta Graph</button>
                 </div>
             </div>
@@ -1328,6 +1329,7 @@ def main():
             if (figType === 'fig1b') {{ img.src = 'summary_figure1b_locus_divergence_full.png'; figName = 'Fig 1B: Complete Macroevolutionary Locus Divergence Across All 68 Vertebrates'; }}
             if (figType === 'fig2') {{ img.src = 'summary_figure2_mechanistic_drivers.png'; figName = 'Fig 2: Mechanistic Drivers of GC Polarity'; }}
             if (figType === 'fig3') {{ img.src = 'summary_figure3_clade_heatmap.png'; figName = 'Fig 3: Clade Architectural Heatmap'; }}
+            if (figType === 'fig4') {{ img.src = 'summary_figure4_phylogenetic_synteny.png'; figName = 'Fig 4: Macroevolutionary Synteny Architecture and Codon Divergence Across Vertebrates'; }}
             if (figType === 'clean') {{ img.src = 'meta_comparative_graph_clean.png'; figName = 'Standardized Meta Graph'; }}
             const cap = document.getElementById('caption-meta');
             if (cap) cap.innerText = figName;
