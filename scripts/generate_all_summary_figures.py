@@ -128,6 +128,8 @@ def plot_figure1_publication(df_summary, out_dir=RESULTS_DIR, filename_prefix="s
             ax_fg.scatter(b_flank, y_flank, marker='<', color='#d95f02', s=45, alpha=0.9, zorder=3, edgecolors='black', linewidths=0.5)
         elif pd.notna(a_flank):
             ax_fg.scatter(a_flank, y_flank, marker='v', color='#ff7f0e', s=45, alpha=0.9, zorder=3, edgecolors='black', linewidths=0.5)
+        elif pd.notna(b_flank):
+            ax_fg.scatter(b_flank, y_flank, marker='<', color='#d95f02', s=45, alpha=0.9, zorder=3, edgecolors='black', linewidths=0.5)
 
         # Globin Dumbbell
         if pd.notna(a_fg) and pd.notna(b_fg):
@@ -147,6 +149,8 @@ def plot_figure1_publication(df_summary, out_dir=RESULTS_DIR, filename_prefix="s
             ax_fg.scatter(b_fg, y, marker='s', color='#2ca02c', s=85, edgecolors='black', linewidths=1.0, zorder=5)
         elif pd.notna(a_fg):
             ax_fg.scatter(a_fg, y, marker='o', color='#1f77b4', s=95, edgecolors='black', linewidths=1.0, zorder=5)
+        elif pd.notna(b_fg):
+            ax_fg.scatter(b_fg, y, marker='s', color='#2ca02c', s=85, edgecolors='black', linewidths=1.0, zorder=5)
 
         # Panel B: CDS GC
         a_cds = row['a_cds_z']
@@ -169,6 +173,8 @@ def plot_figure1_publication(df_summary, out_dir=RESULTS_DIR, filename_prefix="s
             ax_cds.scatter(b_cds, y, marker='s', color='#2ca02c', s=85, edgecolors='black', linewidths=1.0, zorder=5)
         elif pd.notna(a_cds):
             ax_cds.scatter(a_cds, y, marker='o', color='#1f77b4', s=95, edgecolors='black', linewidths=1.0, zorder=5)
+        elif pd.notna(b_cds):
+            ax_cds.scatter(b_cds, y, marker='s', color='#2ca02c', s=85, edgecolors='black', linewidths=1.0, zorder=5)
 
     # Y-axis labels
     ax_fg.set_yticks(y_indices)
@@ -303,6 +309,17 @@ def plot_figure1_interactive(df_summary, out_dir=RESULTS_DIR, filename_prefix="s
                 ),
                 row=1, col=1
             )
+        elif pd.notna(b_flank):
+            fig.add_trace(
+                go.Scatter(
+                    x=[b_flank], y=[y_flank],
+                    mode="markers",
+                    marker=dict(symbol="triangle-left", size=7, color="#d95f02"),
+                    text=[f"{cname} β-Flank Z={b_flank:.2f}"],
+                    hoverinfo="text", showlegend=False
+                ),
+                row=1, col=1
+            )
 
         # Panel A: Globin dumbbell
         a_fg = row['a_fg_z']
@@ -350,6 +367,17 @@ def plot_figure1_interactive(df_summary, out_dir=RESULTS_DIR, filename_prefix="s
                 ),
                 row=1, col=1
             )
+        elif pd.notna(b_fg):
+            fig.add_trace(
+                go.Scatter(
+                    x=[b_fg], y=[y],
+                    mode="markers",
+                    marker=dict(symbol="square", size=9, color="#2ca02c", line=dict(color="black", width=1)),
+                    text=[f"<b>{cname}</b><br>β-Globin Whole-Gene Z: {b_fg:+.2f}σ"],
+                    hoverinfo="text", showlegend=False
+                ),
+                row=1, col=1
+            )
 
         # Panel B: CDS GC
         a_cds = row['a_cds_z']
@@ -393,6 +421,17 @@ def plot_figure1_interactive(df_summary, out_dir=RESULTS_DIR, filename_prefix="s
                     mode="markers",
                     marker=dict(symbol="circle", size=10, color="#1f77b4", line=dict(color="black", width=1)),
                     text=[f"<b>{cname}</b><br>Globin CDS Z: {a_cds:+.2f}σ"],
+                    hoverinfo="text", showlegend=False
+                ),
+                row=1, col=2
+            )
+        elif pd.notna(b_cds):
+            fig.add_trace(
+                go.Scatter(
+                    x=[b_cds], y=[y],
+                    mode="markers",
+                    marker=dict(symbol="square", size=9, color="#2ca02c", line=dict(color="black", width=1)),
+                    text=[f"<b>{cname}</b><br>β-Globin CDS Z: {b_cds:+.2f}σ"],
                     hoverinfo="text", showlegend=False
                 ),
                 row=1, col=2

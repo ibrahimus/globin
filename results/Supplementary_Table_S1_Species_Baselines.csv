@@ -62,7 +62,7 @@ Sus_scrofa,Pig (S. scrofa),amniote_mammal,Mammalia,Sscrofa11.1,Sscrofa11.1,22018
 camelus_dromedarius,Dromedary (C. dromedarius),amniote_mammal,Mammalia,mCamDro1.pat,mCamDro1.pat,18,54.41,8.47,,54.41,8.47,63.15,15.55,41.0
 vicugna_pacos,Alpaca (V. pacos),amniote_mammal,Mammalia,VicPac4,VicPac4,20,54.6,8.46,,54.6,8.46,63.14,15.39,41.0
 Bos_taurus,Cattle (B. taurus),amniote_mammal,Mammalia,ARS-UCD2.0,ARS-UCD2.0,20601,47.31,8.11,20601.0,53.8,8.71,61.89,15.92,42.0
-physeter_catodon,Sperm Whale (P. catodon),amniote_mammal,Mammalia,ASM283717v5,ASM283717v5,30,54.39,9.05,,54.39,9.05,62.42,16.61,41.0
+physeter_catodon,Sperm Whale (P. catodon),amniote_mammal,Mammalia,ASM283717v5,ASM283717v5,35,54.39,9.05,,54.39,9.05,62.42,16.61,41.0
 tursiops_truncatus,Dolphin (T. truncatus),amniote_mammal,Mammalia,mTurTru1.mat.Y,mTurTru1.mat.Y,16,47.54245561175078,8.693691040505673,,54.40599214462498,8.924591943550341,62.42000645647261,16.476303410202927,41.0
 equus_asinus,Donkey (E. asinus),amniote_mammal,Mammalia,EquAss-T2T_v2,EquAss-T2T_v2,15,47.5704465865698,8.695663366579133,,53.96617677191021,8.969231973062422,62.19812517462979,15.848295750546285,41.0
 equus_caballus,Horse (E. caballus),amniote_mammal,Mammalia,TB-T2T,TB-T2T,14,47.730078722138316,8.691069884491784,,54.21892855508262,8.927915332333734,62.33447480433887,15.72771636697548,41.0

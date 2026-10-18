@@ -416,6 +416,10 @@ class GeneAnnotator:
         "LOC102979737": {"category": "beta_globin", "subtype": "HBE", "name": "HBE_like_2"},
         "GeneID:102976673": {"category": "beta_globin", "subtype": "HBE", "name": "HBE_like_1"},
         "LOC102976673": {"category": "beta_globin", "subtype": "HBE", "name": "HBE_like_1"},
+        "GeneID:102987983": {"category": "alpha_globin", "subtype": "HBA1", "name": "HBA1"},
+        "LOC102987983": {"category": "alpha_globin", "subtype": "HBA1", "name": "HBA1"},
+        "GeneID:102988256": {"category": "alpha_globin", "subtype": "HBA2", "name": "HBA2"},
+        "LOC102988256": {"category": "alpha_globin", "subtype": "HBA2", "name": "HBA2"},
         # Short-beaked Echidna (Tachyglossus aculeatus) NCBI RefSeq (mTacAcu1.pri)
         "GeneID:119942016": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA_like_1"},
         "LOC119942016": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA_like_1"},

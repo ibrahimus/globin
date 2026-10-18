@@ -112,6 +112,7 @@ desmodus_rotundus,Vampire Bat (D. rotundus),amniote_mammal,alpha_globin,NC_07138
 desmodus_rotundus,Vampire Bat (D. rotundus),amniote_mammal,beta_globin,NC_071391.1,44400000,44500000,100001,38.86,47.75,38.31,50.98,52.41,53.11,54.73,38.86,36.51,41.5,38.86,38.86,38.86,5,8
 mirounga_angustirostris,Elephant Seal (M. angustirostris),amniote_mammal,alpha_globin,NC_072358.1,128750000,128950000,200001,53.17,61.97,52.03,60.84,54.41,66.67,45.45,52.85,40.52,64.73,51.23,48.1,55.2,1,13
 mirounga_angustirostris,Elephant Seal (M. angustirostris),amniote_mammal,beta_globin,NC_072366.1,47000000,48450000,1450001,42.44,52.04,41.65,53.25,48.13,53.83,44.37,42.44,33.17,61.08,42.26,36.59,49.33,3,58
+physeter_catodon,Sperm Whale (P. catodon),amniote_mammal,alpha_globin,NW_021146805.1,1,25000,25500,50.97,0.0,50.97,64.25,87.9,64.25,87.9,54.06,44.66,60.19,50.97,50.97,50.97,5,5
 physeter_catodon,Sperm Whale (P. catodon),amniote_mammal,beta_globin,NC_041229.1,60300000,61400000,1100001,41.91,53.21,41.27,53.7,49.99,54.13,60.05,41.76,33.52,59.83,41.49,38.38,48.51,4,30
 tachyglossus_aculeatus,Echidna (T. aculeatus),amniote_monotreme,alpha_globin,NC_052086.1,10520000,10730000,210001,54.19,64.06,53.43,64.09,53.99,63.67,45.75,54.06,48.93,63.73,53.87,53.06,55.05,9,15
 tachyglossus_aculeatus,Echidna (T. aculeatus),amniote_monotreme,beta_globin,NC_052067.1,137800000,138000000,200001,49.19,59.97,48.61,61.78,57.96,64.79,51.09,49.2,42.95,60.76,48.96,48.14,49.67,3,6

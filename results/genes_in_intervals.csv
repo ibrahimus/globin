@@ -1800,6 +1800,16 @@ mirounga_angustirostris,amniote_mammal,beta_globin,NC_072366.1,GeneID:123857474,
 ",cluster_non_globin,intervening_gene,False,48426022,48430608,4586,-,paired like homeobox 2A
 mirounga_angustirostris,amniote_mammal,beta_globin,NC_072366.1,GeneID:123857475,CLPB,CLPB,"protein_coding
 ",cluster_non_globin,intervening_gene,False,48454336,48607649,153313,-,ClpB family mitochondrial disaggregase
+physeter_catodon,amniote_mammal,alpha_globin,NW_021146805.1,GeneID:102987699,HBQ1,HBQ1,"protein_coding
+",alpha_globin,HBQ1,True,7890,8571,681,-,hemoglobin subunit theta 1
+physeter_catodon,amniote_mammal,alpha_globin,NW_021146805.1,GeneID:102987983,LOC102987983,HBA1,"protein_coding
+",alpha_globin,HBA1,True,10476,11273,797,-,hemoglobin subunit alpha
+physeter_catodon,amniote_mammal,alpha_globin,NW_021146805.1,GeneID:102988256,LOC102988256,HBA2,"protein_coding
+",alpha_globin,HBA2,True,13632,14416,784,-,hemoglobin subunit alpha
+physeter_catodon,amniote_mammal,alpha_globin,NW_021146805.1,GeneID:102988524,HBM,HBM,"protein_coding
+",alpha_globin,HBM,True,16104,16866,762,-,hemoglobin subunit mu
+physeter_catodon,amniote_mammal,alpha_globin,NW_021146805.1,GeneID:102988808,HBZ,HBZ,"protein_coding
+",alpha_globin,HBZ,True,17621,18805,1184,-,hemoglobin subunit zeta
 physeter_catodon,amniote_mammal,beta_globin,NC_041229.1,GeneID:102974891,PHOX2A,PHOX2A,"protein_coding
 ",cluster_non_globin,intervening_gene,False,60302106,60306645,4539,+,paired like homeobox 2A
 physeter_catodon,amniote_mammal,beta_globin,NC_041229.1,GeneID:102993697,INPPL1,INPPL1,"protein_coding

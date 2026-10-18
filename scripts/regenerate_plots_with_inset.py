@@ -3,6 +3,7 @@ then synchronize results to 1_data_from_mike/results/.
 """
 
 import os
+import sys
 import shutil
 import pandas as pd
 from globin_pipeline.visualizer import Visualizer
@@ -16,7 +17,11 @@ def main():
     df_genes = pd.read_csv(os.path.join(results_dir, "gene_zscores.csv"))
     df_intervals = pd.read_csv(os.path.join(results_dir, "curated_intervals.csv"))
 
-    species_list = sorted(df_genes["species"].unique())
+    species_arg = [arg for arg in sys.argv[1:] if not arg.startswith("-")]
+    if species_arg:
+        species_list = [sp for sp in species_arg if sp in df_genes["species"].unique()]
+    else:
+        species_list = sorted(df_genes["species"].unique())
     print(f"Loaded {len(species_list)} species.")
 
     chr_out_dir = os.path.join(results_dir, "chromosome_plots")

@@ -111,6 +111,7 @@ NC_071387.1	97650000	97850000	desmodus_rotundus:alpha_globin	0	+
 NC_071391.1	44400000	44500000	desmodus_rotundus:beta_globin	0	-
 NC_072358.1	128750000	128950000	mirounga_angustirostris:alpha_globin	0	+
 NC_072366.1	47000000	48450000	mirounga_angustirostris:beta_globin	0	+
+NW_021146805.1	1	25000	physeter_catodon:alpha_globin	0	-
 NC_041229.1	60300000	61400000	physeter_catodon:beta_globin	0	+
 NC_052086.1	10520000	10730000	tachyglossus_aculeatus:alpha_globin	0	+
 NC_052067.1	137800000	138000000	tachyglossus_aculeatus:beta_globin	0	+

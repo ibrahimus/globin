@@ -1430,6 +1430,11 @@ mirounga_angustirostris,amniote_mammal,beta_globin,GeneID:123857471,FOLR2,FOLR2,
 mirounga_angustirostris,amniote_mammal,beta_globin,GeneID:123857473,INPPL1,INPPL1,cluster_non_globin,intervening_gene,False,48411176,48425723,59.42,12941,4.112,60.09,14547,63.08,4534,58.73,10013,62.19,3795,46.64
 mirounga_angustirostris,amniote_mammal,beta_globin,GeneID:123857474,PHOX2A,PHOX2A,cluster_non_globin,intervening_gene,False,48426022,48430608,62.02,3936,3.5951,61.73,4586,67.04,1511,59.12,3075,72.36,861,68.29
 mirounga_angustirostris,amniote_mammal,beta_globin,GeneID:123857475,CLPB,CLPB,cluster_non_globin,intervening_gene,False,48454336,48607649,46.54,142527,5.1539,46.24,153313,44.85,12910,46.37,140403,57.49,2124,69.07
+physeter_catodon,amniote_mammal,alpha_globin,GeneID:102987699,HBQ1,HBQ1,alpha_globin,HBQ1,True,7890,8571,67.41,681,2.8331,67.41,681,,0,,0,67.44,519,87.86
+physeter_catodon,amniote_mammal,alpha_globin,GeneID:102987983,LOC102987983,HBA1,alpha_globin,HBA1,True,10476,11273,61.45,797,2.9015,61.45,797,,0,,0,62.0,429,84.62
+physeter_catodon,amniote_mammal,alpha_globin,GeneID:102988256,LOC102988256,HBA2,alpha_globin,HBA2,True,13632,14416,60.75,784,2.8943,60.75,784,,0,,0,61.31,429,84.62
+physeter_catodon,amniote_mammal,alpha_globin,GeneID:102988524,HBM,HBM,alpha_globin,HBM,True,16104,16866,63.12,762,2.882,63.12,762,,0,,0,65.02,426,87.32
+physeter_catodon,amniote_mammal,alpha_globin,GeneID:102988808,HBZ,HBZ,alpha_globin,HBZ,True,17621,18805,63.53,1184,3.0734,63.53,1184,,0,,0,65.5,429,95.1
 physeter_catodon,amniote_mammal,beta_globin,GeneID:102974891,PHOX2A,PHOX2A,cluster_non_globin,intervening_gene,False,60302106,60306645,61.53,3956,3.5973,62.02,4539,68.91,1441,58.81,3098,71.33,858,59.79
 physeter_catodon,amniote_mammal,beta_globin,GeneID:102993697,INPPL1,INPPL1,cluster_non_globin,intervening_gene,False,60306805,60320953,58.7,13386,4.1267,58.6,14148,61.07,4557,57.43,9591,61.92,3795,63.56
 physeter_catodon,amniote_mammal,beta_globin,GeneID:102996106,FOLR2,FOLR2,cluster_non_globin,intervening_gene,False,60324001,60326258,53.76,2076,3.3172,53.7,2257,57.16,943,51.22,1314,58.14,762,49.21

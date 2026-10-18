@@ -202,6 +202,15 @@ EXTREMA_SPECIES = {
         "fna_url": "https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/837/175/GCF_002837175.3_ASM283717v5/GCF_002837175.3_ASM283717v5_genomic.fna.gz",
         "loci": [
             {
+                "locus_id": "alpha_globin",
+                "chrom": "NW_021146805.1",
+                "start": 1,
+                "end": 25000,
+                "strand": "-",
+                "left_gene": "HBZ",
+                "right_gene": "HBQ1",
+            },
+            {
                 "locus_id": "beta_globin",
                 "chrom": "NC_041229.1",
                 "start": 60300000,

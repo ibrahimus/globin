@@ -1529,6 +1529,14 @@ species:
     assembly: ASM283717v5
     status: active
     loci:
+    - locus_id: alpha_globin
+      chromosome: NW_021146805.1
+      start: 1
+      end: 25000
+      strand: '-'
+      left_gene: HBZ
+      right_gene: HBQ1
+      notes: 'Sperm whale (champion abyssal diver) alpha-globin locus on scaffold NW_021146805.1: HBZ - HBM - LOC102988256 (HBA2) - LOC102987983 (HBA1) - HBQ1'
     - locus_id: beta_globin
       chromosome: NC_041229.1
       start: 60300000

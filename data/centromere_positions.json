@@ -118,5 +118,6 @@
   "tachyglossus_aculeatus::NC_052086.1": 40000000,
   "tachyglossus_aculeatus::NC_052067.1": 88000000,
   "calypte_anna::NC_044260.1": 7000000,
-  "aptenodytes_patagonicus::NC_134961.1": 10000000
+  "aptenodytes_patagonicus::NC_134961.1": 10000000,
+  "physeter_catodon::NW_021146805.1": 12500
 }
