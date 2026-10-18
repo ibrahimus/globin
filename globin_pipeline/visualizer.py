@@ -27,7 +27,8 @@ class Visualizer:
         "chiloscyllium_punctatum",
         "scyliorhinus_canicula",
         "carcharhinus_amblyrhynchos",
-        # Non-teleost Ray-finned Fish (Pre-3R Duplication)
+        # Non-teleost Ray-finned Fish (Cladistia & Holostei)
+        "polypterus_senegalus",
         "lepisosteus_oculatus",
         # Teleost Fish (Post-3R Whole-Genome Duplication)
         "danio_rerio",
@@ -35,6 +36,8 @@ class Visualizer:
         "oryzias_latipes",
         "takifugu_rubripes",
         "gasterosteus_aculeatus",
+        # Lobe-finned Fish (Sarcopterygii: Tetrapod Sister Group)
+        "latimeria_chalumnae",
         # Amphibians (Tetrapod Ancestral Linked Cluster)
         "geotrypetes_seraphini",
         "rhinatrema_bivittatum",
@@ -65,16 +68,19 @@ class Visualizer:
         "crocodylus_porosus",
         # Birds (Aves: Archosauria)
         "struthio_camelus_australis",
+        "aptenodytes_patagonicus",
         "anser_cygnoides",
         "anas_platyrhynchos",
         "meleagris_gallopavo",
         "coturnix_japonica",
         "Gallus_gallus",
         "aquila_chrysaetos_chrysaetos",
+        "calypte_anna",
         "taeniopygia_guttata",
         "sturnus_vulgaris",
         # Monotremes (Basal Mammals)
         "ornithorhynchus_anatinus",
+        "tachyglossus_aculeatus",
         # Marsupials
         "Monodelphis_domestica",
         # Eutherian Mammals
@@ -83,10 +89,15 @@ class Visualizer:
         "rattus_norvegicus",
         "heterocephalus_glaber",
         "miniopterus_natalensis",
+        "desmodus_rotundus",
         "puma_concolor",
         "zalophus_californianus",
+        "mirounga_angustirostris",
         "Sus_scrofa",
+        "camelus_dromedarius",
+        "vicugna_pacos",
         "Bos_taurus",
+        "physeter_catodon",
         "tursiops_truncatus",
         "equus_asinus",
         "equus_caballus",
@@ -157,6 +168,16 @@ class Visualizer:
         "petromyzon_marinus": "Sea Lamprey (P. marinus)",
         "lampetra_fluviatilis": "River Lamprey (L. fluviatilis)",
         "eptatretus_burgeri": "Inshore Hagfish (E. burgeri)",
+        "latimeria_chalumnae": "Coelacanth (L. chalumnae)",
+        "polypterus_senegalus": "Bichir (P. senegalus)",
+        "camelus_dromedarius": "Dromedary (C. dromedarius)",
+        "vicugna_pacos": "Alpaca (V. pacos)",
+        "desmodus_rotundus": "Vampire Bat (D. rotundus)",
+        "mirounga_angustirostris": "Elephant Seal (M. angustirostris)",
+        "physeter_catodon": "Sperm Whale (P. catodon)",
+        "tachyglossus_aculeatus": "Echidna (T. aculeatus)",
+        "calypte_anna": "Hummingbird (C. anna)",
+        "aptenodytes_patagonicus": "King Penguin (A. patagonicus)",
     }
 
     COLOR_PALETTE = {
@@ -2307,9 +2328,10 @@ class Visualizer:
         html_path = os.path.join(output_dir, f"bivariate_length_gc_{species}.html")
 
         # Background KDE
-        base_clean = df_base.dropna(subset=["whole_gene_len", "whole_gene_gc"]) if not df_base.empty else pd.DataFrame()
+        len_col = "whole_gene_len" if "whole_gene_len" in df_base.columns else ("whole_gene_length" if "whole_gene_length" in df_base.columns else None)
+        base_clean = df_base.dropna(subset=[len_col, "whole_gene_gc"]) if (not df_base.empty and len_col) else pd.DataFrame()
         if not base_clean.empty:
-            base_lens = np.log10(base_clean["whole_gene_len"][base_clean["whole_gene_len"] > 0])
+            base_lens = np.log10(base_clean[len_col][base_clean[len_col] > 0])
             base_gc = base_clean["whole_gene_gc"]
             mask = (base_lens >= 1.5) & (base_lens <= 6.5) & (base_gc >= 15) & (base_gc <= 85)
             sample_n = min(4000, mask.sum())
@@ -2793,9 +2815,10 @@ class Visualizer:
         html_path = os.path.join(output_dir, f"bivariate_with_inset_{species}.html")
 
         # Background KDE density cloud
-        base_clean = df_base.dropna(subset=["whole_gene_len", "whole_gene_gc"]) if not df_base.empty else pd.DataFrame()
+        len_col = "whole_gene_len" if "whole_gene_len" in df_base.columns else ("whole_gene_length" if "whole_gene_length" in df_base.columns else None)
+        base_clean = df_base.dropna(subset=[len_col, "whole_gene_gc"]) if (not df_base.empty and len_col) else pd.DataFrame()
         if not base_clean.empty:
-            base_lens = np.log10(base_clean["whole_gene_len"][base_clean["whole_gene_len"] > 0])
+            base_lens = np.log10(base_clean[len_col][base_clean[len_col] > 0])
             base_gc = base_clean["whole_gene_gc"]
             mask = (base_lens >= 1.5) & (base_lens <= 6.5) & (base_gc >= 15) & (base_gc <= 85)
             sample_n = min(4000, mask.sum())
@@ -3395,6 +3418,7 @@ class Visualizer:
             "chondrichthyes": "Chondrichthyes",
             "non_teleost_fish": "Holostei",
             "teleost_fish": "Teleostei",
+            "sarcopterygii": "Sarcopterygii",
             "amphibian": "Amphibia",
             "amniote_reptile": "Reptilia",
             "amniote_crocodylian": "Archosauria",

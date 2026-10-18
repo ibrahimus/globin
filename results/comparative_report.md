@@ -11,15 +11,16 @@ This report summarizes the comparative genomic and composition analysis of verte
 
 | clade               |   num_species |   num_loci |   mean_locus_length_bp |   mean_locus_gc |   mean_exonic_gc |   mean_intergenic_gc |   mean_globin_cds_gc |   mean_globin_gc3 |   total_globins_found |
 |:--------------------|--------------:|-----------:|-----------------------:|----------------:|-----------------:|---------------------:|---------------------:|------------------:|----------------------:|
-| amniote_bird        |             8 |         16 |       171188           |           50.38 |            54.67 |                49.9  |                58.34 |             60.36 |                    50 |
+| amniote_bird        |            10 |         18 |       187723           |           50.41 |            54.85 |                49.92 |                58.36 |             57.87 |                    56 |
 | amniote_crocodylian |             1 |          2 |            1.5e+06     |           48.44 |            50.39 |                48.28 |                53.1  |             67.94 |                    10 |
-| amniote_mammal      |            14 |         28 |       147570           |           45.08 |            53.68 |                44.36 |                57.93 |             61.37 |                   126 |
-| amniote_monotreme   |             1 |          2 |       230000           |           50.56 |            59.6  |                50.19 |                61.31 |             78.06 |                     5 |
+| amniote_mammal      |            19 |         37 |       206810           |           45.01 |            54.07 |                44.25 |                58.05 |             57.79 |                   165 |
+| amniote_monotreme   |             2 |          4 |       217500           |           51.12 |            60.8  |                50.6  |                62.77 |             63.24 |                    17 |
 | amniote_reptile     |            13 |         26 |       294616           |           51.2  |            56.27 |                50.3  |                59.61 |             53.88 |                    68 |
 | amphibian           |             7 |         11 |            1.82455e+06 |           44.03 |            47.97 |                43.94 |                53.08 |             49.69 |                    91 |
 | chondrichthyes      |             5 |          5 |       526001           |           46.52 |            42.16 |                46.57 |                47.24 |             43.2  |                    24 |
 | cyclostome          |             3 |          3 |       420001           |           47.52 |            55.23 |                47.01 |                57.78 |             56.75 |                    15 |
-| non_teleost_fish    |             1 |          1 |       250000           |           47.59 |            53.62 |                46.64 |                61.69 |             84.55 |                     4 |
+| non_teleost_fish    |             2 |          2 |       450000           |           45.53 |            50.06 |                44.98 |                58.08 |             68.54 |                    12 |
+| sarcopterygii       |             1 |          1 |       350001           |           42.18 |            44.8  |                41.93 |                46.8  |             50.87 |                     4 |
 | teleost_fish        |             5 |          9 |       114534           |           39.88 |            47.26 |                38.33 |                52.9  |             59.14 |                    59 |
 
 ## 2. Locus-by-Locus Genomic & GC Metrics
@@ -129,6 +130,21 @@ This report summarizes the comparative genomic and composition analysis of verte
 | notechis_scutatus            | Tiger Snake (N. scutatus)                | amniote_reptile     | beta_globin          | NC_142013.1    |      280001 |        52.95 |                63.74 |             37.16 |             2 |
 | pantherophis_guttatus        | Corn Snake (P. guttatus)                 | amniote_reptile     | alpha_globin         | NC_142076.1    |      110001 |        50.05 |                51.25 |             42.27 |             2 |
 | pantherophis_guttatus        | Corn Snake (P. guttatus)                 | amniote_reptile     | beta_globin          | NC_142067.1    |      290001 |        49.27 |                63.17 |             38.17 |             2 |
+| latimeria_chalumnae          | Coelacanth (L. chalumnae)                | sarcopterygii       | alpha_beta_cluster   | NC_088143.1    |      350001 |        42.18 |                46.8  |             50.87 |             4 |
+| polypterus_senegalus         | Bichir (P. senegalus)                    | non_teleost_fish    | alpha_beta_cluster   | NC_053166.1    |      650001 |        43.46 |                54.47 |             52.53 |             8 |
+| camelus_dromedarius          | Dromedary (C. dromedarius)               | amniote_mammal      | alpha_globin         | NC_087459.1    |      180001 |        49.76 |                63.17 |             40.49 |             6 |
+| camelus_dromedarius          | Dromedary (C. dromedarius)               | amniote_mammal      | beta_globin          | NC_087447.1    |       50001 |        39.01 |                53.92 |             35.28 |             4 |
+| vicugna_pacos                | Alpaca (V. pacos)                        | amniote_mammal      | alpha_globin         | NC_133004.1    |      200001 |        49.19 |                63.07 |             40.62 |             8 |
+| vicugna_pacos                | Alpaca (V. pacos)                        | amniote_mammal      | beta_globin          | NC_132996.1    |       40001 |        38.22 |                54.43 |             59.46 |             3 |
+| desmodus_rotundus            | Vampire Bat (D. rotundus)                | amniote_mammal      | alpha_globin         | NC_071387.1    |      200001 |        50.37 |                63.49 |             39.35 |             5 |
+| desmodus_rotundus            | Vampire Bat (D. rotundus)                | amniote_mammal      | beta_globin          | NC_071391.1    |      100001 |        38.86 |                53.11 |             54.73 |             5 |
+| mirounga_angustirostris      | Elephant Seal (M. angustirostris)        | amniote_mammal      | alpha_globin         | NC_072358.1    |      200001 |        53.17 |                66.67 |             45.45 |             1 |
+| mirounga_angustirostris      | Elephant Seal (M. angustirostris)        | amniote_mammal      | beta_globin          | NC_072366.1    |     1450001 |        42.44 |                53.83 |             44.37 |             3 |
+| physeter_catodon             | Sperm Whale (P. catodon)                 | amniote_mammal      | beta_globin          | NC_041229.1    |     1100001 |        41.91 |                54.13 |             60.05 |             4 |
+| tachyglossus_aculeatus       | Echidna (T. aculeatus)                   | amniote_monotreme   | alpha_globin         | NC_052086.1    |      210001 |        54.19 |                63.67 |             45.75 |             9 |
+| tachyglossus_aculeatus       | Echidna (T. aculeatus)                   | amniote_monotreme   | beta_globin          | NC_052067.1    |      200001 |        49.19 |                64.79 |             51.09 |             3 |
+| calypte_anna                 | Hummingbird (C. anna)                    | amniote_bird        | alpha_globin         | NC_044260.1    |      300001 |        50.66 |                58.34 |             38.55 |             3 |
+| aptenodytes_patagonicus      | King Penguin (A. patagonicus)            | amniote_bird        | alpha_globin         | NC_134961.1    |      340001 |        50.72 |                58.73 |             37.37 |             3 |
 
 ## 3. Key Biological Insights
 

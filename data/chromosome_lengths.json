@@ -103,5 +103,20 @@
   "heptranchias_perlo::NC_090346.1": 52530448,
   "chiloscyllium_punctatum::NC_092778.1": 69723049,
   "somniosus_microcephalus::NC_140997.1": 239814970,
-  "carcharhinus_amblyrhynchos::NC_137341.1": 56541810
+  "carcharhinus_amblyrhynchos::NC_137341.1": 56541810,
+  "latimeria_chalumnae::NC_088143.1": 188107785,
+  "polypterus_senegalus::NC_053166.1": 163732318,
+  "camelus_dromedarius::NC_087459.1": 33143640,
+  "camelus_dromedarius::NC_087447.1": 72861929,
+  "vicugna_pacos::NC_133004.1": 47363144,
+  "vicugna_pacos::NC_132996.1": 75404351,
+  "desmodus_rotundus::NC_071387.1": 212258161,
+  "desmodus_rotundus::NC_071391.1": 167477801,
+  "mirounga_angustirostris::NC_072358.1": 165725162,
+  "mirounga_angustirostris::NC_072366.1": 101211745,
+  "physeter_catodon::NC_041229.1": 104445197,
+  "tachyglossus_aculeatus::NC_052086.1": 84223737,
+  "tachyglossus_aculeatus::NC_052067.1": 176423766,
+  "calypte_anna::NC_044260.1": 15497061,
+  "aptenodytes_patagonicus::NC_134961.1": 20257728
 }

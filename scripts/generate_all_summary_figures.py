@@ -35,13 +35,14 @@ def build_datasets(base_dir=BASE_DIR):
 # =====================================================================
 # FIGURE 1: Macroevolutionary Locus Divergence (Phylogenetic Dumbbell)
 # =====================================================================
-def plot_figure1_publication(df_summary, out_dir=RESULTS_DIR):
+def plot_figure1_publication(df_summary, out_dir=RESULTS_DIR, filename_prefix="summary_figure1_locus_divergence", title=None):
     os.makedirs(out_dir, exist_ok=True)
-    png_path = os.path.join(out_dir, "summary_figure1_locus_divergence.png")
-    pdf_path = os.path.join(out_dir, "summary_figure1_locus_divergence.pdf")
+    png_path = os.path.join(out_dir, f"{filename_prefix}.png")
+    pdf_path = os.path.join(out_dir, f"{filename_prefix}.pdf")
 
     n_sp = len(df_summary)
-    fig, (ax_fg, ax_cds) = plt.subplots(1, 2, figsize=(22, max(19, n_sp * 0.44)), sharey=True, dpi=300)
+    fig_h = max(16, n_sp * 0.48)
+    fig, (ax_fg, ax_cds) = plt.subplots(1, 2, figsize=(22, fig_h), sharey=True, dpi=300)
     y_indices = np.arange(n_sp)
 
     def style_dumbbell_axis(ax, title, xlabel, xlim):
@@ -78,6 +79,7 @@ def plot_figure1_publication(df_summary, out_dir=RESULTS_DIR):
         "Chondrichthyes": "#e0f7fa",
         "Holostei": "#ffffff",
         "Teleostei": "#f0f4f8",
+        "Sarcopterygii": "#ede7f6",
         "Amphibia": "#ffffff",
         "Testudines": "#fffde7",
         "Squamata": "#fffde7",
@@ -192,20 +194,18 @@ def plot_figure1_publication(df_summary, out_dir=RESULTS_DIR):
     ]
     ax_cds.legend(handles=legend_elements_cds, loc='lower right', frameon=True, fontsize=9.0, facecolor='white', framealpha=0.95)
 
-    fig.suptitle(
-        f"Figure 1: Macroevolutionary Locus Divergence Across Vertebrates (n={n_sp} Species)",
-        fontsize=15, fontweight="bold", y=0.99
-    )
-    plt.tight_layout(rect=[0, 0, 1, 0.98])
+    fig_title = title or f"Figure 1: Macroevolutionary Locus Divergence Across Vertebrates (n={n_sp} Species)"
+    fig.suptitle(fig_title, fontsize=15, fontweight="bold", y=0.995 if n_sp > 40 else 0.99)
+    plt.tight_layout(rect=[0, 0, 1, 0.985 if n_sp > 40 else 0.98])
     plt.savefig(png_path, dpi=300)
     plt.savefig(pdf_path)
     plt.close(fig)
-    print(f"Generated Figure 1: {png_path} and {pdf_path}")
+    print(f"Generated Figure 1 ({filename_prefix}): {png_path} and {pdf_path}")
     return png_path, pdf_path
 
 
-def plot_figure1_interactive(df_summary, out_dir=RESULTS_DIR):
-    html_path = os.path.join(out_dir, "summary_figure1_locus_divergence.html")
+def plot_figure1_interactive(df_summary, out_dir=RESULTS_DIR, filename_prefix="summary_figure1_locus_divergence", title=None):
+    html_path = os.path.join(out_dir, f"{filename_prefix}.html")
     n_sp = len(df_summary)
 
     fig = make_subplots(
@@ -402,14 +402,15 @@ def plot_figure1_interactive(df_summary, out_dir=RESULTS_DIR):
     fig.update_xaxes(title_text="<b>Standardized Z-Score: CDS GC</b>", range=[-2.6, 3.6], row=1, col=2)
     fig.update_yaxes(tickvals=y_coords, ticktext=y_labels, autorange="reversed", row=1, col=1)
 
+    fig_title = title or f"Figure 1: Macroevolutionary Locus Divergence Across Vertebrates (n={n_sp} Species)"
     fig.update_layout(
-        title=f"<b>Figure 1: Macroevolutionary Locus Divergence Across Vertebrates (n={n_sp} Species)</b>",
-        height=max(1200, n_sp * 28), width=1400,
+        title=f"<b>{fig_title}</b>",
+        height=max(900, n_sp * 30), width=1400,
         showlegend=False,
         template="plotly_white"
     )
     fig.write_html(html_path)
-    print(f"Generated Figure 1 HTML: {html_path}")
+    print(f"Generated Figure 1 HTML ({filename_prefix}): {html_path}")
     return html_path
 
 
@@ -825,9 +826,65 @@ def plot_figure3_interactive(df_summary, out_dir=RESULTS_DIR):
     return html_path
 
 
+FIG1A_SUMMARY_SPECIES = [
+    # Cyclostomes / Agnatha
+    "eptatretus_burgeri",
+    "petromyzon_marinus",
+    # Chondrichthyes
+    "scyliorhinus_canicula",
+    "somniosus_microcephalus",
+    "carcharhinus_amblyrhynchos",
+    # Non-teleost Actinopterygii
+    "polypterus_senegalus",
+    "lepisosteus_oculatus",
+    # Teleostei
+    "danio_rerio",
+    "takifugu_rubripes",
+    # Sarcopterygii
+    "latimeria_chalumnae",
+    # Amphibia
+    "geotrypetes_seraphini",
+    "ambystoma_mexicanum",
+    "xenopus_tropicalis",
+    # Testudines
+    "Chrysemys_picta_bellii",
+    "chelonia_mydas",
+    # Squamata
+    "anolis_carolinensis",
+    "vipera_berus",
+    "podarcis_muralis",
+    # Crocodylia / Archosauria
+    "alligator_mississippiensis",
+    # Aves
+    "Gallus_gallus",
+    "calypte_anna",
+    "aptenodytes_patagonicus",
+    # Monotremata
+    "ornithorhynchus_anatinus",
+    "tachyglossus_aculeatus",
+    # Marsupialia
+    "Monodelphis_domestica",
+    # Mammalia (Placental Models & Physiological Extrema)
+    "loxodonta_africana",
+    "heterocephalus_glaber",
+    "Mus_musculus",
+    "desmodus_rotundus",
+    "vicugna_pacos",
+    "mirounga_angustirostris",
+    "physeter_catodon",
+    "Homo_sapiens",
+]
+
+
 def synchronize_all_results(base_dir="/Users/ibrahim/Documents/globin_project",
                             art_dir="/Users/ibrahim/.gemini/antigravity-cli/brain/9a1c7782-8799-45ce-a82d-191b5d492881"):
     files = [
+        "summary_figure1a_locus_divergence_summary.png",
+        "summary_figure1a_locus_divergence_summary.pdf",
+        "summary_figure1a_locus_divergence_summary.html",
+        "summary_figure1b_locus_divergence_full.png",
+        "summary_figure1b_locus_divergence_full.pdf",
+        "summary_figure1b_locus_divergence_full.html",
         "summary_figure1_locus_divergence.png",
         "summary_figure1_locus_divergence.pdf",
         "summary_figure1_locus_divergence.html",
@@ -855,8 +912,39 @@ if __name__ == "__main__":
     df_sum.to_csv(os.path.join(RESULTS_DIR, "cross_species_summary_table.csv"), index=False)
     print(f"Cross-species summary built for {len(df_sum)} species.")
 
-    plot_figure1_publication(df_sum)
-    plot_figure1_interactive(df_sum)
+    # 1. Figure 1A: Curated Representative Summary (Spacious, Publication-Ready)
+    df_sum_curated = df_sum[df_sum['species'].isin(FIG1A_SUMMARY_SPECIES)].copy().reset_index(drop=True)
+    print(f"Generating Figure 1A (Curated Summary) for {len(df_sum_curated)} benchmark species...")
+    plot_figure1_publication(
+        df_sum_curated,
+        filename_prefix="summary_figure1a_locus_divergence_summary",
+        title=f"Figure 1A: Macroevolutionary Locus Divergence Across Key Clades & Extrema (n={len(df_sum_curated)} Species)"
+    )
+    plot_figure1_interactive(
+        df_sum_curated,
+        filename_prefix="summary_figure1a_locus_divergence_summary",
+        title=f"Figure 1A: Macroevolutionary Locus Divergence Across Key Clades & Extrema (n={len(df_sum_curated)} Species)"
+    )
+
+    # 2. Figure 1B: Complete Meta-Divergence Graph (All 68 Active Species)
+    print(f"Generating Figure 1B (Comprehensive) for all {len(df_sum)} species...")
+    plot_figure1_publication(
+        df_sum,
+        filename_prefix="summary_figure1b_locus_divergence_full",
+        title=f"Figure 1B: Complete Macroevolutionary Locus Divergence Across All Vertebrates (n={len(df_sum)} Species)"
+    )
+    plot_figure1_interactive(
+        df_sum,
+        filename_prefix="summary_figure1b_locus_divergence_full",
+        title=f"Figure 1B: Complete Macroevolutionary Locus Divergence Across All Vertebrates (n={len(df_sum)} Species)"
+    )
+
+    # Maintain legacy summary_figure1_locus_divergence.* as a mirror of Figure 1A
+    for ext in [".png", ".pdf", ".html"]:
+        src_1a = os.path.join(RESULTS_DIR, f"summary_figure1a_locus_divergence_summary{ext}")
+        dst_legacy = os.path.join(RESULTS_DIR, f"summary_figure1_locus_divergence{ext}")
+        if os.path.exists(src_1a):
+            shutil.copy2(src_1a, dst_legacy)
 
     plot_figure2_publication(df_sum)
     plot_figure2_interactive(df_sum)

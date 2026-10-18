@@ -162,6 +162,14 @@ class BaselineManager:
 
         if not force_recompute and os.path.exists(table_path) and os.path.exists(stats_path):
             df = pd.read_csv(table_path)
+            if "whole_gene_length" in df.columns and "whole_gene_len" not in df.columns:
+                df["whole_gene_len"] = df["whole_gene_length"]
+            elif "whole_gene_len" in df.columns and "whole_gene_length" not in df.columns:
+                df["whole_gene_length"] = df["whole_gene_len"]
+            if "cds_length" in df.columns and "cds_len" not in df.columns:
+                df["cds_len"] = df["cds_length"]
+            elif "cds_len" in df.columns and "cds_length" not in df.columns:
+                df["cds_length"] = df["cds_len"]
             with open(stats_path, "r", encoding="utf-8") as f:
                 stats = json.load(f)
             # Ensure mean_genomic_gc and std_genomic_gc are always present

@@ -665,7 +665,7 @@ def main():
     <header>
         <h1>🧬 Vertebrate Globin Genomics Explorer</h1>
         <p>Interactive Comparative Atlas, Synteny Tracker & 1-on-1 Head-to-Head Architectural Visualizer</p>
-        <span class="badge">44 Vertebrate Genomes • 80 Curated Loci • 1,017 Verified Gene Models • 9 Evolutionary Clades</span>
+        <span class="badge">68 Vertebrate Genomes • 118 Curated Loci • 1,515 Verified Gene Models • 10 Evolutionary Clades</span>
     </header>
 
     <nav class="tabs">
@@ -682,16 +682,17 @@ def main():
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
                 <h3>Global Macroevolutionary Figures</h3>
                 <div class="btn-group" id="meta-view-btns">
-                    <button class="btn active" onclick="setMetaView('fig1')">📊 Fig 1: Locus Divergence</button>
+                    <button class="btn active" onclick="setMetaView('fig1a')">📊 Fig 1A: Curated Summary</button>
+                    <button class="btn" onclick="setMetaView('fig1b')">🌐 Fig 1B: All 68 Species</button>
                     <button class="btn" onclick="setMetaView('fig2')">🔬 Fig 2: Mechanistic Drivers</button>
                     <button class="btn" onclick="setMetaView('fig3')">🗺️ Fig 3: Clade Heatmap</button>
                     <button class="btn" onclick="setMetaView('clean')">🌌 Standardized Meta Graph</button>
                 </div>
             </div>
             <div class="img-container" onclick="openLightbox(this)">
-                <img id="meta-img" src="summary_figure1_locus_divergence.png" alt="Fig 1: Locus Divergence Across Clades">
+                <img id="meta-img" src="summary_figure1a_locus_divergence_summary.png" alt="Fig 1A: Curated Macroevolutionary Locus Divergence Across Key Clades & Extrema">
                 <div class="img-caption-bar">
-                    <span class="caption-text" id="caption-meta">Fig 1: Locus Divergence Across Clades</span>
+                    <span class="caption-text" id="caption-meta">Fig 1A: Curated Macroevolutionary Locus Divergence Across Key Clades & Extrema</span>
                     <span class="caption-action">🔍 Inspect & Zoom →</span>
                 </div>
             </div>
@@ -847,7 +848,7 @@ def main():
     <!-- TAB 4: INTERVAL GENES DATABASE -->
     <div id="tab-genes" class="tab-pane">
         <div class="card">
-            <h3>Annotated Genes Search Database (1,017 Genes)</h3>
+            <h3>Annotated Genes Search Database (1,515 Genes)</h3>
             <div class="search-box">
                 <input type="text" id="gene-search" placeholder="Search by Gene Symbol, Species, or Clade (e.g. HBA, human, mammal)..." oninput="filterGenes()">
             </div>
@@ -1322,8 +1323,9 @@ def main():
                 }});
             }}
             const img = document.getElementById('meta-img');
-            let figName = 'Fig 1: Locus Divergence Across Clades';
-            if (figType === 'fig1') {{ img.src = 'summary_figure1_locus_divergence.png'; figName = 'Fig 1: Locus Divergence Across Clades'; }}
+            let figName = 'Fig 1A: Curated Macroevolutionary Locus Divergence Across Key Clades & Extrema';
+            if (figType === 'fig1a' || figType === 'fig1') {{ img.src = 'summary_figure1a_locus_divergence_summary.png'; figName = 'Fig 1A: Curated Macroevolutionary Locus Divergence Across Key Clades & Extrema'; }}
+            if (figType === 'fig1b') {{ img.src = 'summary_figure1b_locus_divergence_full.png'; figName = 'Fig 1B: Complete Macroevolutionary Locus Divergence Across All 68 Vertebrates'; }}
             if (figType === 'fig2') {{ img.src = 'summary_figure2_mechanistic_drivers.png'; figName = 'Fig 2: Mechanistic Drivers of GC Polarity'; }}
             if (figType === 'fig3') {{ img.src = 'summary_figure3_clade_heatmap.png'; figName = 'Fig 3: Clade Architectural Heatmap'; }}
             if (figType === 'clean') {{ img.src = 'meta_comparative_graph_clean.png'; figName = 'Standardized Meta Graph'; }}

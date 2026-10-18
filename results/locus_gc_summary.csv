@@ -102,3 +102,18 @@ notechis_scutatus,Tiger Snake (N. scutatus),amniote_reptile,alpha_globin,NC_1420
 notechis_scutatus,Tiger Snake (N. scutatus),amniote_reptile,beta_globin,NC_142013.1,200000,480000,280001,52.95,60.57,52.06,60.78,51.84,63.74,37.16,52.9,39.64,62.67,52.4,49.53,55.26,2,20
 pantherophis_guttatus,Corn Snake (P. guttatus),amniote_reptile,alpha_globin,NC_142076.1,22930000,23040000,110001,50.05,55.27,47.51,58.54,50.74,51.25,42.27,50.2,40.42,56.99,49.86,49.86,49.86,2,14
 pantherophis_guttatus,Corn Snake (P. guttatus),amniote_reptile,beta_globin,NC_142067.1,640000,930000,290001,49.27,55.75,47.94,56.49,49.05,63.17,38.17,49.18,34.48,59.53,48.28,45.6,52.58,2,27
+latimeria_chalumnae,Coelacanth (L. chalumnae),sarcopterygii,alpha_beta_cluster,NC_088143.1,166200000,166550000,350001,42.18,44.8,41.93,46.82,47.12,46.8,50.87,42.14,36.45,47.2,41.99,40.54,43.33,4,7
+polypterus_senegalus,Bichir (P. senegalus),non_teleost_fish,alpha_beta_cluster,NC_053166.1,157250000,157900000,650001,43.46,46.49,43.33,53.52,51.3,54.47,52.53,43.43,36.28,50.63,43.41,39.06,46.63,8,14
+camelus_dromedarius,Dromedary (C. dromedarius),amniote_mammal,alpha_globin,NC_087459.1,6850000,7030000,180001,49.76,60.28,48.47,60.94,51.1,63.17,40.49,49.44,36.82,60.93,48.62,45.32,53.16,6,14
+camelus_dromedarius,Dromedary (C. dromedarius),amniote_mammal,beta_globin,NC_087447.1,45400000,45450000,50001,39.01,52.45,38.47,53.92,35.28,53.92,35.28,38.85,34.9,42.32,39.01,39.01,39.01,4,4
+vicugna_pacos,Alpaca (V. pacos),amniote_mammal,alpha_globin,NC_133004.1,18680000,18880000,200001,49.19,60.16,47.97,61.38,48.11,63.07,40.62,49.29,36.93,60.66,48.6,45.45,52.79,8,16
+vicugna_pacos,Alpaca (V. pacos),amniote_mammal,beta_globin,NC_132996.1,29710000,29750000,40001,38.22,50.52,37.57,53.73,60.83,54.43,59.46,38.56,35.2,39.81,38.22,38.22,38.22,3,4
+desmodus_rotundus,Vampire Bat (D. rotundus),amniote_mammal,alpha_globin,NC_071387.1,97650000,97850000,200001,50.37,59.35,49.27,60.7,49.32,63.49,39.35,50.25,37.3,62.78,49.38,46.6,53.0,5,13
+desmodus_rotundus,Vampire Bat (D. rotundus),amniote_mammal,beta_globin,NC_071391.1,44400000,44500000,100001,38.86,47.75,38.31,50.98,52.41,53.11,54.73,38.86,36.51,41.5,38.86,38.86,38.86,5,8
+mirounga_angustirostris,Elephant Seal (M. angustirostris),amniote_mammal,alpha_globin,NC_072358.1,128750000,128950000,200001,53.17,61.97,52.03,60.84,54.41,66.67,45.45,52.85,40.52,64.73,51.23,48.1,55.2,1,13
+mirounga_angustirostris,Elephant Seal (M. angustirostris),amniote_mammal,beta_globin,NC_072366.1,47000000,48450000,1450001,42.44,52.04,41.65,53.25,48.13,53.83,44.37,42.44,33.17,61.08,42.26,36.59,49.33,3,58
+physeter_catodon,Sperm Whale (P. catodon),amniote_mammal,beta_globin,NC_041229.1,60300000,61400000,1100001,41.91,53.21,41.27,53.7,49.99,54.13,60.05,41.76,33.52,59.83,41.49,38.38,48.51,4,30
+tachyglossus_aculeatus,Echidna (T. aculeatus),amniote_monotreme,alpha_globin,NC_052086.1,10520000,10730000,210001,54.19,64.06,53.43,64.09,53.99,63.67,45.75,54.06,48.93,63.73,53.87,53.06,55.05,9,15
+tachyglossus_aculeatus,Echidna (T. aculeatus),amniote_monotreme,beta_globin,NC_052067.1,137800000,138000000,200001,49.19,59.97,48.61,61.78,57.96,64.79,51.09,49.2,42.95,60.76,48.96,48.14,49.67,3,6
+calypte_anna,Hummingbird (C. anna),amniote_bird,alpha_globin,NC_044260.1,14200000,14500000,300001,50.66,56.55,49.94,58.83,50.43,58.34,38.55,50.72,40.93,66.29,50.38,48.16,52.22,3,18
+aptenodytes_patagonicus,King Penguin (A. patagonicus),amniote_bird,alpha_globin,NC_134961.1,140000,480000,340001,50.72,56.08,50.16,57.5,51.32,58.73,37.37,50.63,40.27,71.48,50.49,45.95,53.34,3,15

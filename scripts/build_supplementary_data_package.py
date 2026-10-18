@@ -197,8 +197,9 @@ def build_data_package(
     s4_rows = []
 
     # 1. Clade Level Differences: Mammals vs Birds
-    mam_a = df_sum[df_sum["clade_label"] == "Mammalia"]["a_fg_z"].dropna()
-    mam_b = df_sum[df_sum["clade_label"] == "Mammalia"]["b_fg_z"].dropna()
+    mam_paired = df_sum[(df_sum["clade_label"] == "Mammalia") & df_sum["a_fg_z"].notna() & df_sum["b_fg_z"].notna()]
+    mam_a = mam_paired["a_fg_z"]
+    mam_b = mam_paired["b_fg_z"]
     t_mam, p_mam = stats.ttest_rel(mam_a, mam_b)
     d_mam = (mam_a.mean() - mam_b.mean()) / np.sqrt((mam_a.std()**2 + mam_b.std()**2)/2)
     s4_rows.append({
@@ -221,8 +222,9 @@ def build_data_package(
     })
 
     # Birds paired test
-    bird_a = df_sum[df_sum["clade_label"] == "Aves"]["a_fg_z"].dropna()
-    bird_b = df_sum[df_sum["clade_label"] == "Aves"]["b_fg_z"].dropna()
+    bird_paired = df_sum[(df_sum["clade_label"] == "Aves") & df_sum["a_fg_z"].notna() & df_sum["b_fg_z"].notna()]
+    bird_a = bird_paired["a_fg_z"]
+    bird_b = bird_paired["b_fg_z"]
     t_bird, p_bird = stats.ttest_rel(bird_a, bird_b)
     d_bird = (bird_a.mean() - bird_b.mean()) / np.sqrt((bird_a.std()**2 + bird_b.std()**2)/2)
     s4_rows.append({
@@ -245,8 +247,9 @@ def build_data_package(
     })
 
     # Squamates paired test
-    squam_a = df_sum[df_sum["clade_label"] == "Reptilia"]["a_fg_z"].dropna()
-    squam_b = df_sum[df_sum["clade_label"] == "Reptilia"]["b_fg_z"].dropna()
+    squam_paired = df_sum[(df_sum["clade_label"] == "Reptilia") & df_sum["a_fg_z"].notna() & df_sum["b_fg_z"].notna()]
+    squam_a = squam_paired["a_fg_z"]
+    squam_b = squam_paired["b_fg_z"]
     t_squam, p_squam = stats.ttest_rel(squam_a, squam_b)
     d_squam = (squam_a.mean() - squam_b.mean()) / np.sqrt((squam_a.std()**2 + squam_b.std()**2)/2)
     s4_rows.append({
