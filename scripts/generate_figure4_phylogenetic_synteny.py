@@ -3,10 +3,15 @@ across the Vertebrate Tree (Polished Publication Version).
 
 Combines:
 1. Time-calibrated phylogenetic tree (520 Ma -> 0 Ma) with orthogonal branch layout.
-2. Syntenic chromosome schematics with cytogenetic centromeric constrictions,
-   telomeres, and cleanly positioned syntenic anchor labels.
-3. Paired codon position decomposition (GC1, GC2, GC3) illustrating the synonymous gBGC surge
-   and the polarity reversal between Mammalia (alpha-dominant) and Squamata (beta-dominant).
+2. Syntenic chromosome schematics:
+   - Bichromosomal species display TWO distinct chromosome ribbons (one for α-chromosome, one for β-chromosome)
+     with realistic chromosomal coordinates and physical megabase spans.
+   - Non-amniote tetrapods and fish display ONE single chromosome ribbon representing the ancestral linked α-β locus.
+3. Paired codon position decomposition (GC1, GC2, GC3):
+   - Purifying selection corridor (GC1 and GC2: 45–55%).
+   - Subunit Divergence Bar connecting α-GC3 and β-GC3, colored by a continuous diverging colormap (coolwarm)
+     depicting ΔGC3 (α vs β polarity).
+   - Dedicated legend positioned cleanly below data points without any overlap.
 4. Landmark macroevolutionary transition callouts (N1 through N8).
 
 Outputs:
@@ -23,12 +28,16 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from matplotlib.patches import FancyBboxPatch, Rectangle, Polygon
 from matplotlib.lines import Line2D
+import matplotlib.colors as mcolors
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RESULTS_DIR = os.path.join(BASE_DIR, "results")
 
+# -------------------------------------------------------------
+# 22 Representative Taxa with Realistic Chromosomal Architecture
+# -------------------------------------------------------------
 REPRESENTATIVE_TAXA = [
     # 0. Agnatha
     {
@@ -38,15 +47,14 @@ REPRESENTATIVE_TAXA = [
         'divergence_mya': 500,
         'state': 'CYCLOSTOME_PROTO',
         'color': '#7b1fa2',
-        'alpha_chr': 'GL478636',
-        'alpha_pos': 0.08,
-        'beta_chr': None,
-        'beta_pos': None,
-        'alpha_anchors': 'Proto-Hb',
-        'beta_anchors': '',
-        'notes': 'Single ancestral globin locus; monomeric/homomeric',
+        'is_bichromosomal': False,
+        'chr_label': 'GL478636',
+        'pos': 0.03,
+        'mb_range': '[0.04–0.09 Mb]',
+        'anchors': 'Ancestral Proto-Globin',
+        'notes': 'Single ancestral proto-globin locus; monomeric/homomeric',
     },
-    # 1-2. Chondrichthyes
+    # 1. Chondrichthyes - Grey Reef Shark
     {
         'species': 'carcharhinus_amblyrhynchos',
         'display': 'Grey Reef Shark (C. amblyrhynchos)',
@@ -54,14 +62,14 @@ REPRESENTATIVE_TAXA = [
         'divergence_mya': 435,
         'state': 'CHONDRICHTHYAN_GRADIENT',
         'color': '#00838f',
-        'alpha_chr': 'Chr 18',
-        'alpha_pos': 0.06,
-        'beta_chr': 'Chr 18',
-        'beta_pos': 0.16,
-        'alpha_anchors': 'NPRL3-MPG',
-        'beta_anchors': 'Flank',
-        'notes': 'Separate loci; GC strictly governed by telomeric distance gradient',
+        'is_bichromosomal': False,
+        'chr_label': 'Chr 18',
+        'pos': 0.04,
+        'mb_range': '[3.8–4.0 Mb]',
+        'anchors': '◀ NPRL3-MPG (linked)',
+        'notes': 'Single linked locus on Chr 18; subtelomeric distance governs GC',
     },
+    # 2. Chondrichthyes - Catshark
     {
         'species': 'scyliorhinus_canicula',
         'display': 'Catshark (S. canicula)',
@@ -69,15 +77,18 @@ REPRESENTATIVE_TAXA = [
         'divergence_mya': 430,
         'state': 'CHONDRICHTHYAN_GRADIENT',
         'color': '#00838f',
+        'is_bichromosomal': True,
         'alpha_chr': 'Chr 15',
-        'alpha_pos': 0.04,
-        'beta_chr': 'Chr 21',
-        'beta_pos': 0.68,
+        'alpha_pos': 0.02,
+        'alpha_mb': '[3.8 Mb]',
         'alpha_anchors': 'NPRL3-RHBDF1',
-        'beta_anchors': 'Flank',
-        'notes': 'Bichromosomal; alpha subtelomeric, beta deep interstitial',
+        'beta_chr': 'Chr 21',
+        'beta_pos': 0.45,
+        'beta_mb': '[73.6 Mb]',
+        'beta_anchors': 'Deep Interstitial',
+        'notes': 'Bichromosomal; α subtelomeric, β deep interstitial',
     },
-    # 3. Basal Actinopterygii
+    # 3. Basal Actinopterygii - Spotted Gar
     {
         'species': 'lepisosteus_oculatus',
         'display': 'Spotted Gar (L. oculatus)',
@@ -85,15 +96,14 @@ REPRESENTATIVE_TAXA = [
         'divergence_mya': 350,
         'state': 'LINKED_ANCESTRAL',
         'color': '#1565c0',
-        'alpha_chr': 'LG13',
-        'alpha_pos': 0.12,
-        'beta_chr': 'LG13',
-        'beta_pos': 0.12,
-        'alpha_anchors': 'NPRL3-MPG-RHBDF1',
-        'beta_anchors': '',
-        'notes': 'Pre-teleost 3R state; single linked alpha-beta cluster on LG13',
+        'is_bichromosomal': False,
+        'chr_label': 'LG13',
+        'pos': 0.43,
+        'mb_range': '[14.7–14.9 Mb]',
+        'anchors': '◀ NPRL3-MPG-RHBDF1 (linked)',
+        'notes': 'Pre-teleost 3R state; single linked α-β cluster on LG13',
     },
-    # 4-5. Teleostei
+    # 4. Teleostei - Zebrafish
     {
         'species': 'danio_rerio',
         'display': 'Zebrafish (D. rerio)',
@@ -101,14 +111,14 @@ REPRESENTATIVE_TAXA = [
         'divergence_mya': 310,
         'state': 'LINKED_ANCESTRAL',
         'color': '#1976d2',
-        'alpha_chr': 'Chr 3 & 12',
-        'alpha_pos': 0.10,
-        'beta_chr': 'Chr 3 & 12',
-        'beta_pos': 0.10,
-        'alpha_anchors': 'NPRL3-MPG',
-        'beta_anchors': '',
-        'notes': '3R duplicate loci (LA Chr 3, LB Chr 12); tandem head-to-head pairs',
+        'is_bichromosomal': False,
+        'chr_label': 'Chr 3 & 12',
+        'pos': 0.03,
+        'mb_range': '[20.2–20.5 Mb]',
+        'anchors': '◀ NPRL3-MPG (linked)',
+        'notes': '3R duplicate loci (LA Chr 3, LB Chr 12); tandem linked α-β pairs',
     },
+    # 5. Teleostei - Fugu
     {
         'species': 'takifugu_rubripes',
         'display': 'Fugu (T. rubripes)',
@@ -116,15 +126,14 @@ REPRESENTATIVE_TAXA = [
         'divergence_mya': 310,
         'state': 'LINKED_ANCESTRAL',
         'color': '#1976d2',
-        'alpha_chr': 'Chr 2',
-        'alpha_pos': 0.18,
-        'beta_chr': 'Chr 2',
-        'beta_pos': 0.18,
-        'alpha_anchors': 'NPRL3-MPG',
-        'beta_anchors': '',
-        'notes': 'Ultra-compact genome; linked alpha-beta pairs retain parallel GC',
+        'is_bichromosomal': False,
+        'chr_label': 'Chr 5 & 1',
+        'pos': 0.43,
+        'mb_range': '[10.3–10.5 Mb]',
+        'anchors': '◀ NPRL3-MPG (linked)',
+        'notes': 'Ultra-compact genome; linked α-β pairs retain parallel GC',
     },
-    # 6. Sarcopterygii
+    # 6. Sarcopterygii - Coelacanth
     {
         'species': 'latimeria_chalumnae',
         'display': 'Coelacanth (L. chalumnae)',
@@ -132,15 +141,14 @@ REPRESENTATIVE_TAXA = [
         'divergence_mya': 415,
         'state': 'LINKED_ANCESTRAL',
         'color': '#2e7d32',
-        'alpha_chr': 'Chr 5',
-        'alpha_pos': 0.14,
-        'beta_chr': 'Chr 5',
-        'beta_pos': 0.14,
-        'alpha_anchors': 'NPRL3-LUC7L',
-        'beta_anchors': '',
-        'notes': 'Basal lobe-finned fish; retains primordial linked alpha-beta locus flanked by NPRL3-LUC7L',
+        'is_bichromosomal': False,
+        'chr_label': 'Chr 5',
+        'pos': 0.03,
+        'mb_range': '[166.2–166.7 Mb]',
+        'anchors': '◀ NPRL3-LUC7L (linked)',
+        'notes': 'Basal sarcopterygian; retains ancestral linked α-β locus on Chr 5',
     },
-    # 7-8. Amphibia
+    # 7. Amphibia - Clawed Frog
     {
         'species': 'xenopus_tropicalis',
         'display': 'Clawed Frog (X. tropicalis)',
@@ -148,14 +156,14 @@ REPRESENTATIVE_TAXA = [
         'divergence_mya': 270,
         'state': 'LINKED_ANCESTRAL',
         'color': '#388e3c',
-        'alpha_chr': 'Chr 9',
-        'alpha_pos': 0.10,
-        'beta_chr': 'Chr 9',
-        'beta_pos': 0.10,
-        'alpha_anchors': 'NPRL3-RHBDF1-LUC7L',
-        'beta_anchors': '',
-        'notes': 'Non-amniote tetrapod; retains single linked alpha-beta locus on Chr 9 (hba + hbg/hbe)',
+        'is_bichromosomal': False,
+        'chr_label': 'Chr 9',
+        'pos': 0.35,
+        'mb_range': '[40.3–41.3 Mb]',
+        'anchors': '◀ NPRL3-RHBDF1-LUC7L (linked)',
+        'notes': 'Non-amniote tetrapod; retains single linked α-β locus on Chr 9 (hba + hbg/hbe)',
     },
+    # 8. Amphibia - Axolotl
     {
         'species': 'ambystoma_mexicanum',
         'display': 'Axolotl (A. mexicanum)',
@@ -163,15 +171,14 @@ REPRESENTATIVE_TAXA = [
         'divergence_mya': 270,
         'state': 'LINKED_ANCESTRAL',
         'color': '#388e3c',
-        'alpha_chr': 'Chr 2',
-        'alpha_pos': 0.12,
-        'beta_chr': 'Chr 2',
-        'beta_pos': 0.12,
-        'alpha_anchors': 'NPRL3-RHBDF1',
-        'beta_anchors': '',
-        'notes': 'Giant salamander genome (32 Gb); retains primordial linked alpha-beta locus on Chr 2',
+        'is_bichromosomal': False,
+        'chr_label': 'Chr 2',
+        'pos': 0.45,
+        'mb_range': '[681–689 Mb]',
+        'anchors': '◀ NPRL3-RHBDF1 (linked)',
+        'notes': 'Giant salamander genome (32 Gb); retains ancestral linked α-β locus on Chr 2',
     },
-    # 9-12. Archosauromorpha (Testudines, Crocodylia, Aves)
+    # 9. Testudines - Green Sea Turtle
     {
         'species': 'chelonia_mydas',
         'display': 'Green Sea Turtle (C. mydas)',
@@ -179,14 +186,18 @@ REPRESENTATIVE_TAXA = [
         'divergence_mya': 245,
         'state': 'ARCHOSAUR_BALANCED',
         'color': '#00796b',
-        'alpha_chr': 'Chr 14',
-        'alpha_pos': 0.04,
-        'beta_chr': 'Chr 21',
-        'beta_pos': 0.03,
-        'alpha_anchors': 'NPRL3-LUC7L',
+        'is_bichromosomal': True,
+        'alpha_chr': 'Chr NC_051250',
+        'alpha_pos': 0.37,
+        'alpha_mb': '[31.2 Mb]',
+        'alpha_anchors': 'NPRL3-MPG',
+        'beta_chr': 'Chr NC_057849',
+        'beta_pos': 0.01,
+        'beta_mb': '[3.5 Mb subtelo]',
         'beta_anchors': 'OR51-RRM1',
-        'notes': 'Archosauromorph sister; balanced microchromosomal placement',
+        'notes': 'Basal archelosaur; microchromosomal partitioning of α and β',
     },
+    # 10. Crocodylia - American Alligator
     {
         'species': 'alligator_mississippiensis',
         'display': 'American Alligator (A. mississippiensis)',
@@ -194,14 +205,18 @@ REPRESENTATIVE_TAXA = [
         'divergence_mya': 240,
         'state': 'ARCHOSAUR_BALANCED',
         'color': '#00796b',
-        'alpha_chr': 'Chr 15',
-        'alpha_pos': 0.02,
-        'beta_chr': 'Chr 18',
-        'beta_pos': 0.02,
-        'alpha_anchors': 'NPRL3-MPG-LUC7L',
-        'beta_anchors': 'OR51-NUMA1',
-        'notes': 'Both clusters situated near microchromosome ends',
+        'is_bichromosomal': True,
+        'alpha_chr': 'Chr NC_081836',
+        'alpha_pos': 0.37,
+        'alpha_mb': '[21.2 Mb]',
+        'alpha_anchors': 'NPRL3-LUC7L',
+        'beta_chr': 'Chr NC_081824',
+        'beta_pos': 0.01,
+        'beta_mb': '[4.4 Mb subtelo]',
+        'beta_anchors': 'RRM1-STIM1',
+        'notes': 'Archosaur karyotype; slow morphological evolution, stable GC',
     },
+    # 11. Aves - Chicken
     {
         'species': 'Gallus_gallus',
         'display': 'Chicken (G. gallus)',
@@ -209,14 +224,18 @@ REPRESENTATIVE_TAXA = [
         'divergence_mya': 100,
         'state': 'ARCHOSAUR_BALANCED',
         'color': '#00796b',
-        'alpha_chr': 'Chr 14',
-        'alpha_pos': 0.02,
-        'beta_chr': 'Chr 25',
-        'beta_pos': 0.01,
-        'alpha_anchors': 'NPRL3-MPG-LUC7L',
-        'beta_anchors': 'OR51-NUMA1',
-        'notes': 'Classic avian microchromosomes (Chr 14 & 25); parallel high GC3 (>75%)',
+        'is_bichromosomal': True,
+        'alpha_chr': 'micro-Chr 14',
+        'alpha_pos': 0.22,
+        'alpha_mb': '[12.0 Mb]',
+        'alpha_anchors': 'NPRL3-MPG',
+        'beta_chr': 'macro-Chr 1',
+        'beta_pos': 0.003,
+        'beta_mb': '[196.0 Mb subtelo]',
+        'beta_anchors': 'FOLR1-OR51',
+        'notes': 'α on micro-Chr 14; β on macro-Chr 1 subtelomere',
     },
+    # 12. Aves - Hummingbird
     {
         'species': 'calypte_anna',
         'display': "Anna's Hummingbird (C. anna)",
@@ -224,61 +243,75 @@ REPRESENTATIVE_TAXA = [
         'divergence_mya': 100,
         'state': 'ARCHOSAUR_BALANCED',
         'color': '#00796b',
-        'alpha_chr': 'Chr 14',
-        'alpha_pos': 0.02,
-        'beta_chr': 'Chr 25',
-        'beta_pos': 0.01,
+        'is_bichromosomal': True,
+        'alpha_chr': 'micro-Chr 14',
+        'alpha_pos': 0.07,
+        'alpha_mb': '[14.2 Mb]',
         'alpha_anchors': 'NPRL3-LUC7L',
-        'beta_anchors': 'OR51-NUMA1',
-        'notes': 'High metabolic rate; both microchromosomal clusters maintain elevated GC',
+        'beta_chr': 'micro-Chr 25',
+        'beta_pos': 0.05,
+        'beta_mb': '[Subtelomeric]',
+        'beta_anchors': 'OR51-RRM1',
+        'notes': 'Ultra-high metabolic rate; both loci on microchromosomes',
     },
-    # 13-15. Squamata - The Inversion
+    # 13. Squamata - Wall Lizard
     {
         'species': 'podarcis_muralis',
         'display': 'Wall Lizard (P. muralis)',
-        'clade': 'Lacertoidea',
+        'clade': 'Squamata',
         'divergence_mya': 165,
         'state': 'SQUAMATE_BETA_INVERTED',
         'color': '#d32f2f',
-        'alpha_chr': 'Chr 5',
-        'alpha_pos': 0.023,
-        'beta_chr': 'Chr 18',
-        'beta_pos': 0.014,
+        'is_bichromosomal': True,
+        'alpha_chr': 'Chr NC_135668',
+        'alpha_pos': 0.02,
+        'alpha_mb': '[1.2 Mb subtelo]',
         'alpha_anchors': 'NPRL3-MPG',
-        'beta_anchors': 'CDCA8-OR51-RRM1',
-        'notes': 'Squamate microchromosomal β; both loci capture subtelomeric domains',
+        'beta_chr': 'Chr NC_135658',
+        'beta_pos': 0.01,
+        'beta_mb': '[1.6 Mb subtelo]',
+        'beta_anchors': 'CDCA8 (subtelo)',
+        'notes': 'Both α and β in terminal subtelomeres; parallel hyper-GC surges',
     },
+    # 14. Squamata - Corn Snake
     {
         'species': 'pantherophis_guttatus',
         'display': 'Corn Snake (P. guttatus)',
-        'clade': 'Serpentes',
+        'clade': 'Squamata',
         'divergence_mya': 110,
         'state': 'SQUAMATE_BETA_INVERTED',
         'color': '#c2185b',
-        'alpha_chr': 'Chr 4',
-        'alpha_pos': 0.75,
-        'beta_chr': 'Chr 16',
-        'beta_pos': 0.01,
+        'is_bichromosomal': True,
+        'alpha_chr': 'macro-Chr 4',
+        'alpha_pos': 0.50,
+        'alpha_mb': '[22.9 Mb internal]',
         'alpha_anchors': 'NPRL3-MPG',
-        'beta_anchors': 'CDCA8-OR51-RRM1-STIM1',
-        'notes': 'Runaway β-GC3 (92.2%) driven by subtelomeric microchromosome capture',
+        'beta_chr': 'micro-Chr',
+        'beta_pos': 0.006,
+        'beta_mb': '[0.7 Mb subtelo]',
+        'beta_anchors': '◀ CDCA8-OR51-RRM1',
+        'notes': 'The Squamate Inversion: β translocated to microchromosome subtelomere',
     },
+    # 15. Squamata - Common Adder
     {
         'species': 'vipera_berus',
         'display': 'Common Adder (V. berus)',
-        'clade': 'Serpentes',
+        'clade': 'Squamata',
         'divergence_mya': 110,
         'state': 'SQUAMATE_BETA_INVERTED',
         'color': '#c2185b',
-        'alpha_chr': 'Chr 4',
-        'alpha_pos': 0.74,
-        'beta_chr': 'Chr 16',
-        'beta_pos': 0.01,
+        'is_bichromosomal': True,
+        'alpha_chr': 'macro-Chr 4',
+        'alpha_pos': 0.50,
+        'alpha_mb': '[143 kb internal]',
         'alpha_anchors': 'NPRL3-MPG',
-        'beta_anchors': 'CDCA8-OR51-RRM1',
-        'notes': 'Viperid extreme polarity reversal: β-GC3 93.3%, α-GC3 70.6%',
+        'beta_chr': 'micro-Chr',
+        'beta_pos': 0.005,
+        'beta_mb': '[563 kb subtelo]',
+        'beta_anchors': '◀ RRM1-STIM1',
+        'notes': 'Extreme squamate polarity: β-GC3 reaches 93.3% while α remains low',
     },
-    # 16-17. Mammalia - Monotremata & Marsupialia
+    # 16. Mammalia - Platypus
     {
         'species': 'ornithorhynchus_anatinus',
         'display': 'Platypus (O. anatinus)',
@@ -286,14 +319,18 @@ REPRESENTATIVE_TAXA = [
         'divergence_mya': 165,
         'state': 'MAMMALIAN_ALPHA_SUBTELO',
         'color': '#f57c00',
+        'is_bichromosomal': True,
         'alpha_chr': 'Chr 21',
-        'alpha_pos': 0.03,
-        'beta_chr': 'Chr 18',
-        'beta_pos': 0.65,
+        'alpha_pos': 0.36,
+        'alpha_mb': '[15.7 Mb]',
         'alpha_anchors': 'NPRL3-MPG-LUC7L',
-        'beta_anchors': 'OR51-NUMA1',
-        'notes': 'Basal mammal; α already captures subtelomeric position on small chr',
+        'beta_chr': 'Chr 2',
+        'beta_pos': 0.19,
+        'beta_mb': '[139.4 Mb internal]',
+        'beta_anchors': 'OR51',
+        'notes': 'Basal mammal; α and β decoupled, transitional isochore structure',
     },
+    # 17. Mammalia - Gray Opossum
     {
         'species': 'Monodelphis_domestica',
         'display': 'Gray Opossum (M. domestica)',
@@ -301,15 +338,18 @@ REPRESENTATIVE_TAXA = [
         'divergence_mya': 140,
         'state': 'MAMMALIAN_ALPHA_SUBTELO',
         'color': '#f57c00',
-        'alpha_chr': 'Chr 1',
-        'alpha_pos': 0.04,
-        'beta_chr': 'Chr 3',
-        'beta_pos': 0.68,
+        'is_bichromosomal': True,
+        'alpha_chr': 'Chr 6',
+        'alpha_pos': 0.49,
+        'alpha_mb': '[149.1 Mb]',
         'alpha_anchors': 'NPRL3-MPG-LUC7L',
-        'beta_anchors': 'FOLR1-OR51-NUMA1',
-        'notes': 'Marsupial canonical arrangement: α subtelomeric, β interstitial',
+        'beta_chr': 'Chr 4',
+        'beta_pos': 0.19,
+        'beta_mb': '[352.2 Mb internal]',
+        'beta_anchors': 'FOLR1-OR51',
+        'notes': 'Metatherian model; intermediate GC levels, stable autosomes',
     },
-    # 18-21. Mammalia - Eutheria (Placentalia)
+    # 18. Mammalia - Human
     {
         'species': 'Homo_sapiens',
         'display': 'Human (H. sapiens)',
@@ -317,14 +357,18 @@ REPRESENTATIVE_TAXA = [
         'divergence_mya': 85,
         'state': 'MAMMALIAN_ALPHA_SUBTELO',
         'color': '#e65100',
-        'alpha_chr': 'Chr 16p',
-        'alpha_pos': 0.01,
-        'beta_chr': 'Chr 11p',
-        'beta_pos': 0.65,
-        'alpha_anchors': 'NPRL3-MPG-RHBDF1-LUC7L',
+        'is_bichromosomal': True,
+        'alpha_chr': 'Chr 16',
+        'alpha_pos': 0.002,
+        'alpha_mb': '[0.15 Mb subtelo]',
+        'alpha_anchors': 'NPRL3-MPG-LUC7L',
+        'beta_chr': 'Chr 11',
+        'beta_pos': 0.039,
+        'beta_mb': '[5.2 Mb interstitial]',
         'beta_anchors': 'FOLR1-OR51-NUMA1',
         'notes': 'Canonical mammalian paradigm: α at extreme 16p telomere (GC3=91.1%), β at 11p (65.8%)',
     },
+    # 19. Mammalia - Mouse
     {
         'species': 'Mus_musculus',
         'display': 'House Mouse (M. musculus)',
@@ -332,14 +376,18 @@ REPRESENTATIVE_TAXA = [
         'divergence_mya': 85,
         'state': 'MAMMALIAN_ALPHA_SUBTELO',
         'color': '#e65100',
+        'is_bichromosomal': True,
         'alpha_chr': 'Chr 11',
-        'alpha_pos': 0.02,
+        'alpha_pos': 0.26,
+        'alpha_mb': '[32.2 Mb]',
+        'alpha_anchors': 'NPRL3-MPG',
         'beta_chr': 'Chr 7',
-        'beta_pos': 0.70,
-        'alpha_anchors': 'NPRL3-MPG-LUC7L',
-        'beta_anchors': 'FOLR1-OR51-NUMA1',
-        'notes': 'Murine chromosome reshuffling; α remains subtelomeric, β deep internal',
+        'beta_pos': 0.29,
+        'beta_mb': '[103.5 Mb internal]',
+        'beta_anchors': 'OR51-OR52',
+        'notes': 'Telocentric chromosomes; karyotypic shuffling attenuates polarity',
     },
+    # 20. Mammalia - Cattle
     {
         'species': 'Bos_taurus',
         'display': 'Cattle (B. taurus)',
@@ -347,14 +395,18 @@ REPRESENTATIVE_TAXA = [
         'divergence_mya': 60,
         'state': 'MAMMALIAN_ALPHA_SUBTELO',
         'color': '#e65100',
+        'is_bichromosomal': True,
         'alpha_chr': 'Chr 25',
-        'alpha_pos': 0.03,
-        'beta_chr': 'Chr 15',
-        'beta_pos': 0.68,
+        'alpha_pos': 0.004,
+        'alpha_mb': '[0.17 Mb subtelo]',
         'alpha_anchors': 'NPRL3-MPG-LUC7L',
-        'beta_anchors': 'FOLR1-OR51-NUMA1',
-        'notes': 'Ruminant tandem β expansion; α-GC3 89.5%, β-GC3 65.5%',
+        'beta_chr': 'Chr 15',
+        'beta_pos': 0.43,
+        'beta_mb': '[48.3 Mb internal]',
+        'beta_anchors': 'OR51-OR52',
+        'notes': 'Intense GC polarity: α subtelomeric (89.5%), β deep interstitial (65.5%)',
     },
+    # 21. Mammalia - Sperm Whale
     {
         'species': 'physeter_catodon',
         'display': 'Sperm Whale (P. catodon)',
@@ -362,41 +414,48 @@ REPRESENTATIVE_TAXA = [
         'divergence_mya': 60,
         'state': 'MAMMALIAN_ALPHA_SUBTELO',
         'color': '#e65100',
-        'alpha_chr': 'Scaffold NW_021146805.1',
+        'is_bichromosomal': True,
+        'alpha_chr': 'Chr 15 scaf',
         'alpha_pos': 0.01,
-        'beta_chr': 'Chr 14',
-        'beta_pos': 0.72,
+        'alpha_mb': '[0.02 Mb subtelo]',
         'alpha_anchors': 'NPRL3-MPG-LUC7L',
-        'beta_anchors': 'FOLR1-OR51-NUMA1',
-        'notes': 'Abyssal diver; intact 5-gene α-cluster on GC-rich scaffold, β deep interstitial',
+        'beta_chr': 'Chr 15',
+        'beta_pos': 0.42,
+        'beta_mb': '[60.3 Mb internal]',
+        'beta_anchors': 'TRIM21-FOLR1-OR51',
+        'notes': 'Marine diving adaptation; high myoglobin, high α-globin GC',
     },
 ]
 
+
 def load_data():
-    df_loc = pd.read_csv(os.path.join(RESULTS_DIR, "locus_codon_and_synteny_summary.csv"))
-    df_sp = pd.read_csv(os.path.join(RESULTS_DIR, "species_locus_evolutionary_history.csv"))
-    df_nodes = pd.read_csv(os.path.join(RESULTS_DIR, "ancestral_node_reconstruction.csv"))
-    df_codons = pd.read_csv(os.path.join(RESULTS_DIR, "codon_decomposition_per_gene.csv"))
+    """Load locus summaries, species histories, and gene decompositions."""
+    loc_file = os.path.join(RESULTS_DIR, "locus_codon_and_synteny_summary.csv")
+    sp_file = os.path.join(RESULTS_DIR, "species_locus_evolutionary_history.csv")
+    node_file = os.path.join(RESULTS_DIR, "ancestral_node_reconstruction.csv")
+    codon_file = os.path.join(RESULTS_DIR, "codon_decomposition_per_gene.csv")
+    
+    df_loc = pd.read_csv(loc_file)
+    df_sp = pd.read_csv(sp_file)
+    df_nodes = pd.read_csv(node_file)
+    df_codons = pd.read_csv(codon_file)
     return df_loc, df_sp, df_nodes, df_codons
 
+
 def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS_DIR):
-    os.makedirs(out_dir, exist_ok=True)
+    """Generate high-DPI vector & raster publication Figure 4."""
     png_path = os.path.join(out_dir, "summary_figure4_phylogenetic_synteny.png")
     pdf_path = os.path.join(out_dir, "summary_figure4_phylogenetic_synteny.pdf")
     
     n_taxa = len(REPRESENTATIVE_TAXA)
-    fig_h = max(20, n_taxa * 0.95)
+    fig_h = max(18.0, n_taxa * 0.95)
     
-    # 3 major panels:
-    # 1. Phylogenetic Tree & Time Scale (width 4.8)
-    # 2. Syntenic Chromosome Schematics (width 4.3)
-    # 3. Codon Decomposition & Synonymous Divergence (width 4.3)
     fig, (ax_tree, ax_syn, ax_codon) = plt.subplots(
-        1, 3, figsize=(31, fig_h),
-        gridspec_kw={'width_ratios': [4.8, 4.3, 4.3]},
+        1, 3, figsize=(32, fig_h),
+        gridspec_kw={'width_ratios': [4.7, 4.6, 4.2]},
         dpi=300
     )
-    plt.subplots_adjust(wspace=0.10, left=0.03, right=0.97, top=0.94, bottom=0.04)
+    plt.subplots_adjust(wspace=0.10, left=0.03, right=0.97, top=0.94, bottom=0.06)
     
     y_positions = np.arange(n_taxa)[::-1]  # Top to bottom (index 0 at top, y=21)
     
@@ -405,7 +464,7 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
     # -------------------------------------------------------------
     ax_tree.set_title("A. Calibrated Vertebrate Tree & Evolutionary Milestones", fontsize=15, fontweight='bold', pad=18)
     ax_tree.set_xlim(670, -215)
-    ax_tree.set_ylim(-0.8, n_taxa - 0.2)
+    ax_tree.set_ylim(-2.2, n_taxa - 0.2)
     ax_tree.set_xlabel("Divergence Time (Million Years Ago - Ma)", fontsize=13, fontweight='bold', labelpad=10)
     
     # Time Gridlines (500 to 0 Ma)
@@ -442,7 +501,7 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
     y_root = (y_positions[0] + y_gnatho) / 2.0                # 19.095
 
     # 1. Root / Vertebrata (500 Ma)
-    ax_tree.plot([520, 500], [y_root, y_root], color='#424242', linewidth=2.6, zorder=2) # Stem
+    ax_tree.plot([520, 500], [y_root, y_root], color='#424242', linewidth=2.6, zorder=2)
     draw_orthogonal(500, 0, y_root, y_positions[0], '#7b1fa2', lw=2.6) # Lamprey
     draw_orthogonal(500, 450, y_root, y_gnatho, '#424242', lw=2.6) # Gnathostome trunk
 
@@ -474,7 +533,7 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
     draw_orthogonal(270, 0, y_amphibia, y_positions[7], '#388e3c', lw=2.4) # Xenopus
     draw_orthogonal(270, 0, y_amphibia, y_positions[8], '#388e3c', lw=2.4) # Axolotl
 
-    # 8. Amniota (318 Ma)
+    # 8. Amniota (318 Ma) - THE AUTOSOMAL SPLIT
     draw_orthogonal(318, 280, y_amniota, y_sauropsida, '#00796b', lw=2.6) # Sauropsida stem
     draw_orthogonal(318, 165, y_amniota, y_mammalia, '#e65100', lw=2.6) # Mammalia stem
 
@@ -520,9 +579,7 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
     for i, t in enumerate(REPRESENTATIVE_TAXA):
         y = y_positions[i]
         col = t['color']
-        # Tip marker
         ax_tree.scatter(0, y, color=col, s=48, edgecolors='black', linewidths=0.9, zorder=5)
-        # Taxon name text placed cleanly inside ax_tree (never clipped)
         ax_tree.text(-12, y, t['display'], fontsize=9.8, fontweight='bold', va='center', ha='left', color='#212121', zorder=5)
 
     # Milestone Badges on Tree Nodes
@@ -541,13 +598,13 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
         bbox_props = dict(boxstyle="circle,pad=0.26", fc="#fff9c4", ec="#f57f17", lw=1.3)
         ax_tree.text(mx, my, tag, fontsize=9.5, fontweight='bold', ha='center', va='center', bbox=bbox_props, zorder=6)
 
-    # Clade Label Banners along the left margin (cleanly inside xlim, no overlap)
+    # Clade Label Banners along the left margin
     clade_spans = [
         ("Agnatha", y_positions[0], y_positions[0], "#7b1fa2"),
         ("Chondrichthyes", y_positions[1], y_positions[2], "#00838f"),
         ("Actinopterygii", y_positions[3], y_positions[5], "#1565c0"),
         ("Sarcopterygii", y_positions[6], y_positions[6], "#2e7d32"),
-        ("Amphibia", y_positions[7], y_positions[8], "#388e3c"),
+        ("Amphibia (Linked)", y_positions[7], y_positions[8], "#388e3c"),
         ("Archosauromorpha", y_positions[9], y_positions[12], "#00796b"),
         ("Squamata (Inverted)", y_positions[13], y_positions[15], "#d32f2f"),
         ("Mammalia (Canonical)", y_positions[16], y_positions[21], "#e65100"),
@@ -568,102 +625,122 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
     # PANEL 2: Conserved Syntenic Blocks & Chromosomal Architecture
     # -------------------------------------------------------------
     ax_syn.set_title("B. Conserved Syntenic Blocks & Chromosomal Architecture", fontsize=15, fontweight='bold', pad=18)
-    ax_syn.set_xlim(-0.02, 1.02)
-    ax_syn.set_ylim(-0.8, n_taxa - 0.2)
-    ax_syn.set_xlabel("Relative Chromosome Position (0.0 = 5' Telomere, 1.0 = 3' Telomere)", fontsize=13, fontweight='bold', labelpad=10)
+    ax_syn.set_xlim(-0.04, 1.04)
+    ax_syn.set_ylim(-2.2, n_taxa - 0.2)
+    ax_syn.set_xlabel("Normalized Chromosome Coordinate (0.0 = p-Telomere, 0.5 = Centromere, 1.0 = q-Telomere)", fontsize=13, fontweight='bold', labelpad=10)
     
-    # 5' and 3' Telomere markers
-    ax_syn.axvline(0.0, color="#bdbdbd", linestyle=":", linewidth=1.0)
-    ax_syn.axvline(1.0, color="#bdbdbd", linestyle=":", linewidth=1.0)
-    ax_syn.text(0.0, -0.6, "5' Telomere", fontsize=8.5, ha='center', va='top', color='#757575', fontweight='bold')
-    ax_syn.text(1.0, -0.6, "3' Telomere", fontsize=8.5, ha='center', va='top', color='#757575', fontweight='bold')
+    # Telomere & Centromere guide markers
+    ax_syn.axvline(0.12, color="#bdbdbd", linestyle=":", linewidth=1.0)
+    ax_syn.axvline(0.55, color="#e0e0e0", linestyle=":", linewidth=0.8)
+    ax_syn.axvline(0.98, color="#bdbdbd", linestyle=":", linewidth=1.0)
+    ax_syn.text(0.12, -0.6, "p-Telomere (0.0)", fontsize=8.5, ha='center', va='top', color='#757575', fontweight='bold')
+    ax_syn.text(0.55, -0.6, "Centromere (~0.5)", fontsize=8.5, ha='center', va='top', color='#757575', fontweight='bold')
+    ax_syn.text(0.98, -0.6, "q-Telomere (1.0)", fontsize=8.5, ha='center', va='top', color='#757575', fontweight='bold')
+
+    # Function to draw a clean chromosome ribbon with centromeric constriction
+    def draw_chromosome_ribbon(ax, x0, x1, y_mid, height, chr_name, fc="#f8f9fa", ec="#cccccc", cen_rel=0.48):
+        width = x1 - x0
+        cen_x = x0 + cen_rel * width
+        
+        # Left arm
+        left_arm = FancyBboxPatch((x0, y_mid - height/2.0), cen_x - x0 - 0.015, height,
+                                  boxstyle="round,pad=0.005,rounding_size=0.03",
+                                  fc=fc, ec=ec, lw=1.1, zorder=2)
+        ax.add_patch(left_arm)
+        
+        # Right arm
+        right_arm = FancyBboxPatch((cen_x + 0.015, y_mid - height/2.0), x1 - cen_x - 0.015, height,
+                                   boxstyle="round,pad=0.005,rounding_size=0.03",
+                                   fc=fc, ec=ec, lw=1.1, zorder=2)
+        ax.add_patch(right_arm)
+        
+        # Centromere constriction
+        ax.plot([cen_x - 0.01, cen_x + 0.01], [y_mid, y_mid], color="#9e9e9e", lw=2.0, zorder=3)
+        ax.scatter(cen_x, y_mid, s=20, marker='o', fc='#bdbdbd', ec='#757575', lw=0.6, zorder=4)
+        
+        # Chromosome label on the far left
+        ax.text(x0 - 0.012, y_mid, chr_name, fontsize=8.0, fontweight='bold', ha='right', va='center',
+                color='#37474f', bbox=dict(boxstyle="round,pad=0.2", fc="#eceff1", ec="#b0bec5", lw=0.8), zorder=5)
+
+    X_START = 0.12
+    X_END = 0.98
+    X_SPAN = X_END - X_START
 
     for i, t in enumerate(REPRESENTATIVE_TAXA):
         y = y_positions[i]
-        state = t['state']
+        is_bi = t['is_bichromosomal']
         
-        # Centromere position
-        cen_x = 0.48 if state != 'MAMMALIAN_ALPHA_SUBTELO' else 0.42
-        
-        # Left arm ribbon
-        left_arm = FancyBboxPatch((0.01, y - 0.14), cen_x - 0.03, 0.28,
-                                  boxstyle="round,pad=0.01,rounding_size=0.04",
-                                  fc="#f8f9fa", ec="#cccccc", lw=1.1, zorder=2)
-        ax_syn.add_patch(left_arm)
-        
-        # Right arm ribbon
-        right_arm = FancyBboxPatch((cen_x + 0.02, y - 0.14), 0.98 - cen_x - 0.02, 0.28,
-                                   boxstyle="round,pad=0.01,rounding_size=0.04",
-                                   fc="#f8f9fa", ec="#cccccc", lw=1.1, zorder=2)
-        ax_syn.add_patch(right_arm)
-        
-        # Centromere constriction circle
-        ax_syn.plot([cen_x - 0.015, cen_x + 0.015], [y, y], color="#9e9e9e", lw=3.0, zorder=3)
-        ax_syn.scatter(cen_x, y, s=35, marker='o', fc='#757575', ec='black', lw=0.6, zorder=4)
-
-        # Draw Globin Loci & Syntenic Anchors
-        if state == 'CYCLOSTOME_PROTO':
-            ax_syn.add_patch(Rectangle((0.04, y - 0.12), 0.07, 0.24, fc="#ab47bc", ec="black", lw=1.0, zorder=5))
-            ax_syn.text(0.075, y, "Proto-Hb", fontsize=8.5, fontweight='bold', ha='center', va='center', color='white', zorder=6)
-            ax_syn.text(0.13, y, "Ancestral Agnathan Single Locus", fontsize=8, va='center', ha='left', color="#424242", zorder=6)
+        if is_bi:
+            # -------------------------------------------------------------
+            # BICHROMOSOMAL: Two distinct ribbons (Top = α-Chr, Bottom = β-Chr)
+            # -------------------------------------------------------------
+            y_alpha = y + 0.17
+            y_beta = y - 0.17
             
-        elif state == 'LINKED_ANCESTRAL':
-            pos = t['alpha_pos']
-            ax_syn.add_patch(Rectangle((pos, y - 0.12), 0.055, 0.24, fc="#1e88e5", ec="black", lw=1.0, zorder=5))
-            ax_syn.add_patch(Rectangle((pos + 0.055, y - 0.12), 0.055, 0.24, fc="#43a047", ec="black", lw=1.0, zorder=5))
-            ax_syn.text(pos + 0.027, y, "α", fontsize=9, fontweight='bold', ha='center', va='center', color='white', zorder=6)
-            ax_syn.text(pos + 0.082, y, "β", fontsize=9, fontweight='bold', ha='center', va='center', color='white', zorder=6)
-            ax_syn.text(pos + 0.12, y, f"◀ {t['alpha_anchors']} (linked)", fontsize=7.5, va='center', ha='left', color="#1565c0", zorder=6)
+            # 1. Top Ribbon: Alpha Chromosome
+            draw_chromosome_ribbon(ax_syn, X_START, X_END, y_alpha, height=0.15, chr_name=t['alpha_chr'])
+            a_rel = np.clip(t['alpha_pos'], 0.01, 0.94)
+            a_x = X_START + a_rel * X_SPAN
+            ax_syn.add_patch(FancyBboxPatch((a_x, y_alpha - 0.065), 0.045, 0.13,
+                                            boxstyle="round,pad=0.005,rounding_size=0.02",
+                                            fc="#1e88e5", ec="#0d47a1", lw=1.2, zorder=6))
+            ax_syn.text(a_x + 0.0225, y_alpha, "α", fontsize=8.5, fontweight='bold', ha='center', va='center', color='white', zorder=7)
+            # Label placement: left if in interior, right if near p-telomere
+            if a_rel >= 0.28:
+                ax_syn.text(a_x - 0.012, y_alpha, f"{t['alpha_anchors']} {t.get('alpha_mb', '')}",
+                            fontsize=7.2, va='center', ha='right', color="#0d47a1", zorder=7)
+            else:
+                ax_syn.text(a_x + 0.052, y_alpha, f"{t['alpha_anchors']} {t.get('alpha_mb', '')}",
+                            fontsize=7.2, va='center', ha='left', color="#0d47a1", zorder=7)
             
-        elif state == 'CHONDRICHTHYAN_GRADIENT':
-            a_pos = t['alpha_pos']
-            b_pos = t['beta_pos']
-            ax_syn.add_patch(Rectangle((a_pos, y - 0.12), 0.05, 0.24, fc="#1e88e5", ec="black", lw=1.0, zorder=5))
-            ax_syn.text(a_pos + 0.025, y, "α", fontsize=8.5, fontweight='bold', ha='center', va='center', color='white', zorder=6)
-            ax_syn.add_patch(Rectangle((b_pos, y - 0.12), 0.05, 0.24, fc="#43a047", ec="black", lw=1.0, zorder=5))
-            ax_syn.text(b_pos + 0.025, y, "β", fontsize=8.5, fontweight='bold', ha='center', va='center', color='white', zorder=6)
-            ax_syn.text(a_pos + 0.06, y, t['alpha_anchors'], fontsize=7.5, va='center', ha='left', color="#00838f")
+            # 2. Bottom Ribbon: Beta Chromosome
+            draw_chromosome_ribbon(ax_syn, X_START, X_END, y_beta, height=0.15, chr_name=t['beta_chr'])
+            b_rel = np.clip(t['beta_pos'], 0.01, 0.94)
+            b_x = X_START + b_rel * X_SPAN
+            b_fc = "#d32f2f" if t['state'] == 'SQUAMATE_BETA_INVERTED' else "#43a047"
+            b_ec = "#b71c1c" if t['state'] == 'SQUAMATE_BETA_INVERTED' else "#1b5e20"
+            b_txt_col = "#b71c1c" if t['state'] == 'SQUAMATE_BETA_INVERTED' else "#1b5e20"
             
-        elif state == 'MAMMALIAN_ALPHA_SUBTELO':
-            a_pos = 0.03
-            b_pos = 0.68
-            ax_syn.add_patch(Rectangle((a_pos, y - 0.12), 0.055, 0.24, fc="#1e88e5", ec="#0d47a1", lw=1.2, zorder=5))
-            ax_syn.text(a_pos + 0.027, y, "α", fontsize=9, fontweight='bold', ha='center', va='center', color='white', zorder=6)
-            ax_syn.text(a_pos + 0.065, y, "NPRL3-MPG-LUC7L", fontsize=7.5, va='center', ha='left', color="#0d47a1", zorder=6)
+            ax_syn.add_patch(FancyBboxPatch((b_x, y_beta - 0.065), 0.045, 0.13,
+                                            boxstyle="round,pad=0.005,rounding_size=0.02",
+                                            fc=b_fc, ec=b_ec, lw=1.2, zorder=6))
+            ax_syn.text(b_x + 0.0225, y_beta, "β", fontsize=8.5, fontweight='bold', ha='center', va='center', color='white', zorder=7)
+            # Label placement: left if in interior, right if near p-telomere
+            if b_rel >= 0.28:
+                ax_syn.text(b_x - 0.012, y_beta, f"{t['beta_anchors']} {t.get('beta_mb', '')}",
+                            fontsize=7.2, va='center', ha='right', color=b_txt_col, zorder=7)
+            else:
+                ax_syn.text(b_x + 0.052, y_beta, f"{t['beta_anchors']} {t.get('beta_mb', '')}",
+                            fontsize=7.2, va='center', ha='left', color=b_txt_col, zorder=7)
             
-            ax_syn.add_patch(Rectangle((b_pos, y - 0.12), 0.055, 0.24, fc="#43a047", ec="#1b5e20", lw=1.2, zorder=5))
-            ax_syn.text(b_pos + 0.027, y, "β", fontsize=9, fontweight='bold', ha='center', va='center', color='white', zorder=6)
-            ax_syn.text(b_pos + 0.065, y, "FOLR1-OR51-NUMA1", fontsize=7.5, va='center', ha='left', color="#1b5e20", zorder=6)
+        else:
+            # -------------------------------------------------------------
+            # SINGLE CHROMOSOME: Tandem linked or ancestral proto locus
+            # -------------------------------------------------------------
+            draw_chromosome_ribbon(ax_syn, X_START, X_END, y, height=0.24, chr_name=t['chr_label'])
+            pos_rel = np.clip(t['pos'], 0.01, 0.90)
+            x_pos = X_START + pos_rel * X_SPAN
             
-        elif state == 'SQUAMATE_BETA_INVERTED':
-            b_pos = 0.03
-            a_pos = 0.72
-            # Crimson Beta
-            ax_syn.add_patch(Rectangle((b_pos, y - 0.12), 0.055, 0.24, fc="#d32f2f", ec="#b71c1c", lw=1.3, zorder=5))
-            ax_syn.text(b_pos + 0.027, y, "β", fontsize=9, fontweight='bold', ha='center', va='center', color='white', zorder=6)
-            ax_syn.text(b_pos + 0.065, y, "CDCA8-OR51-RRM1 ◀ INVERSION", fontsize=7.5, fontweight='bold', va='center', ha='left', color="#b71c1c", zorder=6)
-            
-            # Alpha internal
-            ax_syn.add_patch(Rectangle((a_pos, y - 0.12), 0.055, 0.24, fc="#1e88e5", ec="#0d47a1", lw=1.0, zorder=5))
-            ax_syn.text(a_pos + 0.027, y, "α", fontsize=9, fontweight='bold', ha='center', va='center', color='white', zorder=6)
-            ax_syn.text(a_pos + 0.065, y, "NPRL3", fontsize=7.5, va='center', ha='left', color="#0d47a1", zorder=6)
-
-        elif state == 'ARCHOSAUR_BALANCED':
-            a_pos = 0.03
-            b_pos = 0.12
-            ax_syn.add_patch(Rectangle((a_pos, y - 0.12), 0.05, 0.24, fc="#1e88e5", ec="black", lw=1.0, zorder=5))
-            ax_syn.text(a_pos + 0.025, y, "α", fontsize=8.5, fontweight='bold', ha='center', va='center', color='white', zorder=6)
-            ax_syn.add_patch(Rectangle((b_pos, y - 0.12), 0.05, 0.24, fc="#43a047", ec="black", lw=1.0, zorder=5))
-            ax_syn.text(b_pos + 0.025, y, "β", fontsize=8.5, fontweight='bold', ha='center', va='center', color='white', zorder=6)
-            ax_syn.text(b_pos + 0.065, y, "Microchromosomes (Chr 14 & 25)", fontsize=7.5, va='center', ha='left', color="#004d40", zorder=6)
-
-        else: # General fallback
-            a_pos = t.get('alpha_pos', 0.10)
-            b_pos = t.get('beta_pos', 0.65)
-            ax_syn.add_patch(Rectangle((a_pos, y - 0.12), 0.05, 0.24, fc="#1e88e5", ec="black", lw=1.0, zorder=5))
-            ax_syn.text(a_pos + 0.025, y, "α", fontsize=8.5, fontweight='bold', ha='center', va='center', color='white', zorder=6)
-            ax_syn.add_patch(Rectangle((b_pos, y - 0.12), 0.05, 0.24, fc="#43a047", ec="black", lw=1.0, zorder=5))
-            ax_syn.text(b_pos + 0.025, y, "β", fontsize=8.5, fontweight='bold', ha='center', va='center', color='white', zorder=6)
+            if t['state'] == 'CYCLOSTOME_PROTO':
+                ax_syn.add_patch(FancyBboxPatch((x_pos, y - 0.09), 0.065, 0.18,
+                                                boxstyle="round,pad=0.005,rounding_size=0.02",
+                                                fc="#ab47bc", ec="#4a148c", lw=1.2, zorder=6))
+                ax_syn.text(x_pos + 0.0325, y, "Proto-Hb", fontsize=8.0, fontweight='bold', ha='center', va='center', color='white', zorder=7)
+                ax_syn.text(x_pos + 0.075, y, f"{t['anchors']} {t['mb_range']}", fontsize=7.5, va='center', ha='left', color="#4a148c", zorder=7)
+            else:
+                # Tandem linked α-β block
+                ax_syn.add_patch(FancyBboxPatch((x_pos, y - 0.09), 0.045, 0.18,
+                                                boxstyle="round,pad=0.005,rounding_size=0.02",
+                                                fc="#1e88e5", ec="#0d47a1", lw=1.2, zorder=6))
+                ax_syn.add_patch(FancyBboxPatch((x_pos + 0.045, y - 0.09), 0.045, 0.18,
+                                                boxstyle="round,pad=0.005,rounding_size=0.02",
+                                                fc="#43a047", ec="#1b5e20", lw=1.2, zorder=6))
+                ax_syn.text(x_pos + 0.0225, y, "α", fontsize=8.5, fontweight='bold', ha='center', va='center', color='white', zorder=7)
+                ax_syn.text(x_pos + 0.0675, y, "β", fontsize=8.5, fontweight='bold', ha='center', va='center', color='white', zorder=7)
+                if pos_rel >= 0.32:
+                    ax_syn.text(x_pos - 0.012, y, f"{t['anchors']} {t['mb_range']}", fontsize=7.5, va='center', ha='right', color="#1565c0", zorder=7)
+                else:
+                    ax_syn.text(x_pos + 0.10, y, f"{t['anchors']} {t['mb_range']}", fontsize=7.5, va='center', ha='left', color="#1565c0", zorder=7)
 
     ax_syn.set_yticks([])
     ax_syn.spines['top'].set_visible(False)
@@ -671,17 +748,27 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
     ax_syn.spines['left'].set_visible(False)
 
     # -------------------------------------------------------------
-    # PANEL 3: Codon Position Decomposition & Synonymous Divergence
+    # PANEL 3: Codon Position Decomposition & Diverging GC3 Contrast
     # -------------------------------------------------------------
-    ax_codon.set_title("C. Codon Decomposition (GC1, GC2, GC3) & Divergence", fontsize=15, fontweight='bold', pad=18)
+    ax_codon.set_title("C. Codon Decomposition (GC1, GC2, GC3) & Subunit Divergence (ΔGC3)", fontsize=15, fontweight='bold', pad=18)
     ax_codon.set_xlim(30, 118)
-    ax_codon.set_ylim(-0.8, n_taxa - 0.2)
-    ax_codon.set_xlabel("GC Content (%) [Diamond = GC3; Shaded Bar = GC12 to GC3 Surge]", fontsize=13, fontweight='bold', labelpad=10)
+    ax_codon.set_ylim(-2.2, n_taxa - 0.2)
+    ax_codon.set_xlabel("GC Content (%) [Corridor: Conserved GC1 & GC2 | Bar: ΔGC3 Subunit Contrast]", fontsize=13, fontweight='bold', labelpad=10)
     ax_codon.set_xticks([40, 50, 60, 70, 80, 90, 100])
     
+    # Purifying Selection Corridor (45% to 55%) across all species
+    ax_codon.axvspan(45, 55, color='#eceff1', alpha=0.75, zorder=1)
+    ax_codon.axvline(45, color='#cfd8dc', linestyle=':', linewidth=1.1, zorder=2)
+    ax_codon.axvline(55, color='#cfd8dc', linestyle=':', linewidth=1.1, zorder=2)
+    ax_codon.text(50, -0.6, "Purifying Selection (GC1/2: 45–55%)", fontsize=8.0, ha='center', va='top', color='#546e7a', fontweight='bold')
+
     # Background guides
-    for gc_mark in [40, 50, 60, 70, 80, 90, 100]:
-        ax_codon.axvline(gc_mark, color="#f0f0f0", linestyle="--", linewidth=0.9, zorder=1)
+    for gc_mark in [40, 60, 70, 80, 90, 100]:
+        ax_codon.axvline(gc_mark, color="#f5f5f5", linestyle="--", linewidth=0.9, zorder=1)
+
+    # Continuous Diverging Colormap (coolwarm: Blue for β>α, Grey for Balanced, Red for α>β)
+    div_norm = mcolors.Normalize(vmin=-25.0, vmax=25.0)
+    coolwarm_cmap = plt.cm.coolwarm
 
     for i, t in enumerate(REPRESENTATIVE_TAXA):
         y = y_positions[i]
@@ -689,6 +776,7 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
         sp_rows = df_sp[df_sp['species'] == sp]
         loc_rows = df_loc[df_loc['species'] == sp]
         
+        # Retrieve codon metrics
         if t['state'] == 'LINKED_ANCESTRAL':
             sp_g = df_codons[(df_codons['species'] == sp) & (df_codons['is_globin'])]
             a_genes = sp_g[sp_g['gene_name'].str.contains(r'hba|hbz|alpha|hbaa|hbae|LOC102354|LOC138569', case=False, regex=True)]
@@ -713,53 +801,77 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
             b_gc2 = b_row['mean_gc2'].iloc[0] if has_b and pd.notna(b_row['mean_gc2'].iloc[0]) else 38.0
             b_gc3 = b_row['mean_gc3'].iloc[0] if has_b and pd.notna(b_row['mean_gc3'].iloc[0]) else 58.0
         
-        # 1. Alpha Codons (Circle/Triangle/Diamond)
+        # Calculate Delta GC3
+        d_gc3 = (a_gc3 - b_gc3) if (has_a and has_b and t['state'] != 'CYCLOSTOME_PROTO') else 0.0
+        div_color = coolwarm_cmap(div_norm(d_gc3))
+
+        # 1. Purifying selection markers (GC1 and GC2)
         if has_a:
-            # Shaded bar from GC12 to GC3 highlighting synonymous surge
-            a_gc12 = (a_gc1 + a_gc2) / 2.0
-            ax_codon.plot([a_gc12, a_gc3], [y + 0.12, y + 0.12],
-                          color="#ffcc80" if a_gc3 > 80 else "#bbdefb", linewidth=3.4, zorder=3, solid_capstyle='round')
-            ax_codon.scatter(a_gc1, y + 0.12, marker='o', s=34, color='#1565c0', edgecolors='black', linewidths=0.6, zorder=4)
-            ax_codon.scatter(a_gc2, y + 0.12, marker='^', s=34, color='#42a5f5', edgecolors='black', linewidths=0.6, zorder=4)
-            ax_codon.scatter(a_gc3, y + 0.12, marker='D', s=65, color='#e65100' if a_gc3 > 80 else '#1e88e5', edgecolors='black', linewidths=0.8, zorder=5)
+            ax_codon.scatter(a_gc1, y + 0.14, marker='o', s=30, color='#1565c0', edgecolors='black', linewidths=0.6, zorder=4)
+            ax_codon.scatter(a_gc2, y + 0.14, marker='^', s=30, color='#42a5f5', edgecolors='black', linewidths=0.6, zorder=4)
 
-        # 2. Beta Codons (Square/Inverted-Triangle/Diamond)
         if has_b and t['state'] != 'CYCLOSTOME_PROTO':
-            b_gc12 = (b_gc1 + b_gc2) / 2.0
-            ax_codon.plot([b_gc12, b_gc3], [y - 0.12, y - 0.12],
-                          color="#ef9a9a" if b_gc3 > 80 else "#c8e6c9", linewidth=3.4, zorder=3, solid_capstyle='round')
-            ax_codon.scatter(b_gc1, y - 0.12, marker='s', s=34, color='#2e7d32', edgecolors='black', linewidths=0.6, zorder=4)
-            ax_codon.scatter(b_gc2, y - 0.12, marker='v', s=34, color='#81c784', edgecolors='black', linewidths=0.6, zorder=4)
-            ax_codon.scatter(b_gc3, y - 0.12, marker='D', s=65, color='#d32f2f' if b_gc3 > 80 else '#43a047', edgecolors='black', linewidths=0.8, zorder=5)
+            ax_codon.scatter(b_gc1, y - 0.14, marker='s', s=30, color='#2e7d32', edgecolors='black', linewidths=0.6, zorder=4)
+            ax_codon.scatter(b_gc2, y - 0.14, marker='v', s=30, color='#81c784', edgecolors='black', linewidths=0.6, zorder=4)
 
-        # Delta GC3 Badge on the right (positioned at 103, plenty of room before 118)
-        if not sp_rows.empty and pd.notna(sp_rows['delta_gc3_a_minus_b'].iloc[0]):
-            d_gc3 = sp_rows['delta_gc3_a_minus_b'].iloc[0]
-            if d_gc3 > 5.0:
-                txt = f"ΔGC3: +{d_gc3:.1f}% (α > β)"
-                col = "#e65100"
-                bg = "#fff3e0"
-            elif d_gc3 < -5.0:
-                txt = f"ΔGC3: {d_gc3:.1f}% (β > α)"
-                col = "#b71c1c"
-                bg = "#ffebee"
-            else:
-                txt = f"ΔGC3: {d_gc3:+.1f}% (Bal)"
-                col = "#424242"
-                bg = "#f5f5f5"
-            ax_codon.text(103, y, txt, fontsize=8.5, fontweight='bold', va='center', ha='left', color=col,
-                          bbox=dict(boxstyle="round,pad=0.25", fc=bg, ec=col, lw=0.9))
+        # 2. Subunit Divergence Bar connecting alpha-GC3 and beta-GC3
+        if has_a and has_b and t['state'] != 'CYCLOSTOME_PROTO':
+            min_gc3 = min(a_gc3, b_gc3)
+            max_gc3 = max(a_gc3, b_gc3)
+            # Chunky rounded contrast bar
+            ax_codon.plot([min_gc3, max_gc3], [y, y],
+                          color=div_color, linewidth=5.5, zorder=3, solid_capstyle='round')
+            
+            # Alpha GC3 marker (Blue Diamond)
+            ax_codon.scatter(a_gc3, y, marker='D', s=70, color='#1565c0', edgecolors='black', linewidths=0.9, zorder=5)
+            # Beta GC3 marker (Green or Crimson Square)
+            b_mcol = '#d32f2f' if t['state'] == 'SQUAMATE_BETA_INVERTED' else '#2e7d32'
+            ax_codon.scatter(b_gc3, y, marker='s', s=70, color=b_mcol, edgecolors='black', linewidths=0.9, zorder=5)
+            
+        elif t['state'] == 'CYCLOSTOME_PROTO':
+            # Single proto-globin
+            ax_codon.scatter(a_gc3, y, marker='D', s=75, color='#ab47bc', edgecolors='black', linewidths=1.0, zorder=5)
 
-    # Legend for Panel 3
+        # 3. Delta GC3 Badge on the right
+        if t['state'] == 'CYCLOSTOME_PROTO':
+            badge_txt = "Proto-Hb"
+            badge_bg = "#f3e5f5"
+            badge_ec = "#ab47bc"
+            badge_col = "#6a1b9a"
+        elif d_gc3 > 5.0:
+            badge_txt = f"ΔGC3: +{d_gc3:.1f}% (α > β)"
+            badge_bg = "#fff3e0" if d_gc3 < 15 else "#ffebee"
+            badge_ec = div_color
+            badge_col = "#b71c1c"
+        elif d_gc3 < -5.0:
+            badge_txt = f"ΔGC3: {d_gc3:.1f}% (β > α)"
+            badge_bg = "#e8eaf6"
+            badge_ec = div_color
+            badge_col = "#1a237e"
+        else:
+            badge_txt = f"ΔGC3: {d_gc3:+.1f}% (Bal)"
+            badge_bg = "#f5f5f5"
+            badge_ec = "#9e9e9e"
+            badge_col = "#424242"
+            
+        ax_codon.text(103.5, y, badge_txt, fontsize=8.2, fontweight='bold', va='center', ha='left',
+                      color=badge_col, bbox=dict(boxstyle="round,pad=0.28", fc=badge_bg, ec=badge_ec, lw=1.1))
+
+    # Dedicated Legend below the plot (absolutely zero overlap with data points)
     leg_elements = [
         Line2D([0], [0], marker='o', color='w', markerfacecolor='#1565c0', markeredgecolor='black', markersize=6.5, label='α-Globin GC1'),
         Line2D([0], [0], marker='^', color='w', markerfacecolor='#42a5f5', markeredgecolor='black', markersize=6.5, label='α-Globin GC2'),
-        Line2D([0], [0], marker='D', color='w', markerfacecolor='#e65100', markeredgecolor='black', markersize=7.5, label='α-Globin GC3 (Synonymous Surge)'),
+        Line2D([0], [0], marker='D', color='w', markerfacecolor='#1565c0', markeredgecolor='black', markersize=7.5, label='α-Globin GC3'),
         Line2D([0], [0], marker='s', color='w', markerfacecolor='#2e7d32', markeredgecolor='black', markersize=6.5, label='β-Globin GC1'),
         Line2D([0], [0], marker='v', color='w', markerfacecolor='#81c784', markeredgecolor='black', markersize=6.5, label='β-Globin GC2'),
-        Line2D([0], [0], marker='D', color='w', markerfacecolor='#d32f2f', markeredgecolor='black', markersize=7.5, label='β-Globin GC3 (Synonymous Surge)'),
+        Line2D([0], [0], marker='s', color='w', markerfacecolor='#2e7d32', markeredgecolor='black', markersize=7.5, label='β-Globin GC3 (Canonical/Linked)'),
+        Line2D([0], [0], marker='s', color='w', markerfacecolor='#d32f2f', markeredgecolor='black', markersize=7.5, label='β-Globin GC3 (Squamate Inverted)'),
+        Line2D([0], [0], color='#b40426', linewidth=4.0, label='ΔGC3 > 0 Divergence Bar (α-dominant)'),
+        Line2D([0], [0], color='#dddddd', linewidth=4.0, label='ΔGC3 ≈ 0 Divergence Bar (Balanced)'),
+        Line2D([0], [0], color='#3b4cc0', linewidth=4.0, label='ΔGC3 < 0 Divergence Bar (β-dominant)'),
     ]
-    ax_codon.legend(handles=leg_elements, loc='lower left', fontsize=8.5, frameon=True, facecolor='#fafafa', edgecolor='#cccccc', ncol=2)
+    ax_codon.legend(handles=leg_elements, loc='upper center', bbox_to_anchor=(0.5, -0.06),
+                    fontsize=8.5, frameon=True, facecolor='#ffffff', edgecolor='#cccccc', ncol=4)
 
     ax_codon.set_yticks([])
     ax_codon.spines['top'].set_visible(False)
@@ -786,11 +898,11 @@ def plot_figure4_interactive(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
     fig = make_subplots(
         rows=1, cols=3,
         shared_yaxes=True,
-        column_widths=[0.32, 0.36, 0.32],
+        column_widths=[0.32, 0.38, 0.30],
         subplot_titles=[
             "<b>A. Calibrated Vertebrate Chronogram & Transitions</b>",
-            "<b>B. Conserved Syntenic Architecture (0 = Telomere)</b>",
-            "<b>C. Codon Decomposition (GC1, GC2, GC3)</b>"
+            "<b>B. Conserved Syntenic Architecture (Separate Ribbons for Separate Autosomes)</b>",
+            "<b>C. Codon Decomposition & Diverging ΔGC3 Contrast</b>"
         ],
         horizontal_spacing=0.06
     )
@@ -798,7 +910,6 @@ def plot_figure4_interactive(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
     # 1. Panel A: Tree Trunks and Species Tips
     for i, t in enumerate(REPRESENTATIVE_TAXA):
         y = y_positions[i]
-        sp = t['species']
         col = t['color']
         div_t = t['divergence_mya']
         
@@ -856,117 +967,102 @@ def plot_figure4_interactive(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
     # 2. Panel B: Syntenic Chromosome Schematics
     for i, t in enumerate(REPRESENTATIVE_TAXA):
         y = y_positions[i]
-        state = t['state']
-        cen_x = 0.48 if state != 'MAMMALIAN_ALPHA_SUBTELO' else 0.42
+        is_bi = t['is_bichromosomal']
         
-        # Chromosome ribbon
-        fig.add_trace(go.Scatter(
-            x=[0.01, 0.99], y=[y, y],
-            mode='lines',
-            line=dict(color='#e0e0e0', width=16),
-            hoverinfo='skip',
-            showlegend=False
-        ), row=1, col=2)
-        
-        # Centromere
-        fig.add_trace(go.Scatter(
-            x=[cen_x], y=[y],
-            mode='markers',
-            marker=dict(size=10, color='#757575', symbol='circle', line=dict(color='black', width=1)),
-            hovertext=f"Centromere (cen ~ {cen_x:.2f})",
-            hoverinfo='text',
-            showlegend=False
-        ), row=1, col=2)
-        
-        # Globin Loci markers
-        if state == 'CYCLOSTOME_PROTO':
+        if is_bi:
+            # Top Ribbon: Alpha Chromosome
+            y_a = y + 0.17
             fig.add_trace(go.Scatter(
-                x=[0.08], y=[y],
+                x=[0.12, 0.98], y=[y_a, y_a],
+                mode='lines',
+                line=dict(color='#e0e0e0', width=10),
+                hoverinfo='skip',
+                showlegend=False
+            ), row=1, col=2)
+            
+            a_pos = 0.12 + np.clip(t['alpha_pos'], 0.01, 0.94) * 0.86
+            fig.add_trace(go.Scatter(
+                x=[a_pos], y=[y_a],
                 mode='markers+text',
-                marker=dict(size=15, color='#ab47bc', symbol='square'),
-                text=["Proto-Hb"],
+                marker=dict(size=12, color='#1e88e5', symbol='square', line=dict(color='#0d47a1', width=1)),
+                text=[f"  α: {t['alpha_chr']} {t.get('alpha_mb', '')}"],
                 textposition="middle right",
-                hovertext="Proto-Globin Single Locus (GL478636)",
+                hovertext=f"<b>α-Globin</b><br>Chr: {t['alpha_chr']}<br>Pos: {t.get('alpha_mb', '')}<br>Anchors: {t['alpha_anchors']}",
                 hoverinfo='text',
                 showlegend=False
             ), row=1, col=2)
-        elif state == 'LINKED_ANCESTRAL':
-            pos = t['alpha_pos']
+            
+            # Bottom Ribbon: Beta Chromosome
+            y_b = y - 0.17
             fig.add_trace(go.Scatter(
-                x=[pos], y=[y],
-                mode='markers',
-                marker=dict(size=14, color='#1e88e5', symbol='square', line=dict(color='black', width=1)),
-                hovertext=f"Linked α-Globin ({t['alpha_chr']}: {t['alpha_anchors']})",
-                hoverinfo='text',
+                x=[0.12, 0.98], y=[y_b, y_b],
+                mode='lines',
+                line=dict(color='#e0e0e0', width=10),
+                hoverinfo='skip',
                 showlegend=False
             ), row=1, col=2)
+            
+            b_pos = 0.12 + np.clip(t['beta_pos'], 0.01, 0.94) * 0.86
+            b_col = '#d32f2f' if t['state'] == 'SQUAMATE_BETA_INVERTED' else '#43a047'
             fig.add_trace(go.Scatter(
-                x=[pos + 0.035], y=[y],
+                x=[b_pos], y=[y_b],
                 mode='markers+text',
-                marker=dict(size=14, color='#43a047', symbol='square', line=dict(color='black', width=1)),
-                text=[f"  α-β linked ({t['alpha_anchors']})"],
+                marker=dict(size=12, color=b_col, symbol='square', line=dict(color='black', width=1)),
+                text=[f"  β: {t['beta_chr']} {t.get('beta_mb', '')}"],
                 textposition="middle right",
-                hovertext=f"Linked β-Globin ({t['alpha_chr']}: {t['alpha_anchors']})",
+                hovertext=f"<b>β-Globin</b><br>Chr: {t['beta_chr']}<br>Pos: {t.get('beta_mb', '')}<br>Anchors: {t['beta_anchors']}",
                 hoverinfo='text',
                 showlegend=False
             ), row=1, col=2)
-        elif state == 'SQUAMATE_BETA_INVERTED':
+            
+        else:
+            # Single Ribbon: Linked or Proto
             fig.add_trace(go.Scatter(
-                x=[0.03], y=[y],
-                mode='markers+text',
-                marker=dict(size=15, color='#d32f2f', symbol='square'),
-                text=["β (subtelo)"],
-                textposition="middle right",
-                hovertext="β-Globin Inverted to Subtelomere (CDCA8-OR51)",
-                hoverinfo='text',
+                x=[0.12, 0.98], y=[y, y],
+                mode='lines',
+                line=dict(color='#e0e0e0', width=14),
+                hoverinfo='skip',
                 showlegend=False
             ), row=1, col=2)
-            fig.add_trace(go.Scatter(
-                x=[0.72], y=[y],
-                mode='markers+text',
-                marker=dict(size=15, color='#1e88e5', symbol='square'),
-                text=["α (internal)"],
-                textposition="middle right",
-                hovertext="α-Globin Retained Internally (NPRL3-MPG)",
-                hoverinfo='text',
-                showlegend=False
-            ), row=1, col=2)
-        else: # Mammalia, Amphibia, Archosauria, Chondrichthyes
-            a_p = t['alpha_pos'] if t['alpha_pos'] is not None else 0.03
-            b_p = t['beta_pos'] if t['beta_pos'] is not None else 0.68
-            fig.add_trace(go.Scatter(
-                x=[a_p], y=[y],
-                mode='markers',
-                marker=dict(size=14, color='#1e88e5', symbol='square'),
-                hovertext=f"α-Globin: {t['alpha_chr']} ({t['alpha_anchors']})",
-                hoverinfo='text',
-                showlegend=False
-            ), row=1, col=2)
-            fig.add_trace(go.Scatter(
-                x=[b_p], y=[y],
-                mode='markers',
-                marker=dict(size=14, color='#43a047', symbol='square'),
-                hovertext=f"β-Globin: {t['beta_chr']} ({t['beta_anchors']})",
-                hoverinfo='text',
-                showlegend=False
-            ), row=1, col=2)
+            
+            p_pos = 0.12 + np.clip(t['pos'], 0.01, 0.90) * 0.86
+            if t['state'] == 'CYCLOSTOME_PROTO':
+                fig.add_trace(go.Scatter(
+                    x=[p_pos], y=[y],
+                    mode='markers+text',
+                    marker=dict(size=14, color='#ab47bc', symbol='square'),
+                    text=[f"  Proto-Hb ({t['chr_label']})"],
+                    textposition="middle right",
+                    hovertext=f"Ancestral Proto-Globin: {t['chr_label']} {t['mb_range']}",
+                    hoverinfo='text',
+                    showlegend=False
+                ), row=1, col=2)
+            else:
+                fig.add_trace(go.Scatter(
+                    x=[p_pos], y=[y],
+                    mode='markers+text',
+                    marker=dict(size=14, color='#1e88e5', symbol='square'),
+                    text=[f"  α-β linked ({t['chr_label']}) {t['mb_range']}"],
+                    textposition="middle right",
+                    hovertext=f"<b>Linked α-β Locus</b><br>Chr: {t['chr_label']}<br>Pos: {t['mb_range']}<br>Anchors: {t['anchors']}",
+                    hoverinfo='text',
+                    showlegend=False
+                ), row=1, col=2)
 
-    # 3. Panel C: Codon Decomposition
+    # 3. Panel C: Codon Decomposition & Diverging Contrast
+    div_norm = mcolors.Normalize(vmin=-25.0, vmax=25.0)
+    coolwarm_cmap = plt.cm.coolwarm
+
     for i, t in enumerate(REPRESENTATIVE_TAXA):
         y = y_positions[i]
         sp = t['species']
-        sp_rows = df_sp[df_sp['species'] == sp]
         loc_rows = df_loc[df_loc['species'] == sp]
         
         if t['state'] == 'LINKED_ANCESTRAL':
             sp_g = df_codons[(df_codons['species'] == sp) & (df_codons['is_globin'])]
             a_genes = sp_g[sp_g['gene_name'].str.contains(r'hba|hbz|alpha|hbaa|hbae|LOC102354|LOC138569', case=False, regex=True)]
             b_genes = sp_g[sp_g['gene_name'].str.contains(r'hbb|hbe|hbg|beta|hbba|hbbe|LOC102356|LOC102355|LOC138579|LOC138580', case=False, regex=True)]
-            a_gc1 = a_genes['gc1'].mean() if not a_genes.empty and 'gc1' in a_genes and pd.notna(a_genes['gc1'].mean()) else 52.0
-            a_gc2 = a_genes['gc2'].mean() if not a_genes.empty and 'gc2' in a_genes and pd.notna(a_genes['gc2'].mean()) else 42.0
             a_gc3 = a_genes['gc3'].mean() if not a_genes.empty and 'gc3' in a_genes and pd.notna(a_genes['gc3'].mean()) else 60.0
-            b_gc1 = b_genes['gc1'].mean() if not b_genes.empty and 'gc1' in b_genes and pd.notna(b_genes['gc1'].mean()) else 50.0
-            b_gc2 = b_genes['gc2'].mean() if not b_genes.empty and 'gc2' in b_genes and pd.notna(b_genes['gc2'].mean()) else 38.0
             b_gc3 = b_genes['gc3'].mean() if not b_genes.empty and 'gc3' in b_genes and pd.notna(b_genes['gc3'].mean()) else 60.0
             has_a = not a_genes.empty
             has_b = not b_genes.empty
@@ -975,78 +1071,65 @@ def plot_figure4_interactive(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
             b_row = loc_rows[loc_rows['locus_class'].isin(['beta_globin', 'linked_alpha_beta'])]
             has_a = not a_row.empty
             has_b = not b_row.empty
-            a_gc1 = a_row['mean_gc1'].iloc[0] if has_a and pd.notna(a_row['mean_gc1'].iloc[0]) else 52.0
-            a_gc2 = a_row['mean_gc2'].iloc[0] if has_a and pd.notna(a_row['mean_gc2'].iloc[0]) else 42.0
             a_gc3 = a_row['mean_gc3'].iloc[0] if has_a and pd.notna(a_row['mean_gc3'].iloc[0]) else 65.0
-            b_gc1 = b_row['mean_gc1'].iloc[0] if has_b and pd.notna(b_row['mean_gc1'].iloc[0]) else 50.0
-            b_gc2 = b_row['mean_gc2'].iloc[0] if has_b and pd.notna(b_row['mean_gc2'].iloc[0]) else 38.0
             b_gc3 = b_row['mean_gc3'].iloc[0] if has_b and pd.notna(b_row['mean_gc3'].iloc[0]) else 58.0
         
-        if has_a:
-            a_gc12 = (a_gc1 + a_gc2) / 2.0
-            
-            # Connector bar
+        d_gc3 = (a_gc3 - b_gc3) if (has_a and has_b and t['state'] != 'CYCLOSTOME_PROTO') else 0.0
+        rgba = coolwarm_cmap(div_norm(d_gc3))
+        hex_col = mcolors.to_hex(rgba)
+        
+        if has_a and has_b and t['state'] != 'CYCLOSTOME_PROTO':
+            # Subunit Divergence Bar
             fig.add_trace(go.Scatter(
-                x=[a_gc12, a_gc3], y=[y + 0.12, y + 0.12],
+                x=[min(a_gc3, b_gc3), max(a_gc3, b_gc3)], y=[y, y],
                 mode='lines',
-                line=dict(color='#ffcc80' if a_gc3 > 80 else '#bbdefb', width=6),
+                line=dict(color=hex_col, width=8),
                 hoverinfo='skip',
                 showlegend=False
             ), row=1, col=3)
             
-            # GC3 marker
-            hover_a = (
-                f"<b>{t['display']} (α-Globin)</b><br>"
-                f"GC1: {a_gc1:.1f}% | GC2: {a_gc2:.1f}%<br>"
-                f"GC12: {a_gc12:.1f}%<br>"
-                f"<b>GC3: {a_gc3:.1f}%</b> (Surge: {a_gc3 - a_gc12:+.1f}%)"
-            )
+            # Alpha GC3 Diamond
             fig.add_trace(go.Scatter(
-                x=[a_gc3], y=[y + 0.12],
+                x=[a_gc3], y=[y],
                 mode='markers',
-                marker=dict(size=12, color='#e65100' if a_gc3 > 80 else '#1e88e5', symbol='diamond', line=dict(color='black', width=1)),
-                hovertext=hover_a,
+                marker=dict(size=12, color='#1565c0', symbol='diamond', line=dict(color='black', width=1)),
+                hovertext=f"<b>{t['display']} (α-Globin)</b><br>GC3: {a_gc3:.1f}%<br>ΔGC3 (α - β): {d_gc3:+.1f}%",
                 hoverinfo='text',
                 showlegend=False
             ), row=1, col=3)
-
-        if has_b and t['state'] != 'CYCLOSTOME_PROTO':
-            b_gc12 = (b_gc1 + b_gc2) / 2.0
             
+            # Beta GC3 Square
+            b_c = '#d32f2f' if t['state'] == 'SQUAMATE_BETA_INVERTED' else '#2e7d32'
             fig.add_trace(go.Scatter(
-                x=[b_gc12, b_gc3], y=[y - 0.12, y - 0.12],
-                mode='lines',
-                line=dict(color='#ef9a9a' if b_gc3 > 80 else '#c8e6c9', width=6),
-                hoverinfo='skip',
+                x=[b_gc3], y=[y],
+                mode='markers',
+                marker=dict(size=12, color=b_c, symbol='square', line=dict(color='black', width=1)),
+                hovertext=f"<b>{t['display']} (β-Globin)</b><br>GC3: {b_gc3:.1f}%<br>ΔGC3 (α - β): {d_gc3:+.1f}%",
+                hoverinfo='text',
                 showlegend=False
             ), row=1, col=3)
             
-            hover_b = (
-                f"<b>{t['display']} (β-Globin)</b><br>"
-                f"GC1: {b_gc1:.1f}% | GC2: {b_gc2:.1f}%<br>"
-                f"GC12: {b_gc12:.1f}%<br>"
-                f"<b>GC3: {b_gc3:.1f}%</b> (Surge: {b_gc3 - b_gc12:+.1f}%)"
-            )
+        elif t['state'] == 'CYCLOSTOME_PROTO':
             fig.add_trace(go.Scatter(
-                x=[b_gc3], y=[y - 0.12],
+                x=[a_gc3], y=[y],
                 mode='markers',
-                marker=dict(size=12, color='#d32f2f' if b_gc3 > 80 else '#43a047', symbol='diamond', line=dict(color='black', width=1)),
-                hovertext=hover_b,
+                marker=dict(size=13, color='#ab47bc', symbol='diamond', line=dict(color='black', width=1)),
+                hovertext=f"<b>{t['display']} (Proto-Hb)</b><br>GC3: {a_gc3:.1f}%",
                 hoverinfo='text',
                 showlegend=False
             ), row=1, col=3)
 
     # Layout styling
     fig.update_xaxes(title_text="<b>Divergence Time (Ma)</b>", range=[560, -180], autorange="reversed", row=1, col=1)
-    fig.update_xaxes(title_text="<b>Relative Position (0 = 5' Telomere, 1 = 3' Telomere)</b>", range=[-0.05, 1.05], row=1, col=2)
-    fig.update_xaxes(title_text="<b>GC Content (%) [Diamond = GC3]</b>", range=[32, 105], row=1, col=3)
+    fig.update_xaxes(title_text="<b>Normalized Position (0 = p-Telomere, 1 = q-Telomere)</b>", range=[-0.05, 1.05], row=1, col=2)
+    fig.update_xaxes(title_text="<b>GC Content (%) [Diamond = α-GC3, Square = β-GC3]</b>", range=[32, 115], row=1, col=3)
     
-    fig.update_yaxes(showticklabels=False, range=[-0.8, n_taxa - 0.2])
+    fig.update_yaxes(showticklabels=False, range=[-1.5, n_taxa - 0.2])
     
     fig.update_layout(
         title="<b>Figure 4: Macroevolutionary Synteny Architecture and Codon Divergence Across Vertebrates</b>",
-        height=max(900, n_taxa * 42),
-        width=1750,
+        height=max(900, n_taxa * 44),
+        width=1800,
         template="plotly_white",
         margin=dict(l=40, r=40, t=80, b=50)
     )
@@ -1057,7 +1140,7 @@ def plot_figure4_interactive(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
 
 
 def main():
-    print("=== Generating Polished Figure 4: Phylogenetic Synteny & Codon Divergence Map ===")
+    print("=== Generating Polished Figure 4: Separate Chromosomes & Diverging Codon Map ===")
     df_loc, df_sp, df_nodes, df_codons = load_data()
     
     png_path, pdf_path = plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons)
@@ -1071,7 +1154,7 @@ def main():
             shutil.copy2(f, dest)
             print(f"  Synchronized: {os.path.basename(f)}")
             
-    print("\nPolished Figure 4 generation and synchronization complete!")
+    print("\nFigure 4 generation and synchronization complete!")
 
 if __name__ == "__main__":
     main()
