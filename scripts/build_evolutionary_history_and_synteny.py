@@ -344,13 +344,28 @@ def main():
         a_telo = a_row['rel_dist_to_telomere'].iloc[0] if has_alpha and pd.notna(a_row['rel_dist_to_telomere'].iloc[0]) else None
         b_telo = b_row['rel_dist_to_telomere'].iloc[0] if has_beta and pd.notna(b_row['rel_dist_to_telomere'].iloc[0]) else None
         
+        # If linked locus, decompose alpha-like vs beta-like globins within the cluster
+        if has_linked and (a_gc3 is None or b_gc3 is None):
+            sp_genes = df_codons[(df_codons['species'] == sp) & (df_codons['is_globin'])]
+            a_genes = sp_genes[sp_genes['gene_name'].str.contains(r'hba|hbz|alpha|hbaa|hbae|LOC102354|LOC138569', case=False, regex=True)]
+            b_genes = sp_genes[sp_genes['gene_name'].str.contains(r'hbb|hbe|hbg|beta|hbba|hbbe|LOC102356|LOC102355|LOC138579|LOC138580', case=False, regex=True)]
+            if not a_genes.empty and not b_genes.empty:
+                a_gc3 = round(a_genes['gc3'].mean(), 2)
+                b_gc3 = round(b_genes['gc3'].mean(), 2)
+                a_gc12 = round(a_genes['gc12'].mean(), 2)
+                b_gc12 = round(b_genes['gc12'].mean(), 2)
+                a_gc4d = round(a_genes['gc4d'].mean(), 2)
+                b_gc4d = round(b_genes['gc4d'].mean(), 2)
+                a_telo = round(linked_row['rel_dist_to_telomere'].iloc[0], 4) if pd.notna(linked_row['rel_dist_to_telomere'].iloc[0]) else 0.15
+                b_telo = a_telo
+
         delta_gc3 = round(a_gc3 - b_gc3, 2) if (a_gc3 is not None and b_gc3 is not None) else None
         delta_gc12 = round(a_gc12 - b_gc12, 2) if (a_gc12 is not None and b_gc12 is not None) else None
         delta_gc4d = round(a_gc4d - b_gc4d, 2) if (a_gc4d is not None and b_gc4d is not None) else None
         
         # Classification of Evolutionary Path
-        if has_linked or clade in ['teleost_fish', 'primitive_fish']:
-            path = "Path A: Actinopterygian Tandem Linked (Ancestral)"
+        if has_linked or clade in ['teleost_fish', 'primitive_fish', 'amphibian', 'sarcopterygii']:
+            path = "Path A: Non-Amniote Tandem Linked (Ancestral)"
             state_code = "LINKED_ANCESTRAL"
         elif clade == 'chondrichthyes':
             path = "Path B: Chondrichthyan Telomeric Gradient"
@@ -364,9 +379,6 @@ def main():
         elif clade == 'amniote_reptile' and any(sn in sp for sn in ['snake', 'thamnophis', 'pantherophis', 'notechis', 'vipera', 'candoia', 'podarcis', 'zootoca', 'pogona', 'anolis', 'varanus']):
             path = "Path D2: Squamate Subtelomeric-β Inversion"
             state_code = "SQUAMATE_BETA_INVERTED"
-        elif clade == 'amphibian':
-            path = "Path E: Amphibian Karyotypic Transition"
-            state_code = "AMPHIBIAN_TRANSITION"
         elif clade == 'cyclostome':
             path = "Path 0: Agnathan Single Globin Cluster"
             state_code = "CYCLOSTOME_PROTO"
@@ -434,8 +446,8 @@ def main():
             'driving_mechanism': 'Distance-to-telomere gradient (no strict mammalian-style isochores)',
         },
         {
-            'node_id': 'N4_Actinopterygii_Radiation',
-            'divergence_time_mya': 420,
+            'node_id': 'N4_Teleostei_Radiation',
+            'divergence_time_mya': 310,
             'event': 'Retention of primordial linked α-β pairing; 3R duplication yields duplicate loci (LA and LB)',
             'locus_organization': 'Tandem linked α-β pairs (e.g. hbaa1-hbba1, hbaa2-hbba2)',
             'synteny_anchor': 'NPRL3 - RHBDF1 - AANAT2',
@@ -444,28 +456,28 @@ def main():
             'driving_mechanism': 'Strict co-localization ensures parallel GC evolution (ΔGC ≈ 0)',
         },
         {
-            'node_id': 'N5_Tetrapoda_Origin',
-            'divergence_time_mya': 375,
+            'node_id': 'N5_Amniota_Ancestor',
+            'divergence_time_mya': 318,
             'event': 'Permanent autosomal separation of α and β clusters onto distinct chromosomes',
-            'locus_organization': 'α-cluster captures NPRL3-MPG; β-cluster captures FOLR1-OR51-NUMA1',
-            'synteny_anchor': 'α: NPRL3-MPG; β: OR51-NUMA1',
-            'ancestral_gc3': 62.0,
-            'ancestral_gc12': 48.0,
+            'locus_organization': 'α-cluster captures NPRL3-MPG; β-cluster captures CDCA8-OR51-RRM1-STIM1',
+            'synteny_anchor': 'α: NPRL3-MPG-LUC7L; β: CDCA8-OR51-RRM1-STIM1',
+            'ancestral_gc3': 65.0,
+            'ancestral_gc12': 49.0,
             'driving_mechanism': 'Translocation enables independent chromosomal evolutionary fates',
         },
         {
-            'node_id': 'N6_Amniota_Node',
-            'divergence_time_mya': 318,
-            'event': 'Split into Synapsida (mammal stem) and Sauropsida (reptile/bird stem)',
-            'locus_organization': 'Independent α and β autosomal loci',
-            'synteny_anchor': 'α: NPRL3-MPG-LUC7L; β: OR51-RRM1-STIM1',
-            'ancestral_gc3': 65.0,
-            'ancestral_gc12': 49.0,
-            'driving_mechanism': 'Beginning of lineage-specific isochore remodeling',
+            'node_id': 'N6_Archosauria_Aves',
+            'divergence_time_mya': 245,
+            'event': 'Microchromosomal partitioning of both α and β loci (Chr 14 and Chr 25 in chicken)',
+            'locus_organization': 'Both loci on high-recombination microchromosomes',
+            'synteny_anchor': 'α: NPRL3 on micro-14; β: OR51 on micro-25',
+            'ancestral_gc3': 75.0,
+            'ancestral_gc12': 50.0,
+            'driving_mechanism': 'Microchromosomes undergo high recombination: parallel GC3 elevation in both',
         },
         {
             'node_id': 'N7_Mammalia_Crown',
-            'divergence_time_mya': 200,
+            'divergence_time_mya': 220,
             'event': 'Subtelomeric capture of α-cluster (Chr 16 in human); β remains in interstitial desert (Chr 11)',
             'locus_organization': 'α subtelomeric (<1-2 Mb to telomere); β interstitial (>40 Mb to telomere)',
             'synteny_anchor': 'α: NPRL3-MPG-RHBDF1-LUC7L; β: FOLR1-TRIM68-OR51-NUMA1',

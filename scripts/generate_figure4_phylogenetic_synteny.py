@@ -130,15 +130,15 @@ REPRESENTATIVE_TAXA = [
         'display': 'Coelacanth (L. chalumnae)',
         'clade': 'Sarcopterygii',
         'divergence_mya': 415,
-        'state': 'AMPHIBIAN_TRANSITION',
+        'state': 'LINKED_ANCESTRAL',
         'color': '#2e7d32',
-        'alpha_chr': 'JH127080',
-        'alpha_pos': 0.10,
-        'beta_chr': 'JH126585',
-        'beta_pos': 0.68,
-        'alpha_anchors': 'NPRL3',
-        'beta_anchors': 'OR51-NUMA1',
-        'notes': 'Basal lobe-finned fish; ancestral tetrapod autosomal segregation',
+        'alpha_chr': 'Chr 5',
+        'alpha_pos': 0.14,
+        'beta_chr': 'Chr 5',
+        'beta_pos': 0.14,
+        'alpha_anchors': 'NPRL3-LUC7L',
+        'beta_anchors': '',
+        'notes': 'Basal lobe-finned fish; retains primordial linked alpha-beta locus flanked by NPRL3-LUC7L',
     },
     # 7-8. Amphibia
     {
@@ -146,30 +146,30 @@ REPRESENTATIVE_TAXA = [
         'display': 'Clawed Frog (X. tropicalis)',
         'clade': 'Amphibia',
         'divergence_mya': 270,
-        'state': 'AMPHIBIAN_TRANSITION',
+        'state': 'LINKED_ANCESTRAL',
         'color': '#388e3c',
-        'alpha_chr': 'Chr 1',
+        'alpha_chr': 'Chr 9',
         'alpha_pos': 0.10,
-        'beta_chr': 'Chr 5',
-        'beta_pos': 0.70,
-        'alpha_anchors': 'NPRL3-MPG-LUC7L',
-        'beta_anchors': 'CDCA8-OR51',
-        'notes': 'True tetrapod separation; alpha on Chr 1, beta on Chr 5',
+        'beta_chr': 'Chr 9',
+        'beta_pos': 0.10,
+        'alpha_anchors': 'NPRL3-RHBDF1-LUC7L',
+        'beta_anchors': '',
+        'notes': 'Non-amniote tetrapod; retains single linked alpha-beta locus on Chr 9 (hba + hbg/hbe)',
     },
     {
         'species': 'ambystoma_mexicanum',
         'display': 'Axolotl (A. mexicanum)',
         'clade': 'Amphibia',
         'divergence_mya': 270,
-        'state': 'AMPHIBIAN_TRANSITION',
+        'state': 'LINKED_ANCESTRAL',
         'color': '#388e3c',
         'alpha_chr': 'Chr 2',
         'alpha_pos': 0.12,
-        'beta_chr': 'Chr 13',
-        'beta_pos': 0.65,
-        'alpha_anchors': 'NPRL3-MPG',
-        'beta_anchors': 'OR51-RRM1',
-        'notes': 'Giant salamander genome (32 Gb); massive intron expansion',
+        'beta_chr': 'Chr 2',
+        'beta_pos': 0.12,
+        'alpha_anchors': 'NPRL3-RHBDF1',
+        'beta_anchors': '',
+        'notes': 'Giant salamander genome (32 Gb); retains primordial linked alpha-beta locus on Chr 2',
     },
     # 9-12. Archosauromorpha (Testudines, Crocodylia, Aves)
     {
@@ -396,7 +396,7 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
         gridspec_kw={'width_ratios': [4.8, 4.3, 4.3]},
         dpi=300
     )
-    plt.subplots_adjust(wspace=0.10, left=0.03, right=0.97, top=0.95, bottom=0.04)
+    plt.subplots_adjust(wspace=0.10, left=0.03, right=0.97, top=0.94, bottom=0.04)
     
     y_positions = np.arange(n_taxa)[::-1]  # Top to bottom (index 0 at top, y=21)
     
@@ -530,8 +530,8 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
         (500, y_positions[0], "N1", "500 Ma: Proto-Globin Single Locus (Agnatha)"),
         (450, y_gnatho, "N2", "450 Ma: Gnathostome α-β Tandem Duplication"),
         (435, y_chondro, "N3", "435 Ma: Chondrichthyan Telomeric Segregation"),
-        (355, y_tetrapoda, "N4", "355 Ma: Tetrapod Autosomal Split"),
-        (310, y_teleo, "N5", "310 Ma: Teleost 3R Duplication & Tandem Retention"),
+        (310, y_teleo, "N4", "310 Ma: Teleost 3R Duplication & Tandem Retention"),
+        (318, y_amniota, "N5", "318 Ma: Amniote Autosomal Split (α: NPRL3, β translocates to CDCA8-OR51)"),
         (245, y_archosauro, "N6", "245 Ma: Archosaur Microchromosomal Partitioning"),
         (220, y_mammalia, "N7", "220 Ma: Mammalian Subtelomeric-α Capture"),
         (165, y_squamata, "N8", "165 Ma: Squamate Subtelomeric-β Inversion"),
@@ -657,14 +657,13 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
             ax_syn.text(b_pos + 0.025, y, "β", fontsize=8.5, fontweight='bold', ha='center', va='center', color='white', zorder=6)
             ax_syn.text(b_pos + 0.065, y, "Microchromosomes (Chr 14 & 25)", fontsize=7.5, va='center', ha='left', color="#004d40", zorder=6)
 
-        else: # Amphibia / Sarcopterygii
-            a_pos = 0.10
-            b_pos = 0.65
+        else: # General fallback
+            a_pos = t.get('alpha_pos', 0.10)
+            b_pos = t.get('beta_pos', 0.65)
             ax_syn.add_patch(Rectangle((a_pos, y - 0.12), 0.05, 0.24, fc="#1e88e5", ec="black", lw=1.0, zorder=5))
             ax_syn.text(a_pos + 0.025, y, "α", fontsize=8.5, fontweight='bold', ha='center', va='center', color='white', zorder=6)
             ax_syn.add_patch(Rectangle((b_pos, y - 0.12), 0.05, 0.24, fc="#43a047", ec="black", lw=1.0, zorder=5))
             ax_syn.text(b_pos + 0.025, y, "β", fontsize=8.5, fontweight='bold', ha='center', va='center', color='white', zorder=6)
-            ax_syn.text(b_pos + 0.065, y, "OR51", fontsize=7.5, va='center', ha='left', color="#2e7d32", zorder=6)
 
     ax_syn.set_yticks([])
     ax_syn.spines['top'].set_visible(False)
@@ -690,15 +689,32 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
         sp_rows = df_sp[df_sp['species'] == sp]
         loc_rows = df_loc[df_loc['species'] == sp]
         
-        a_row = loc_rows[loc_rows['locus_class'].isin(['alpha_globin', 'linked_alpha_beta'])]
-        b_row = loc_rows[loc_rows['locus_class'].isin(['beta_globin', 'linked_alpha_beta'])]
+        if t['state'] == 'LINKED_ANCESTRAL':
+            sp_g = df_codons[(df_codons['species'] == sp) & (df_codons['is_globin'])]
+            a_genes = sp_g[sp_g['gene_name'].str.contains(r'hba|hbz|alpha|hbaa|hbae|LOC102354|LOC138569', case=False, regex=True)]
+            b_genes = sp_g[sp_g['gene_name'].str.contains(r'hbb|hbe|hbg|beta|hbba|hbbe|LOC102356|LOC102355|LOC138579|LOC138580', case=False, regex=True)]
+            a_gc1 = a_genes['gc1'].mean() if not a_genes.empty and 'gc1' in a_genes and pd.notna(a_genes['gc1'].mean()) else 52.0
+            a_gc2 = a_genes['gc2'].mean() if not a_genes.empty and 'gc2' in a_genes and pd.notna(a_genes['gc2'].mean()) else 42.0
+            a_gc3 = a_genes['gc3'].mean() if not a_genes.empty and 'gc3' in a_genes and pd.notna(a_genes['gc3'].mean()) else 60.0
+            b_gc1 = b_genes['gc1'].mean() if not b_genes.empty and 'gc1' in b_genes and pd.notna(b_genes['gc1'].mean()) else 50.0
+            b_gc2 = b_genes['gc2'].mean() if not b_genes.empty and 'gc2' in b_genes and pd.notna(b_genes['gc2'].mean()) else 38.0
+            b_gc3 = b_genes['gc3'].mean() if not b_genes.empty and 'gc3' in b_genes and pd.notna(b_genes['gc3'].mean()) else 60.0
+            has_a = not a_genes.empty
+            has_b = not b_genes.empty
+        else:
+            a_row = loc_rows[loc_rows['locus_class'].isin(['alpha_globin', 'linked_alpha_beta'])]
+            b_row = loc_rows[loc_rows['locus_class'].isin(['beta_globin', 'linked_alpha_beta'])]
+            has_a = not a_row.empty
+            has_b = not b_row.empty
+            a_gc1 = a_row['mean_gc1'].iloc[0] if has_a and pd.notna(a_row['mean_gc1'].iloc[0]) else 52.0
+            a_gc2 = a_row['mean_gc2'].iloc[0] if has_a and pd.notna(a_row['mean_gc2'].iloc[0]) else 42.0
+            a_gc3 = a_row['mean_gc3'].iloc[0] if has_a and pd.notna(a_row['mean_gc3'].iloc[0]) else 65.0
+            b_gc1 = b_row['mean_gc1'].iloc[0] if has_b and pd.notna(b_row['mean_gc1'].iloc[0]) else 50.0
+            b_gc2 = b_row['mean_gc2'].iloc[0] if has_b and pd.notna(b_row['mean_gc2'].iloc[0]) else 38.0
+            b_gc3 = b_row['mean_gc3'].iloc[0] if has_b and pd.notna(b_row['mean_gc3'].iloc[0]) else 58.0
         
         # 1. Alpha Codons (Circle/Triangle/Diamond)
-        if not a_row.empty:
-            a_gc1 = a_row['mean_gc1'].iloc[0] if pd.notna(a_row['mean_gc1'].iloc[0]) else 52.0
-            a_gc2 = a_row['mean_gc2'].iloc[0] if pd.notna(a_row['mean_gc2'].iloc[0]) else 42.0
-            a_gc3 = a_row['mean_gc3'].iloc[0] if pd.notna(a_row['mean_gc3'].iloc[0]) else 65.0
-            
+        if has_a:
             # Shaded bar from GC12 to GC3 highlighting synonymous surge
             a_gc12 = (a_gc1 + a_gc2) / 2.0
             ax_codon.plot([a_gc12, a_gc3], [y + 0.12, y + 0.12],
@@ -708,11 +724,7 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
             ax_codon.scatter(a_gc3, y + 0.12, marker='D', s=65, color='#e65100' if a_gc3 > 80 else '#1e88e5', edgecolors='black', linewidths=0.8, zorder=5)
 
         # 2. Beta Codons (Square/Inverted-Triangle/Diamond)
-        if not b_row.empty and t['state'] != 'CYCLOSTOME_PROTO':
-            b_gc1 = b_row['mean_gc1'].iloc[0] if pd.notna(b_row['mean_gc1'].iloc[0]) else 50.0
-            b_gc2 = b_row['mean_gc2'].iloc[0] if pd.notna(b_row['mean_gc2'].iloc[0]) else 38.0
-            b_gc3 = b_row['mean_gc3'].iloc[0] if pd.notna(b_row['mean_gc3'].iloc[0]) else 58.0
-            
+        if has_b and t['state'] != 'CYCLOSTOME_PROTO':
             b_gc12 = (b_gc1 + b_gc2) / 2.0
             ax_codon.plot([b_gc12, b_gc3], [y - 0.12, y - 0.12],
                           color="#ef9a9a" if b_gc3 > 80 else "#c8e6c9", linewidth=3.4, zorder=3, solid_capstyle='round')
@@ -755,7 +767,7 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
     ax_codon.spines['left'].set_visible(False)
 
     plt.suptitle("Figure 4: Macroevolutionary Synteny Architecture and Codon Divergence Across Vertebrates",
-                 fontsize=18, fontweight='bold', y=0.98)
+                 fontsize=18, fontweight='bold', y=0.975)
 
     plt.savefig(png_path, dpi=300, bbox_inches='tight')
     plt.savefig(pdf_path, format='pdf', bbox_inches='tight')
@@ -823,8 +835,8 @@ def plot_figure4_interactive(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
         (500, 21.0, "N1", "500 Ma: Proto-Globin Single Locus (Agnatha)"),
         (450, 17.2, "N2", "450 Ma: Gnathostome α-β Tandem Duplication"),
         (435, 19.5, "N3", "435 Ma: Chondrichthyan Telomeric Segregation"),
-        (355, 10.0, "N4", "355 Ma: Tetrapod Autosomal Split"),
-        (310, 16.5, "N5", "310 Ma: Teleost 3R Duplication & Tandem Retention"),
+        (310, 16.5, "N4", "310 Ma: Teleost 3R Duplication & Tandem Retention"),
+        (318, 6.5, "N5", "318 Ma: Amniote Autosomal Split (α: NPRL3, β translocates to CDCA8-OR51)"),
         (245, 11.1, "N6", "245 Ma: Archosaur Microchromosomal Partitioning"),
         (220, 3.9, "N7", "220 Ma: Mammalian Subtelomeric-α Capture"),
         (165, 7.3, "N8", "165 Ma: Squamate Subtelomeric-β Inversion"),
@@ -879,13 +891,22 @@ def plot_figure4_interactive(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
                 showlegend=False
             ), row=1, col=2)
         elif state == 'LINKED_ANCESTRAL':
+            pos = t['alpha_pos']
             fig.add_trace(go.Scatter(
-                x=[t['alpha_pos']], y=[y],
+                x=[pos], y=[y],
+                mode='markers',
+                marker=dict(size=14, color='#1e88e5', symbol='square', line=dict(color='black', width=1)),
+                hovertext=f"Linked α-Globin ({t['alpha_chr']}: {t['alpha_anchors']})",
+                hoverinfo='text',
+                showlegend=False
+            ), row=1, col=2)
+            fig.add_trace(go.Scatter(
+                x=[pos + 0.035], y=[y],
                 mode='markers+text',
-                marker=dict(size=15, color='#1e88e5', symbol='square'),
-                text=["α-β linked"],
+                marker=dict(size=14, color='#43a047', symbol='square', line=dict(color='black', width=1)),
+                text=[f"  α-β linked ({t['alpha_anchors']})"],
                 textposition="middle right",
-                hovertext=f"Linked Tandem α-β locus: {t['alpha_anchors']}",
+                hovertext=f"Linked β-Globin ({t['alpha_chr']}: {t['alpha_anchors']})",
                 hoverinfo='text',
                 showlegend=False
             ), row=1, col=2)
@@ -937,13 +958,31 @@ def plot_figure4_interactive(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
         sp_rows = df_sp[df_sp['species'] == sp]
         loc_rows = df_loc[df_loc['species'] == sp]
         
-        a_row = loc_rows[loc_rows['locus_class'].isin(['alpha_globin', 'linked_alpha_beta'])]
-        b_row = loc_rows[loc_rows['locus_class'].isin(['beta_globin', 'linked_alpha_beta'])]
+        if t['state'] == 'LINKED_ANCESTRAL':
+            sp_g = df_codons[(df_codons['species'] == sp) & (df_codons['is_globin'])]
+            a_genes = sp_g[sp_g['gene_name'].str.contains(r'hba|hbz|alpha|hbaa|hbae|LOC102354|LOC138569', case=False, regex=True)]
+            b_genes = sp_g[sp_g['gene_name'].str.contains(r'hbb|hbe|hbg|beta|hbba|hbbe|LOC102356|LOC102355|LOC138579|LOC138580', case=False, regex=True)]
+            a_gc1 = a_genes['gc1'].mean() if not a_genes.empty and 'gc1' in a_genes and pd.notna(a_genes['gc1'].mean()) else 52.0
+            a_gc2 = a_genes['gc2'].mean() if not a_genes.empty and 'gc2' in a_genes and pd.notna(a_genes['gc2'].mean()) else 42.0
+            a_gc3 = a_genes['gc3'].mean() if not a_genes.empty and 'gc3' in a_genes and pd.notna(a_genes['gc3'].mean()) else 60.0
+            b_gc1 = b_genes['gc1'].mean() if not b_genes.empty and 'gc1' in b_genes and pd.notna(b_genes['gc1'].mean()) else 50.0
+            b_gc2 = b_genes['gc2'].mean() if not b_genes.empty and 'gc2' in b_genes and pd.notna(b_genes['gc2'].mean()) else 38.0
+            b_gc3 = b_genes['gc3'].mean() if not b_genes.empty and 'gc3' in b_genes and pd.notna(b_genes['gc3'].mean()) else 60.0
+            has_a = not a_genes.empty
+            has_b = not b_genes.empty
+        else:
+            a_row = loc_rows[loc_rows['locus_class'].isin(['alpha_globin', 'linked_alpha_beta'])]
+            b_row = loc_rows[loc_rows['locus_class'].isin(['beta_globin', 'linked_alpha_beta'])]
+            has_a = not a_row.empty
+            has_b = not b_row.empty
+            a_gc1 = a_row['mean_gc1'].iloc[0] if has_a and pd.notna(a_row['mean_gc1'].iloc[0]) else 52.0
+            a_gc2 = a_row['mean_gc2'].iloc[0] if has_a and pd.notna(a_row['mean_gc2'].iloc[0]) else 42.0
+            a_gc3 = a_row['mean_gc3'].iloc[0] if has_a and pd.notna(a_row['mean_gc3'].iloc[0]) else 65.0
+            b_gc1 = b_row['mean_gc1'].iloc[0] if has_b and pd.notna(b_row['mean_gc1'].iloc[0]) else 50.0
+            b_gc2 = b_row['mean_gc2'].iloc[0] if has_b and pd.notna(b_row['mean_gc2'].iloc[0]) else 38.0
+            b_gc3 = b_row['mean_gc3'].iloc[0] if has_b and pd.notna(b_row['mean_gc3'].iloc[0]) else 58.0
         
-        if not a_row.empty:
-            a_gc1 = a_row['mean_gc1'].iloc[0] if pd.notna(a_row['mean_gc1'].iloc[0]) else 52.0
-            a_gc2 = a_row['mean_gc2'].iloc[0] if pd.notna(a_row['mean_gc2'].iloc[0]) else 42.0
-            a_gc3 = a_row['mean_gc3'].iloc[0] if pd.notna(a_row['mean_gc3'].iloc[0]) else 65.0
+        if has_a:
             a_gc12 = (a_gc1 + a_gc2) / 2.0
             
             # Connector bar
@@ -971,10 +1010,7 @@ def plot_figure4_interactive(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
                 showlegend=False
             ), row=1, col=3)
 
-        if not b_row.empty and t['state'] != 'CYCLOSTOME_PROTO':
-            b_gc1 = b_row['mean_gc1'].iloc[0] if pd.notna(b_row['mean_gc1'].iloc[0]) else 50.0
-            b_gc2 = b_row['mean_gc2'].iloc[0] if pd.notna(b_row['mean_gc2'].iloc[0]) else 38.0
-            b_gc3 = b_row['mean_gc3'].iloc[0] if pd.notna(b_row['mean_gc3'].iloc[0]) else 58.0
+        if has_b and t['state'] != 'CYCLOSTOME_PROTO':
             b_gc12 = (b_gc1 + b_gc2) / 2.0
             
             fig.add_trace(go.Scatter(
