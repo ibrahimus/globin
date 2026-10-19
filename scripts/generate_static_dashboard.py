@@ -683,7 +683,8 @@ def main():
             <h1>Vertebrate Globin Genomics Explorer</h1>
             <p>Interactive Comparative Atlas, Synteny Tracker &amp; 1-on-1 Architectural Visualizer</p>
         </div>
-        <div class="header-right">
+        <div class="header-right" style="display: flex; align-items: center; gap: 0.65rem;">
+            <button class="btn" onclick="showTab('meta'); setMetaView('fig0');" style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-weight: 600; padding: 0.35rem 0.75rem; font-size: 0.82rem; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;">Overview &amp; Guide</button>
             <span class="badge">68 Vertebrate Genomes • 120 Curated Loci • 1,530 Verified Gene Models • 10 Evolutionary Clades</span>
         </div>
     </header>
@@ -702,6 +703,7 @@ def main():
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.45rem; flex-wrap: wrap; gap: 0.5rem;">
                 <h3 style="margin: 0; font-size: 0.98rem; font-weight: 700;">Global Macroevolutionary Figures</h3>
                 <div class="btn-group" id="meta-view-btns" style="margin-bottom: 0;">
+                    <button class="btn" onclick="setMetaView('fig0')">Overview &amp; Guide</button>
                     <button class="btn active" onclick="setMetaView('fig1a')">Fig 1A: Curated Summary</button>
                     <button class="btn" onclick="setMetaView('fig1b')">Fig 1B: All 68 Species</button>
                     <button class="btn" onclick="setMetaView('fig2')">Fig 2: Mechanistic Drivers</button>
@@ -1343,6 +1345,7 @@ def main():
             }}
             const img = document.getElementById('meta-img');
             let figName = 'Fig 1A: Curated Macroevolutionary Locus Divergence Across Key Clades & Extrema';
+            if (figType === 'fig0' || figType === 'overview') {{ img.src = 'summary_figure0_overview_and_methodology.png'; figName = 'Figure 0: Conceptual Paradigm, Syntenic Discovery Pipeline, Metric Anatomy & Interactive Dashboard User Guide'; }}
             if (figType === 'fig1a' || figType === 'fig1') {{ img.src = 'summary_figure1a_locus_divergence_summary.png'; figName = 'Fig 1A: Curated Macroevolutionary Locus Divergence Across Key Clades & Extrema'; }}
             if (figType === 'fig1b') {{ img.src = 'summary_figure1b_locus_divergence_full.png'; figName = 'Fig 1B: Complete Macroevolutionary Locus Divergence Across All 68 Vertebrates'; }}
             if (figType === 'fig2') {{ img.src = 'summary_figure2_mechanistic_drivers.png'; figName = 'Fig 2: Mechanistic Drivers of GC Polarity'; }}
