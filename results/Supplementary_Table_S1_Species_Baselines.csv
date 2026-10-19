@@ -37,7 +37,7 @@ pantherophis_guttatus,Corn Snake (P. guttatus),amniote_reptile,Reptilia,ASM59756
 thamnophis_elegans,Garter Snake (T. elegans),amniote_reptile,Reptilia,rThaEle1.pri,rThaEle1.pri,19034,42.84,6.26,19034.0,48.3,7.45,51.97,14.82,40.95
 alligator_mississippiensis,Alligator (A. mississippiensis),amniote_crocodylian,Archosauria,rAllMis1,rAllMis1,20433,48.99,8.15,20446.0,52.12,8.89,58.93,16.9,44.0
 struthio_camelus_australis,Ostrich (S. camelus),amniote_bird,Aves,ASM69896v1,ASM69896v1,13,44.231286545703526,7.703120912796682,,48.77627593289969,6.8785185938752855,52.69405888394385,14.701848229780438,42.0
-aptenodytes_patagonicus,King Penguin (A. patagonicus),amniote_bird,Aves,bAptPat1.pri.cur,bAptPat1.pri.cur,15,52.28,8.9,,52.28,8.89,59.22,17.62,41.0
+aptenodytes_patagonicus,King Penguin (A. patagonicus),amniote_bird,Aves,bAptPat1.pri.cur,bAptPat1.pri.cur,29,52.28,8.9,,52.28,8.89,59.22,17.62,41.0
 anser_cygnoides,Swan Goose (A. cygnoides),amniote_bird,Aves,Taihu_goose_T2T_genome,Taihu_goose_T2T_genome,22,50.08864659585007,11.264631971107905,,54.79657878804557,10.182712214625111,63.43065441136001,19.108710849049583,41.0
 anas_platyrhynchos,Mallard Duck (A. platyrhynchos),amniote_bird,Aves,ASM874695v1,ASM874695v1,16765,48.92,10.75,16765.0,53.25,9.34,60.78,17.82,41.5
 meleagris_gallopavo,Turkey (M. gallopavo),amniote_bird,Aves,Turkey_5.1,Turkey_5.1,16226,46.43,8.93,16226.0,50.51,7.93,55.72,15.4,41.8

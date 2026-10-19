@@ -1529,3 +1529,17 @@ calypte_anna,amniote_bird,beta_globin,GeneID:103539612,LOC103539612,HBBL_like,be
 calypte_anna,amniote_bird,beta_globin,GeneID:103539617,LOC103539617,LOC103539617,cluster_non_globin,intervening_gene,False,150301,151276,59.18,975,2.989,59.18,975,,0,,0,58.78,951,84.23
 calypte_anna,amniote_bird,beta_globin,GeneID:103539613,LOC103539613,LOC103539613,cluster_non_globin,intervening_gene,False,161235,163762,59.2,2527,3.4026,59.2,2527,,0,,0,59.04,813,78.97
 calypte_anna,amniote_bird,beta_globin,GeneID:103539619,RPS11,RPS11,cluster_non_globin,intervening_gene,False,164135,176989,50.42,12854,4.109,50.42,12854,,0,,0,59.83,468,85.26
+aptenodytes_patagonicus,amniote_bird,beta_globin,GeneID:KAF1663532.1,FOLR1,Folr1,cluster_non_globin,intervening_gene,False,133089,135227,54.65,2139,3.3302,54.65,2139,56.07,840,53.73,1299,56.07,840,68.57
+aptenodytes_patagonicus,amniote_bird,beta_globin,GeneID:KAF1663538.1,OR52B2_1,OR52B2_1,cluster_non_globin,intervening_gene,False,157570,158520,52.47,951,2.9782,52.47,951,52.47,951,,0,52.47,951,66.88
+aptenodytes_patagonicus,amniote_bird,beta_globin,GeneID:KAF1663540.1,HBRH_CHICK,HBR_like,beta_globin,HBB,True,180682,182292,55.43,1611,3.2071,55.43,1611,57.82,441,54.53,1170,57.82,441,81.63
+aptenodytes_patagonicus,amniote_bird,beta_globin,GeneID:KAF1663541.1,HBB_0,HBB_like,beta_globin,HBB,True,194005,195315,57.82,1311,3.1176,57.82,1311,60.77,441,56.32,870,60.77,441,85.71
+aptenodytes_patagonicus,amniote_bird,beta_globin,GeneID:KAF1663544.1,HBB_1,HBBA_like,beta_globin,HBB,True,197364,198864,55.5,1501,3.1764,55.5,1501,60.32,441,53.49,1060,60.32,441,82.31
+aptenodytes_patagonicus,amniote_bird,beta_globin,GeneID:KAF1663546.1,HBE,HBE_like,beta_globin,HBE,True,202349,204090,53.04,1742,3.241,53.04,1742,58.05,441,51.35,1301,58.05,441,78.23
+aptenodytes_patagonicus,amniote_bird,beta_globin,GeneID:KAF1663542.1,OR51E2,OR51E2,cluster_non_globin,intervening_gene,False,230147,231076,57.2,930,2.9685,57.2,930,57.2,930,,0,57.2,930,80.65
+aptenodytes_patagonicus,amniote_bird,beta_globin,GeneID:KAF1663545.1,OR51G2,OR51G2,cluster_non_globin,intervening_gene,False,236814,237752,45.47,939,2.9727,45.47,939,45.47,939,,0,45.47,939,56.55
+aptenodytes_patagonicus,amniote_bird,beta_globin,GeneID:KAF1663533.1,OR51F2,OR51F2,cluster_non_globin,intervening_gene,False,253779,254735,54.96,957,2.9809,54.96,957,54.96,957,,0,54.96,957,77.43
+aptenodytes_patagonicus,amniote_bird,beta_globin,GeneID:KAF1663543.1,OR52K1,OR52K1,cluster_non_globin,intervening_gene,False,265292,266161,52.3,870,2.9395,52.3,870,52.3,870,,0,52.3,870,71.72
+aptenodytes_patagonicus,amniote_bird,beta_globin,GeneID:KAF1663535.1,OR52M1,OR52M1,cluster_non_globin,intervening_gene,False,280661,281596,57.26,936,2.9713,57.26,936,57.26,936,,0,57.26,936,79.17
+aptenodytes_patagonicus,amniote_bird,beta_globin,GeneID:KAF1663536.1,RRM1,RRM1,cluster_non_globin,RRM1,False,322259,342931,44.83,20673,4.3154,44.83,20673,48.06,2376,44.41,18297,48.06,2376,57.7
+aptenodytes_patagonicus,amniote_bird,beta_globin,GeneID:KAF1663537.1,SLC6A7_1,SLC6A7_1,cluster_non_globin,intervening_gene,False,353105,361410,65.21,8306,3.9194,65.21,8306,62.65,1794,65.91,6512,62.65,1794,88.13
+aptenodytes_patagonicus,amniote_bird,beta_globin,GeneID:KAF1663539.1,STIM1,STIM1,cluster_non_globin,STIM1,False,365895,428749,49.09,62855,4.7983,49.09,62855,57.15,1986,48.82,60869,57.15,1986,73.72

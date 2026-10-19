@@ -119,3 +119,4 @@ tachyglossus_aculeatus,Echidna (T. aculeatus),Monotremata,beta_globin,NC_052067.
 calypte_anna,Hummingbird (C. anna),Aves,alpha_globin,NC_044260.1,14200000,14500000,300001,999021.0,6.45,Interstitial (≥5% Arm),3,0,0,15,56.35,0.57,58.34,0.83,,,,,55.05,0.41
 aptenodytes_patagonicus,King Penguin (A. patagonicus),Aves,alpha_globin,NC_134961.1,140000,480000,340001,137975.0,0.68,Subtelomeric (<5% Arm),3,0,0,12,57.44,0.58,58.73,0.73,,,,,54.71,0.27
 calypte_anna,Hummingbird (C. anna),Aves,beta_globin,NW_007619074.1,1,179301,179301,105.0,0.06,Subtelomeric (<5% Arm),0,3,0,7,,,,,58.25,0.81,61.79,1.26,57.42,0.71
+aptenodytes_patagonicus,King Penguin (A. patagonicus),Aves,beta_globin,VULM01006596.1,130000,380000,250001,40334.0,8.6,Interstitial (≥5% Arm),0,4,0,10,,,,,55.45,0.36,59.24,0.78,53.34,0.12

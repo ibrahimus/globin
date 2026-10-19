@@ -11,7 +11,7 @@ ambystoma_mexicanum,amphibian,Path A: Non-Amniote Tandem Linked (Ancestral),LINK
 anas_platyrhynchos,amniote_bird,Path D1: Archosaurian Balanced Microchromosomal,ARCHOSAUR_BALANCED,False,True,True,64.46,77.98,-13.52,51.14,50.37,0.77,61.19,74.67,-13.48,0.3842,0.0061
 anolis_carolinensis,amniote_reptile,Path D2: Squamate Subtelomeric-β Inversion,SQUAMATE_BETA_INVERTED,False,True,True,51.74,38.52,13.22,63.54,77.03,-13.49,50.07,42.31,7.76,0.393,0.0063
 anser_cygnoides,amniote_bird,Path D1: Archosaurian Balanced Microchromosomal,ARCHOSAUR_BALANCED,False,True,True,71.79,83.91,-12.12,48.82,48.62,0.2,68.75,81.7,-12.95,0.4095,0.0021
-aptenodytes_patagonicus,amniote_bird,Path D1: Archosaurian Balanced Microchromosomal,ARCHOSAUR_BALANCED,False,True,False,80.97,,,47.76,,,79.47,,,0.0068,
+aptenodytes_patagonicus,amniote_bird,Path D1: Archosaurian Balanced Microchromosomal,ARCHOSAUR_BALANCED,False,True,True,80.97,81.97,-1.0,47.76,47.88,-0.12,79.47,83.32,-3.85,0.0068,0.2837
 aquila_chrysaetos_chrysaetos,amniote_bird,Path D1: Archosaurian Balanced Microchromosomal,ARCHOSAUR_BALANCED,False,True,True,61.68,75.76,-14.08,60.16,45.96,14.2,61.94,73.76,-11.82,0.1653,0.0196
 bufo_bufo,amphibian,Path A: Non-Amniote Tandem Linked (Ancestral),LINKED_ANCESTRAL,True,False,False,,,,,,,,,,,
 calypte_anna,amniote_bird,Path D1: Archosaurian Balanced Microchromosomal,ARCHOSAUR_BALANCED,False,True,True,74.83,87.76,-12.93,50.23,49.09,1.14,70.31,87.66,-17.35,0.0827,0.0006

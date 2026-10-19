@@ -1988,3 +1988,17 @@ calypte_anna,amniote_bird,beta_globin,NW_007619074.1,GeneID:103539612,LOC1035396
 calypte_anna,amniote_bird,beta_globin,NW_007619074.1,GeneID:103539617,LOC103539617,LOC103539617,protein_coding,cluster_non_globin,intervening_gene,False,150301,151276,975,+,olfactory receptor 52B2-like
 calypte_anna,amniote_bird,beta_globin,NW_007619074.1,GeneID:103539613,LOC103539613,LOC103539613,protein_coding,cluster_non_globin,intervening_gene,False,161235,163762,2527,+,folate receptor gamma-like
 calypte_anna,amniote_bird,beta_globin,NW_007619074.1,GeneID:103539619,RPS11,RPS11,protein_coding,cluster_non_globin,intervening_gene,False,164135,176989,12854,+,40S ribosomal protein S11
+aptenodytes_patagonicus,amniote_bird,beta_globin,VULM01006596.1,GeneID:KAF1663532.1,FOLR1,Folr1,protein_coding,cluster_non_globin,intervening_gene,False,133089,135227,2139,-,Folate receptor alpha
+aptenodytes_patagonicus,amniote_bird,beta_globin,VULM01006596.1,GeneID:KAF1663538.1,OR52B2_1,OR52B2_1,protein_coding,cluster_non_globin,intervening_gene,False,157570,158520,951,-,Olfactory receptor 52B2
+aptenodytes_patagonicus,amniote_bird,beta_globin,VULM01006596.1,GeneID:KAF1663540.1,HBRH_CHICK,HBR_like,protein_coding,beta_globin,HBB,True,180682,182292,1611,+,Hemoglobin subunit rho
+aptenodytes_patagonicus,amniote_bird,beta_globin,VULM01006596.1,GeneID:KAF1663541.1,HBB_0,HBB_like,protein_coding,beta_globin,HBB,True,194005,195315,1311,+,Hemoglobin subunit beta
+aptenodytes_patagonicus,amniote_bird,beta_globin,VULM01006596.1,GeneID:KAF1663544.1,HBB_1,HBBA_like,protein_coding,beta_globin,HBB,True,197364,198864,1501,+,Hemoglobin subunit beta
+aptenodytes_patagonicus,amniote_bird,beta_globin,VULM01006596.1,GeneID:KAF1663546.1,HBE,HBE_like,protein_coding,beta_globin,HBE,True,202349,204090,1742,+,Hemoglobin subunit epsilon
+aptenodytes_patagonicus,amniote_bird,beta_globin,VULM01006596.1,GeneID:KAF1663542.1,OR51E2,OR51E2,protein_coding,cluster_non_globin,intervening_gene,False,230147,231076,930,-,Olfactory receptor 51E2
+aptenodytes_patagonicus,amniote_bird,beta_globin,VULM01006596.1,GeneID:KAF1663545.1,OR51G2,OR51G2,protein_coding,cluster_non_globin,intervening_gene,False,236814,237752,939,-,Olfactory receptor 51G2
+aptenodytes_patagonicus,amniote_bird,beta_globin,VULM01006596.1,GeneID:KAF1663533.1,OR51F2,OR51F2,protein_coding,cluster_non_globin,intervening_gene,False,253779,254735,957,-,Olfactory receptor 51F2
+aptenodytes_patagonicus,amniote_bird,beta_globin,VULM01006596.1,GeneID:KAF1663543.1,OR52K1,OR52K1,protein_coding,cluster_non_globin,intervening_gene,False,265292,266161,870,-,Olfactory receptor 52K1
+aptenodytes_patagonicus,amniote_bird,beta_globin,VULM01006596.1,GeneID:KAF1663535.1,OR52M1,OR52M1,protein_coding,cluster_non_globin,intervening_gene,False,280661,281596,936,+,Olfactory receptor 52M1
+aptenodytes_patagonicus,amniote_bird,beta_globin,VULM01006596.1,GeneID:KAF1663536.1,RRM1,RRM1,protein_coding,cluster_non_globin,RRM1,False,322259,342931,20673,-,Ribonucleoside-diphosphate reductase large subunit
+aptenodytes_patagonicus,amniote_bird,beta_globin,VULM01006596.1,GeneID:KAF1663537.1,SLC6A7_1,SLC6A7_1,protein_coding,cluster_non_globin,intervening_gene,False,353105,361410,8306,+,Sodium-dependent proline transporter
+aptenodytes_patagonicus,amniote_bird,beta_globin,VULM01006596.1,GeneID:KAF1663539.1,STIM1,STIM1,protein_coding,cluster_non_globin,STIM1,False,365895,428749,62855,-,Stromal interaction molecule 1

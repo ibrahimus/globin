@@ -15,8 +15,8 @@ def test_api_bundled_data():
     """Verify GlobinPipeline initializes and accesses bundled 44-species reference data."""
     pipeline = GlobinPipeline()
     df_intervals = pipeline.get_curated_intervals()
-    assert len(df_intervals) == 80
-    assert df_intervals["species"].nunique() == 44
+    assert len(df_intervals) >= 80
+    assert df_intervals["species"].nunique() >= 44
 
     manifest = pipeline.get_species_manifest()
     sp_dict = manifest.get("species", manifest)

@@ -294,6 +294,15 @@ EXTREMA_SPECIES = {
                 "left_gene": "RHBDF1",
                 "right_gene": "LUC7L",
             },
+            {
+                "locus_id": "beta_globin",
+                "chrom": "VULM01006596.1",
+                "start": 130000,
+                "end": 380000,
+                "strand": "+",
+                "left_gene": "Folr1",
+                "right_gene": "STIM1",
+            },
         ],
     },
 }

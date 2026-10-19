@@ -215,7 +215,8 @@ species:
       strand: '-'
       left_gene: LOC102454060
       right_gene: RHBDF1
-      notes: 'Chinese softshell turtle alpha-globin locus on chr16: LOC102454060 (HBAA) - LOC102460110 (HBAD) - LOC102459869 (pi) - NPRL3 - MPG - RHBDF1'
+      notes: 'Chinese softshell turtle alpha-globin locus on chr16: LOC102454060 (HBAA)
+        - LOC102460110 (HBAD) - LOC102459869 (pi) - NPRL3 - MPG - RHBDF1'
     - locus_id: beta_globin
       chromosome: NC_134711.1
       start: 331060000
@@ -223,7 +224,8 @@ species:
       strand: '-'
       left_gene: LOC142826610
       right_gene: LOC102453687
-      notes: 'Chinese softshell turtle beta-globin locus on chr1: 3 tandem beta globins (LOC142826610, LOC142818157, LOC102453687)'
+      notes: 'Chinese softshell turtle beta-globin locus on chr1: 3 tandem beta globins
+        (LOC142826610, LOC142818157, LOC102453687)'
   gopherus_evgoodei:
     common_name: Goode's Thornscrub Tortoise (G. evgoodei)
     clade: amniote_reptile
@@ -459,15 +461,17 @@ species:
       strand: '-'
       left_gene: RHBDF1
       right_gene: LOC104143901
-      notes: 'Palaeognathae basal avian alpha locus on NW_009271137.1: GTF3C1 - RHBDF1 - MPG - NPRL3 - LOC104143903 (HBZ) - LOC104143902 (HBAD) - LOC104143901 (HBAA)'
+      notes: 'Palaeognathae basal avian alpha locus on NW_009271137.1: GTF3C1 - RHBDF1
+        - MPG - NPRL3 - LOC104143903 (HBZ) - LOC104143902 (HBAD) - LOC104143901 (HBAA)'
     - locus_id: beta_globin
       chromosome: NW_009270861.1
       start: 1000
       end: 30000
-      strand: '+'
+      strand: +
       left_gene: LOC104141507
       right_gene: LOC104141514
-      notes: 'Palaeognathae basal avian beta locus on NW_009270861.1: LOC104141513 - LOC104141507 (HBE) - LOC104141505 (HBB) - LOC104141514 (HBBA)'
+      notes: 'Palaeognathae basal avian beta locus on NW_009270861.1: LOC104141513
+        - LOC104141507 (HBE) - LOC104141505 (HBB) - LOC104141514 (HBBA)'
   anolis_carolinensis:
     common_name: Green Anole (A. carolinensis)
     clade: amniote_reptile
@@ -1056,7 +1060,8 @@ species:
       strand: +
       left_gene: LOC138569676
       right_gene: RHBDF1
-      notes: 'Axolotl ancestral linked alpha+beta cluster on chr2q: 2 beta globins, 14 alpha globins, NPRL3, and RHBDF1'
+      notes: 'Axolotl ancestral linked alpha+beta cluster on chr2q: 2 beta globins,
+        14 alpha globins, NPRL3, and RHBDF1'
     - locus_id: beta_secondary
       chromosome: NC_090925.1
       start: 788300000
@@ -1064,7 +1069,8 @@ species:
       strand: +
       left_gene: LOC138579605
       right_gene: LOC138580890
-      notes: 'Axolotl secondary tandem beta-globin array on chr3p: 12 tandem beta-like globins'
+      notes: 'Axolotl secondary tandem beta-globin array on chr3p: 12 tandem beta-like
+        globins'
   triturus_cristatus:
     common_name: Crested Newt (T. cristatus)
     clade: amphibian
@@ -1079,7 +1085,8 @@ species:
       strand: +
       left_gene: RHBDF1
       right_gene: LOC146790088
-      notes: 'Great crested newt ancestral linked alpha+beta locus on chr10: RHBDF1, NPRL3, 18 alpha globins, and 2 beta globins'
+      notes: 'Great crested newt ancestral linked alpha+beta locus on chr10: RHBDF1,
+        NPRL3, 18 alpha globins, and 2 beta globins'
     - locus_id: beta_secondary
       chromosome: NC_140590.1
       start: 1210800000
@@ -1087,7 +1094,8 @@ species:
       strand: +
       left_gene: TTC5
       right_gene: LOC146811624
-      notes: 'Great crested newt secondary adult beta-globin locus on chr7: TTC5 - 7 tandem beta globins'
+      notes: 'Great crested newt secondary adult beta-globin locus on chr7: TTC5 -
+        7 tandem beta globins'
   zootoca_vivipara:
     common_name: Viviparous Lizard (Z. vivipara)
     clade: amniote_reptile
@@ -1102,7 +1110,9 @@ species:
       strand: '-'
       left_gene: LOC118093251
       right_gene: LOC118092497
-      notes: 'Viviparous lizard alpha-globin locus on chr13: LOC118093251 (alpha_D) - LOC118093266 (alpha) - LOC118093265 (alpha_2) - RHBDF1 - MPG - NPRL3 - LOC118092498 (alpha_D) - LOC118092499 (alpha_A) - LOC118092497 (pi)'
+      notes: 'Viviparous lizard alpha-globin locus on chr13: LOC118093251 (alpha_D)
+        - LOC118093266 (alpha) - LOC118093265 (alpha_2) - RHBDF1 - MPG - NPRL3 - LOC118092498
+        (alpha_D) - LOC118092499 (alpha_A) - LOC118092497 (pi)'
     - locus_id: beta_globin
       chromosome: NC_142587.1
       start: 101690000
@@ -1110,7 +1120,8 @@ species:
       strand: '-'
       left_gene: LOC118085062
       right_gene: LOC118085601
-      notes: 'Viviparous lizard beta-globin locus on chr4: 6 tandem beta globins flanked by olfactory receptor cluster'
+      notes: 'Viviparous lizard beta-globin locus on chr4: 6 tandem beta globins flanked
+        by olfactory receptor cluster'
   eptatretus_burgeri:
     common_name: Inshore Hagfish (E. burgeri)
     clade: cyclostome
@@ -1122,10 +1133,11 @@ species:
       chromosome: NC_140977.1
       start: 52050000
       end: 52280000
-      strand: '+'
+      strand: +
       left_gene: NPRL3
       right_gene: LOC147010100
-      notes: 'Inshore hagfish ancestral proto-globin locus on chr17: NPRL3 adjacent to tandem globin cluster'
+      notes: 'Inshore hagfish ancestral proto-globin locus on chr17: NPRL3 adjacent
+        to tandem globin cluster'
   lampetra_fluviatilis:
     common_name: River Lamprey (L. fluviatilis)
     clade: cyclostome
@@ -1137,10 +1149,11 @@ species:
       chromosome: NC_136297.1
       start: 11400000
       end: 12300000
-      strand: '+'
+      strand: +
       left_gene: NPRL3
       right_gene: LOC144940938
-      notes: 'European river lamprey ancestral proto-globin locus on chr23: NPRL3 adjacent to tandem globin clusters'
+      notes: 'European river lamprey ancestral proto-globin locus on chr23: NPRL3
+        adjacent to tandem globin clusters'
   tursiops_truncatus:
     common_name: Bottlenose Dolphin (T. truncatus)
     clade: amniote_mammal
@@ -1155,15 +1168,18 @@ species:
       strand: '-'
       left_gene: RHBDF1
       right_gene: HBQ1
-      notes: 'Cetacean marine diver alpha locus on chr16 (NC_047048.1): POLR3K - SNRNP25 - RHBDF1 - MPG - NPRL3 - HBZ - HBM - LOC117308133 (HBA2) - LOC117308132 (HBA1) - HBQ1 - LUC7L'
+      notes: 'Cetacean marine diver alpha locus on chr16 (NC_047048.1): POLR3K - SNRNP25
+        - RHBDF1 - MPG - NPRL3 - HBZ - HBM - LOC117308133 (HBA2) - LOC117308132 (HBA1)
+        - HBQ1 - LUC7L'
     - locus_id: beta_globin
       chromosome: NC_047041.1
       start: 59880000
       end: 59940000
-      strand: '+'
+      strand: +
       left_gene: LOC117313420
       right_gene: LOC101315568
-      notes: 'Cetacean marine diver beta locus on chr9 (NC_047041.1): LOC117313420 (HBB) - LOC101335834 (HBD) - LOC101336124 (HBG) - LOC101315568 (HBE)'
+      notes: 'Cetacean marine diver beta locus on chr9 (NC_047041.1): LOC117313420
+        (HBB) - LOC101335834 (HBD) - LOC101336124 (HBG) - LOC101315568 (HBE)'
   zalophus_californianus:
     common_name: California Sea Lion (Z. californianus)
     clade: amniote_mammal
@@ -1178,15 +1194,18 @@ species:
       strand: '-'
       left_gene: RHBDF1
       right_gene: HBQ1
-      notes: 'Pinniped marine diver alpha locus on chr11 (NC_045604.1): POLR3K - SNRNP25 - RHBDF1 - MPG - NPRL3 - HBZ - LOC113933389 - HBM - LOC113933387 - HBA1 - HBQ1 - LUC7L'
+      notes: 'Pinniped marine diver alpha locus on chr11 (NC_045604.1): POLR3K - SNRNP25
+        - RHBDF1 - MPG - NPRL3 - HBZ - LOC113933389 - HBM - LOC113933387 - HBA1 -
+        HBQ1 - LUC7L'
     - locus_id: beta_globin
       chromosome: NC_045605.1
       start: 61010000
       end: 61060000
-      strand: '+'
+      strand: +
       left_gene: LOC113914337
       right_gene: HBE1
-      notes: 'Pinniped marine diver beta locus on chr12 (NC_045605.1): LOC113914337 (HBB2) - LOC118355949 (HBB1) - LOC113914336 (HBD) - LOC113914335 (HBG) - HBE1'
+      notes: 'Pinniped marine diver beta locus on chr12 (NC_045605.1): LOC113914337
+        (HBB2) - LOC118355949 (HBB1) - LOC113914336 (HBD) - LOC113914335 (HBG) - HBE1'
   loxodonta_africana:
     common_name: African Savanna Elephant (L. africana)
     clade: amniote_mammal
@@ -1201,15 +1220,17 @@ species:
       strand: '-'
       left_gene: RHBDF1
       right_gene: HBQ1
-      notes: 'Afrotherian baseline alpha locus on chr6 (NC_087353.1): RHBDF1 - MPG - NPRL3 - HBZ - LOC100657757 - HBM - LOC135232945 - HBA2 - HBQ1 - LUC7L'
+      notes: 'Afrotherian baseline alpha locus on chr6 (NC_087353.1): RHBDF1 - MPG
+        - NPRL3 - HBZ - LOC100657757 - HBM - LOC135232945 - HBA2 - HBQ1 - LUC7L'
     - locus_id: beta_globin
       chromosome: NC_087348.1
       start: 82900000
       end: 82950000
-      strand: '+'
+      strand: +
       left_gene: LOC100677792
       right_gene: HBB/D
-      notes: 'Afrotherian baseline beta locus on chr1 (NC_087348.1): LOC100677792 (HBE1) - LOC100677510 (HBG) - LOC135232176 (HBD) - HBB/D'
+      notes: 'Afrotherian baseline beta locus on chr1 (NC_087348.1): LOC100677792
+        (HBE1) - LOC100677510 (HBG) - LOC135232176 (HBD) - HBB/D'
   scyliorhinus_canicula:
     common_name: Small-spotted Catshark (S. canicula)
     clade: chondrichthyes
@@ -1221,10 +1242,12 @@ species:
       chromosome: NC_052160.1
       start: 73580000
       end: 73860000
-      strand: '+'
+      strand: +
       left_gene: LOC119978731
       right_gene: LOC119978783
-      notes: 'Cartilaginous fish ancestral jawed vertebrate linked cluster on chr15 (NC_052160.1): LOC119978731 (beta) - LOC119978771 (alpha) - LOC119978759 (alpha) - LOC119978783 (beta)'
+      notes: 'Cartilaginous fish ancestral jawed vertebrate linked cluster on chr15
+        (NC_052160.1): LOC119978731 (beta) - LOC119978771 (alpha) - LOC119978759 (alpha)
+        - LOC119978783 (beta)'
   heptranchias_perlo:
     common_name: Sharpnose Sevengill Shark (H. perlo)
     clade: chondrichthyes
@@ -1236,10 +1259,12 @@ species:
       chromosome: NC_090346.1
       start: 21050000
       end: 21650000
-      strand: '+'
+      strand: +
       left_gene: LOC137340586
       right_gene: LOC137340887
-      notes: 'Hexanchiform shark ancestral linked cluster on chr22 (NC_090346.1): LOC137340586 (beta) - LOC137340588 (alpha) - LOC137340587 (alpha) - LOC137340887 (beta)'
+      notes: 'Hexanchiform shark ancestral linked cluster on chr22 (NC_090346.1):
+        LOC137340586 (beta) - LOC137340588 (alpha) - LOC137340587 (alpha) - LOC137340887
+        (beta)'
   somniosus_microcephalus:
     common_name: Greenland Shark (S. microcephalus)
     clade: chondrichthyes
@@ -1251,10 +1276,11 @@ species:
       chromosome: NC_140997.1
       start: 34600000
       end: 35850000
-      strand: '+'
+      strand: +
       left_gene: LOC147110465
       right_gene: LOC147110472
-      notes: 'Squaliform shark expanded linked cluster on chr11 (NC_140997.1): 7 tandem globins (beta-alpha-alpha-beta-alpha-beta-beta) LOC147110465..LOC147110472'
+      notes: 'Squaliform shark expanded linked cluster on chr11 (NC_140997.1): 7 tandem
+        globins (beta-alpha-alpha-beta-alpha-beta-beta) LOC147110465..LOC147110472'
   chiloscyllium_punctatum:
     common_name: Brownbanded Bamboo Shark (C. punctatum)
     clade: chondrichthyes
@@ -1266,10 +1292,11 @@ species:
       chromosome: NC_092778.1
       start: 19100000
       end: 19350000
-      strand: '+'
+      strand: +
       left_gene: LOC140464411
       right_gene: LOC140464413
-      notes: 'Orectolobiform shark linked cluster on chr40 (NC_092778.1): LOC140464411 (beta) - LOC140464415 (alpha) - LOC140464412 (alpha) - LOC140464413 (beta)'
+      notes: 'Orectolobiform shark linked cluster on chr40 (NC_092778.1): LOC140464411
+        (beta) - LOC140464415 (alpha) - LOC140464412 (alpha) - LOC140464413 (beta)'
   carcharhinus_amblyrhynchos:
     common_name: Grey Reef Shark (C. amblyrhynchos)
     clade: chondrichthyes
@@ -1281,10 +1308,12 @@ species:
       chromosome: NC_137341.1
       start: 3800000
       end: 4050000
-      strand: '+'
+      strand: +
       left_gene: LOC145354793
       right_gene: LOC145354794
-      notes: 'Carcharhiniform shark peri-telomeric linked cluster on chr18 (NC_137341.1): LOC145354793 (beta) - LOC145354628 (alpha) - LOC145354629 (alpha) - LOC145354794 (beta)'
+      notes: 'Carcharhiniform shark peri-telomeric linked cluster on chr18 (NC_137341.1):
+        LOC145354793 (beta) - LOC145354628 (alpha) - LOC145354629 (alpha) - LOC145354794
+        (beta)'
   heterocephalus_glaber:
     common_name: Naked Mole-Rat (H. glaber)
     clade: amniote_mammal
@@ -1299,15 +1328,18 @@ species:
       strand: '-'
       left_gene: Rhbdf1
       right_gene: LOC101724100
-      notes: 'Subterranean hypoxia extremophile alpha locus on NW_004624913.1: Rhbdf1 - Mpg - Nprl3 - LOC101705305 (HBZ) - LOC101704937 (HBA1) - LOC101704581 (HBA2) - LOC101724100 (HBQ) - Luc7l'
+      notes: 'Subterranean hypoxia extremophile alpha locus on NW_004624913.1: Rhbdf1
+        - Mpg - Nprl3 - LOC101705305 (HBZ) - LOC101704937 (HBA1) - LOC101704581 (HBA2)
+        - LOC101724100 (HBQ) - Luc7l'
     - locus_id: beta_globin
       chromosome: NW_004624817.1
       start: 6650000
       end: 6750000
-      strand: '+'
+      strand: +
       left_gene: LOC101696428
       right_gene: LOC101718529
-      notes: 'Subterranean hypoxia extremophile beta locus on NW_004624817.1: LOC101696428 (HBB) - LOC101718185 (HBE) - LOC101718529 (HBG)'
+      notes: 'Subterranean hypoxia extremophile beta locus on NW_004624817.1: LOC101696428
+        (HBB) - LOC101718185 (HBE) - LOC101718529 (HBG)'
   vipera_berus:
     common_name: Adder (V. berus)
     clade: amniote_reptile
@@ -1319,18 +1351,22 @@ species:
       chromosome: NC_138216.1
       start: 100000
       end: 200000
-      strand: '+'
+      strand: +
       left_gene: AXIN1
       right_gene: GTF3C1
-      notes: 'European adder alpha-globin locus on chr13 (NC_138216.1): AXIN1 - MRPL28 - PGAP6 - LOC308674188 (HBA_like) - LOC308674198 (HBAD_like) - NPRL3 - MPG - RHBDF1 - SNRNP25 - POLR3K - GTF3C1'
+      notes: 'European adder alpha-globin locus on chr13 (NC_138216.1): AXIN1 - MRPL28
+        - PGAP6 - LOC308674188 (HBA_like) - LOC308674198 (HBAD_like) - NPRL3 - MPG
+        - RHBDF1 - SNRNP25 - POLR3K - GTF3C1'
     - locus_id: beta_globin
       chromosome: NC_138206.1
       start: 410000
       end: 795000
-      strand: '+'
+      strand: +
       left_gene: LOC308667846
       right_gene: STIM1
-      notes: 'European adder beta-globin locus on chr4 (NC_138206.1): LOC308667846 (HBB1) - LOC308667833 (HBB2) - OR cluster - LOC308667849 (HBE_like) - RRM1 - STIM1'
+      notes: 'European adder beta-globin locus on chr4 (NC_138206.1): LOC308667846
+        (HBB1) - LOC308667833 (HBB2) - OR cluster - LOC308667849 (HBE_like) - RRM1
+        - STIM1'
   candoia_aspera:
     common_name: Ground Boa (C. aspera)
     clade: amniote_reptile
@@ -1342,10 +1378,12 @@ species:
       chromosome: NC_086166.1
       start: 105000
       end: 220000
-      strand: '+'
+      strand: +
       left_gene: AXIN1
       right_gene: GTF3C1
-      notes: 'New Guinea ground boa (basal constrictor Henophidia) alpha-globin locus on chr14 (NC_086166.1): AXIN1 - MRPL28 - PGAP6 - LOC134505371 (HBA_like) - LOC134505464 (HBAD_like) - NPRL3 - MPG - RHBDF1 - SNRNP25 - POLR3K - GTF3C1'
+      notes: 'New Guinea ground boa (basal constrictor Henophidia) alpha-globin locus
+        on chr14 (NC_086166.1): AXIN1 - MRPL28 - PGAP6 - LOC134505371 (HBA_like) -
+        LOC134505464 (HBAD_like) - NPRL3 - MPG - RHBDF1 - SNRNP25 - POLR3K - GTF3C1'
     - locus_id: beta_globin
       chromosome: NC_086157.1
       start: 116450000
@@ -1353,7 +1391,9 @@ species:
       strand: '-'
       left_gene: STIM1
       right_gene: CDCA8
-      notes: 'New Guinea ground boa (basal constrictor Henophidia) beta-globin locus on chr5 (NC_086157.1): STIM1 - RRM1 - OR cluster - LOC134499366 (HBB2) - LOC134499367 (HBB1) - CDCA8'
+      notes: 'New Guinea ground boa (basal constrictor Henophidia) beta-globin locus
+        on chr5 (NC_086157.1): STIM1 - RRM1 - OR cluster - LOC134499366 (HBB2) - LOC134499367
+        (HBB1) - CDCA8'
   notechis_scutatus:
     common_name: Tiger Snake (N. scutatus)
     clade: amniote_reptile
@@ -1368,15 +1408,18 @@ species:
       strand: '-'
       left_gene: GTF3C1
       right_gene: AXIN1
-      notes: 'Mainland tiger snake (neurotoxic elapid) alpha-globin locus on chr12 (NC_142020.1): GTF3C1 - POLR3K - SNRNP25 - RHBDF1 - MPG - NPRL3 - LOC113422343 (HBAD_like) - LOC113422342 (HBA_like) - PGAP6 - MRPL28 - AXIN1'
+      notes: 'Mainland tiger snake (neurotoxic elapid) alpha-globin locus on chr12
+        (NC_142020.1): GTF3C1 - POLR3K - SNRNP25 - RHBDF1 - MPG - NPRL3 - LOC113422343
+        (HBAD_like) - LOC113422342 (HBA_like) - PGAP6 - MRPL28 - AXIN1'
     - locus_id: beta_globin
       chromosome: NC_142013.1
       start: 200000
       end: 480000
-      strand: '+'
+      strand: +
       left_gene: LOC113430661
       right_gene: STIM1
-      notes: 'Mainland tiger snake (neurotoxic elapid) beta-globin locus on chr5 (NC_142013.1): LOC113430661 (HBB1) - LOC113427597 (HBB_like) - OR cluster - RRM1 - STIM1'
+      notes: 'Mainland tiger snake (neurotoxic elapid) beta-globin locus on chr5 (NC_142013.1):
+        LOC113430661 (HBB1) - LOC113427597 (HBB_like) - OR cluster - RRM1 - STIM1'
   pantherophis_guttatus:
     common_name: Corn Snake (P. guttatus)
     clade: amniote_reptile
@@ -1391,15 +1434,18 @@ species:
       strand: '-'
       left_gene: GTF3C1
       right_gene: AXIN1
-      notes: 'Corn snake (squamate genetics model) alpha-globin locus on chr14 (NC_142076.1): GTF3C1 - POLR3K - SNRNP25 - RHBDF1 - MPG - NPRL3 - LOC117679451 (HBAD_like) - LOC117679444 (HBA_like) - PGAP6 - MRPL28 - AXIN1'
+      notes: 'Corn snake (squamate genetics model) alpha-globin locus on chr14 (NC_142076.1):
+        GTF3C1 - POLR3K - SNRNP25 - RHBDF1 - MPG - NPRL3 - LOC117679451 (HBAD_like)
+        - LOC117679444 (HBA_like) - PGAP6 - MRPL28 - AXIN1'
     - locus_id: beta_globin
       chromosome: NC_142067.1
       start: 640000
       end: 930000
-      strand: '+'
+      strand: +
       left_gene: CDCA8
       right_gene: STIM1
-      notes: 'Corn snake (squamate genetics model) beta-globin locus on chr5 (NC_142067.1): CDCA8 - LOC117656765 (HBB1) - LOC117656766 (HBB2) - OR cluster - RRM1 - STIM1'
+      notes: 'Corn snake (squamate genetics model) beta-globin locus on chr5 (NC_142067.1):
+        CDCA8 - LOC117656765 (HBB1) - LOC117656766 (HBB2) - OR cluster - RRM1 - STIM1'
   latimeria_chalumnae:
     common_name: Coelacanth (L. chalumnae)
     clade: sarcopterygii
@@ -1411,10 +1457,12 @@ species:
       chromosome: NC_088143.1
       start: 166200000
       end: 166550000
-      strand: '+'
+      strand: +
       left_gene: LOC102356551
       right_gene: LOC102354658
-      notes: 'West Indian Ocean Coelacanth ancestral linked cluster on chr5 (NC_088143.1): LOC102356551 (beta) - LOC102355174 (beta) - LOC102354911 (alpha) - LOC102354658 (alpha-D) flanked by NPRL3 and LUC7L'
+      notes: 'West Indian Ocean Coelacanth ancestral linked cluster on chr5 (NC_088143.1):
+        LOC102356551 (beta) - LOC102355174 (beta) - LOC102354911 (alpha) - LOC102354658
+        (alpha-D) flanked by NPRL3 and LUC7L'
   polypterus_senegalus:
     common_name: Bichir (P. senegalus)
     clade: non_teleost_fish
@@ -1426,10 +1474,12 @@ species:
       chromosome: NC_053166.1
       start: 157250000
       end: 157900000
-      strand: '+'
+      strand: +
       left_gene: LOC120542922
       right_gene: LOC120542357
-      notes: 'Senegal bichir ancestral linked cluster on scaffold_13 (NC_053166.1): 8 tandem alternating globins (LOC120542922..LOC120542357) flanked by FAM234A/LUC7L and NPRL3/MPG/RHBDF1A'
+      notes: 'Senegal bichir ancestral linked cluster on scaffold_13 (NC_053166.1):
+        8 tandem alternating globins (LOC120542922..LOC120542357) flanked by FAM234A/LUC7L
+        and NPRL3/MPG/RHBDF1A'
   camelus_dromedarius:
     common_name: Dromedary (C. dromedarius)
     clade: amniote_mammal
@@ -1441,10 +1491,12 @@ species:
       chromosome: NC_087459.1
       start: 6850000
       end: 7030000
-      strand: '+'
+      strand: +
       left_gene: RHBDF1
       right_gene: FAM234A
-      notes: 'Dromedary camel alpha-globin locus on chr24 (NC_087459.1): RHBDF1 - MPG - NPRL3 - HBZ - LOC105098413 - HBM - LOC105098414 - LOC116147145 - HBQ1 - LUC7L - FAM234A'
+      notes: 'Dromedary camel alpha-globin locus on chr24 (NC_087459.1): RHBDF1 -
+        MPG - NPRL3 - HBZ - LOC105098413 - HBM - LOC105098414 - LOC116147145 - HBQ1
+        - LUC7L - FAM234A'
     - locus_id: beta_globin
       chromosome: NC_087447.1
       start: 45400000
@@ -1452,7 +1504,8 @@ species:
       strand: '-'
       left_gene: HBE1
       right_gene: LOC105097953
-      notes: 'Dromedary camel beta-globin locus on chr12 (NC_087447.1): HBE1 - LOC135322589 (HBE2) - LOC105097952 (HBB1) - LOC105097953 (HBB2)'
+      notes: 'Dromedary camel beta-globin locus on chr12 (NC_087447.1): HBE1 - LOC135322589
+        (HBE2) - LOC105097952 (HBB1) - LOC105097953 (HBB2)'
   vicugna_pacos:
     common_name: Alpaca (V. pacos)
     clade: amniote_mammal
@@ -1464,10 +1517,12 @@ species:
       chromosome: NC_133004.1
       start: 18680000
       end: 18880000
-      strand: '+'
+      strand: +
       left_gene: RHBDF1
       right_gene: FAM234A
-      notes: 'Alpaca (high-altitude hypoxia specialist) alpha-globin locus on chr18 (NC_133004.1): RHBDF1 - MPG - NPRL3 - HBZ - LOC102529226 - HBM - LOC140686921 - LOC102542614 - HBQ1 - LUC7L - FAM234A'
+      notes: 'Alpaca (high-altitude hypoxia specialist) alpha-globin locus on chr18
+        (NC_133004.1): RHBDF1 - MPG - NPRL3 - HBZ - LOC102529226 - HBM - LOC140686921
+        - LOC102542614 - HBQ1 - LUC7L - FAM234A'
     - locus_id: beta_globin
       chromosome: NC_132996.1
       start: 29710000
@@ -1475,7 +1530,8 @@ species:
       strand: '-'
       left_gene: LOC102525863
       right_gene: HBE1
-      notes: 'Alpaca (high-altitude hypoxia specialist) beta-globin locus on chr10 (NC_132996.1): LOC102525863 (HBB) - LOC102526108 (HBE4) - HBE1'
+      notes: 'Alpaca (high-altitude hypoxia specialist) beta-globin locus on chr10
+        (NC_132996.1): LOC102525863 (HBB) - LOC102526108 (HBE4) - HBE1'
   desmodus_rotundus:
     common_name: Vampire Bat (D. rotundus)
     clade: amniote_mammal
@@ -1487,10 +1543,12 @@ species:
       chromosome: NC_071387.1
       start: 97650000
       end: 97850000
-      strand: '+'
+      strand: +
       left_gene: RHBDF1
       right_gene: FAM234A
-      notes: 'Common vampire bat (obligate hematophage) alpha-globin locus on chr8 (NC_071387.1): RHBDF1 - MPG - NPRL3 - HBZ - HBM - HBA - HBA - HBQ1 - LUC7L - FAM234A'
+      notes: 'Common vampire bat (obligate hematophage) alpha-globin locus on chr8
+        (NC_071387.1): RHBDF1 - MPG - NPRL3 - HBZ - HBM - HBA - HBA - HBQ1 - LUC7L
+        - FAM234A'
     - locus_id: beta_globin
       chromosome: NC_071391.1
       start: 44400000
@@ -1498,7 +1556,9 @@ species:
       strand: '-'
       left_gene: LOC112317580
       right_gene: LOC128781113
-      notes: 'Common vampire bat (obligate hematophage) beta-globin locus on chr6 (NC_071391.1): LOC112317580 (HBB) - LOC112317579 (HBB) - LOC112317628 (HBE2) - LOC112317625 (HBE1) - LOC128781113 (HBE_like)'
+      notes: 'Common vampire bat (obligate hematophage) beta-globin locus on chr6
+        (NC_071391.1): LOC112317580 (HBB) - LOC112317579 (HBB) - LOC112317628 (HBE2)
+        - LOC112317625 (HBE1) - LOC128781113 (HBE_like)'
   mirounga_angustirostris:
     common_name: Elephant Seal (M. angustirostris)
     clade: amniote_mammal
@@ -1510,18 +1570,21 @@ species:
       chromosome: NC_072358.1
       start: 128750000
       end: 128950000
-      strand: '+'
+      strand: +
       left_gene: RHBDF1
       right_gene: FAM234A
-      notes: 'Northern elephant seal (champion pinniped diver) alpha-globin locus on chr3 (NC_072358.1): RHBDF1 - MPG - NPRL3 - HBQ1 - LUC7L - FAM234A'
+      notes: 'Northern elephant seal (champion pinniped diver) alpha-globin locus
+        on chr3 (NC_072358.1): RHBDF1 - MPG - NPRL3 - HBQ1 - LUC7L - FAM234A'
     - locus_id: beta_globin
       chromosome: NC_072366.1
       start: 47000000
       end: 48450000
-      strand: '+'
+      strand: +
       left_gene: HBE1
       right_gene: CLPB
-      notes: 'Northern elephant seal (champion pinniped diver) beta-globin locus on chr11 (NC_072366.1): HBE1 - LOC123856653 (HBE2) - LOC123857440 (HBB) flanked by FOLR cluster and CLPB'
+      notes: 'Northern elephant seal (champion pinniped diver) beta-globin locus on
+        chr11 (NC_072366.1): HBE1 - LOC123856653 (HBE2) - LOC123857440 (HBB) flanked
+        by FOLR cluster and CLPB'
   physeter_catodon:
     common_name: Sperm Whale (P. catodon)
     clade: amniote_mammal
@@ -1536,15 +1599,18 @@ species:
       strand: '-'
       left_gene: HBZ
       right_gene: HBQ1
-      notes: 'Sperm whale (champion abyssal diver) alpha-globin locus on scaffold NW_021146805.1: HBZ - HBM - LOC102988256 (HBA2) - LOC102987983 (HBA1) - HBQ1'
+      notes: 'Sperm whale (champion abyssal diver) alpha-globin locus on scaffold
+        NW_021146805.1: HBZ - HBM - LOC102988256 (HBA2) - LOC102987983 (HBA1) - HBQ1'
     - locus_id: beta_globin
       chromosome: NC_041229.1
       start: 60300000
       end: 61400000
-      strand: '+'
+      strand: +
       left_gene: LOC102992241
       right_gene: UBQLN3
-      notes: 'Sperm whale (champion abyssal diver) beta-globin locus on pseudo-chr16 (NC_041229.1): NUP98 - STIM1 - RRM1 - OR cluster - LOC102976944 (HBB) - LOC112063602 (HBB_like) - LOC102979737 (HBE_like) - LOC102976673 (HBE)'
+      notes: 'Sperm whale (champion abyssal diver) beta-globin locus on pseudo-chr16
+        (NC_041229.1): NUP98 - STIM1 - RRM1 - OR cluster - LOC102976944 (HBB) - LOC112063602
+        (HBB_like) - LOC102979737 (HBE_like) - LOC102976673 (HBE)'
   tachyglossus_aculeatus:
     common_name: Echidna (T. aculeatus)
     clade: amniote_monotreme
@@ -1556,18 +1622,22 @@ species:
       chromosome: NC_052086.1
       start: 10520000
       end: 10730000
-      strand: '+'
+      strand: +
       left_gene: RHBDF1
       right_gene: FAM234A
-      notes: 'Short-beaked echidna (egg-laying burrowing monotreme) alpha-globin locus on chr7 (NC_052086.1): RHBDF1 - MPG - NPRL3 - HBZ - 8 tandem alpha globins (LOC119942016..LOC119942714) - LUC7L - FAM234A'
+      notes: 'Short-beaked echidna (egg-laying burrowing monotreme) alpha-globin locus
+        on chr7 (NC_052086.1): RHBDF1 - MPG - NPRL3 - HBZ - 8 tandem alpha globins
+        (LOC119942016..LOC119942714) - LUC7L - FAM234A'
     - locus_id: beta_globin
       chromosome: NC_052067.1
       start: 137800000
       end: 138000000
-      strand: '+'
+      strand: +
       left_gene: LOC119943796
       right_gene: RRM1
-      notes: 'Short-beaked echidna (egg-laying burrowing monotreme) beta-globin locus on chr1 (NC_052067.1): LOC119943796 (HBB) - LOC119943805 (HBB) - LOC119943816 (HBB) flanked by RRM1 and STIM1'
+      notes: 'Short-beaked echidna (egg-laying burrowing monotreme) beta-globin locus
+        on chr1 (NC_052067.1): LOC119943796 (HBB) - LOC119943805 (HBB) - LOC119943816
+        (HBB) flanked by RRM1 and STIM1'
   calypte_anna:
     common_name: Hummingbird (C. anna)
     clade: amniote_bird
@@ -1579,18 +1649,23 @@ species:
       chromosome: NC_044260.1
       start: 14200000
       end: 14500000
-      strand: '+'
+      strand: +
       left_gene: RHBDF1
       right_gene: LUC7L
-      notes: 'Anna hummingbird (metabolic rate champion) alpha-globin locus on Superscaffold_14 (NC_044260.1): RHBDF1 - MPG - NPRL3 - LOC103537793 (pi) - LOC103536784 (alpha-D) - LOC103536783 (alpha-A) - FAM234A - LUC7L'
+      notes: 'Anna hummingbird (metabolic rate champion) alpha-globin locus on Superscaffold_14
+        (NC_044260.1): RHBDF1 - MPG - NPRL3 - LOC103537793 (pi) - LOC103536784 (alpha-D)
+        - LOC103536783 (alpha-A) - FAM234A - LUC7L'
     - locus_id: beta_globin
       chromosome: NW_007619074.1
       start: 1
       end: 179301
-      strand: '+'
+      strand: +
       left_gene: STIM1
       right_gene: RPS11
-      notes: 'Anna hummingbird (metabolic rate champion) beta-globin locus on scaffold NW_007619074.1 (179 kb): STIM1 - RRM1 - LOC103539616 (OR51) - LOC103539610 (HBE) - LOC103539611 (HBB) - LOC103539612 (HBBL) - LOC103539617 (OR52) - LOC103539613 (FOLR1) - RPS11'
+      notes: 'Anna hummingbird (metabolic rate champion) beta-globin locus on scaffold
+        NW_007619074.1 (179 kb): STIM1 - RRM1 - LOC103539616 (OR51) - LOC103539610
+        (HBE) - LOC103539611 (HBB) - LOC103539612 (HBBL) - LOC103539617 (OR52) - LOC103539613
+        (FOLR1) - RPS11'
   aptenodytes_patagonicus:
     common_name: King Penguin (A. patagonicus)
     clade: amniote_bird
@@ -1602,9 +1677,19 @@ species:
       chromosome: NC_134961.1
       start: 140000
       end: 480000
-      strand: '+'
+      strand: +
       left_gene: RHBDF1
       right_gene: LUC7L
-      notes: 'King penguin (Antarctic sub-zero diver) alpha-globin locus on chr13 (NC_134961.1): RHBDF1 - MPG - NPRL3 - LOC143166448 (pi) - LOC143166394 (alpha-D) - LOC143166313 (alpha-A) - FAM234A - LUC7L'
-
-
+      notes: 'King penguin (Antarctic sub-zero diver) alpha-globin locus on chr13
+        (NC_134961.1): RHBDF1 - MPG - NPRL3 - LOC143166448 (pi) - LOC143166394 (alpha-D)
+        - LOC143166313 (alpha-A) - FAM234A - LUC7L'
+    - locus_id: beta_globin
+      chromosome: VULM01006596.1
+      start: 130000
+      end: 380000
+      strand: +
+      left_gene: Folr1
+      right_gene: STIM1
+      notes: 'King penguin (Antarctic sub-zero diver) beta-globin locus on scaffold
+        VULM01006596.1 (250 kb): Folr1 - OR52B2 - HBR (rho) - HBB_0 (beta-0) - HBB_1
+        (beta-1) - HBE (epsilon) - OR51/OR52 - RRM1 - SLC6A7 - STIM1'

@@ -119,3 +119,4 @@ tachyglossus_aculeatus,Echidna (T. aculeatus),amniote_monotreme,beta_globin,NC_0
 calypte_anna,Hummingbird (C. anna),amniote_bird,alpha_globin,NC_044260.1,14200000,14500000,300001,50.66,56.55,49.94,58.83,50.43,58.34,38.55,50.72,40.93,66.29,50.38,48.16,52.22,3,18
 aptenodytes_patagonicus,King Penguin (A. patagonicus),amniote_bird,alpha_globin,NC_134961.1,140000,480000,340001,50.72,56.08,50.16,57.5,51.32,58.73,37.37,50.63,40.27,71.48,50.49,45.95,53.34,3,15
 calypte_anna,Hummingbird (C. anna),amniote_bird,beta_globin,NW_007619074.1,1,179301,179301,55.34,0.0,55.34,59.71,79.05,61.79,87.16,55.15,48.71,59.21,55.77,55.55,55.93,3,10
+aptenodytes_patagonicus,King Penguin (A. patagonicus),amniote_bird,beta_globin,VULM01006596.1,130000,380000,250001,49.33,55.18,49.01,55.84,74.96,59.24,81.97,49.34,25.32,66.29,48.65,46.2,52.83,4,14
