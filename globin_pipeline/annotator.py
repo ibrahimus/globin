@@ -450,6 +450,12 @@ class GeneAnnotator:
         "LOC103536784": {"category": "alpha_globin", "subtype": "HBAD", "name": "HBAD_like"},
         "GeneID:103536783": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA_like"},
         "LOC103536783": {"category": "alpha_globin", "subtype": "HBA", "name": "HBA_like"},
+        "GeneID:103539610": {"category": "beta_globin", "subtype": "HBE", "name": "HBE_like"},
+        "LOC103539610": {"category": "beta_globin", "subtype": "HBE", "name": "HBE_like"},
+        "GeneID:103539611": {"category": "beta_globin", "subtype": "HBB", "name": "HBB_like"},
+        "LOC103539611": {"category": "beta_globin", "subtype": "HBB", "name": "HBB_like"},
+        "GeneID:103539612": {"category": "beta_globin", "subtype": "HBB", "name": "HBBL_like"},
+        "LOC103539612": {"category": "beta_globin", "subtype": "HBB", "name": "HBBL_like"},
         # King Penguin (Aptenodytes patagonicus) NCBI RefSeq (bAptPat1.pri.cur)
         "GeneID:143166448": {"category": "alpha_globin", "subtype": "HBZ", "name": "HBZ_like"},
         "LOC143166448": {"category": "alpha_globin", "subtype": "HBZ", "name": "HBZ_like"},

@@ -896,7 +896,7 @@ FIG1A_SUMMARY_SPECIES = [
     "alligator_mississippiensis",
     # Aves
     "Gallus_gallus",
-    "calypte_anna",
+    "aquila_chrysaetos_chrysaetos",
     "aptenodytes_patagonicus",
     # Monotremata
     "ornithorhynchus_anatinus",

@@ -44,7 +44,7 @@ meleagris_gallopavo,Turkey (M. gallopavo),amniote_bird,Aves,Turkey_5.1,Turkey_5.
 coturnix_japonica,Quail (C. japonica),amniote_bird,Aves,WE-NBRP24,WE-NBRP24,25,48.010034056852234,8.253725259433505,,52.847424847879395,8.200882956776493,58.882620561256914,14.920698170898769,41.0
 Gallus_gallus,Chicken (G. gallus),amniote_bird,Aves,bGalGal1.mat.broiler.GRCg7b,bGalGal1.mat.broiler.GRCg7b,17007,48.48,9.35,17007.0,53.12,8.59,59.7,16.03,42.0
 aquila_chrysaetos_chrysaetos,Golden Eagle (A. chrysaetos),amniote_bird,Aves,bAquChr1.2,bAquChr1.2,16118,48.33,10.54,16118.0,52.27,9.08,58.75,17.32,42.0
-calypte_anna,Hummingbird (C. anna),amniote_bird,Aves,bCalAnn1_v1.p,bCalAnn1_v1.p,18,51.8,7.93,,51.8,7.93,58.1,15.43,41.0
+calypte_anna,Hummingbird (C. anna),amniote_bird,Aves,bCalAnn1_v1.p,bCalAnn1_v1.p,28,51.8,7.93,,51.8,7.93,58.1,15.43,41.0
 sturnus_vulgaris,Starling (S. vulgaris),amniote_bird,Aves,bStuVul1.hap1,bStuVul1.hap1,20,47.89527925609684,9.097977789388931,,54.2524533598456,8.634291475518864,63.06205626060002,16.3934137643689,41.0
 ornithorhynchus_anatinus,Platypus (O. anatinus),amniote_monotreme,Monotremata,mOrnAna1.p.v1,mOrnAna1.p.v1,17417,52.71,8.71,17417.0,57.47,9.11,69.16,16.15,45.5
 tachyglossus_aculeatus,Echidna (T. aculeatus),amniote_monotreme,Monotremata,mTacAcu1.pri,mTacAcu1.pri,21,57.04,8.94,,57.04,8.94,69.48,15.8,41.0

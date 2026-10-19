@@ -266,6 +266,15 @@ EXTREMA_SPECIES = {
                 "left_gene": "RHBDF1",
                 "right_gene": "LUC7L",
             },
+            {
+                "locus_id": "beta_globin",
+                "chrom": "NW_007619074.1",
+                "start": 1,
+                "end": 179301,
+                "strand": "+",
+                "left_gene": "STIM1",
+                "right_gene": "RPS11",
+            },
         ],
     },
     "aptenodytes_patagonicus": {

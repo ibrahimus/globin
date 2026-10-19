@@ -665,7 +665,7 @@ def main():
     <header>
         <h1>🧬 Vertebrate Globin Genomics Explorer</h1>
         <p>Interactive Comparative Atlas, Synteny Tracker & 1-on-1 Head-to-Head Architectural Visualizer</p>
-        <span class="badge">68 Vertebrate Genomes • 119 Curated Loci • 1,520 Verified Gene Models • 10 Evolutionary Clades</span>
+        <span class="badge">68 Vertebrate Genomes • 120 Curated Loci • 1,530 Verified Gene Models • 10 Evolutionary Clades</span>
     </header>
 
     <nav class="tabs">
@@ -849,7 +849,7 @@ def main():
     <!-- TAB 4: INTERVAL GENES DATABASE -->
     <div id="tab-genes" class="tab-pane">
         <div class="card">
-            <h3>Annotated Genes Search Database (1,520 Genes)</h3>
+            <h3>Annotated Genes Search Database (1,530 Genes)</h3>
             <div class="search-box">
                 <input type="text" id="gene-search" placeholder="Search by Gene Symbol, Species, or Clade (e.g. HBA, human, mammal)..." oninput="filterGenes()">
             </div>

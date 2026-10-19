@@ -1519,3 +1519,13 @@ aptenodytes_patagonicus,amniote_bird,alpha_globin,GeneID:143166400,ARHGDIG,ARHGD
 aptenodytes_patagonicus,amniote_bird,alpha_globin,GeneID:143166410,RGS11,RGS11,cluster_non_globin,RGS11,False,429080,434485,69.94,5113,3.7087,70.18,5405,64.99,1705,72.57,3700,63.06,1413,40.34
 aptenodytes_patagonicus,amniote_bird,alpha_globin,GeneID:143166349,FAM234A,FAM234A,cluster_non_globin,FAM234A,False,435839,452142,47.71,11919,4.0762,49.06,16303,54.3,5085,46.68,11218,52.2,1659,54.43
 aptenodytes_patagonicus,amniote_bird,alpha_globin,GeneID:143166712,LUC7L,LUC7L,cluster_non_globin,LUC7L,False,457327,477645,45.94,18728,4.2725,46.62,20318,53.46,2703,45.57,17615,51.75,1113,58.22
+calypte_anna,amniote_bird,beta_globin,GeneID:103539609,STIM1,STIM1,cluster_non_globin,STIM1,False,105,39166,55.84,39061,4.5917,55.84,39061,,0,,0,55.56,720,72.5
+calypte_anna,amniote_bird,beta_globin,GeneID:103539615,RRM1,RRM1,cluster_non_globin,RRM1,False,39862,78676,55.77,38814,4.589,55.77,38814,,0,,0,54.73,2337,76.51
+calypte_anna,amniote_bird,beta_globin,GeneID:103539614,LOC103539614,LOC103539614,cluster_non_globin,intervening_gene,False,60090,61385,59.69,1295,3.1123,59.69,1295,,0,,0,62.02,129,41.86
+calypte_anna,amniote_bird,beta_globin,GeneID:103539616,LOC103539616,LOC103539616,cluster_non_globin,intervening_gene,False,111918,112875,61.86,957,2.9809,61.86,957,,0,,0,61.76,957,89.66
+calypte_anna,amniote_bird,beta_globin,GeneID:103539610,LOC103539610,HBE_like,beta_globin,HBE,True,122451,124230,56.77,1779,3.2502,56.77,1779,,0,,0,60.59,444,87.16
+calypte_anna,amniote_bird,beta_globin,GeneID:103539611,LOC103539611,HBB_like,beta_globin,HBB,True,126403,128319,58.47,1916,3.2824,58.47,1916,,0,,0,63.74,444,90.54
+calypte_anna,amniote_bird,beta_globin,GeneID:103539612,LOC103539612,HBBL_like,beta_globin,HBB,True,131421,132695,59.5,1274,3.1052,59.5,1274,,0,,0,61.04,444,83.78
+calypte_anna,amniote_bird,beta_globin,GeneID:103539617,LOC103539617,LOC103539617,cluster_non_globin,intervening_gene,False,150301,151276,59.18,975,2.989,59.18,975,,0,,0,58.78,951,84.23
+calypte_anna,amniote_bird,beta_globin,GeneID:103539613,LOC103539613,LOC103539613,cluster_non_globin,intervening_gene,False,161235,163762,59.2,2527,3.4026,59.2,2527,,0,,0,59.04,813,78.97
+calypte_anna,amniote_bird,beta_globin,GeneID:103539619,RPS11,RPS11,cluster_non_globin,intervening_gene,False,164135,176989,50.42,12854,4.109,50.42,12854,,0,,0,59.83,468,85.26

@@ -1583,6 +1583,14 @@ species:
       left_gene: RHBDF1
       right_gene: LUC7L
       notes: 'Anna hummingbird (metabolic rate champion) alpha-globin locus on Superscaffold_14 (NC_044260.1): RHBDF1 - MPG - NPRL3 - LOC103537793 (pi) - LOC103536784 (alpha-D) - LOC103536783 (alpha-A) - FAM234A - LUC7L'
+    - locus_id: beta_globin
+      chromosome: NW_007619074.1
+      start: 1
+      end: 179301
+      strand: '+'
+      left_gene: STIM1
+      right_gene: RPS11
+      notes: 'Anna hummingbird (metabolic rate champion) beta-globin locus on scaffold NW_007619074.1 (179 kb): STIM1 - RRM1 - LOC103539616 (OR51) - LOC103539610 (HBE) - LOC103539611 (HBB) - LOC103539612 (HBBL) - LOC103539617 (OR52) - LOC103539613 (FOLR1) - RPS11'
   aptenodytes_patagonicus:
     common_name: King Penguin (A. patagonicus)
     clade: amniote_bird
