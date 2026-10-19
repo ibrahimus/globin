@@ -231,72 +231,72 @@ def draw_panel_b(ax, standalone=True):
         ("1. Linked Primordial Archetype (Basal Actinopterygii & Amphibians — Spotted Gar, Xenopus)",
          "Ancestral tandem arrangement: α and β globin genes reside on the same chromosome in a single cluster.",
          "Both genes share identical genomic environment and regional recombination rate. ΔGC3 (α - β) ≈ 0%.",
-         "#1565c0", "#f0fdf4", 0.540, "Single Chromosome (Gar Chr 19 / Xenopus Chr 1)", "LINKED"),
+         "#1565c0", "#f0fdf4", 0.505, "Single Chromosome (Gar Chr 19 / Xenopus Chr 1)", "LINKED"),
 
         ("2. Canonical Decoupled Subtelomeric-α (Eutherian & Metatherian Mammals — Human, Mouse)",
          "Amniote translocation decouples α and β. α captured by subtelomere (<1 Mb to telomere); β remains interstitial.",
          "Runaway subtelomeric gBGC supercharges α-GC3 (>85–95%) while β-GC3 remains moderate (~60–65%). ΔGC3 > 0%.",
-         "#e65100", "#fff7ed", 0.365, "Two Chromosomes (α Subtelomeric / β Interstitial)", "MAMMALIAN"),
+         "#e65100", "#fff7ed", 0.345, "Two Chromosomes (α Subtelomeric / β Interstitial)", "MAMMALIAN"),
 
         ("3. Dual Microchromosomal Partitioning (Archosauria & Aves — Chicken, Eagle, Hummingbird)",
          "Both α and β clusters translocate onto distinct, highly recombinogenic microchromosomes (Chr 14 and Chr 25).",
          "High crossover density drives synchronous hyper-elevation of both clusters: α-GC3 > 85%, β-GC3 > 85%. ΔGC3 ≈ 0%.",
-         "#00796b", "#f0fdfa", 0.190, "Two Microchromosomes (Micro-14 and Micro-25)", "AVIAN"),
+         "#00796b", "#f0fdfa", 0.185, "Two Microchromosomes (Micro-14 and Micro-25)", "AVIAN"),
 
         ("4. Squamate Inverted Polarity (Lizards & Snakes — Wall Lizard, Garter Snake)",
          "Squamates exhibit inverted chromosomal polarity: the β locus is translocated to a microchromosome or subtelomere,",
          "driving elevated β-GC3 (85–95%), while the α locus resides in an interstitial genomic desert (GC3 48–55%). ΔGC3 < 0%.",
-         "#b91c1c", "#fef2f2", 0.015, "Inverted Polarity (β Subtelomeric / α Interstitial)", "SQUAMATE"),
+         "#b91c1c", "#fef2f2", 0.025, "Inverted Polarity (β Subtelomeric / α Interstitial)", "SQUAMATE"),
     ]
 
     for atitle, adesc1, adesc2, acol, afc, ay, achr, atype in archetypes:
-        abox = FancyBboxPatch((0.035, ay), 0.93, 0.155, boxstyle="round,pad=0.002,rounding_size=0.008",
+        abox = FancyBboxPatch((0.035, ay), 0.93, 0.138, boxstyle="round,pad=0.002,rounding_size=0.008",
                               facecolor=afc, edgecolor=acol, lw=1.2, zorder=3)
         ax.add_patch(abox)
-        ax.text(0.055, ay + 0.138, atitle, fontsize=9.6, fontweight='bold', color=acol, va='top', zorder=4)
-        ax.text(0.055, ay + 0.116, adesc1, fontsize=8.4, color='#334155', va='top', zorder=4)
-        ax.text(0.055, ay + 0.095, adesc2, fontsize=8.4, fontweight='bold', color='#1e293b', va='top', zorder=4)
-        ax.text(0.055, ay + 0.074, f"Cytogenetic State: {achr}", fontsize=8.0, color='#64748b', va='top', zorder=4)
+        ax.text(0.055, ay + 0.123, atitle, fontsize=9.4, fontweight='bold', color=acol, va='top', zorder=4)
+        ax.text(0.055, ay + 0.103, adesc1, fontsize=8.3, color='#334155', va='top', zorder=4)
+        ax.text(0.055, ay + 0.083, adesc2, fontsize=8.3, fontweight='bold', color='#1e293b', va='top', zorder=4)
+        ax.text(0.055, ay + 0.063, f"Cytogenetic State: {achr}", fontsize=7.8, color='#64748b', va='top', zorder=4)
 
-        mini_y = ay + 0.032
-        ax.plot([0.055, 0.91], [mini_y, mini_y], color="#cbd5e1", lw=8, solid_capstyle='round', zorder=4)
+        mini_y = ay + 0.026
+        ax.plot([0.055, 0.91], [mini_y, mini_y], color="#cbd5e1", lw=7, solid_capstyle='round', zorder=4)
         
         if atype == "LINKED":
-            ax.plot([0.42, 0.42], [mini_y - 0.012, mini_y + 0.012], color="#475569", lw=2, zorder=5)
-            ax.add_patch(FancyBboxPatch((0.70, mini_y - 0.016), 0.045, 0.032, boxstyle="square,pad=0", fc="#1e88e5", ec="#0d47a1", lw=1, zorder=6))
-            ax.add_patch(FancyBboxPatch((0.745, mini_y - 0.016), 0.045, 0.032, boxstyle="square,pad=0", fc="#43a047", ec="#1b5e20", lw=1, zorder=6))
+            ax.plot([0.42, 0.42], [mini_y - 0.010, mini_y + 0.010], color="#475569", lw=2, zorder=5)
+            ax.add_patch(FancyBboxPatch((0.70, mini_y - 0.014), 0.045, 0.028, boxstyle="square,pad=0", fc="#1e88e5", ec="#0d47a1", lw=1, zorder=6))
+            ax.add_patch(FancyBboxPatch((0.745, mini_y - 0.014), 0.045, 0.028, boxstyle="square,pad=0", fc="#43a047", ec="#1b5e20", lw=1, zorder=6))
             ax.text(0.722, mini_y, "α", ha='center', va='center', fontsize=7.5, fontweight='bold', color='white', zorder=7)
             ax.text(0.767, mini_y, "β", ha='center', va='center', fontsize=7.5, fontweight='bold', color='white', zorder=7)
             ax.text(0.81, mini_y, "◀ Linked α-β (ΔGC3 ≈ 0)", fontsize=8.0, fontweight='bold', color='#1565c0', va='center', zorder=7)
             
         elif atype == "MAMMALIAN":
-            ax.plot([0.055, 0.055], [mini_y - 0.012, mini_y + 0.012], color="#dc2626", lw=2.5, zorder=5)
-            ax.add_patch(FancyBboxPatch((0.075, mini_y - 0.016), 0.045, 0.032, boxstyle="square,pad=0", fc="#1e88e5", ec="#0d47a1", lw=1, zorder=6))
+            ax.plot([0.055, 0.055], [mini_y - 0.010, mini_y + 0.010], color="#dc2626", lw=2.5, zorder=5)
+            ax.add_patch(FancyBboxPatch((0.075, mini_y - 0.014), 0.045, 0.028, boxstyle="square,pad=0", fc="#1e88e5", ec="#0d47a1", lw=1, zorder=6))
             ax.text(0.097, mini_y, "α", ha='center', va='center', fontsize=7.5, fontweight='bold', color='white', zorder=7)
             ax.text(0.135, mini_y, "Subtelomeric α (GC3 > 90%)", fontsize=8.0, fontweight='bold', color='#0369a1', va='center', zorder=7)
             
-            ax.add_patch(FancyBboxPatch((0.60, mini_y - 0.016), 0.045, 0.032, boxstyle="square,pad=0", fc="#43a047", ec="#1b5e20", lw=1, zorder=6))
+            ax.add_patch(FancyBboxPatch((0.60, mini_y - 0.014), 0.045, 0.028, boxstyle="square,pad=0", fc="#43a047", ec="#1b5e20", lw=1, zorder=6))
             ax.text(0.622, mini_y, "β", ha='center', va='center', fontsize=7.5, fontweight='bold', color='white', zorder=7)
             ax.text(0.66, mini_y, "Interstitial β (GC3 ~ 65%)", fontsize=8.0, fontweight='bold', color='#15803d', va='center', zorder=7)
 
         elif atype == "AVIAN":
-            ax.add_patch(FancyBboxPatch((0.15, mini_y - 0.016), 0.045, 0.032, boxstyle="square,pad=0", fc="#1e88e5", ec="#0d47a1", lw=1, zorder=6))
+            ax.add_patch(FancyBboxPatch((0.15, mini_y - 0.014), 0.045, 0.028, boxstyle="square,pad=0", fc="#1e88e5", ec="#0d47a1", lw=1, zorder=6))
             ax.text(0.172, mini_y, "α", ha='center', va='center', fontsize=7.5, fontweight='bold', color='white', zorder=7)
-            ax.add_patch(FancyBboxPatch((0.55, mini_y - 0.016), 0.045, 0.032, boxstyle="square,pad=0", fc="#43a047", ec="#1b5e20", lw=1, zorder=6))
+            ax.add_patch(FancyBboxPatch((0.55, mini_y - 0.014), 0.045, 0.028, boxstyle="square,pad=0", fc="#43a047", ec="#1b5e20", lw=1, zorder=6))
             ax.text(0.572, mini_y, "β", ha='center', va='center', fontsize=7.5, fontweight='bold', color='white', zorder=7)
             ax.text(0.21, mini_y, "Micro-14 (GC3 ~ 88%)", fontsize=8.0, fontweight='bold', color='#00796b', va='center', zorder=7)
             ax.text(0.61, mini_y, "Micro-25 (GC3 ~ 92%)", fontsize=8.0, fontweight='bold', color='#00796b', va='center', zorder=7)
 
         elif atype == "SQUAMATE":
-            ax.plot([0.055, 0.055], [mini_y - 0.012, mini_y + 0.012], color="#dc2626", lw=2.5, zorder=5)
-            ax.add_patch(FancyBboxPatch((0.075, mini_y - 0.016), 0.045, 0.032, boxstyle="square,pad=0", fc="#43a047", ec="#1b5e20", lw=1, zorder=6))
+            ax.plot([0.055, 0.055], [mini_y - 0.010, mini_y + 0.010], color="#dc2626", lw=2.5, zorder=5)
+            ax.add_patch(FancyBboxPatch((0.075, mini_y - 0.014), 0.045, 0.028, boxstyle="square,pad=0", fc="#43a047", ec="#1b5e20", lw=1, zorder=6))
             ax.text(0.097, mini_y, "β", ha='center', va='center', fontsize=7.5, fontweight='bold', color='white', zorder=7)
             ax.text(0.135, mini_y, "Subtelomeric β (GC3 > 94%)", fontsize=8.0, fontweight='bold', color='#15803d', va='center', zorder=7)
             
-            ax.add_patch(FancyBboxPatch((0.60, mini_y - 0.016), 0.045, 0.032, boxstyle="square,pad=0", fc="#1e88e5", ec="#0d47a1", lw=1, zorder=6))
+            ax.add_patch(FancyBboxPatch((0.60, mini_y - 0.014), 0.045, 0.028, boxstyle="square,pad=0", fc="#1e88e5", ec="#0d47a1", lw=1, zorder=6))
             ax.text(0.622, mini_y, "α", ha='center', va='center', fontsize=7.5, fontweight='bold', color='white', zorder=7)
-            # No exclamation mark, calm scientific text
             ax.text(0.66, mini_y, "Interstitial α (GC3 ~ 50%) — Inverted Polarity", fontsize=8.0, fontweight='bold', color='#b91c1c', va='center', zorder=7)
+            
 
 
 # =========================================================================
@@ -307,18 +307,24 @@ def draw_panel_c(ax, standalone=True):
     ax.set_ylim(0, 1)
     ax.axis('off')
 
-    # Title with "Codon Dynamics" as requested, no subtitle
-    ax.text(0.02, 0.970, "Figure 0C: Anatomy of Calculated Metrics: Gene Architecture & Codon Dynamics",
+    # Title with "Codon Dynamics" as requested, ample space above Card 1
+    ax.text(0.02, 0.978, "Figure 0C: Anatomy of Calculated Metrics: Gene Architecture & Codon Dynamics",
             fontsize=15.5, fontweight='bold', color='#0f172a', va='top')
 
-    # Card 1: Gene Architecture & Splicing Demarcation
-    draw_card(ax, 0.02, 0.600, 0.96, 0.350,
+    # Card 1: Gene Architecture & Splicing Demarcation (starts at y=0.555, height 0.370 -> top at 0.925)
+    draw_card(ax, 0.02, 0.555, 0.96, 0.370,
               title="1. Gene Architecture: Whole-Gene GC% vs. CDS GC% Splicing Demarcation",
               fc="#ffffff", ec="#cbd5e1", lw=1.2)
 
+    # Demarcation Line 1: Gene GC% Range (encompassing exons + introns + UTRs) - comfortably below divider (0.879)
+    y_g_dem = 0.852
+    ax.plot([0.16, 0.93], [y_g_dem, y_g_dem], color='#047857', lw=1.8, marker='|', markersize=8, zorder=6)
+    ax.text(0.545, y_g_dem + 0.012, "◀── Whole-Gene GC% Calculation Range (Exons 1–3 + Introns 1–2 + UTRs: ~0.84 kb in α vs ~1.61 kb in β) ──▶",
+            ha='center', fontsize=8.4, fontweight='bold', color='#047857')
+
     # Genomic Track (Upper)
-    y_gen = 0.885
-    ax.text(0.035, y_gen, "Genomic DNA Locus:", fontsize=9.2, fontweight='bold', color='#0f172a', va='center')
+    y_gen = 0.812
+    ax.text(0.035, y_gen, "Genomic DNA Locus:", fontsize=9.0, fontweight='bold', color='#0f172a', va='center')
     ax.plot([0.16, 0.93], [y_gen, y_gen], color="#94a3b8", lw=2.5, zorder=2)
     
     # UTRs
@@ -338,18 +344,12 @@ def draw_panel_c(ax, standalone=True):
                                    fc=ecol, ec="#1e3a8a", lw=1.2, zorder=4))
         ax.text(ex + ew/2.0, y_gen, ename, ha='center', va='center', fontsize=8.0, fontweight='bold', color='white', zorder=5)
 
-    ax.text(0.380, y_gen + 0.028, "Intron 1 (~120 bp)", ha='center', fontsize=7.5, color='#475569', fontweight='bold')
-    ax.text(0.655, y_gen + 0.028, "Intron 2 (140 bp in α vs 850 bp in β)", ha='center', fontsize=7.8, color='#b91c1c', fontweight='bold')
-
-    # Demarcation Line 1: Gene GC% Range (encompassing exons + introns + UTRs)
-    y_g_dem = y_gen + 0.042
-    ax.plot([0.16, 0.93], [y_g_dem, y_g_dem], color='#047857', lw=1.8, marker='|', markersize=8, zorder=6)
-    ax.text(0.545, y_g_dem + 0.012, "◀── Whole-Gene GC% Calculation Range (Exons 1–3 + Introns 1–2 + UTRs: ~0.84 kb in α vs ~1.61 kb in β) ──▶",
-            ha='center', fontsize=8.5, fontweight='bold', color='#047857')
+    ax.text(0.380, y_gen + 0.026, "Intron 1 (~120 bp)", ha='center', fontsize=7.4, color='#475569', fontweight='bold')
+    ax.text(0.655, y_gen + 0.026, "Intron 2 (140 bp in α vs 850 bp in β)", ha='center', fontsize=7.6, color='#b91c1c', fontweight='bold')
 
     # Splicing Connectors: Pulling exons down to form merged CDS
-    y_cds = 0.775
-    ax.text(0.035, y_cds, "Spliced mRNA (CDS):", fontsize=9.2, fontweight='bold', color='#1d4ed8', va='center')
+    y_cds = 0.722
+    ax.text(0.035, y_cds, "Spliced mRNA (CDS):", fontsize=9.0, fontweight='bold', color='#1d4ed8', va='center')
     
     # Spliced Exons concatenated together
     exons_spliced = [
@@ -363,55 +363,51 @@ def draw_panel_c(ax, standalone=True):
         ax.text(ex + ew/2.0, y_cds, ename, ha='center', va='center', fontsize=8.2, fontweight='bold', color='white', zorder=5)
 
     # Demarcation Line 2: CDS GC% Range (Merged coding sequence only)
-    y_c_dem = y_cds - 0.030
+    y_c_dem = y_cds - 0.028
     ax.plot([0.260, 0.690], [y_c_dem, y_c_dem], color='#1d4ed8', lw=1.8, marker='|', markersize=8, zorder=6)
-    ax.text(0.475, y_c_dem - 0.014, "◀── CDS GC% Calculation Range (Concatenated Spliced Coding Sequence Only: 426–444 bp) ──▶",
-            ha='center', fontsize=8.5, fontweight='bold', color='#1d4ed8')
+    ax.text(0.475, y_c_dem - 0.013, "◀── CDS GC% Calculation Range (Concatenated Spliced Coding Sequence Only: 426–444 bp) ──▶",
+            ha='center', fontsize=8.4, fontweight='bold', color='#1d4ed8')
 
     # Splicing dashed guideline paths
     ax.plot([0.220 + 0.055, 0.260 + 0.055], [y_gen - 0.022, y_cds + 0.020], color='#3b82f6', lw=1.1, linestyle='--', zorder=2)
     ax.plot([0.430 + 0.070, 0.370 + 0.090], [y_gen - 0.022, y_cds + 0.020], color='#3b82f6', lw=1.1, linestyle='--', zorder=2)
     ax.plot([0.740 + 0.060, 0.550 + 0.070], [y_gen - 0.022, y_cds + 0.020], color='#3b82f6', lw=1.1, linestyle='--', zorder=2)
-    ax.text(0.760, y_cds, "Splicing removes introns;\nCDS feeds codon decomposition", fontsize=7.8, color='#475569', va='center')
+    ax.text(0.760, y_cds, "Splicing removes introns;\nCDS feeds codon decomposition", fontsize=7.6, color='#475569', va='center')
 
-    # Codon Position Breakdown & Purifying Corridor (NO GC4d, large bold text in front)
-    div_c1 = 0.705
+    # Codon Position Breakdown & Purifying Corridor
+    div_c1 = 0.655
     ax.plot([0.035, 0.945], [div_c1, div_c1], color='#e2e8f0', lw=1.0, zorder=2)
     
-    ax.text(0.035, 0.685, "Codon Position Decomposition & Selection Constraints:", fontsize=9.6, fontweight='bold', color='#0f172a')
+    ax.text(0.035, 0.636, "Codon Position Decomposition & Selection Constraints:", fontsize=9.4, fontweight='bold', color='#0f172a')
     
-    # Clear bullets with increased font size
-    ax.scatter([0.045], [0.655], color="#0284c7", s=32, zorder=10)
-    ax.text(0.058, 0.655, "GC1: 1st position (~50–65% GC) — Constrained by amino acid polarity", fontsize=8.6, color='#1e293b', va='center', fontweight='bold')
+    ax.scatter([0.045], [0.612], color="#0284c7", s=32, zorder=10)
+    ax.text(0.058, 0.612, "GC1: 1st position (~50–65% GC) — Constrained by amino acid polarity", fontsize=8.5, color='#1e293b', va='center', fontweight='bold')
     
-    ax.scatter([0.045], [0.630], color="#d97706", s=32, zorder=10)
-    ax.text(0.058, 0.630, "GC2: 2nd position (45–55% GC) — Strictly locked in Purifying Selection Corridor across all 68 vertebrates", fontsize=8.6, color='#1e293b', va='center', fontweight='bold')
+    ax.scatter([0.045], [0.590], color="#d97706", s=32, zorder=10)
+    ax.text(0.058, 0.590, "GC2: 2nd position (45–55% GC) — Strictly locked in Purifying Selection Corridor across all 68 vertebrates", fontsize=8.5, color='#1e293b', va='center', fontweight='bold')
 
-    ax.scatter([0.045], [0.605], color="#dc2626", s=32, zorder=10)
-    ax.text(0.058, 0.605, "GC3: 3rd position (35–98% GC) — Synonymous site! Neutral barometer of GC-biased gene conversion (gBGC)", fontsize=8.6, color='#b91c1c', va='center', fontweight='bold')
+    ax.scatter([0.045], [0.568], color="#dc2626", s=32, zorder=10)
+    ax.text(0.058, 0.568, "GC3: 3rd position (35–98% GC) — Synonymous site! Neutral barometer of GC-biased gene conversion (gBGC)", fontsize=8.5, color='#b91c1c', va='center', fontweight='bold')
 
     # Purifying Selection Corridor Axis (Right side)
-    corr_y = 0.640
+    corr_y = 0.602
     ax.plot([0.62, 0.94], [corr_y, corr_y], color="#94a3b8", lw=1.8, zorder=4)
-    # Highlighted green corridor
     ax.add_patch(patches.Rectangle((0.68, corr_y - 0.015), 0.10, 0.030, facecolor="#bbf7d0", edgecolor="#16a34a", lw=1.2, zorder=5))
-    ax.text(0.730, corr_y + 0.024, "Purifying Selection Corridor (45–55%)", ha='center', fontsize=8.2, color='#15803d', fontweight='bold', zorder=6)
+    ax.text(0.730, corr_y + 0.022, "Purifying Selection Corridor (45–55%)", ha='center', fontsize=8.2, color='#15803d', fontweight='bold', zorder=6)
     
-    # Points on the axis (Z-order 10 so they are strictly in front)
     ax.scatter([0.70], [corr_y], color="#d97706", s=45, zorder=10)
     ax.scatter([0.75], [corr_y], color="#0284c7", s=45, zorder=10)
     ax.scatter([0.91], [corr_y], color="#dc2626", s=50, zorder=10)
-    ax.text(0.70, corr_y - 0.020, "GC2", ha='center', fontsize=8.2, color='#d97706', fontweight='bold', zorder=11)
-    ax.text(0.75, corr_y - 0.020, "GC1", ha='center', fontsize=8.2, color='#0284c7', fontweight='bold', zorder=11)
-    ax.text(0.91, corr_y - 0.020, "GC3 (+gBGC)", ha='center', fontsize=8.2, color='#dc2626', fontweight='bold', zorder=11)
+    ax.text(0.70, corr_y - 0.018, "GC2", ha='center', fontsize=8.2, color='#d97706', fontweight='bold', zorder=11)
+    ax.text(0.75, corr_y - 0.018, "GC1", ha='center', fontsize=8.2, color='#0284c7', fontweight='bold', zorder=11)
+    ax.text(0.91, corr_y - 0.018, "GC3 (+gBGC)", ha='center', fontsize=8.2, color='#dc2626', fontweight='bold', zorder=11)
 
     # Card 2: Conserved Globin Heme Pocket: Proximal Histidine (His-F8) Motif
-    draw_card(ax, 0.02, 0.185, 0.96, 0.400,
+    draw_card(ax, 0.02, 0.175, 0.96, 0.365,
               title="2. Conserved Globin Heme Pocket: Proximal Histidine (His-F8) Motif & Synonymous GC3 Divergence",
               subtitle="Comparison across 350+ Myr: 100% Identical Amino Acids, Yet 100% of Divergent 3rd Positions Shifted to G/C in Human",
               fc="#ffffff", ec="#cbd5e1", lw=1.2)
 
-    # 10 Conserved Codons
     codons_human = [
         ('Leu', 'CTG', 'L'),
         ('Ser', 'AGC', 'S'),
@@ -440,8 +436,8 @@ def draw_panel_c(ax, standalone=True):
 
     x_start = 0.190
     x_step = 0.076
-    y_human = 0.470
-    y_xen = 0.265
+    y_human = 0.435
+    y_xen = 0.245
 
     # Human Track Info Card on Left
     h_info = FancyBboxPatch((0.035, y_human - 0.025), 0.135, 0.065, boxstyle="round,pad=0.001,rounding_size=0.004",
@@ -521,23 +517,21 @@ def draw_panel_c(ax, standalone=True):
             ax.plot([xh, xh], [y_human - 0.022, y_xen + 0.030], color='#cbd5e1', lw=1.2, zorder=2)
             ax.text(xh, mid_y, "==", ha='center', va='center', fontsize=7.5, color='#94a3b8', zorder=4)
 
-    # Card 3: Bernardi Compaction Law & Distance-to-Telomere Driver (Clean, bounded, no text overflow)
-    draw_card(ax, 0.02, 0.010, 0.96, 0.165,
+    # Card 3: Bernardi Compaction Law & Distance-to-Telomere Driver
+    draw_card(ax, 0.02, 0.008, 0.96, 0.156,
               title="3. Bernardi's Compaction Law & Telomeric Distance Driver",
+              subtitle="High-GC isochores suppress intron expansion; low-GC regions accumulate expanded introns.",
               fc="#ffffff", ec="#cbd5e1", lw=1.2)
 
-    ax.text(0.04, 0.128, "Bernardi's Compaction Law: High-GC isochores suppress intron expansion; low-GC regions accumulate expanded introns.",
-            fontsize=8.5, color='#1e293b')
-    ax.text(0.04, 0.106, "Human HBA1 (α): 843 bp (Intron 2 = 140 bp) [Compact High-GC]  vs.  Human HBB (β): 1,608 bp (Intron 2 = 850 bp) [Expanded Low-GC]",
-            fontsize=8.5, color='#1e40af', fontweight='bold')
+    ax.text(0.04, 0.076, "Human HBA1 (α): 843 bp (Intron 2 = 140 bp) [Compact High-GC]  vs.  Human HBB (β): 1,608 bp (Intron 2 = 850 bp) [Expanded Low-GC]",
+            fontsize=8.4, color='#1e40af', fontweight='bold')
 
-    ax.text(0.04, 0.076, "Distance-to-Telomere (dtelo / Lchr) Drives gBGC:", fontsize=8.8, fontweight='bold', color='#0f172a')
-    ax.text(0.04, 0.055, "• Meiotic crossovers are physically biased toward chromosome ends, accelerating GC-biased gene conversion (gBGC).",
-            fontsize=8.2, color='#334155')
-    ax.text(0.04, 0.035, "• Subtelomeric loci (dtelo < 1 Mb) undergo runaway GC3 elevation; internal/centromeric loci remain buffered in AT-rich baselines.",
-            fontsize=8.2, color='#b91c1c', fontweight='bold')
-    ax.text(0.04, 0.016, "Relative Telomeric Distance: dtelo_rel = min(Pos, Chr_Len - Pos) / Chr_Len    (0.000 Subtelomeric  ➔  0.500 Metacentric)",
-            fontsize=8.0, family='monospace', color='#047857', fontweight='bold')
+    ax.text(0.04, 0.056, "Distance-to-Telomere (dtelo / Lchr) Drives gBGC: Subtelomeric loci (<1 Mb) undergo runaway GC3 elevation; internal loci remain AT-buffered.",
+            fontsize=8.2, color='#0f172a', fontweight='bold')
+    ax.text(0.04, 0.036, "• Meiotic crossovers are physically biased toward chromosome ends, accelerating GC-biased gene conversion (gBGC).",
+            fontsize=8.0, color='#334155')
+    ax.text(0.04, 0.017, "Relative Telomeric Distance: dtelo_rel = min(Pos, Chr_Len - Pos) / Chr_Len    (0.000 Subtelomeric  ➔  0.500 Metacentric)",
+            fontsize=7.8, family='monospace', color='#047857', fontweight='bold')
 
 
 # =========================================================================
@@ -554,11 +548,9 @@ def draw_panel_d(ax, standalone=True):
     modules = [
         ("Tab 1: Global Macroevolutionary Figures",
          "The Big-Picture Evolutionary Synthesis across 68 Vertebrates",
-         ["• Fig 0, 0A, 0B, 0C: Conceptual framework, synteny discovery pipeline, metric anatomy, and codon dynamics.",
-          "• Fig 1A: Curated benchmark summary across 33 representative species spanning 500 Myr of divergence.",
-          "• Fig 1B: Complete, exhaustive distribution across all 68 jawed vertebrate genomes.",
-          "• Fig 2: Mechanistic drivers of GC polarity (Bivariate GC regressions, gene length compaction, telomeric distance).",
-          "• Fig 3: Time-calibrated phylogenetic chronogram, chromosome synteny maps, and codon ΔGC3 divergence."],
+         ["• Fig 0, 0A–0C: Conceptual framework, syntenic retrieval pipeline, metric anatomy, and codon dynamics.",
+          "• Fig 1A & 1B: Curated summary across 33 species (1A) and exhaustive 68-vertebrate macroevolutionary atlas (1B).",
+          "• Fig 2 & 3: Mechanistic drivers of GC polarity (Fig 2) and time-calibrated phylogenetic synteny chronogram (Fig 3)."],
          "#1e40af", "#eff6ff", "[ Fig 0 ]  [ Fig 1A ]  [ Fig 1B ]  [ Fig 2 ]  [ Fig 3 ]"),
 
         ("Tab 2: 1-on-1 Head-to-Head Comparison",
@@ -582,18 +574,18 @@ def draw_panel_d(ax, standalone=True):
          "#581c87", "#faf5ff", "[ 1,180 Gene Models ]  [ Wilcoxon Tests ]  [ Effect Sizes ]"),
     ]
 
-    card_h = 0.175
-    spacing = 0.022
-    start_y = 0.730
+    card_h = 0.170
+    spacing = 0.020
+    start_y = 0.735
     for idx, (mtitle, msub, mpts, mcol, mfc, mbtns) in enumerate(modules):
         cy = start_y - idx * (card_h + spacing)
         card = FancyBboxPatch((0.02, cy), 0.96, card_h, boxstyle="round,pad=0.002,rounding_size=0.008",
                               facecolor=mfc, edgecolor=mcol, lw=1.3, zorder=2)
         ax.add_patch(card)
         ax.text(0.04, cy + card_h - 0.028, mtitle, fontsize=11.2, fontweight='bold', color=mcol, zorder=3)
-        ax.text(0.04, cy + card_h - 0.052, msub, fontsize=9.4, fontstyle='italic', color='#475569', zorder=3)
+        ax.text(0.04, cy + card_h - 0.050, msub, fontsize=9.4, fontstyle='italic', color='#475569', zorder=3)
         for p_idx, pt in enumerate(mpts):
-            ax.text(0.04, cy + card_h - 0.080 - p_idx * 0.026, pt, fontsize=8.6, color='#1e293b', zorder=3)
+            ax.text(0.04, cy + card_h - 0.078 - p_idx * 0.026, pt, fontsize=8.6, color='#1e293b', zorder=3)
         ax.text(0.96, cy + card_h - 0.028, mbtns, ha='right', fontsize=8.6, family='monospace', fontweight='bold', color=mcol, zorder=3)
 
     # Dedicated Workflow & Shortcuts Footer Card
