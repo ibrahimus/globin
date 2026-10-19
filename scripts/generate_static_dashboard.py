@@ -705,7 +705,7 @@ def main():
                     <button class="btn active" onclick="setMetaView('fig1a')">Fig 1A: Curated Summary</button>
                     <button class="btn" onclick="setMetaView('fig1b')">Fig 1B: All 68 Species</button>
                     <button class="btn" onclick="setMetaView('fig2')">Fig 2: Mechanistic Drivers</button>
-                    <button class="btn" onclick="setMetaView('fig4')">Fig 4: Phylogenetic Synteny &amp; Codon Map</button>
+                    <button class="btn" onclick="setMetaView('fig3')">Fig 3: Phylogenetic Synteny &amp; Codon Map</button>
                 </div>
             </div>
             <div class="img-container" onclick="openLightbox(this)">
@@ -1346,7 +1346,7 @@ def main():
             if (figType === 'fig1a' || figType === 'fig1') {{ img.src = 'summary_figure1a_locus_divergence_summary.png'; figName = 'Fig 1A: Curated Macroevolutionary Locus Divergence Across Key Clades & Extrema'; }}
             if (figType === 'fig1b') {{ img.src = 'summary_figure1b_locus_divergence_full.png'; figName = 'Fig 1B: Complete Macroevolutionary Locus Divergence Across All 68 Vertebrates'; }}
             if (figType === 'fig2') {{ img.src = 'summary_figure2_mechanistic_drivers.png'; figName = 'Fig 2: Mechanistic Drivers of GC Polarity'; }}
-            if (figType === 'fig4') {{ img.src = 'summary_figure4_phylogenetic_synteny.png'; figName = 'Fig 4: Macroevolutionary Synteny Architecture and Codon Divergence Across Vertebrates'; }}
+            if (figType === 'fig3' || figType === 'fig4') {{ img.src = 'summary_figure3_phylogenetic_synteny.png'; figName = 'Fig 3: Macroevolutionary Synteny Architecture and Codon Divergence Across Vertebrates'; }}
             const cap = document.getElementById('caption-meta');
             if (cap) cap.innerText = figName;
         }}

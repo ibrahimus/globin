@@ -910,7 +910,7 @@ FIG1A_SUMMARY_SPECIES = [
     "desmodus_rotundus",
     "vicugna_pacos",
     "mirounga_angustirostris",
-    "physeter_catodon",
+    "tursiops_truncatus",
     "Homo_sapiens",
 ]
 

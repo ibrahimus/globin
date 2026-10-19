@@ -470,25 +470,28 @@ REPRESENTATIVE_TAXA = [
         'beta_anchors': 'OR51-OR52',
         'notes': 'Intense GC polarity: α subtelomeric (89.5%), β deep interstitial (65.5%)',
     },
-    # 21. Mammalia - Sperm Whale
+    # 21. Mammalia - Dolphin
     {
-        'species': 'physeter_catodon',
-        'display': 'Sperm Whale (P. catodon)',
+        'species': 'tursiops_truncatus',
+        'display': 'Dolphin (T. truncatus)',
         'clade': 'Cetacea',
         'divergence_mya': 60,
         'state': 'MAMMALIAN_ALPHA_SUBTELO',
         'color': '#e65100',
         'is_bichromosomal': True,
-        'alpha_is_scaffold': True,
-        'alpha_scaffold': 'NW_021146805.1',
-        'alpha_scaffold_len': '25 kb',
+        'is_scaffold': False,
+        'alpha_is_scaffold': False,
+        'alpha_chr': 'Chr 15',
+        'alpha_cen': 0.406,
+        'alpha_pos': 0.441,
+        'alpha_mb': '[38.1 Mb]',
         'alpha_anchors': 'NPRL3-MPG-LUC7L',
-        'beta_chr': 'Chr 15',
-        'beta_cen': 0.479,
-        'beta_pos': 0.583,
-        'beta_mb': '[60.3 Mb internal]',
-        'beta_anchors': 'TRIM21-FOLR1-OR51',
-        'notes': 'α on unanchored 25 kb scaffold; β on Chr 15 interstitial q-arm',
+        'beta_chr': 'Chr 8',
+        'beta_cen': 0.467,
+        'beta_pos': 0.552,
+        'beta_mb': '[59.9 Mb internal]',
+        'beta_anchors': 'FOLR1-OR51',
+        'notes': 'Marine cetacean with chromosome-anchored loci; α on Chr 15 (GC3=78.5%), β on Chr 8 (GC3=65.6%)',
     },
 ]
 
@@ -509,9 +512,11 @@ def load_datasets():
 
 
 def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS_DIR):
-    """Generate high-DPI publication vector PDF and raster PNG for Figure 4."""
-    png_path = os.path.join(out_dir, "summary_figure4_phylogenetic_synteny.png")
-    pdf_path = os.path.join(out_dir, "summary_figure4_phylogenetic_synteny.pdf")
+    """Generate high-DPI publication vector PDF and raster PNG for Figure 3."""
+    png_path_3 = os.path.join(out_dir, "summary_figure3_phylogenetic_synteny.png")
+    pdf_path_3 = os.path.join(out_dir, "summary_figure3_phylogenetic_synteny.pdf")
+    png_path_4 = os.path.join(out_dir, "summary_figure4_phylogenetic_synteny.png")
+    pdf_path_4 = os.path.join(out_dir, "summary_figure4_phylogenetic_synteny.pdf")
     
     n_taxa = len(REPRESENTATIVE_TAXA)
     y_positions = np.arange(n_taxa)[::-1]
@@ -988,19 +993,22 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
     ax_codon.spines['left'].set_visible(False)
 
     # Supertitle
-    fig.suptitle("Figure 4: Macroevolutionary Synteny Architecture and Codon Divergence Across Vertebrates",
+    fig.suptitle("Figure 3: Macroevolutionary Synteny Architecture and Codon Divergence Across Vertebrates",
                  fontsize=18, fontweight='bold', y=0.975)
 
-    plt.savefig(png_path, dpi=300, bbox_inches='tight')
-    plt.savefig(pdf_path, format='pdf', bbox_inches='tight')
+    plt.savefig(png_path_3, dpi=300, bbox_inches='tight')
+    plt.savefig(pdf_path_3, format='pdf', bbox_inches='tight')
+    plt.savefig(png_path_4, dpi=300, bbox_inches='tight')
+    plt.savefig(pdf_path_4, format='pdf', bbox_inches='tight')
     plt.close()
-    print(f"Generated Figure 4 (PNG/PDF): {png_path} and {pdf_path}")
-    return png_path, pdf_path
+    print(f"Generated Figure 3 (PNG/PDF): {png_path_3} and {pdf_path_3}")
+    return png_path_3, pdf_path_3
 
 
 def plot_figure4_interactive(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS_DIR):
-    """Generate high-fidelity interactive Plotly HTML for Figure 4."""
-    html_path = os.path.join(out_dir, "summary_figure4_phylogenetic_synteny.html")
+    """Generate high-fidelity interactive Plotly HTML for Figure 3 (and 4)."""
+    html_path_3 = os.path.join(out_dir, "summary_figure3_phylogenetic_synteny.html")
+    html_path_4 = os.path.join(out_dir, "summary_figure4_phylogenetic_synteny.html")
     
     n_taxa = len(REPRESENTATIVE_TAXA)
     y_positions = list(range(n_taxa))[::-1]
@@ -1274,27 +1282,31 @@ def plot_figure4_interactive(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
             ), row=1, col=3)
 
     fig.update_layout(
-        title="<b>Figure 4: Macroevolutionary Synteny Architecture and Codon Divergence Across Vertebrates</b>",
+        title="<b>Figure 3: Macroevolutionary Synteny Architecture and Codon Divergence Across Vertebrates</b>",
         font=dict(family="Arial, sans-serif", size=11),
         template="plotly_white",
         height=950,
         margin=dict(l=40, r=40, t=80, b=40),
     )
     
-    fig.write_html(html_path)
-    print(f"Generated Figure 4 Interactive HTML: {html_path}")
-    return html_path
+    fig.write_html(html_path_3)
+    fig.write_html(html_path_4)
+    print(f"Generated Figure 3 Interactive HTML: {html_path_3}")
+    return html_path_3
 
 
 def main():
-    print("=== Generating Polished Figure 4: Separate Chromosomes, Scaffold Frag Representation & Clean Palette ===")
+    print("=== Generating Polished Figure 3: Separate Chromosomes, Scaffold Frag Representation & Clean Palette ===")
     df_loc, df_sp, df_nodes, df_codons = load_datasets()
     
     png_path, pdf_path = plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS_DIR)
     html_path = plot_figure4_interactive(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS_DIR)
     
     # Synchronize to 1_data_from_mike/results/
-    for fname in ["summary_figure4_phylogenetic_synteny.png",
+    for fname in ["summary_figure3_phylogenetic_synteny.png",
+                  "summary_figure3_phylogenetic_synteny.pdf",
+                  "summary_figure3_phylogenetic_synteny.html",
+                  "summary_figure4_phylogenetic_synteny.png",
                   "summary_figure4_phylogenetic_synteny.pdf",
                   "summary_figure4_phylogenetic_synteny.html"]:
         src = os.path.join(RESULTS_DIR, fname)
@@ -1304,7 +1316,7 @@ def main():
                 f_out.write(f_in.read())
             print(f"  Synchronized: {fname}")
             
-    print("\nFigure 4 generation and synchronization complete!")
+    print("\nFigure 3 generation and synchronization complete!")
 
 
 if __name__ == "__main__":
