@@ -156,42 +156,57 @@ def main():
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg);
             color: var(--text-main);
-            line-height: 1.5;
-            padding: 1.5rem;
+            line-height: 1.45;
+            padding: 0.75rem 1.25rem;
         }}
         header {{
             background: linear-gradient(135deg, #1e293b, #0f172a);
             color: white;
-            padding: 1.8rem 2rem;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            padding: 0.6rem 1.25rem;
+            border-radius: 8px;
+            margin-bottom: 0.65rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }}
-        header h1 {{ font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.5rem; }}
-        header p {{ color: #94a3b8; font-size: 0.95rem; }}
+        .header-left h1 {{
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+            color: #f8fafc;
+        }}
+        .header-left p {{
+            color: #94a3b8;
+            font-size: 0.8rem;
+            margin: 0.15rem 0 0 0;
+        }}
         .badge {{
             display: inline-block;
             background: #334155;
             color: #38bdf8;
-            padding: 0.2rem 0.6rem;
+            padding: 0.2rem 0.55rem;
             border-radius: 9999px;
-            font-size: 0.75rem;
+            font-size: 0.74rem;
             font-weight: 600;
-            margin-top: 0.5rem;
+            white-space: nowrap;
         }}
 
         nav.tabs {{
             display: flex;
-            gap: 0.5rem;
+            gap: 0.25rem;
             border-bottom: 2px solid var(--border);
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.65rem;
             overflow-x: auto;
         }}
         nav.tabs button {{
             background: none;
             border: none;
-            padding: 0.75rem 1.25rem;
-            font-size: 0.95rem;
+            padding: 0.45rem 0.85rem;
+            font-size: 0.88rem;
             font-weight: 600;
             color: var(--text-muted);
             cursor: pointer;
@@ -208,18 +223,18 @@ def main():
         .tab-pane {{ display: none; }}
         .tab-pane.active {{ display: block; }}
 
-        .grid-2 {{ display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }}
+        .grid-2 {{ display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }}
         @media (max-width: 900px) {{ .grid-2 {{ grid-template-columns: 1fr; }} }}
 
         .card {{
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 1.25rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            margin-bottom: 1.25rem;
+            border-radius: 8px;
+            padding: 0.85rem 1.1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            margin-bottom: 0.85rem;
         }}
-        .card h3 {{ font-size: 1.15rem; font-weight: 600; margin-bottom: 0.8rem; color: #1e293b; }}
+        .card h3 {{ font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem; color: #1e293b; }}
 
         select, input {{
             width: 100%;
@@ -401,20 +416,21 @@ def main():
 
         .btn-group {{
             display: flex;
-            gap: 0.4rem;
+            gap: 0.35rem;
             flex-wrap: wrap;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }}
         .btn {{
             background: #f1f5f9;
             border: 1px solid var(--border);
-            padding: 0.45rem 0.8rem;
+            padding: 0.32rem 0.65rem;
             border-radius: 6px;
-            font-size: 0.85rem;
+            font-size: 0.81rem;
             font-weight: 600;
             color: #475569;
             cursor: pointer;
             transition: all 0.15s;
+            white-space: nowrap;
         }}
         .btn:hover {{ background: #e2e8f0; color: #0f172a; }}
         .btn.active {{ background: var(--primary); color: white; border-color: var(--primary); }}
@@ -446,13 +462,13 @@ def main():
             transform: scale(1.006);
         }}
         .img-caption-bar {{
-            padding: 0.45rem 0.8rem;
+            padding: 0.32rem 0.75rem;
             background: #f8fafc;
             border-top: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: #64748b;
         }}
         .caption-text {{
@@ -663,38 +679,40 @@ def main():
 <body>
 
     <header>
-        <h1>🧬 Vertebrate Globin Genomics Explorer</h1>
-        <p>Interactive Comparative Atlas, Synteny Tracker & 1-on-1 Head-to-Head Architectural Visualizer</p>
-        <span class="badge">68 Vertebrate Genomes • 120 Curated Loci • 1,530 Verified Gene Models • 10 Evolutionary Clades</span>
+        <div class="header-left">
+            <h1>Vertebrate Globin Genomics Explorer</h1>
+            <p>Interactive Comparative Atlas, Synteny Tracker &amp; 1-on-1 Architectural Visualizer</p>
+        </div>
+        <div class="header-right">
+            <span class="badge">68 Vertebrate Genomes • 120 Curated Loci • 1,530 Verified Gene Models • 10 Evolutionary Clades</span>
+        </div>
     </header>
 
     <nav class="tabs">
-        <button class="active" onclick="showTab('meta')">🌐 Cross-Species Meta Explorer</button>
-        <button onclick="showTab('comparison')">⚖️ 1-on-1 Head-to-Head Comparison</button>
-        <button onclick="showTab('deepdive')">🔬 Single Species Deep Dive</button>
-        <button onclick="showTab('genes')">📋 Interval Genes Database</button>
-        <button onclick="showTab('stats')">📊 Statistical Contrasts</button>
+        <button class="active" onclick="showTab('meta')">Cross-Species Meta Explorer</button>
+        <button onclick="showTab('comparison')">1-on-1 Head-to-Head Comparison</button>
+        <button onclick="showTab('deepdive')">Single Species Deep Dive</button>
+        <button onclick="showTab('genes')">Interval Genes Database</button>
+        <button onclick="showTab('stats')">Statistical Contrasts</button>
     </nav>
 
     <!-- TAB 1: CROSS-SPECIES META EXPLORER (DEFAULT LANDING PAGE) -->
     <div id="tab-meta" class="tab-pane active">
-        <div class="card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
-                <h3>Global Macroevolutionary Figures</h3>
-                <div class="btn-group" id="meta-view-btns">
-                    <button class="btn active" onclick="setMetaView('fig1a')">📊 Fig 1A: Curated Summary</button>
-                    <button class="btn" onclick="setMetaView('fig1b')">🌐 Fig 1B: All 68 Species</button>
-                    <button class="btn" onclick="setMetaView('fig2')">🔬 Fig 2: Mechanistic Drivers</button>
-                    <button class="btn" onclick="setMetaView('fig3')">🗺️ Fig 3: Clade Heatmap</button>
-                    <button class="btn" onclick="setMetaView('fig4')">🧬 Fig 4: Phylogenetic Synteny & Codon Map</button>
-                    <button class="btn" onclick="setMetaView('clean')">🌌 Standardized Meta Graph</button>
+        <div class="card" style="padding: 0.65rem 0.95rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.45rem; flex-wrap: wrap; gap: 0.5rem;">
+                <h3 style="margin: 0; font-size: 0.98rem; font-weight: 700;">Global Macroevolutionary Figures</h3>
+                <div class="btn-group" id="meta-view-btns" style="margin-bottom: 0;">
+                    <button class="btn active" onclick="setMetaView('fig1a')">Fig 1A: Curated Summary</button>
+                    <button class="btn" onclick="setMetaView('fig1b')">Fig 1B: All 68 Species</button>
+                    <button class="btn" onclick="setMetaView('fig2')">Fig 2: Mechanistic Drivers</button>
+                    <button class="btn" onclick="setMetaView('fig4')">Fig 4: Phylogenetic Synteny &amp; Codon Map</button>
                 </div>
             </div>
             <div class="img-container" onclick="openLightbox(this)">
-                <img id="meta-img" src="summary_figure1a_locus_divergence_summary.png" alt="Fig 1A: Curated Macroevolutionary Locus Divergence Across Key Clades & Extrema">
+                <img id="meta-img" src="summary_figure1a_locus_divergence_summary.png" alt="Fig 1A: Curated Macroevolutionary Locus Divergence Across Key Clades &amp; Extrema">
                 <div class="img-caption-bar">
-                    <span class="caption-text" id="caption-meta">Fig 1A: Curated Macroevolutionary Locus Divergence Across Key Clades & Extrema</span>
-                    <span class="caption-action">🔍 Inspect & Zoom →</span>
+                    <span class="caption-text" id="caption-meta">Fig 1A: Curated Macroevolutionary Locus Divergence Across Key Clades &amp; Extrema</span>
+                    <span class="caption-action">Inspect &amp; Zoom →</span>
                 </div>
             </div>
         </div>
@@ -703,10 +721,10 @@ def main():
     <!-- TAB 2: 1-on-1 HEAD-TO-HEAD COMPARISON -->
     <div id="tab-comparison" class="tab-pane">
         <div class="card">
-            <h3>⚖️ Configure 1-on-1 Species Contrast</h3>
+            <h3>Configure 1-on-1 Species Contrast</h3>
             <div class="grid-2">
                 <div>
-                    <label style="font-size: 0.85rem; font-weight: 600; color: #475569; display: block; margin-bottom: 0.35rem;">SPECIES A</label>
+                    <label style="font-size: 0.82rem; font-weight: 600; color: #475569; display: block; margin-bottom: 0.25rem;">SPECIES A</label>
                     <div class="combobox-wrapper" id="wrapper-comp-sp-a">
                         <div class="combobox-trigger" onclick="toggleCombobox('comp-sp-a')" tabindex="0" onkeydown="handleComboboxTriggerKey(event, 'comp-sp-a')">
                             <div class="combobox-selection" id="display-comp-sp-a">
@@ -716,7 +734,7 @@ def main():
                         </div>
                         <div class="combobox-dropdown" id="dropdown-comp-sp-a">
                             <div class="combobox-search-box">
-                                <input type="text" id="search-comp-sp-a" placeholder="🔍 Search species, common name, clade, short name..." oninput="filterCombobox('comp-sp-a', this.value)" onkeydown="handleSearchInputKey(event, 'comp-sp-a')">
+                                <input type="text" id="search-comp-sp-a" placeholder="Search species, common name, clade, short name..." oninput="filterCombobox('comp-sp-a', this.value)" onkeydown="handleSearchInputKey(event, 'comp-sp-a')">
                             </div>
                             <div class="combobox-options" id="options-comp-sp-a"></div>
                         </div>
@@ -724,7 +742,7 @@ def main():
                     </div>
                 </div>
                 <div>
-                    <label style="font-size: 0.85rem; font-weight: 600; color: #475569; display: block; margin-bottom: 0.35rem;">SPECIES B</label>
+                    <label style="font-size: 0.82rem; font-weight: 600; color: #475569; display: block; margin-bottom: 0.25rem;">SPECIES B</label>
                     <div class="combobox-wrapper" id="wrapper-comp-sp-b">
                         <div class="combobox-trigger" onclick="toggleCombobox('comp-sp-b')" tabindex="0" onkeydown="handleComboboxTriggerKey(event, 'comp-sp-b')">
                             <div class="combobox-selection" id="display-comp-sp-b">
@@ -734,7 +752,7 @@ def main():
                         </div>
                         <div class="combobox-dropdown" id="dropdown-comp-sp-b">
                             <div class="combobox-search-box">
-                                <input type="text" id="search-comp-sp-b" placeholder="🔍 Search species, common name, clade, short name..." oninput="filterCombobox('comp-sp-b', this.value)" onkeydown="handleSearchInputKey(event, 'comp-sp-b')">
+                                <input type="text" id="search-comp-sp-b" placeholder="Search species, common name, clade, short name..." oninput="filterCombobox('comp-sp-b', this.value)" onkeydown="handleSearchInputKey(event, 'comp-sp-b')">
                             </div>
                             <div class="combobox-options" id="options-comp-sp-b"></div>
                         </div>
@@ -745,7 +763,7 @@ def main():
         </div>
 
         <div class="card">
-            <h3>📊 Comparative Scorecard & Isochore Polarity</h3>
+            <h3>Comparative Scorecard &amp; Isochore Polarity</h3>
             <div style="overflow-x: auto;">
                 <table id="comp-table">
                     <thead>
@@ -762,34 +780,34 @@ def main():
         </div>
 
         <div class="card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
-                <h3>🖼️ Synchronized Visual Comparison</h3>
-                <div class="btn-group" id="comp-view-btns">
-                    <button class="btn active" onclick="setCompView('chromosome')">📍 Linear Chromosome Tracks</button>
-                    <button class="btn" onclick="setCompView('inset')">🎯 Bivariate with Mini Inset</button>
-                    <button class="btn" onclick="setCompView('diagnostic')">📈 Diagnostic GC Distribution</button>
-                    <button class="btn" onclick="setCompView('bivariate')">📐 Standard Bivariate</button>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                <h3 style="margin: 0;">Synchronized Visual Comparison</h3>
+                <div class="btn-group" id="comp-view-btns" style="margin-bottom: 0;">
+                    <button class="btn active" onclick="setCompView('chromosome')">Linear Chromosome Tracks</button>
+                    <button class="btn" onclick="setCompView('inset')">Bivariate with Mini Inset</button>
+                    <button class="btn" onclick="setCompView('diagnostic')">Diagnostic GC Distribution</button>
+                    <button class="btn" onclick="setCompView('bivariate')">Standard Bivariate</button>
                 </div>
             </div>
 
             <div class="grid-2">
                 <div>
-                    <h4 id="lbl-img-a" style="margin-bottom: 0.5rem; color: #1e293b;">Species A</h4>
+                    <h4 id="lbl-img-a" style="margin-bottom: 0.35rem; color: #1e293b; font-size: 0.95rem;">Species A</h4>
                     <div class="img-container" onclick="openLightbox(this)">
                         <img id="img-comp-a" src="" alt="Plot A">
                         <div class="img-caption-bar">
                             <span class="caption-text" id="caption-comp-a">Species A Plot</span>
-                            <span class="caption-action">🔍 Inspect & Zoom →</span>
+                            <span class="caption-action">Inspect &amp; Zoom →</span>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <h4 id="lbl-img-b" style="margin-bottom: 0.5rem; color: #1e293b;">Species B</h4>
+                    <h4 id="lbl-img-b" style="margin-bottom: 0.35rem; color: #1e293b; font-size: 0.95rem;">Species B</h4>
                     <div class="img-container" onclick="openLightbox(this)">
                         <img id="img-comp-b" src="" alt="Plot B">
                         <div class="img-caption-bar">
                             <span class="caption-text" id="caption-comp-b">Species B Plot</span>
-                            <span class="caption-action">🔍 Inspect & Zoom →</span>
+                            <span class="caption-action">Inspect &amp; Zoom →</span>
                         </div>
                     </div>
                 </div>
@@ -803,7 +821,7 @@ def main():
             <div>
                 <div class="card">
                     <h3>Select Species</h3>
-                    <div class="combobox-wrapper" id="wrapper-deep-sp" style="margin-top: 0.5rem;">
+                    <div class="combobox-wrapper" id="wrapper-deep-sp" style="margin-top: 0.35rem;">
                         <div class="combobox-trigger" onclick="toggleCombobox('deep-sp')" tabindex="0" onkeydown="handleComboboxTriggerKey(event, 'deep-sp')">
                             <div class="combobox-selection" id="display-deep-sp">
                                 <span>Loading species...</span>
@@ -812,33 +830,33 @@ def main():
                         </div>
                         <div class="combobox-dropdown" id="dropdown-deep-sp">
                             <div class="combobox-search-box">
-                                <input type="text" id="search-deep-sp" placeholder="🔍 Search species, common name, clade, short name..." oninput="filterCombobox('deep-sp', this.value)" onkeydown="handleSearchInputKey(event, 'deep-sp')">
+                                <input type="text" id="search-deep-sp" placeholder="Search species, common name, clade, short name..." oninput="filterCombobox('deep-sp', this.value)" onkeydown="handleSearchInputKey(event, 'deep-sp')">
                             </div>
                             <div class="combobox-options" id="options-deep-sp"></div>
                         </div>
                         <select id="deep-sp" style="display: none;" onchange="updateDeepDive()"></select>
                     </div>
                     
-                    <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; font-size: 0.95rem; color: #334155;">Species Profile</h4>
-                    <div id="deep-profile" style="font-size: 0.88rem; line-height: 1.7; color: #475569;"></div>
+                    <h4 style="margin-top: 0.8rem; margin-bottom: 0.35rem; font-size: 0.9rem; color: #334155;">Species Profile</h4>
+                    <div id="deep-profile" style="font-size: 0.85rem; line-height: 1.6; color: #475569;"></div>
                 </div>
             </div>
             <div>
                 <div class="card">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
-                        <h3 id="deep-title">Visualizations</h3>
-                        <div class="btn-group" id="deep-view-btns">
-                            <button class="btn active" onclick="setDeepView('chromosome')">📍 Linear Chromosome</button>
-                            <button class="btn" onclick="setDeepView('inset')">🎯 Bivariate with Inset</button>
-                            <button class="btn" onclick="setDeepView('diagnostic')">📈 Diagnostic GC</button>
-                            <button class="btn" onclick="setDeepView('bivariate')">📐 Standard Bivariate</button>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                        <h3 id="deep-title" style="margin: 0;">Visualizations</h3>
+                        <div class="btn-group" id="deep-view-btns" style="margin-bottom: 0;">
+                            <button class="btn active" onclick="setDeepView('chromosome')">Linear Chromosome</button>
+                            <button class="btn" onclick="setDeepView('inset')">Bivariate with Inset</button>
+                            <button class="btn" onclick="setDeepView('diagnostic')">Diagnostic GC</button>
+                            <button class="btn" onclick="setDeepView('bivariate')">Standard Bivariate</button>
                         </div>
                     </div>
                     <div class="img-container" onclick="openLightbox(this)">
                         <img id="deep-img" src="" alt="Deep dive plot">
                         <div class="img-caption-bar">
-                            <span class="caption-text" id="caption-deep">Architecture & Distribution Plot</span>
-                            <span class="caption-action">🔍 Inspect & Zoom →</span>
+                            <span class="caption-text" id="caption-deep">Architecture &amp; Distribution Plot</span>
+                            <span class="caption-action">Inspect &amp; Zoom →</span>
                         </div>
                     </div>
                 </div>
@@ -911,7 +929,7 @@ def main():
     <!-- FULLSCREEN INTERACTIVE LIGHTBOX MODAL -->
     <div id="lightbox-modal" class="lightbox-modal">
         <div class="lightbox-header">
-            <div class="lightbox-title" id="lightbox-title">🔬 High-Resolution Figure Inspection</div>
+            <div class="lightbox-title" id="lightbox-title">High-Resolution Figure Inspection</div>
             <div class="lightbox-controls">
                 <div id="lightbox-subpanels" class="subpanel-nav" style="display: none;">
                     <span class="subpanel-lbl">Diagnostic Panels:</span>
@@ -929,7 +947,7 @@ def main():
                     <button class="tool-btn" onclick="changeZoom(0.35)" title="Zoom In (+)">+</button>
                     <button class="tool-btn" onclick="fitToScreen()" title="Fit to Screen (Key: 0)">Fit</button>
                     <button class="tool-btn" onclick="setZoom100()" title="100% Native Pixels">1:1</button>
-                    <button class="tool-btn close-btn" onclick="closeLightbox()" title="Close (Esc)">✕ Close</button>
+                    <button class="tool-btn close-btn" onclick="closeLightbox()" title="Close (Esc)">&times; Close</button>
                 </div>
             </div>
         </div>
@@ -939,8 +957,8 @@ def main():
             </div>
         </div>
         <div class="lightbox-footer">
-            <span id="lightbox-mouse-help">🖱️ <b>Interactive Zoom:</b> Click to zoom in/out • Scroll wheel to zoom • Drag to pan</span>
-            <span id="lightbox-shortcuts">⌨️ <b>Shortcuts:</b> <code>Esc</code> Close • <code>0</code> Fit • <code>+</code>/<code>-</code> Zoom</span>
+            <span id="lightbox-mouse-help"><b>Interactive Zoom:</b> Click to zoom in/out • Scroll wheel to zoom • Drag to pan</span>
+            <span id="lightbox-shortcuts"><b>Shortcuts:</b> <code>Esc</code> Close • <code>0</code> Fit • <code>+</code>/<code>-</code> Zoom</span>
         </div>
     </div>
 
@@ -1250,7 +1268,7 @@ def main():
                 ['Curated Globin Loci', `${{dA.loci_count}} loci`, `${{dB.loci_count}} loci`, '—'],
                 ['α-Globin GC / Whole-Gene Z', dA.alpha_gc ? `${{dA.alpha_gc.toFixed(1)}}% (Z=${{dA.alpha_z > 0 ? '+' : ''}}${{dA.alpha_z.toFixed(2)}}σ)` : (dA.proto_gc ? `Proto: ${{dA.proto_gc.toFixed(1)}}% (Z=${{dA.proto_z > 0 ? '+' : ''}}${{dA.proto_z.toFixed(2)}}σ)` : 'N/A'), dB.alpha_gc ? `${{dB.alpha_gc.toFixed(1)}}% (Z=${{dB.alpha_z > 0 ? '+' : ''}}${{dB.alpha_z.toFixed(2)}}σ)` : (dB.proto_gc ? `Proto: ${{dB.proto_gc.toFixed(1)}}% (Z=${{dB.proto_z > 0 ? '+' : ''}}${{dB.proto_z.toFixed(2)}}σ)` : 'N/A'), (dA.alpha_z && dB.alpha_z) ? `ΔZ = ${{ (dA.alpha_z - dB.alpha_z).toFixed(2) }}σ` : 'N/A'],
                 ['β-Globin GC / Whole-Gene Z', dA.beta_gc ? `${{dA.beta_gc.toFixed(1)}}% (Z=${{dA.beta_z > 0 ? '+' : ''}}${{dA.beta_z.toFixed(2)}}σ)` : (dA.proto_gc ? 'N/A (Ancestral Proto-Globin)' : 'N/A'), dB.beta_gc ? `${{dB.beta_gc.toFixed(1)}}% (Z=${{dB.beta_z > 0 ? '+' : ''}}${{dB.beta_z.toFixed(2)}}σ)` : (dB.proto_gc ? 'N/A (Ancestral Proto-Globin)' : 'N/A'), (dA.beta_z && dB.beta_z) ? `ΔZ = ${{ (dA.beta_z - dB.beta_z).toFixed(2) }}σ` : 'N/A'],
-                ['Subunit Polarity (ΔZ = α - β)', dA.polarity ? `${{dA.polarity > 0 ? '+' : ''}}${{dA.polarity.toFixed(2)}}σ` : (dA.proto_gc ? 'N/A (Monomeric Proto-Globin)' : 'N/A'), dB.polarity ? `${{dB.polarity > 0 ? '+' : ''}}${{dB.polarity.toFixed(2)}}σ` : (dB.proto_gc ? 'N/A (Monomeric Proto-Globin)' : 'N/A'), (dA.polarity && dB.polarity) ? ((dA.polarity > 0 && dB.polarity < 0) || (dA.polarity < 0 && dB.polarity > 0) ? '⚡ Polarity Inversion' : 'Conserved Polarity') : 'N/A']
+                ['Subunit Polarity (ΔZ = α - β)', dA.polarity ? `${{dA.polarity > 0 ? '+' : ''}}${{dA.polarity.toFixed(2)}}σ` : (dA.proto_gc ? 'N/A (Monomeric Proto-Globin)' : 'N/A'), dB.polarity ? `${{dB.polarity > 0 ? '+' : ''}}${{dB.polarity.toFixed(2)}}σ` : (dB.proto_gc ? 'N/A (Monomeric Proto-Globin)' : 'N/A'), (dA.polarity && dB.polarity) ? ((dA.polarity > 0 && dB.polarity < 0) || (dA.polarity < 0 && dB.polarity > 0) ? 'Polarity Inversion' : 'Conserved Polarity') : 'N/A']
             ];
 
             const tbody = document.getElementById('comp-tbody');
@@ -1328,9 +1346,7 @@ def main():
             if (figType === 'fig1a' || figType === 'fig1') {{ img.src = 'summary_figure1a_locus_divergence_summary.png'; figName = 'Fig 1A: Curated Macroevolutionary Locus Divergence Across Key Clades & Extrema'; }}
             if (figType === 'fig1b') {{ img.src = 'summary_figure1b_locus_divergence_full.png'; figName = 'Fig 1B: Complete Macroevolutionary Locus Divergence Across All 68 Vertebrates'; }}
             if (figType === 'fig2') {{ img.src = 'summary_figure2_mechanistic_drivers.png'; figName = 'Fig 2: Mechanistic Drivers of GC Polarity'; }}
-            if (figType === 'fig3') {{ img.src = 'summary_figure3_clade_heatmap.png'; figName = 'Fig 3: Clade Architectural Heatmap'; }}
             if (figType === 'fig4') {{ img.src = 'summary_figure4_phylogenetic_synteny.png'; figName = 'Fig 4: Macroevolutionary Synteny Architecture and Codon Divergence Across Vertebrates'; }}
-            if (figType === 'clean') {{ img.src = 'meta_comparative_graph_clean.png'; figName = 'Standardized Meta Graph'; }}
             const cap = document.getElementById('caption-meta');
             if (cap) cap.innerText = figName;
         }}
@@ -1409,24 +1425,24 @@ def main():
                 const d = speciesData[sp];
                 const sciName = sp.replace(/_/g, ' ');
                 const viewName = isDiagnostic ? '6-Panel Diagnostic GC Distribution' : (img.alt || 'High-Resolution Visual');
-                titleHtml = '<span>🔬 <b>' + sciName + '</b> <span style="color: #94a3b8; font-weight: normal;">(' + d.common_name + ' • ' + d.clade + ')</span> — <span style="color: #38bdf8; font-weight: 600;">' + viewName + '</span></span>';
+                titleHtml = '<span><b>' + sciName + '</b> <span style="color: #94a3b8; font-weight: normal;">(' + d.common_name + ' • ' + d.clade + ')</span> — <span style="color: #38bdf8; font-weight: 600;">' + viewName + '</span></span>';
             }} else if (img.id === 'meta-img') {{
                 const cap = document.getElementById('caption-meta');
                 const metaTitle = cap ? cap.innerText : 'Macroevolutionary Meta Analysis';
-                titleHtml = '<span>🌐 <b>Macroevolutionary Meta Analysis</b> — <span style="color: #38bdf8; font-weight: 600;">' + metaTitle + '</span></span>';
+                titleHtml = '<span><b>Macroevolutionary Meta Analysis</b> — <span style="color: #38bdf8; font-weight: 600;">' + metaTitle + '</span></span>';
             }} else {{
-                titleHtml = '<span>🔬 <b>High-Resolution Figure Inspection</b></span>';
+                titleHtml = '<span><b>High-Resolution Figure Inspection</b></span>';
             }}
 
             titleEl.innerHTML = titleHtml;
             subpanelNav.style.display = isDiagnostic ? 'flex' : 'none';
 
             if (isDiagnostic) {{
-                if (mouseHelp) mouseHelp.innerHTML = '🖱️ <b>Diagnostic View:</b> Click any panel to focus • Click again to return to full view • Drag to pan';
-                if (shortcuts) shortcuts.innerHTML = '⌨️ <b>Shortcuts:</b> <code>Esc</code> Close • <code>0</code> Fit • <code>+</code>/<code>-</code> Zoom • <code>1</code>–<code>6</code> Panels A–F';
+                if (mouseHelp) mouseHelp.innerHTML = '<b>Diagnostic View:</b> Click any panel to focus • Click again to return to full view • Drag to pan';
+                if (shortcuts) shortcuts.innerHTML = '<b>Shortcuts:</b> <code>Esc</code> Close • <code>0</code> Fit • <code>+</code>/<code>-</code> Zoom • <code>1</code>–<code>6</code> Panels A–F';
             }} else {{
-                if (mouseHelp) mouseHelp.innerHTML = '🖱️ <b>Interactive Zoom:</b> Click to zoom in/out • Scroll wheel to zoom • Drag to pan';
-                if (shortcuts) shortcuts.innerHTML = '⌨️ <b>Shortcuts:</b> <code>Esc</code> Close • <code>0</code> Fit • <code>+</code>/<code>-</code> Zoom';
+                if (mouseHelp) mouseHelp.innerHTML = '<b>Interactive Zoom:</b> Click to zoom in/out • Scroll wheel to zoom • Drag to pan';
+                if (shortcuts) shortcuts.innerHTML = '<b>Shortcuts:</b> <code>Esc</code> Close • <code>0</code> Fit • <code>+</code>/<code>-</code> Zoom';
             }}
 
             modal.classList.add('active');
