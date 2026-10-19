@@ -25,7 +25,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
-from matplotlib.patches import FancyBboxPatch
+from matplotlib.patches import FancyBboxPatch, ConnectionPatch
 from matplotlib.lines import Line2D
 import matplotlib.colors as mcolors
 import plotly.graph_objects as go
@@ -524,6 +524,13 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
     ax_syn = fig.add_subplot(gs[1])
     ax_codon = fig.add_subplot(gs[2])
 
+    ax_tree.set_xlim(680, -250)
+    ax_tree.set_ylim(-2.2, n_taxa - 0.2)
+    ax_syn.set_xlim(-0.04, 1.04)
+    ax_syn.set_ylim(-2.2, n_taxa - 0.2)
+    ax_codon.set_xlim(30, 118)
+    ax_codon.set_ylim(-2.2, n_taxa - 0.2)
+
     # -------------------------------------------------------------
     # Visual Alignment Aids Across Panels A, B, and C
     # -------------------------------------------------------------
@@ -533,10 +540,31 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
             ax_tree.axhspan(y - 0.44, y + 0.44, color="#f8fafc", zorder=0)
             ax_syn.axhspan(y - 0.44, y + 0.44, color="#f8fafc", zorder=0)
             ax_codon.axhspan(y - 0.44, y + 0.44, color="#f8fafc", zorder=0)
-        # Faint horizontal alignment dotted line
-        ax_tree.axhline(y, color="#e2e8f0", linestyle=":", linewidth=0.75, zorder=0)
-        ax_syn.axhline(y, color="#e2e8f0", linestyle=":", linewidth=0.75, zorder=0)
-        ax_codon.axhline(y, color="#e2e8f0", linestyle=":", linewidth=0.75, zorder=0)
+        # Horizontal alignment dotted lines across panels
+        ax_tree.axhline(y, color="#cbd5e1", linestyle=":", linewidth=0.9, zorder=0)
+        ax_syn.axhline(y, color="#cbd5e1", linestyle=":", linewidth=0.9, zorder=0)
+        ax_codon.axhline(y, color="#cbd5e1", linestyle=":", linewidth=0.9, zorder=0)
+
+    # Bridge alignment lines and zebra striping across the gap between Panel B and Panel C
+    fig.canvas.draw()
+    pos_syn = ax_syn.get_position()
+    pos_codon = ax_codon.get_position()
+    y_min, y_max = -2.2, n_taxa - 0.2
+
+    for i, y in enumerate(y_positions):
+        # 1. Bridge zebra striping across the gap
+        if i % 2 == 1:
+            y_b = pos_syn.y0 + ((y - 0.44 - y_min) / (y_max - y_min)) * (pos_syn.y1 - pos_syn.y0)
+            y_t = pos_syn.y0 + ((y + 0.44 - y_min) / (y_max - y_min)) * (pos_syn.y1 - pos_syn.y0)
+            rect = patches.Rectangle((pos_syn.x1, y_b), pos_codon.x0 - pos_syn.x1, y_t - y_b,
+                                     transform=fig.transFigure, facecolor='#f8fafc', edgecolor='none', zorder=0)
+            fig.add_artist(rect)
+        
+        # 2. Bridge the dotted alignment line across the gap
+        con = ConnectionPatch(xyA=(1.04, y), coordsA=ax_syn.transData,
+                              xyB=(30, y), coordsB=ax_codon.transData,
+                              color="#cbd5e1", linestyle=":", linewidth=0.9, zorder=0)
+        fig.add_artist(con)
 
     # -------------------------------------------------------------
     # PANEL 1: Time-Calibrated Vertebrate Chronogram
@@ -713,10 +741,10 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
         ax.text(x0 - 0.012, y_mid, chr_name, fontsize=8.0, fontweight='bold', ha='right', va='center',
                 color='#37474f', bbox=dict(boxstyle="round,pad=0.2", fc="#eceff1", ec="#b0bec5", lw=0.8), zorder=5)
 
-    def draw_scaffold_box(ax, x0, x1, y_mid, height, scaffold_name, locus_tag="Proto-Hb", locus_fc="#ab47bc", locus_ec="#4a148c", locus_text=""):
+    def draw_scaffold_box(ax, x0, x1, y_mid, height, scaffold_name, locus_tag="Proto-Hb", locus_fc="#ab47bc", locus_ec="#4a148c"):
         """Draw unanchored scaffold fragment (dashed border, no centromere/telomeres)."""
         width = x1 - x0
-        box_w = 0.58 * width
+        box_w = 0.35 * width
         scaff_patch = FancyBboxPatch((x0, y_mid - height/2.0), box_w, height,
                                      boxstyle="round,pad=0.005,rounding_size=0.02",
                                      fc="#fcfdfe", ec="#90a4ae", lw=1.2, linestyle="--", zorder=2)
@@ -726,16 +754,13 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
         ax.text(x0 - 0.012, y_mid, scaffold_name, fontsize=7.8, fontweight='bold', ha='right', va='center',
                 color='#455a64', bbox=dict(boxstyle="round,pad=0.2", fc="#eceff1", ec="#90a4ae", lw=0.8, linestyle="--"), zorder=5)
         
-        # Locus block inside scaffold
-        loc_x = x0 + 0.025 * width
-        loc_w = 0.045 if locus_tag == "α" else 0.075
+        # Locus block inside scaffold (centered)
+        loc_w = 0.048 if locus_tag == "α" else 0.088
+        loc_x = x0 + (box_w - loc_w) / 2.0
         ax.add_patch(FancyBboxPatch((loc_x, y_mid - height*0.38), loc_w, height*0.76,
                                     boxstyle="round,pad=0.005,rounding_size=0.02",
                                     fc=locus_fc, ec=locus_ec, lw=1.1, zorder=6))
-        ax.text(loc_x + loc_w/2.0, y_mid, locus_tag, fontsize=7.8, fontweight='bold', ha='center', va='center', color='white', zorder=7)
-        
-        # Text annotation
-        ax.text(loc_x + loc_w + 0.015, y_mid, locus_text, fontsize=7.0, va='center', ha='left', color=locus_ec, fontweight='bold', zorder=7)
+        ax.text(loc_x + loc_w/2.0, y_mid, locus_tag, fontsize=8.0, fontweight='bold', ha='center', va='center', color='white', zorder=7)
 
     for i, t in enumerate(REPRESENTATIVE_TAXA):
         y = y_positions[i]
@@ -750,38 +775,28 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
             a_rel = np.clip(t['alpha_pos'], 0.01, 0.94)
             a_x = X_START + a_rel * X_SPAN
             # Linked α-β block
-            ax_syn.add_patch(FancyBboxPatch((a_x, y_a - 0.055), 0.035, 0.11,
+            ax_syn.add_patch(FancyBboxPatch((a_x, y_a - 0.055), 0.042, 0.11,
                                             boxstyle="round,pad=0.005,rounding_size=0.02",
                                             fc="#1e88e5", ec="#0d47a1", lw=1.1, zorder=6))
-            ax_syn.add_patch(FancyBboxPatch((a_x + 0.035, y_a - 0.055), 0.035, 0.11,
+            ax_syn.add_patch(FancyBboxPatch((a_x + 0.042, y_a - 0.055), 0.042, 0.11,
                                             boxstyle="round,pad=0.005,rounding_size=0.02",
                                             fc="#43a047", ec="#1b5e20", lw=1.1, zorder=6))
-            ax_syn.text(a_x + 0.0175, y_a, "α", fontsize=7.5, fontweight='bold', ha='center', va='center', color='white', zorder=7)
-            ax_syn.text(a_x + 0.0525, y_a, "β", fontsize=7.5, fontweight='bold', ha='center', va='center', color='white', zorder=7)
-            # Label
-            if a_rel >= 0.50:
-                ax_syn.text(a_x - 0.012, y_a, f"{t['alpha_anchors']} {t['alpha_mb']}", fontsize=7.2, va='center', ha='right', color="#0d47a1", zorder=7)
-            else:
-                ax_syn.text(a_x + 0.078, y_a, f"{t['alpha_anchors']} {t['alpha_mb']}", fontsize=7.2, va='center', ha='left', color="#0d47a1", zorder=7)
+            ax_syn.text(a_x + 0.021, y_a, "α", fontsize=7.8, fontweight='bold', ha='center', va='center', color='white', zorder=7)
+            ax_syn.text(a_x + 0.063, y_a, "β", fontsize=7.8, fontweight='bold', ha='center', va='center', color='white', zorder=7)
 
             # Ribbon 2: Locus B (LB)
             draw_chromosome_ribbon(ax_syn, X_START, X_END, y_b, height=0.15, chr_name=t['beta_chr'], cen_rel=t.get('beta_cen', 0.35))
             b_rel = np.clip(t['beta_pos'], 0.01, 0.94)
             b_x = X_START + b_rel * X_SPAN
             # Linked α-β block
-            ax_syn.add_patch(FancyBboxPatch((b_x, y_b - 0.055), 0.035, 0.11,
+            ax_syn.add_patch(FancyBboxPatch((b_x, y_b - 0.055), 0.042, 0.11,
                                             boxstyle="round,pad=0.005,rounding_size=0.02",
                                             fc="#1e88e5", ec="#0d47a1", lw=1.1, zorder=6))
-            ax_syn.add_patch(FancyBboxPatch((b_x + 0.035, y_b - 0.055), 0.035, 0.11,
+            ax_syn.add_patch(FancyBboxPatch((b_x + 0.042, y_b - 0.055), 0.042, 0.11,
                                             boxstyle="round,pad=0.005,rounding_size=0.02",
                                             fc="#43a047", ec="#1b5e20", lw=1.1, zorder=6))
-            ax_syn.text(b_x + 0.0175, y_b, "α", fontsize=7.5, fontweight='bold', ha='center', va='center', color='white', zorder=7)
-            ax_syn.text(b_x + 0.0525, y_b, "β", fontsize=7.5, fontweight='bold', ha='center', va='center', color='white', zorder=7)
-            # Label
-            if b_rel >= 0.50:
-                ax_syn.text(b_x - 0.012, y_b, f"{t['beta_anchors']} {t['beta_mb']}", fontsize=7.2, va='center', ha='right', color="#1b5e20", zorder=7)
-            else:
-                ax_syn.text(b_x + 0.078, y_b, f"{t['beta_anchors']} {t['beta_mb']}", fontsize=7.2, va='center', ha='left', color="#1b5e20", zorder=7)
+            ax_syn.text(b_x + 0.021, y_b, "α", fontsize=7.8, fontweight='bold', ha='center', va='center', color='white', zorder=7)
+            ax_syn.text(b_x + 0.063, y_b, "β", fontsize=7.8, fontweight='bold', ha='center', va='center', color='white', zorder=7)
 
         # CASE 2: Bichromosomal Amniotes (Top = α, Bottom = β)
         elif t['is_bichromosomal']:
@@ -793,41 +808,26 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
                 # Sperm Whale α on unanchored scaffold
                 draw_scaffold_box(ax_syn, X_START, X_END, y_alpha, height=0.15,
                                   scaffold_name=t['alpha_scaffold'], locus_tag="α",
-                                  locus_fc="#1e88e5", locus_ec="#0d47a1",
-                                  locus_text=f"{t['alpha_anchors']} [{t.get('alpha_scaffold_len', '25 kb')}]")
+                                  locus_fc="#1e88e5", locus_ec="#0d47a1")
             else:
                 draw_chromosome_ribbon(ax_syn, X_START, X_END, y_alpha, height=0.15,
                                        chr_name=t['alpha_chr'], cen_rel=t.get('alpha_cen', 0.40))
                 a_rel = np.clip(t['alpha_pos'], 0.01, 0.94)
                 a_x = X_START + a_rel * X_SPAN
-                ax_syn.add_patch(FancyBboxPatch((a_x, y_alpha - 0.055), 0.045, 0.11,
+                ax_syn.add_patch(FancyBboxPatch((a_x, y_alpha - 0.055), 0.048, 0.11,
                                                 boxstyle="round,pad=0.005,rounding_size=0.02",
                                                 fc="#1e88e5", ec="#0d47a1", lw=1.2, zorder=6))
-                ax_syn.text(a_x + 0.0225, y_alpha, "α", fontsize=8.0, fontweight='bold', ha='center', va='center', color='white', zorder=7)
-                # Text label
-                if a_rel >= 0.50:
-                    ax_syn.text(a_x - 0.012, y_alpha, f"{t['alpha_anchors']} {t.get('alpha_mb', '')}",
-                                fontsize=7.2, va='center', ha='right', color="#0d47a1", zorder=7)
-                else:
-                    ax_syn.text(a_x + 0.052, y_alpha, f"{t['alpha_anchors']} {t.get('alpha_mb', '')}",
-                                fontsize=7.2, va='center', ha='left', color="#0d47a1", zorder=7)
+                ax_syn.text(a_x + 0.024, y_alpha, "α", fontsize=8.2, fontweight='bold', ha='center', va='center', color='white', zorder=7)
             
             # Bottom Track: Beta (Standard green for all species including squamates)
             draw_chromosome_ribbon(ax_syn, X_START, X_END, y_beta, height=0.15,
                                    chr_name=t['beta_chr'], cen_rel=t.get('beta_cen', 0.40))
             b_rel = np.clip(t['beta_pos'], 0.01, 0.94)
             b_x = X_START + b_rel * X_SPAN
-            ax_syn.add_patch(FancyBboxPatch((b_x, y_beta - 0.055), 0.045, 0.11,
+            ax_syn.add_patch(FancyBboxPatch((b_x, y_beta - 0.055), 0.048, 0.11,
                                             boxstyle="round,pad=0.005,rounding_size=0.02",
                                             fc="#43a047", ec="#1b5e20", lw=1.2, zorder=6))
-            ax_syn.text(b_x + 0.0225, y_beta, "β", fontsize=8.0, fontweight='bold', ha='center', va='center', color='white', zorder=7)
-            # Text label
-            if b_rel >= 0.50:
-                ax_syn.text(b_x - 0.012, y_beta, f"{t['beta_anchors']} {t.get('beta_mb', '')}",
-                            fontsize=7.2, va='center', ha='right', color="#1b5e20", zorder=7)
-            else:
-                ax_syn.text(b_x + 0.052, y_beta, f"{t['beta_anchors']} {t.get('beta_mb', '')}",
-                            fontsize=7.2, va='center', ha='left', color="#1b5e20", zorder=7)
+            ax_syn.text(b_x + 0.024, y_beta, "β", fontsize=8.2, fontweight='bold', ha='center', va='center', color='white', zorder=7)
             
         # CASE 3: Monochromosomal / Linked / Proto
         else:
@@ -835,8 +835,7 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
                 # Sea Lamprey unplaced scaffold
                 draw_scaffold_box(ax_syn, X_START, X_END, y, height=0.22,
                                   scaffold_name=t['scaffold_label'], locus_tag="Proto-Hb",
-                                  locus_fc="#ab47bc", locus_ec="#4a148c",
-                                  locus_text=f"{t['anchors']} [{t.get('scaffold_len', '238 kb')}]")
+                                  locus_fc="#ab47bc", locus_ec="#4a148c")
             else:
                 # Bona fide chromosome with linked α-β cluster
                 draw_chromosome_ribbon(ax_syn, X_START, X_END, y, height=0.22,
@@ -845,20 +844,14 @@ def plot_figure4_publication(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
                 x_pos = X_START + pos_rel * X_SPAN
                 
                 # Tandem linked α-β block
-                ax_syn.add_patch(FancyBboxPatch((x_pos, y - 0.08), 0.040, 0.16,
+                ax_syn.add_patch(FancyBboxPatch((x_pos, y - 0.08), 0.044, 0.16,
                                                 boxstyle="round,pad=0.005,rounding_size=0.02",
                                                 fc="#1e88e5", ec="#0d47a1", lw=1.2, zorder=6))
-                ax_syn.add_patch(FancyBboxPatch((x_pos + 0.040, y - 0.08), 0.040, 0.16,
+                ax_syn.add_patch(FancyBboxPatch((x_pos + 0.044, y - 0.08), 0.044, 0.16,
                                                 boxstyle="round,pad=0.005,rounding_size=0.02",
                                                 fc="#43a047", ec="#1b5e20", lw=1.2, zorder=6))
-                ax_syn.text(x_pos + 0.020, y, "α", fontsize=8.0, fontweight='bold', ha='center', va='center', color='white', zorder=7)
-                ax_syn.text(x_pos + 0.060, y, "β", fontsize=8.0, fontweight='bold', ha='center', va='center', color='white', zorder=7)
-                
-                # Smart label placement avoiding centromere
-                if t['species'] == 'scyliorhinus_canicula' or pos_rel < 0.50:
-                    ax_syn.text(x_pos + 0.088, y, f"{t['anchors']} {t['mb_range']}", fontsize=7.5, va='center', ha='left', color="#1565c0", zorder=7)
-                else:
-                    ax_syn.text(x_pos - 0.012, y, f"{t['anchors']} {t['mb_range']}", fontsize=7.5, va='center', ha='right', color="#1565c0", zorder=7)
+                ax_syn.text(x_pos + 0.022, y, "α", fontsize=8.2, fontweight='bold', ha='center', va='center', color='white', zorder=7)
+                ax_syn.text(x_pos + 0.066, y, "β", fontsize=8.2, fontweight='bold', ha='center', va='center', color='white', zorder=7)
 
     ax_syn.set_yticks([])
     ax_syn.spines['top'].set_visible(False)
@@ -1098,10 +1091,8 @@ def plot_figure4_interactive(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
             a_pos = 0.12 + np.clip(t['alpha_pos'], 0.01, 0.94) * 0.86
             fig.add_trace(go.Scatter(
                 x=[a_pos], y=[y_a],
-                mode='markers+text',
+                mode='markers',
                 marker=dict(size=12, color='#1e88e5', symbol='square', line=dict(color='#0d47a1', width=1)),
-                text=[f"  {t['alpha_chr']} {t['alpha_mb']}"],
-                textposition="middle right",
                 hovertext=f"<b>Locus A (LA)</b><br>Chr: {t['alpha_chr']}<br>Pos: {t['alpha_mb']}<br>Anchors: {t['alpha_anchors']}",
                 hoverinfo='text',
                 showlegend=False
@@ -1119,10 +1110,8 @@ def plot_figure4_interactive(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
             b_pos = 0.12 + np.clip(t['beta_pos'], 0.01, 0.94) * 0.86
             fig.add_trace(go.Scatter(
                 x=[b_pos], y=[y_b],
-                mode='markers+text',
+                mode='markers',
                 marker=dict(size=12, color='#43a047', symbol='square', line=dict(color='#1b5e20', width=1)),
-                text=[f"  {t['beta_chr']} {t['beta_mb']}"],
-                textposition="middle right",
                 hovertext=f"<b>Locus B (LB)</b><br>Chr: {t['beta_chr']}<br>Pos: {t['beta_mb']}<br>Anchors: {t['beta_anchors']}",
                 hoverinfo='text',
                 showlegend=False
@@ -1143,10 +1132,8 @@ def plot_figure4_interactive(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
                 ), row=1, col=2)
                 fig.add_trace(go.Scatter(
                     x=[0.16], y=[y_a],
-                    mode='markers+text',
+                    mode='markers',
                     marker=dict(size=12, color='#1e88e5', symbol='square', line=dict(color='#0d47a1', width=1)),
-                    text=[f"  {t['alpha_scaffold']} [Unanchored Scaffold]"],
-                    textposition="middle right",
                     hovertext=f"<b>α-Globin (Unanchored Scaffold)</b><br>Scaffold: {t['alpha_scaffold']}<br>Anchors: {t['alpha_anchors']}",
                     hoverinfo='text',
                     showlegend=False
@@ -1162,10 +1149,8 @@ def plot_figure4_interactive(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
                 a_pos = 0.12 + np.clip(t['alpha_pos'], 0.01, 0.94) * 0.86
                 fig.add_trace(go.Scatter(
                     x=[a_pos], y=[y_a],
-                    mode='markers+text',
+                    mode='markers',
                     marker=dict(size=12, color='#1e88e5', symbol='square', line=dict(color='#0d47a1', width=1)),
-                    text=[f"  α: {t['alpha_chr']} {t.get('alpha_mb', '')}"],
-                    textposition="middle right",
                     hovertext=f"<b>α-Globin</b><br>Chr: {t['alpha_chr']}<br>Pos: {t.get('alpha_mb', '')}<br>Anchors: {t['alpha_anchors']}",
                     hoverinfo='text',
                     showlegend=False
@@ -1182,10 +1167,8 @@ def plot_figure4_interactive(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
             b_pos = 0.12 + np.clip(t['beta_pos'], 0.01, 0.94) * 0.86
             fig.add_trace(go.Scatter(
                 x=[b_pos], y=[y_b],
-                mode='markers+text',
+                mode='markers',
                 marker=dict(size=12, color='#43a047', symbol='square', line=dict(color='#1b5e20', width=1)),
-                text=[f"  β: {t['beta_chr']} {t.get('beta_mb', '')}"],
-                textposition="middle right",
                 hovertext=f"<b>β-Globin</b><br>Chr: {t['beta_chr']}<br>Pos: {t.get('beta_mb', '')}<br>Anchors: {t['beta_anchors']}",
                 hoverinfo='text',
                 showlegend=False
@@ -1203,10 +1186,8 @@ def plot_figure4_interactive(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
                 ), row=1, col=2)
                 fig.add_trace(go.Scatter(
                     x=[0.16], y=[y],
-                    mode='markers+text',
+                    mode='markers',
                     marker=dict(size=14, color='#ab47bc', symbol='diamond', line=dict(color='#4a148c', width=1)),
-                    text=[f"  {t['scaffold_label']} [Unplaced Scaffold]"],
-                    textposition="middle right",
                     hovertext=f"<b>Proto-Globin</b><br>Scaffold: {t['scaffold_label']}<br>Span: {t.get('scaffold_len', '')}",
                     hoverinfo='text',
                     showlegend=False
@@ -1222,10 +1203,8 @@ def plot_figure4_interactive(df_loc, df_sp, df_nodes, df_codons, out_dir=RESULTS
                 p_pos = 0.12 + np.clip(t['pos'], 0.01, 0.92) * 0.86
                 fig.add_trace(go.Scatter(
                     x=[p_pos], y=[y],
-                    mode='markers+text',
+                    mode='markers',
                     marker=dict(size=14, color='#1e88e5', symbol='square', line=dict(color='#0d47a1', width=1)),
-                    text=[f"  Linked α-β: {t['chr_label']} {t['mb_range']}"],
-                    textposition="middle right",
                     hovertext=f"<b>Linked α-β Cluster</b><br>Chr: {t['chr_label']}<br>Pos: {t['mb_range']}<br>Anchors: {t['anchors']}",
                     hoverinfo='text',
                     showlegend=False
