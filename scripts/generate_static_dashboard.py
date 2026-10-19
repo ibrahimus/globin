@@ -714,14 +714,13 @@ def main():
                     <button class="btn" onclick="setMetaView('fig3')">Fig 3: Phylogenetic Synteny &amp; Codon Map</button>
                 </div>
             </div>
-            <!-- Subpanel Navigator for Figure 0 -->
+            <!-- Subpanel Navigator for Overview Figures -->
             <div id="fig0-subpanel-bar" style="display: none; align-items: center; gap: 0.35rem; padding: 0.35rem 0.6rem; background: #0f172a; border: 1px solid #334155; border-radius: 6px; margin-bottom: 0.45rem; flex-wrap: wrap;">
-                <span style="font-size: 0.75rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 0.25rem;">Fig 0 Panels:</span>
-                <button class="btn btn-sm active" id="subbtn-fig0" onclick="setMetaView('fig0')">Master (4-Panel)</button>
-                <button class="btn btn-sm" id="subbtn-fig0a" onclick="setMetaView('fig0a')">0A: Human Paradigm</button>
-                <button class="btn btn-sm" id="subbtn-fig0b" onclick="setMetaView('fig0b')">0B: Synteny Pipeline</button>
-                <button class="btn btn-sm" id="subbtn-fig0c" onclick="setMetaView('fig0c')">0C: Metrics &amp; GC3 Zoom</button>
-                <button class="btn btn-sm" id="subbtn-fig0d" onclick="setMetaView('fig0d')">0D: Dashboard Guide</button>
+                <span style="font-size: 0.75rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 0.25rem;">Overview Figures:</span>
+                <button class="btn btn-sm active" id="subbtn-fig0" onclick="setMetaView('fig0')">Fig 0: Dashboard Guide</button>
+                <button class="btn btn-sm" id="subbtn-fig0a" onclick="setMetaView('fig0a')">Fig 0A: Human Paradigm</button>
+                <button class="btn btn-sm" id="subbtn-fig0b" onclick="setMetaView('fig0b')">Fig 0B: Synteny Pipeline</button>
+                <button class="btn btn-sm" id="subbtn-fig0c" onclick="setMetaView('fig0c')">Fig 0C: Metrics &amp; Codon Dynamics</button>
                 <a href="overview_guide.html" target="_blank" class="btn btn-sm" style="margin-left: auto; background: rgba(56, 189, 248, 0.18); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); text-decoration: none; font-weight: 600;">Interactive Slide Navigator ↗</a>
             </div>
             <div class="img-container" onclick="openLightbox(this)">
@@ -1376,9 +1375,9 @@ def main():
 
             const img = document.getElementById('meta-img');
             let figName = 'Fig 1A: Curated Macroevolutionary Locus Divergence Across Key Clades & Extrema';
-            if (figType === 'fig0' || figType === 'overview') {{
-                img.src = 'summary_figure0_overview_and_methodology.png';
-                figName = 'Figure 0: Conceptual Paradigm, Syntenic Discovery Pipeline, Metric Anatomy & Interactive Dashboard User Guide';
+            if (figType === 'fig0' || figType === 'overview' || figType === 'fig0d') {{
+                img.src = 'summary_figure0_dashboard_guide.png';
+                figName = 'Figure 0: Interactive Dashboard Architecture & Analytical User Guide';
             }} else if (figType === 'fig0a') {{
                 img.src = 'summary_figure0a_human_paradigm.png';
                 figName = 'Figure 0A: The Human Globin Paradigm & Evolutionary Inquiry';
@@ -1387,10 +1386,7 @@ def main():
                 figName = 'Figure 0B: Synteny-Anchored Locus Retrieval Pipeline & 4 Archetypes';
             }} else if (figType === 'fig0c') {{
                 img.src = 'summary_figure0c_metric_anatomy_and_gc3.png';
-                figName = 'Figure 0C: Anatomy of Genomic Metrics, Biophysics & Synonymous GC3 Codon Shift (His-F8 Motif)';
-            }} else if (figType === 'fig0d') {{
-                img.src = 'summary_figure0d_dashboard_guide.png';
-                figName = 'Figure 0D: Interactive Dashboard Architecture & Analytical User Guide';
+                figName = 'Figure 0C: Anatomy of Calculated Metrics: Gene Architecture & Codon Dynamics';
             }} else if (figType === 'fig1a' || figType === 'fig1') {{
                 img.src = 'summary_figure1a_locus_divergence_summary.png';
                 figName = 'Fig 1A: Curated Macroevolutionary Locus Divergence Across Key Clades & Extrema';

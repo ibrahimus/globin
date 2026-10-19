@@ -334,7 +334,6 @@
             display: block;
         }
 
-        /* When in continuous scroll mode */
         body.mode-continuous .panel-section {
             display: block !important;
             animation: none;
@@ -499,9 +498,7 @@
             color: #ffffff;
         }
 
-        /* ========================================================= */
-        /* INTERACTIVE CODON & GC3 DEEP DIVE TOOL                    */
-        /* ========================================================= */
+        /* INTERACTIVE TOOL STYLING */
         .interactive-tool-box {
             background: linear-gradient(180deg, #131d31, #0f172a);
             border: 1px solid rgba(56, 189, 248, 0.35);
@@ -567,7 +564,6 @@
             border-color: var(--primary-light);
         }
 
-        /* STATS SUMMARY BAR */
         .stats-summary-bar {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -603,7 +599,6 @@
             margin-top: 0.1rem;
         }
 
-        /* CODON COMPARISON TRACKS */
         .codon-tracks-wrapper {
             background: #090d16;
             border: 1px solid var(--border);
@@ -660,7 +655,6 @@
         .track-meta-col.human .track-meta-gc3 { color: var(--primary-light); }
         .track-meta-col.xenopus .track-meta-gc3 { color: var(--accent-gc-light); }
 
-        /* CODON CELL CARD */
         .codon-col-header {
             text-align: center;
             padding-bottom: 0.35rem;
@@ -747,7 +741,6 @@
             font-weight: 900;
         }
 
-        /* CONNECTOR ROW */
         .shift-connector {
             text-align: center;
             padding: 0.35rem 0;
@@ -778,7 +771,6 @@
             font-weight: normal;
         }
 
-        /* INSPECTOR DETAILS CARD */
         .codon-inspector-box {
             background: var(--surface-card);
             border: 1px solid var(--border);
@@ -908,7 +900,6 @@
             background: white;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 1024px) {
             .sidebar {
                 position: relative;
@@ -954,10 +945,10 @@
         <ul class="nav-list" id="sidebar-nav-list">
             <li>
                 <button class="nav-item-btn active" onclick="goToSlide(0)">
-                    <span class="nav-badge">Master</span>
+                    <span class="nav-badge">Fig 0</span>
                     <div class="nav-title-box">
-                        <span class="nav-main-title">Figure 0: Master Overview</span>
-                        <span class="nav-sub-desc">Unified 4-Panel Synthesis Poster</span>
+                        <span class="nav-main-title">Dashboard Architecture</span>
+                        <span class="nav-sub-desc">Analytical User Guide &amp; Modules</span>
                     </div>
                 </button>
             </li>
@@ -966,7 +957,7 @@
                     <span class="nav-badge">Fig 0A</span>
                     <div class="nav-title-box">
                         <span class="nav-main-title">Human Globin Paradigm</span>
-                        <span class="nav-sub-desc">Chr 16p vs 11p &amp; Inquiry</span>
+                        <span class="nav-sub-desc">Chr 16p vs 11p &amp; Inquiries</span>
                     </div>
                 </button>
             </li>
@@ -975,7 +966,7 @@
                     <span class="nav-badge">Fig 0B</span>
                     <div class="nav-title-box">
                         <span class="nav-main-title">Syntenic Discovery Pipeline</span>
-                        <span class="nav-sub-desc">Flank Mining &amp; 4 Archetypes</span>
+                        <span class="nav-sub-desc">HMMER Scans &amp; 4 Archetypes</span>
                     </div>
                 </button>
             </li>
@@ -983,22 +974,13 @@
                 <button class="nav-item-btn" onclick="goToSlide(3)">
                     <span class="nav-badge">Fig 0C</span>
                     <div class="nav-title-box">
-                        <span class="nav-main-title">Metric Anatomy &amp; GC3 Zoom</span>
-                        <span class="nav-sub-desc">Purifying Selection &amp; Codon Drift</span>
+                        <span class="nav-main-title">Metrics &amp; Codon Dynamics</span>
+                        <span class="nav-sub-desc">Splicing Ranges &amp; Purifying Corridor</span>
                     </div>
                 </button>
             </li>
             <li>
                 <button class="nav-item-btn" onclick="goToSlide(4)">
-                    <span class="nav-badge">Fig 0D</span>
-                    <div class="nav-title-box">
-                        <span class="nav-main-title">Interactive Dashboard Guide</span>
-                        <span class="nav-sub-desc">Modules, Controls &amp; Shortcuts</span>
-                    </div>
-                </button>
-            </li>
-            <li>
-                <button class="nav-item-btn" onclick="goToSlide(5)">
                     <span class="nav-badge" style="background: rgba(234, 179, 8, 0.2); color: #facc15; border-color: rgba(234, 179, 8, 0.4);">Tool</span>
                     <div class="nav-title-box">
                         <span class="nav-main-title">Interactive Codon Explorer</span>
@@ -1033,9 +1015,9 @@
         <!-- STEP SLIDE DECK CONTROLS -->
         <div class="step-controller" id="step-ctrl-bar">
             <div class="step-info">
-                <span id="step-indicator-text" style="color: var(--primary-light);">Slide 1 of 6</span>
+                <span id="step-indicator-text" style="color: var(--primary-light);">Slide 1 of 5</span>
                 <span style="color: var(--border-highlight);">•</span>
-                <span id="step-title-text" style="font-weight: 600; color: #cbd5e1;">Master Overview (Master Figure 0)</span>
+                <span id="step-title-text" style="font-weight: 600; color: #cbd5e1;">Figure 0: Interactive Dashboard Architecture &amp; Analytical User Guide</span>
             </div>
             <div class="step-btns">
                 <button class="btn-ctrl" id="btn-prev" onclick="changeSlide(-1)">
@@ -1050,48 +1032,46 @@
         </div>
 
         <!-- =================================================================== -->
-        <!-- SLIDE 0: MASTER FIGURE 0 SYNTHESIS                                 -->
+        <!-- SLIDE 0: FIGURE 0 - DASHBOARD USER GUIDE (FIRST FIGURE)            -->
         <!-- =================================================================== -->
         <section class="panel-section active-slide" id="slide-0">
             <div class="panel-header">
                 <div class="panel-header-left">
-                    <div class="panel-breadcrumb">Comprehensive Synthesis Poster</div>
-                    <h2 class="panel-title">Master Figure 0: Conceptual Paradigm, Syntenic Retrieval, Metric Anatomy &amp; Dashboard Architecture</h2>
-                    <p class="panel-desc">A unified high-resolution multi-panel poster synthesizing the four cornerstones of the project: the human paradigm, the synteny pipeline, biophysical metrics &amp; GC3 drift, and the interactive dashboard user guide.</p>
+                    <div class="panel-breadcrumb">Platform Architecture • User Manual</div>
+                    <h2 class="panel-title">Figure 0: Interactive Dashboard Architecture &amp; Analytical User Guide</h2>
+                    <p class="panel-desc">A visual guide to navigating the 5 analytical modules, interactive lightbox, combobox search filters, and publication export workflows in dashboard.html.</p>
                 </div>
                 <div class="panel-dl-group">
-                    <a href="summary_figure0_overview_and_methodology.png" download class="dl-btn">PNG (300 DPI)</a>
-                    <a href="summary_figure0_overview_and_methodology.pdf" download class="dl-btn pdf">Vector PDF</a>
+                    <a href="summary_figure0_dashboard_guide.png" download class="dl-btn">PNG (300 DPI)</a>
+                    <a href="summary_figure0_dashboard_guide.pdf" download class="dl-btn pdf">Vector PDF</a>
                 </div>
             </div>
 
-            <div class="img-display-box" onclick="openLightbox('summary_figure0_overview_and_methodology.png', 'Master Figure 0: Overview and Methodology')">
-                <img src="summary_figure0_overview_and_methodology.png" alt="Master Figure 0: Overview and Methodology">
+            <div class="img-display-box" onclick="openLightbox('summary_figure0_dashboard_guide.png', 'Figure 0: Interactive Dashboard Architecture & User Guide')">
+                <img src="summary_figure0_dashboard_guide.png" alt="Figure 0: Interactive Dashboard Guide">
                 <div class="img-overlay-bar">
-                    <span><b>Master Figure 0:</b> 4-Panel Unified Methodology Poster (300 DPI)</span>
+                    <span><b>Figure 0:</b> Interactive Dashboard Architecture, 5 Modules &amp; Workflow Manual</span>
                     <span style="color: var(--primary-light);">Click to Zoom Full Resolution ↗</span>
                 </div>
             </div>
 
             <div class="narrative-grid">
                 <div class="narrative-card">
-                    <h4>The Four Core Themes</h4>
+                    <h4>The 5 Core Exploratory Modules</h4>
                     <ul>
-                        <li><b>Panel A (Human Paradigm):</b> Highlights the chromosomal dichotomy between human α (16p subtelomeric heavy isochore, GC3 = 91%) and β (11p interstitial light isochore, GC3 = 66%).</li>
-                        <li><b>Panel B (Syntenic Pipeline):</b> Illustrates how 500 Myr conserved flanking genes (MPG-RHBDF1 and RRM1-STIM1) were used to systematically recover unannotated loci across 68 vertebrates.</li>
-                        <li><b>Panel C (Metric Anatomy):</b> Demonstrates how GC1/2 are locked in a purifying corridor while GC3 drifts under biased gene conversion, verified at the conserved Proximal Histidine (His-F8).</li>
-                        <li><b>Panel D (Dashboard Guide):</b> Maps the interactive modules, diagnostic distributions, and analytical workflows.</li>
+                        <li><b>Tab 1: Global Macroevolutionary Figures:</b> Macro-level synthesis spanning 500 Myr of vertebrate evolution (Figures 0, 0A, 0B, 0C, 1A, 1B, 2, and 3).</li>
+                        <li><b>Tab 2: 1-on-1 Head-to-Head Comparison:</b> Direct pairwise contrast between any two species with autocomplete comboboxes, generating synchronized linear chromosome tracks, bivariate insets, and diagnostic suites.</li>
+                        <li><b>Tab 3: Single Species Deep Dive:</b> Full architectural profile of any individual species in the 68-genome database with exact coordinates and centromere locations.</li>
+                        <li><b>Tabs 4 &amp; 5: Interval Database &amp; Statistical Contrasts:</b> Real-time filtering of 1,180 verified globin genes and non-parametric statistical hypothesis tests (Wilcoxon, Mann-Whitney U).</li>
                     </ul>
                 </div>
                 <div class="narrative-card">
-                    <h4>Quick Navigation</h4>
-                    <p>To view each subpanel in high magnification with dedicated text and live interactive tools, use the sidebar or click through the slides above:</p>
+                    <h4>Interactive Lightbox &amp; Keyboard Shortcuts</h4>
                     <ul>
-                        <li><a href="javascript:goToSlide(1)" style="color: var(--primary-light);">→ Step 1: Panel 0A (Human Paradigm &amp; Inquiry)</a></li>
-                        <li><a href="javascript:goToSlide(2)" style="color: var(--primary-light);">→ Step 2: Panel 0B (Syntenic Discovery Pipeline)</a></li>
-                        <li><a href="javascript:goToSlide(3)" style="color: var(--primary-light);">→ Step 3: Panel 0C (Metric Anatomy &amp; GC3 Codon Zoom)</a></li>
-                        <li><a href="javascript:goToSlide(4)" style="color: var(--primary-light);">→ Step 4: Panel 0D (Dashboard User Guide)</a></li>
-                        <li><a href="javascript:goToSlide(5)" style="color: var(--primary-light);">→ Step 5: Interactive His-F8 Codon Inspector</a></li>
+                        <li><b>Inspect Any Figure:</b> Click any plot or chromosome map in the dashboard to open the full-screen pan-and-zoom inspection lightbox.</li>
+                        <li><b>Smooth Zoom &amp; Pan:</b> Drag with mouse to pan; scroll wheel to zoom smoothly up to 5x.</li>
+                        <li><b>Diagnostic Shortcuts (1–6):</b> In 6-panel diagnostic plots, press keys <code>1</code> through <code>6</code> on your keyboard to instantly snap and focus on Panels A, B, C, D, E, or F.</li>
+                        <li><b>Reset &amp; Close:</b> Press <code>0</code> to fit the image to screen; press <code>Esc</code> to close the lightbox.</li>
                     </ul>
                 </div>
             </div>
@@ -1103,7 +1083,7 @@
         <section class="panel-section" id="slide-1">
             <div class="panel-header">
                 <div class="panel-header-left">
-                    <div class="panel-breadcrumb">Panel 0A • Foundational Inquiry</div>
+                    <div class="panel-breadcrumb">Foundational Inquiry • Locus Architecture</div>
                     <h2 class="panel-title">Figure 0A: The Human Globin Paradigm &amp; Evolutionary Inquiry</h2>
                     <p class="panel-desc">Investigating whether the extreme compositional and chromosomal polarity observed between human α- and β-globins represents a universal vertebrate trait or an evolutionary lineage-specific artifact.</p>
                 </div>
@@ -1116,26 +1096,25 @@
             <div class="img-display-box" onclick="openLightbox('summary_figure0a_human_paradigm.png', 'Figure 0A: The Human Globin Paradigm')">
                 <img src="summary_figure0a_human_paradigm.png" alt="Figure 0A: The Human Globin Paradigm">
                 <div class="img-overlay-bar">
-                    <span><b>Figure 0A:</b> Chromosomal Ideograms, Isochore Mapping &amp; 3 Core Hypotheses</span>
+                    <span><b>Figure 0A:</b> Chromosomal Ideograms, Isochore Mapping &amp; Macroevolutionary Inquiries</span>
                     <span style="color: var(--primary-light);">Click to Zoom Full Resolution ↗</span>
                 </div>
             </div>
 
             <div class="narrative-grid">
                 <div class="narrative-card">
-                    <h4>The Classical Human Textbook Model</h4>
+                    <h4>The Human Textbook Dichotomy</h4>
                     <p>In the human genome, the functional hemoglobin tetramer consists of two α-like and two β-like subunits. However, their genomic domiciles could not be more disparate:</p>
                     <ul>
-                        <li><b>Human α-Globin Cluster (Chr 16p13.3):</b> Resides merely ~160 kb from the chromosome terminus in an ultra-dense, early-replicating "heavy isochore" (H3 family, regional GC &gt; 52%). Third-codon positions ($GC_3$) reach an astonishing <b>91.1%</b> (Z = +2.86σ above genomic mean).</li>
-                        <li><b>Human β-Globin Cluster (Chr 11p15.4):</b> Resides ~5.2 Mb from the telomere in a gene-poor, late-replicating "light isochore" (L2 family, regional GC ~40%). Third-codon positions ($GC_3$) average <b>66.3%</b> (Z = +0.22σ).</li>
+                        <li><b>Human α-Globin Cluster (Chr 16p13.3):</b> Resides merely ~160 kb from the chromosome terminus in an ultra-dense, early-replicating heavy isochore (H3 family, regional GC &gt; 54%). Third-codon positions ($GC_3$) reach an astonishing <b>91.1%</b> (Z = +2.86σ above genomic mean).</li>
+                        <li><b>Human β-Globin Cluster (Chr 11p15.4):</b> Resides ~5.2 Mb from the telomere in a gene-poor, late-replicating light isochore (L1/L2 family, regional GC ~40%). Third-codon positions ($GC_3$) average <b>65.8%</b> (Z = +0.22σ).</li>
                     </ul>
                 </div>
                 <div class="narrative-card">
-                    <h4>Three Macroevolutionary Hypotheses Tested</h4>
+                    <h4>Core Evolutionary Inquiries Tested</h4>
                     <ul>
-                        <li><b>H1: Universal Biochemical Necessity?</b> Is high GC at α required for mRNA secondary structure or high translational efficiency in red blood cells? <i>(Rejected: Teleosts and amphibians thrive with identical α and β GC context).</i></li>
-                        <li><b>H2: Ancient Chromosomal Segregation?</b> Did the whole-genome duplications (2R-WGD) split α and β onto different chromosomes, creating permanent polarity? <i>(Rejected: Anamniote tetrapods and non-teleost fishes retain α and β physically linked on the same chromosome).</i></li>
-                        <li><b>H3: Isochore Dynamics &amp; Recombination (gBGC)?</b> Is compositional polarity an epiphenomenon of chromosomal geography, where subtelomeric proximity drives GC accumulation through recombination-associated biased gene conversion? <i>(Confirmed: Polarity follows telomeric proximity across clades).</i></li>
+                        <li><b>Inquiry 1 (Universal Polarity?):</b> Is this extreme GC disparity an invariant vertebrate feature, or a mammalian derived state? <i>(Result: Non-universal; teleosts, gar, and amphibians retain identical α and β composition).</i></li>
+                        <li><b>Inquiry 2 (Telomeric Distance Driver?):</b> Does physical distance to the telomere dictate locus GC content via GC-biased gene conversion (gBGC) across 500 Myr of vertebrate evolution? <i>(Result: Confirmed; telomeric proximity strongly predicts GC3 elevation across independent clades).</i></li>
                     </ul>
                 </div>
             </div>
@@ -1147,9 +1126,9 @@
         <section class="panel-section" id="slide-2">
             <div class="panel-header">
                 <div class="panel-header-left">
-                    <div class="panel-breadcrumb">Panel 0B • Methodological Innovation</div>
-                    <h2 class="panel-title">Figure 0B: Synteny-Anchored Retrieval Pipeline &amp; 4 Macroevolutionary Archetypes</h2>
-                    <p class="panel-desc">Overcoming extreme lineage-specific sequence divergence through multi-flank synteny mining, uncovering four major structural archetypes across 500 million years of jawed vertebrate evolution.</p>
+                    <div class="panel-breadcrumb">Methodology • Syntenic Orthology &amp; Archetypes</div>
+                    <h2 class="panel-title">Figure 0B: Synteny-Anchored Locus Retrieval Pipeline &amp; 4 Archetypes</h2>
+                    <p class="panel-desc">A 5-stage bioinformatic pipeline combining synteny flank anchoring, HMMER profile proteome scanning, and de novo exon-intron modeling across 68 jawed vertebrate genomes.</p>
                 </div>
                 <div class="panel-dl-group">
                     <a href="summary_figure0b_synteny_pipeline.png" download class="dl-btn">PNG (300 DPI)</a>
@@ -1160,42 +1139,43 @@
             <div class="img-display-box" onclick="openLightbox('summary_figure0b_synteny_pipeline.png', 'Figure 0B: Synteny Pipeline and Archetypes')">
                 <img src="summary_figure0b_synteny_pipeline.png" alt="Figure 0B: Synteny Pipeline and Archetypes">
                 <div class="img-overlay-bar">
-                    <span><b>Figure 0B:</b> Synteny Flank Anchoring Pipeline &amp; Four Chromosomal Archetypes</span>
+                    <span><b>Figure 0B:</b> 5-Stage Syntenic Retrieval Pipeline &amp; Four Chromosomal Archetypes</span>
                     <span style="color: var(--primary-light);">Click to Zoom Full Resolution ↗</span>
                 </div>
             </div>
 
             <div class="narrative-grid">
                 <div class="narrative-card">
-                    <h4>The Synteny Mining Pipeline</h4>
-                    <p>Standard homology searches (BLAST/HMMER) frequently miss divergent globin genes in non-mammalian lineages due to rapid pseudogenization and extreme nucleotide composition drift. Our pipeline establishes orthology through conserved genomic architecture:</p>
+                    <h4>The 5-Stage Retrieval Pipeline</h4>
                     <ul>
-                        <li><b>α-Flank Block:</b> Anchored by <code>MPG</code>, <code>RHBDF1</code>, <code>LUC7L</code>, and <code>NME4</code>. This syntenic gene arrangement has remained intact for &gt;450 million years from cartilaginous fishes to primates.</li>
-                        <li><b>β-Flank Block:</b> Anchored by <code>RRM1</code>, <code>STIM1</code>, <code>TRMT10A</code>, and <code>HBEGF</code>.</li>
-                        <li><b>De Novo CDS Extraction:</b> Recovers complete exon-intron structures directly from chromosomal assemblies, eliminating annotation artifacts.</li>
+                        <li><b>1. Syntenic Flank Search:</b> Query 68 assemblies for conserved flanking markers (α: <code>NPRL3</code>, <code>MPG</code>, <code>RHBDF1</code>, <code>LUC7L</code>; β: <code>OR51</code> cluster, <code>TRIM21</code>, <code>RRM1</code>, <code>STIM1</code>).</li>
+                        <li><b>2. HMMER &amp; TBLASTN Proteome Scan:</b> When annotations are missing or fragmented, scan translated scaffolds using globin Pfam profile HMMs (<code>PF00042</code>) via <code>hmmsearch</code> and cross-species seeded TBLASTN.</li>
+                        <li><b>3. De Novo Gene Modeling:</b> Extract canonical 3-exon / 2-intron globin coding sequences directly from genomic contigs using canonical splice junctions (<code>GT-AG</code>).</li>
+                        <li><b>4. Chromosome vs. Scaffold Anchoring:</b> Discriminate fully assembled chromosome arms from unplaced contigs to guarantee accurate telomeric distance calculations.</li>
+                        <li><b>5. Baseline Calibration:</b> Compute whole-genome coding baselines ($N = 15,000–35,000$ genes) to quantify isochore Z-score deviations ($\Delta GC_3$).</li>
                     </ul>
                 </div>
                 <div class="narrative-card">
                     <h4>Four Macroevolutionary Chromosomal Archetypes</h4>
                     <ul>
-                        <li><b>Archetype 1 (Ancestral Linked • Teleosts, Gar, Amphibians):</b> Both α- and β-globins reside in a single head-to-head linked locus on one chromosome arm. Because both gene families share the exact same chromosomal environment, their composition is identical ($\Delta GC_3 pprox 0\%$).</li>
-                        <li><b>Archetype 2 (Mammalian Classical Polarity):</b> Independent interchromosomal translocation moved α to a subtelomeric heavy isochore (16p) while β remained interstitial (11p), generating a strong positive bias ($\Delta GC_3 = +20\%$ to $+35\%$).</li>
-                        <li><b>Archetype 3 (Avian Microchromosomal Hyper-Compaction):</b> Both α and β were translocated to distinct microchromosomes. High recombination across both microchromosomes elevates both loci into extreme heavy GC territory ($GC_3 &gt; 80\%$).</li>
-                        <li><b>Archetype 4 (The Great Squamate Inversion):</b> Snakes and lizards completely invert the mammalian polarity! β is translocated to a subtelomeric microchromosome ($GC_3 &gt; 90\%$), while α resides interstitially, reversing polarity ($\Delta GC_3 = -25\%$).</li>
+                        <li><b>Archetype 1 (Linked Primordial):</b> In spotted gar and amphibians (<i>Xenopus</i>), α and β globins reside in a single head-to-head cluster on one chromosome arm. Sharing the exact same genomic environment, their composition is identical ($\Delta GC_3 pprox 0\%$).</li>
+                        <li><b>Archetype 2 (Mammalian Decoupled):</b> Translocation decoupled α and β. α was captured by a recombinogenic subtelomere (<1 Mb to telomere), driving elevated $lpha	ext{-}GC_3$ (>85–95%) while β remains interstitial ($\Delta GC_3 > 0\%$).</li>
+                        <li><b>Archetype 3 (Avian Dual Microchromosomal):</b> Both α and β clusters translocated to distinct microchromosomes. High crossover density drives synchronous hyper-elevation of both clusters ($lpha	ext{-}GC_3 > 85\%$, $eta	ext{-}GC_3 > 85\%$, $\Delta GC_3 pprox 0\%$).</li>
+                        <li><b>Archetype 4 (Squamate Inverted Polarity):</b> In lizards and snakes, β translocated to a microchromosome or subtelomere ($eta	ext{-}GC_3 > 90\%$), while α resides in an interstitial desert ($lpha	ext{-}GC_3 \sim 48	ext{–}55\%$), completely inverting polarity ($\Delta GC_3 < 0\%$).</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <!-- =================================================================== -->
-        <!-- SLIDE 3: FIGURE 0C - METRIC ANATOMY & GC3 CODON ZOOM               -->
+        <!-- SLIDE 3: FIGURE 0C - METRIC ANATOMY & CODON DYNAMICS               -->
         <!-- =================================================================== -->
         <section class="panel-section" id="slide-3">
             <div class="panel-header">
                 <div class="panel-header-left">
-                    <div class="panel-breadcrumb">Panel 0C • Biophysics &amp; Codon Architecture</div>
-                    <h2 class="panel-title">Figure 0C: Anatomy of Genomic Metrics, Biophysics &amp; Synonymous GC3 Drift</h2>
-                    <p class="panel-desc">Disentangling functional protein purifying selection from recombination-associated biased gene conversion (gBGC), featuring the invariant Proximal Histidine (His-F8) heme-iron coordination motif.</p>
+                    <div class="panel-breadcrumb">Biophysics • Splicing Ranges &amp; Codon Dynamics</div>
+                    <h2 class="panel-title">Figure 0C: Anatomy of Calculated Metrics: Gene Architecture &amp; Codon Dynamics</h2>
+                    <p class="panel-desc">Disentangling whole-gene versus CDS GC% calculation ranges, demonstrating splicing demarcation, and establishing the Purifying Selection Corridor (45–55%).</p>
                 </div>
                 <div class="panel-dl-group">
                     <a href="summary_figure0c_metric_anatomy_and_gc3.png" download class="dl-btn">PNG (300 DPI)</a>
@@ -1203,91 +1183,43 @@
                 </div>
             </div>
 
-            <div class="img-display-box" onclick="openLightbox('summary_figure0c_metric_anatomy_and_gc3.png', 'Figure 0C: Metric Anatomy and GC3 Zoom')">
-                <img src="summary_figure0c_metric_anatomy_and_gc3.png" alt="Figure 0C: Metric Anatomy and GC3 Zoom">
+            <div class="img-display-box" onclick="openLightbox('summary_figure0c_metric_anatomy_and_gc3.png', 'Figure 0C: Metric Anatomy and Codon Dynamics')">
+                <img src="summary_figure0c_metric_anatomy_and_gc3.png" alt="Figure 0C: Metric Anatomy and Codon Dynamics">
                 <div class="img-overlay-bar">
-                    <span><b>Figure 0C:</b> Gene Anatomy, Purifying Corridor (45–55%) &amp; Conserved His-F8 Codon Shift</span>
+                    <span><b>Figure 0C:</b> Splicing Demarcation, Purifying Corridor (45–55%) &amp; Conserved His-F8 Motif</span>
                     <span style="color: var(--primary-light);">Click to Zoom Full Resolution ↗</span>
                 </div>
             </div>
 
             <div class="narrative-grid">
                 <div class="narrative-card">
-                    <h4>The Purifying Selection Corridor (45%–55%)</h4>
-                    <p>Why do we measure GC3 rather than whole-gene GC or overall CDS GC?</p>
+                    <h4>Whole-Gene GC% vs. CDS GC% Ranges</h4>
                     <ul>
-                        <li><b>Positions 1 and 2 ($GC_1, GC_2$):</b> In the standard genetic code, mutations at codon positions 1 and 2 almost always alter the encoded amino acid. To maintain hemoglobin's intricate 3D structure and oxygen-binding kinetics, purifying selection constrains $GC_1$ and $GC_2$ strictly within <b>45% to 55%</b> across all 68 jawed vertebrate species.</li>
-                        <li><b>Position 3 ($GC_3$):</b> Because the genetic code is highly degenerate at position 3, mutations here are predominantly synonymous (silent). Position 3 is largely free from functional protein selection, acting as a direct barometer of neutral mutational pressure and <b>GC-biased gene conversion (gBGC)</b>.</li>
-                        <li><b>4-Fold Degenerate Sites ($GC_{4d}$):</b> Codons where all 4 nucleotides encode the exact same amino acid (Gly, Pro, Ala, Val, Thr). These sites exhibit 100% synonymous neutrality and mirror $GC_3$ perfectly ($R^2 &gt; 0.98$).</li>
+                        <li><b>Whole-Gene GC% Range:</b> Demarcates the entire unspliced genomic interval including Exons 1–3, Introns 1–2, and flanking UTRs (~0.84 kb in human α vs. ~1.61 kb in β). Measures regional chromatin GC and reflects isochore context.</li>
+                        <li><b>CDS GC% Splicing Range:</b> Formed by splicing out all introns and concatenating coding exons into a continuous 426–444 bp open reading frame. Excludes non-coding variation and serves as the direct input for codon decomposition.</li>
+                        <li><b>Bernardi's Compaction Law:</b> High-GC isochores suppress intron expansion (human α Intron 2 = 140 bp), whereas low-GC isochores permit massive intron expansion (human β Intron 2 = 850 bp).</li>
                     </ul>
                 </div>
                 <div class="narrative-card">
-                    <h4>The Bernardi Compaction Law</h4>
+                    <h4>The Purifying Selection Corridor (45%–55%)</h4>
                     <ul>
-                        <li><b>Intron &amp; Gene Length:</b> Heavy isochore genes (high GC3) undergo severe structural compaction. In human α-globin, total gene length is only <b>0.84 kb</b> (compact introns of 117 bp and 140 bp).</li>
-                        <li><b>Light Isochore Expansion:</b> Conversely, in light isochores (e.g. human β-globin), introns are expanded (total gene length <b>1.61 kb</b>, nearly double α). In amphibians and lungfish, globin gene spans expand to 15–50+ kb due to massive retrotransposon insertions in low-recombination regions.</li>
-                        <li><b>Live Interactive Tool:</b> Explore the live sequence zoom on <a href="javascript:goToSlide(5)" style="color: var(--primary-light); font-weight: 700;">Step 5 (Interactive Codon Explorer)</a> below!</li>
+                        <li><b>Positions 1 and 2 ($GC_1, GC_2$):</b> Strongly constrained by functional amino acid selection. Pinned inside the <b>Purifying Selection Corridor (45–55%)</b> across all 68 jawed vertebrates to preserve protein folding and oxygen affinity.</li>
+                        <li><b>Position 3 ($GC_3$):</b> Because the 3rd position is synonymous, it escapes protein-level purifying selection and acts as a neutral barometer of <b>GC-biased gene conversion (gBGC)</b>, ranging unconstrained from 35% to 98% across lineages.</li>
+                        <li><b>Explore Live Sequence Zoom:</b> Step into the <a href="javascript:goToSlide(4)" style="color: var(--primary-light); font-weight: 700;">Interactive Codon Explorer</a> on Slide 5 below to inspect the conserved Proximal Histidine (His-F8) motif!</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <!-- =================================================================== -->
-        <!-- SLIDE 4: FIGURE 0D - INTERACTIVE DASHBOARD USER GUIDE               -->
+        <!-- SLIDE 4: LIVE INTERACTIVE CODON & GC3 DEEP DIVE TOOL               -->
         <!-- =================================================================== -->
         <section class="panel-section" id="slide-4">
             <div class="panel-header">
                 <div class="panel-header-left">
-                    <div class="panel-breadcrumb">Panel 0D • Platform Architecture</div>
-                    <h2 class="panel-title">Figure 0D: Interactive Dashboard Architecture &amp; Analytical User Guide</h2>
-                    <p class="panel-desc">A visual guide to the 5 exploration modules, interactive diagnostic lightbox, combobox search filters, and publication export tools in the dashboard.</p>
-                </div>
-                <div class="panel-dl-group">
-                    <a href="summary_figure0d_dashboard_guide.png" download class="dl-btn">PNG (300 DPI)</a>
-                    <a href="summary_figure0d_dashboard_guide.pdf" download class="dl-btn pdf">Vector PDF</a>
-                </div>
-            </div>
-
-            <div class="img-display-box" onclick="openLightbox('summary_figure0d_dashboard_guide.png', 'Figure 0D: Interactive Dashboard Guide')">
-                <img src="summary_figure0d_dashboard_guide.png" alt="Figure 0D: Interactive Dashboard Guide">
-                <div class="img-overlay-bar">
-                    <span><b>Figure 0D:</b> Dashboard Architecture, 5 Modules &amp; Analytical Workflows</span>
-                    <span style="color: var(--primary-light);">Click to Zoom Full Resolution ↗</span>
-                </div>
-            </div>
-
-            <div class="narrative-grid">
-                <div class="narrative-card">
-                    <h4>The 5 Core Dashboard Tabs</h4>
-                    <ul>
-                        <li><b>Tab 1: Cross-Species Meta Explorer:</b> Toggle between global macroevolutionary synthesis figures (Fig 0 Master, Fig 0A–0D subpanels, Fig 1A Curated Summary, Fig 1B Complete 68 Species, Fig 2 Mechanistic Drivers, Fig 3 Phylogenetic Synteny).</li>
-                        <li><b>Tab 2: 1-on-1 Head-to-Head Comparison:</b> Select any two species (e.g. <i>Homo sapiens</i> vs. <i>Xenopus tropicalis</i>) with autocomplete comboboxes to generate synchronized side-by-side chromosome tracks, bivariate insets, and diagnostic distributions.</li>
-                        <li><b>Tab 3: Single Species Deep Dive:</b> Inspect individual chromosomal loci, centromere coordinates, and exact distances to telomeres.</li>
-                        <li><b>Tab 4: Interval Genes Database:</b> Searchable database of all 1,180 verified globin genes with real-time filtering by clade, gene family, and Z-score.</li>
-                        <li><b>Tab 5: Statistical Contrasts:</b> Quantitative non-parametric tests (Mann-Whitney U, Wilcoxon signed-rank) evaluating α vs. β divergence across clades.</li>
-                    </ul>
-                </div>
-                <div class="narrative-card">
-                    <h4>Diagnostic Lightbox &amp; Keyboard Shortcuts</h4>
-                    <ul>
-                        <li><b>Click to Inspect:</b> Click any plot or chromosome map in the dashboard to open the interactive high-resolution pan-and-zoom inspection lightbox.</li>
-                        <li><b>Pan &amp; Zoom:</b> Drag with mouse to pan; scroll wheel to zoom smoothly up to 5x.</li>
-                        <li><b>Diagnostic Shortcuts (1–6):</b> In 6-panel diagnostic plots, press keys <code>1</code> through <code>6</code> on your keyboard to instantly snap and focus on Panels A, B, C, D, E, or F.</li>
-                        <li><b>Reset &amp; Close:</b> Press <code>0</code> to fit the image to screen; press <code>Esc</code> to close the lightbox.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- =================================================================== -->
-        <!-- SLIDE 5: LIVE INTERACTIVE CODON & GC3 DEEP DIVE TOOL               -->
-        <!-- =================================================================== -->
-        <section class="panel-section" id="slide-5">
-            <div class="panel-header">
-                <div class="panel-header-left">
                     <div class="panel-breadcrumb">Interactive Discovery Tool • Live Codon Inspector</div>
                     <h2 class="panel-title">Conserved Globin Heme Pocket: Proximal Histidine (His-F8) Motif &amp; Synonymous Codon Shift</h2>
-                    <p class="panel-desc">Direct empirical proof of GC-biased gene conversion (gBGC): 100% amino acid sequence conservation across 350+ million years of evolution, yet 100% of divergent third-codon positions have shifted to G/C in human!</p>
+                    <p class="panel-desc">Direct empirical proof of GC-biased gene conversion (gBGC): 100% amino acid sequence conservation across 350+ million years of evolution, yet 100% of divergent third-codon positions have shifted to G/C in human.</p>
                 </div>
                 <div class="panel-dl-group">
                     <a href="dashboard.html" class="dl-btn" style="color: var(--primary-light); border-color: rgba(56, 189, 248, 0.4);">Open in Dashboard →</a>
@@ -1340,7 +1272,6 @@
                     <!-- Column Header / AA Badges -->
                     <div class="codon-grid" id="codon-grid-headers">
                         <div style="font-size: 0.72rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase;">Residue &amp; Motif</div>
-                        <!-- 10 AA items populated by JS -->
                     </div>
 
                     <!-- Human Track -->
@@ -1350,13 +1281,11 @@
                             <span class="track-meta-loc">Chr 16p13.3 (Subtelo)</span>
                             <span class="track-meta-gc3">Window GC3: 100%</span>
                         </div>
-                        <!-- 10 Human codon cards populated by JS -->
                     </div>
 
                     <!-- Shift Connector Row -->
                     <div class="codon-grid" id="codon-grid-connectors" style="margin: 0.35rem 0;">
                         <div style="text-align: center; font-size: 0.68rem; color: var(--text-dim); font-weight: 700;">Synonymous Shift</div>
-                        <!-- 10 connector badges populated by JS -->
                     </div>
 
                     <!-- Xenopus Track -->
@@ -1366,7 +1295,6 @@
                             <span class="track-meta-loc">Chr 1 (Interstitial)</span>
                             <span class="track-meta-gc3">Window GC3: 50%</span>
                         </div>
-                        <!-- 10 Xenopus codon cards populated by JS -->
                     </div>
                 </div>
 
@@ -1392,11 +1320,11 @@
             <div class="narrative-grid" style="margin-top: 1.5rem;">
                 <div class="narrative-card">
                     <h4>Why the Proximal Histidine (His-F8) is Decisive</h4>
-                    <p>The Proximal Histidine (coordinate 88 in this alignment, historically numbered residue 87 or 93 depending on the species-specific numbering convention, universally designated helix residue <b>F8</b>) is the single most critical amino acid in the entire hemoglobin protein:</p>
+                    <p>The Proximal Histidine (coordinate 88 in this alignment, universally designated helix residue <b>F8</b>) is the single most critical amino acid in the entire globin fold:</p>
                     <ul>
-                        <li><b>Direct Chemical Bond:</b> Its imidazole nitrogen forms the invariant coordination bond directly to the divalent heme iron atom ($	ext{Fe}^{2+}$).</li>
-                        <li><b>Zero Substitution Tolerance:</b> Any non-synonymous mutation here produces a non-functional or unstable globin (e.g., Hemoglobin M Saskatoon/Iwata), causing severe methemoglobinemia.</li>
-                        <li><b>The Silent Flip ($T 	o C$):</b> Despite 350+ million years of divergence since the amphibian-amniote ancestor, Xenopus uses <code>CAT</code> while Human uses <code>CAC</code>. Both translate to Histidine with 100% fidelity. But at position 3, the nucleotide shifted from ancestral pyrimidine <code>T</code> to derived <code>C</code>, directly reflecting the recombination-associated GC bias of the human 16p13.3 subtelomere!</li>
+                        <li><b>Direct Chemical Bond:</b> Its imidazole ring nitrogen forms the essential covalent coordination bond to the divalent heme iron atom ($	ext{Fe}^{2+}$).</li>
+                        <li><b>Zero Substitution Tolerance:</b> Any non-synonymous mutation here produces a non-functional or unstable globin, causing severe methemoglobinemia.</li>
+                        <li><b>The Silent Transition ($T 	o C$):</b> Despite 350+ million years of divergence since the amphibian-amniote ancestor, Xenopus uses <code>CAT</code> while Human uses <code>CAC</code>. Both translate to Histidine with 100% fidelity. But at position 3, the nucleotide shifted from ancestral <code>T</code> to derived <code>C</code>, directly reflecting the recombination-associated GC bias of the human 16p13.3 subtelomere.</li>
                     </ul>
                 </div>
                 <div class="narrative-card">
@@ -1408,7 +1336,7 @@
                         <li><b>Residue 90 (Arg):</b> Xenopus <code>AGA</code> $	o$ Human <code>CGG</code> (ends in <b>G</b>, $+gBGC$)</li>
                         <li><b>Residue 92 (Asp):</b> Xenopus <code>GAT</code> $	o$ Human <code>GAC</code> (ends in <b>C</b>, $+gBGC$)</li>
                         <li><b>Residue 93 (Pro):</b> Xenopus <code>CCA</code> $	o$ Human <code>CCG</code> (ends in <b>G</b>, $+gBGC$)</li>
-                        <li><b>Significance:</b> <b>5 out of 5 (100%)</b> of the divergent synonymous sites shifted toward G or C in the human lineage, providing undeniable empirical proof that GC3 divergence is driven by biased gene conversion at recombinogenic subtelomeres rather than adaptive protein selection.</li>
+                        <li><b>Significance:</b> <b>5 out of 5 (100%)</b> of the divergent synonymous sites shifted toward G or C in the human lineage, providing empirical confirmation that GC3 divergence is driven by biased gene conversion at recombinogenic subtelomeres rather than adaptive protein selection.</li>
                     </ul>
                 </div>
             </div>
@@ -1429,16 +1357,15 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        const totalSlides = 6;
+        const totalSlides = 5;
         let currentSlide = 0;
-        let viewMode = 'slide'; // 'slide' or 'scroll'
+        let viewMode = 'slide';
 
         const slideTitles = [
-            "Master Overview (Figure 0 Master Poster)",
+            "Figure 0: Interactive Dashboard Architecture & Analytical User Guide",
             "Figure 0A: The Human Globin Paradigm & Evolutionary Inquiry",
-            "Figure 0B: Synteny-Anchored Retrieval Pipeline & 4 Archetypes",
-            "Figure 0C: Anatomy of Genomic Metrics, Biophysics & Synonymous GC3 Drift",
-            "Figure 0D: Interactive Dashboard Architecture & User Guide",
+            "Figure 0B: Synteny-Anchored Locus Retrieval Pipeline & 4 Archetypes",
+            "Figure 0C: Anatomy of Calculated Metrics: Gene Architecture & Codon Dynamics",
             "Interactive Discovery Tool: Conserved His-F8 Codon Inspector"
         ];
 
@@ -1532,9 +1459,7 @@
             document.body.style.overflow = '';
         }
 
-        // =========================================================
-        // CODON INTERACTIVE TOOL DATA & RENDERING
-        // =========================================================
+        // CODON INTERACTIVE TOOL DATA
         const codonData = [
             {
                 aa: 'Leu', num: 84, single: 'L', class: 'Hydrophobic / Aliphatic',
@@ -1559,7 +1484,7 @@
             {
                 aa: 'His', num: 88, single: 'H', class: 'Essential Catalytic Axial Ligand (F8)',
                 human: 'CAC', xenopus: 'CAT', isF8: true,
-                role: 'INVARIANT PROXIMAL HISTIDINE (His-F8): Forms the vital covalent coordination bond with the heme iron atom (Fe²⁺). Absolutely required for reversible O₂ transport across all jawed vertebrates!'
+                role: 'INVARIANT PROXIMAL HISTIDINE (His-F8): Forms the vital covalent coordination bond with the heme iron atom (Fe²⁺). Absolutely required for reversible O₂ transport across all jawed vertebrates.'
             },
             {
                 aa: 'Ala', num: 89, single: 'A', class: 'Hydrophobic / Small',
@@ -1596,14 +1521,12 @@
             const connGrid = document.getElementById('codon-grid-connectors');
             const xenGrid = document.getElementById('codon-grid-xenopus');
 
-            // Clear previous items except the first column
             while (hGrid.children.length > 1) hGrid.removeChild(hGrid.lastChild);
             while (humanGrid.children.length > 1) humanGrid.removeChild(humanGrid.lastChild);
             while (connGrid.children.length > 1) connGrid.removeChild(connGrid.lastChild);
             while (xenGrid.children.length > 1) xenGrid.removeChild(xenGrid.lastChild);
 
             codonData.forEach((d, idx) => {
-                // Header (AA badge)
                 const hdrCol = document.createElement('div');
                 hdrCol.className = 'codon-col-header';
                 hdrCol.innerHTML = `
@@ -1612,7 +1535,6 @@
                 `;
                 hGrid.appendChild(hdrCol);
 
-                // Human Card
                 const hCard = document.createElement('div');
                 hCard.className = `codon-card ${idx === selectedCodonIndex ? 'selected' : ''}`;
                 hCard.onclick = () => selectCodon(idx);
@@ -1628,7 +1550,6 @@
                 `;
                 humanGrid.appendChild(hCard);
 
-                // Connector
                 const connCol = document.createElement('div');
                 connCol.className = 'shift-connector';
                 const hasShift = (d.xenopus[2] !== d.human[2]);
@@ -1639,7 +1560,6 @@
                 }
                 connGrid.appendChild(connCol);
 
-                // Xenopus Card
                 const xCard = document.createElement('div');
                 xCard.className = `codon-card ${idx === selectedCodonIndex ? 'selected' : ''}`;
                 xCard.onclick = () => selectCodon(idx);
@@ -1662,13 +1582,6 @@
 
         function selectCodon(idx) {
             selectedCodonIndex = idx;
-            document.querySelectorAll('.codon-card').forEach((card, i) => {
-                // There are 2 cards per index (Human and Xenopus)
-                const cardIdx = Math.floor(i / 2);
-                if (i % 10 === idx || Math.floor(i / 10) * 10 + idx === i) {
-                    // Match column
-                }
-            });
             renderCodonTool();
         }
 
@@ -1707,13 +1620,12 @@
             if (type === 'f8') {
                 selectCodon(4);
             } else if (type === 'shifts') {
-                selectCodon(1); // Ser-85 (first shift)
+                selectCodon(1);
             } else {
                 selectCodon(4);
             }
         }
 
-        // Initialize on load
         window.addEventListener('DOMContentLoaded', () => {
             renderCodonTool();
             goToSlide(0);
