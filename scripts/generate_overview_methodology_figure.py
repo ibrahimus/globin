@@ -316,22 +316,27 @@ def draw_panel_c(ax, standalone=True):
               title="1. Gene Architecture: Whole-Gene GC% vs. CDS GC% Splicing Demarcation",
               fc="#ffffff", ec="#cbd5e1", lw=1.2)
 
-    # Demarcation Line 1: Gene GC% Range (encompassing exons + introns + UTRs) - comfortably below divider (0.879)
+    # Demarcation Line 1: Whole-Gene GC% Range (Exons 1–3 + Introns 1–2, strictly EXCLUDING UTRs)
     y_g_dem = 0.852
-    ax.plot([0.16, 0.93], [y_g_dem, y_g_dem], color='#047857', lw=1.8, marker='|', markersize=8, zorder=6)
-    ax.text(0.545, y_g_dem + 0.012, "◀── Whole-Gene GC% Calculation Range (Exons 1–3 + Introns 1–2 + UTRs: ~0.84 kb in α vs ~1.61 kb in β) ──▶",
-            ha='center', fontsize=8.4, fontweight='bold', color='#047857')
+    ax.plot([0.220, 0.860], [y_g_dem, y_g_dem], color='#047857', lw=1.8, marker='|', markersize=8, zorder=6)
+    ax.text(0.540, y_g_dem + 0.012, "◀── Whole-Gene GC% Range: Exons 1–3 + Introns 1–2 (UTRs Excluded to Avoid Aberrant GC Skew: ~0.84 kb in α vs ~1.61 kb in β) ──▶",
+            ha='center', fontsize=8.2, fontweight='bold', color='#047857')
 
     # Genomic Track (Upper)
     y_gen = 0.812
     ax.text(0.035, y_gen, "Genomic DNA Locus:", fontsize=9.0, fontweight='bold', color='#0f172a', va='center')
-    ax.plot([0.16, 0.93], [y_gen, y_gen], color="#94a3b8", lw=2.5, zorder=2)
+    ax.plot([0.140, 0.940], [y_gen, y_gen], color="#94a3b8", lw=2.5, zorder=2)
     
-    # UTRs
-    ax.add_patch(FancyBboxPatch((0.160, y_gen - 0.015), 0.045, 0.030, boxstyle="square,pad=0", fc="#e2e8f0", ec="#64748b", lw=1, zorder=3))
-    ax.text(0.182, y_gen, "5' UTR", ha='center', va='center', fontsize=7.5, color='#475569')
-    ax.add_patch(FancyBboxPatch((0.885, y_gen - 0.015), 0.045, 0.030, boxstyle="square,pad=0", fc="#e2e8f0", ec="#64748b", lw=1, zorder=3))
-    ax.text(0.907, y_gen, "3' UTR", ha='center', va='center', fontsize=7.5, color='#475569')
+    # UTRs (Explicitly Excluded from Whole-Gene GC% to avoid strange GC/CpG skew)
+    ax.add_patch(FancyBboxPatch((0.145, y_gen - 0.016), 0.060, 0.032, boxstyle="square,pad=0",
+                               fc="#f1f5f9", ec="#94a3b8", lw=1.2, hatch="//", zorder=3))
+    ax.text(0.175, y_gen, "5' UTR", ha='center', va='center', fontsize=7.5, color='#475569', fontweight='bold', zorder=4)
+    ax.text(0.175, y_gen + 0.024, "Excluded", ha='center', fontsize=7.0, color='#dc2626', fontweight='bold', zorder=5)
+
+    ax.add_patch(FancyBboxPatch((0.875, y_gen - 0.016), 0.060, 0.032, boxstyle="square,pad=0",
+                               fc="#f1f5f9", ec="#94a3b8", lw=1.2, hatch="//", zorder=3))
+    ax.text(0.905, y_gen, "3' UTR", ha='center', va='center', fontsize=7.5, color='#475569', fontweight='bold', zorder=4)
+    ax.text(0.905, y_gen + 0.024, "Excluded", ha='center', fontsize=7.0, color='#dc2626', fontweight='bold', zorder=5)
 
     # Exons on Genomic Track
     exons_gen = [
