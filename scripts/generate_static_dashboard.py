@@ -434,6 +434,10 @@ def main():
         }}
         .btn:hover {{ background: #e2e8f0; color: #0f172a; }}
         .btn.active {{ background: var(--primary); color: white; border-color: var(--primary); }}
+        .btn-sm {{
+            padding: 0.2rem 0.5rem;
+            font-size: 0.76rem;
+        }}
 
         .img-container {{
             background: white;
@@ -684,7 +688,7 @@ def main():
             <p>Interactive Comparative Atlas, Synteny Tracker &amp; 1-on-1 Architectural Visualizer</p>
         </div>
         <div class="header-right" style="display: flex; align-items: center; gap: 0.65rem;">
-            <button class="btn" onclick="showTab('meta'); setMetaView('fig0');" style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-weight: 600; padding: 0.35rem 0.75rem; font-size: 0.82rem; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;">Overview &amp; Guide</button>
+            <a href="overview_guide.html" target="_blank" class="btn" style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-weight: 600; padding: 0.35rem 0.75rem; font-size: 0.82rem; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; transition: all 0.2s ease;">Overview &amp; Guide ↗</a>
             <span class="badge">68 Vertebrate Genomes • 120 Curated Loci • 1,530 Verified Gene Models • 10 Evolutionary Clades</span>
         </div>
     </header>
@@ -709,6 +713,16 @@ def main():
                     <button class="btn" onclick="setMetaView('fig2')">Fig 2: Mechanistic Drivers</button>
                     <button class="btn" onclick="setMetaView('fig3')">Fig 3: Phylogenetic Synteny &amp; Codon Map</button>
                 </div>
+            </div>
+            <!-- Subpanel Navigator for Figure 0 -->
+            <div id="fig0-subpanel-bar" style="display: none; align-items: center; gap: 0.35rem; padding: 0.35rem 0.6rem; background: #0f172a; border: 1px solid #334155; border-radius: 6px; margin-bottom: 0.45rem; flex-wrap: wrap;">
+                <span style="font-size: 0.75rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 0.25rem;">Fig 0 Panels:</span>
+                <button class="btn btn-sm active" id="subbtn-fig0" onclick="setMetaView('fig0')">Master (4-Panel)</button>
+                <button class="btn btn-sm" id="subbtn-fig0a" onclick="setMetaView('fig0a')">0A: Human Paradigm</button>
+                <button class="btn btn-sm" id="subbtn-fig0b" onclick="setMetaView('fig0b')">0B: Synteny Pipeline</button>
+                <button class="btn btn-sm" id="subbtn-fig0c" onclick="setMetaView('fig0c')">0C: Metrics &amp; GC3 Zoom</button>
+                <button class="btn btn-sm" id="subbtn-fig0d" onclick="setMetaView('fig0d')">0D: Dashboard Guide</button>
+                <a href="overview_guide.html" target="_blank" class="btn btn-sm" style="margin-left: auto; background: rgba(56, 189, 248, 0.18); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); text-decoration: none; font-weight: 600;">Interactive Slide Navigator ↗</a>
             </div>
             <div class="img-container" onclick="openLightbox(this)">
                 <img id="meta-img" src="summary_figure1a_locus_divergence_summary.png" alt="Fig 1A: Curated Macroevolutionary Locus Divergence Across Key Clades &amp; Extrema">
@@ -1333,23 +1347,63 @@ def main():
         }}
 
         function setMetaView(figType) {{
-            document.querySelectorAll('#meta-view-btns button').forEach(b => b.classList.remove('active'));
-            const clickedBtn = (window.event && window.event.target) ? window.event.target.closest('button') : null;
-            if (clickedBtn && clickedBtn.closest('#meta-view-btns')) {{
-                clickedBtn.classList.add('active');
-            }} else {{
-                document.querySelectorAll('#meta-view-btns button').forEach(btn => {{
-                    const oc = btn.getAttribute('onclick') || '';
-                    if (oc.indexOf(figType) !== -1) btn.classList.add('active');
+            const subBar = document.getElementById('fig0-subpanel-bar');
+            if (figType.startsWith('fig0') || figType === 'overview') {{
+                if (subBar) subBar.style.display = 'flex';
+                if (subBar) {{
+                    subBar.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+                    const activeSubBtn = document.getElementById('subbtn-' + figType) || document.getElementById('subbtn-fig0');
+                    if (activeSubBtn) activeSubBtn.classList.add('active');
+                }}
+                document.querySelectorAll('#meta-view-btns button').forEach(b => {{
+                    const oc = b.getAttribute('onclick') || '';
+                    if (oc.indexOf('fig0') !== -1) b.classList.add('active');
+                    else b.classList.remove('active');
                 }});
+            }} else {{
+                if (subBar) subBar.style.display = 'none';
+                document.querySelectorAll('#meta-view-btns button').forEach(b => b.classList.remove('active'));
+                const clickedBtn = (window.event && window.event.target) ? window.event.target.closest('button') : null;
+                if (clickedBtn && clickedBtn.closest('#meta-view-btns')) {{
+                    clickedBtn.classList.add('active');
+                }} else {{
+                    document.querySelectorAll('#meta-view-btns button').forEach(btn => {{
+                        const oc = btn.getAttribute('onclick') || '';
+                        if (oc.indexOf(figType) !== -1) btn.classList.add('active');
+                    }});
+                }}
             }}
+
             const img = document.getElementById('meta-img');
             let figName = 'Fig 1A: Curated Macroevolutionary Locus Divergence Across Key Clades & Extrema';
-            if (figType === 'fig0' || figType === 'overview') {{ img.src = 'summary_figure0_overview_and_methodology.png'; figName = 'Figure 0: Conceptual Paradigm, Syntenic Discovery Pipeline, Metric Anatomy & Interactive Dashboard User Guide'; }}
-            if (figType === 'fig1a' || figType === 'fig1') {{ img.src = 'summary_figure1a_locus_divergence_summary.png'; figName = 'Fig 1A: Curated Macroevolutionary Locus Divergence Across Key Clades & Extrema'; }}
-            if (figType === 'fig1b') {{ img.src = 'summary_figure1b_locus_divergence_full.png'; figName = 'Fig 1B: Complete Macroevolutionary Locus Divergence Across All 68 Vertebrates'; }}
-            if (figType === 'fig2') {{ img.src = 'summary_figure2_mechanistic_drivers.png'; figName = 'Fig 2: Mechanistic Drivers of GC Polarity'; }}
-            if (figType === 'fig3' || figType === 'fig4') {{ img.src = 'summary_figure3_phylogenetic_synteny.png'; figName = 'Fig 3: Macroevolutionary Synteny Architecture and Codon Divergence Across Vertebrates'; }}
+            if (figType === 'fig0' || figType === 'overview') {{
+                img.src = 'summary_figure0_overview_and_methodology.png';
+                figName = 'Figure 0: Conceptual Paradigm, Syntenic Discovery Pipeline, Metric Anatomy & Interactive Dashboard User Guide';
+            }} else if (figType === 'fig0a') {{
+                img.src = 'summary_figure0a_human_paradigm.png';
+                figName = 'Figure 0A: The Human Globin Paradigm & Evolutionary Inquiry';
+            }} else if (figType === 'fig0b') {{
+                img.src = 'summary_figure0b_synteny_pipeline.png';
+                figName = 'Figure 0B: Synteny-Anchored Locus Retrieval Pipeline & 4 Archetypes';
+            }} else if (figType === 'fig0c') {{
+                img.src = 'summary_figure0c_metric_anatomy_and_gc3.png';
+                figName = 'Figure 0C: Anatomy of Genomic Metrics, Biophysics & Synonymous GC3 Codon Shift (His-F8 Motif)';
+            }} else if (figType === 'fig0d') {{
+                img.src = 'summary_figure0d_dashboard_guide.png';
+                figName = 'Figure 0D: Interactive Dashboard Architecture & Analytical User Guide';
+            }} else if (figType === 'fig1a' || figType === 'fig1') {{
+                img.src = 'summary_figure1a_locus_divergence_summary.png';
+                figName = 'Fig 1A: Curated Macroevolutionary Locus Divergence Across Key Clades & Extrema';
+            }} else if (figType === 'fig1b') {{
+                img.src = 'summary_figure1b_locus_divergence_full.png';
+                figName = 'Fig 1B: Complete Macroevolutionary Locus Divergence Across All 68 Vertebrates';
+            }} else if (figType === 'fig2') {{
+                img.src = 'summary_figure2_mechanistic_drivers.png';
+                figName = 'Fig 2: Mechanistic Drivers of GC Polarity';
+            }} else if (figType === 'fig3' || figType === 'fig4') {{
+                img.src = 'summary_figure3_phylogenetic_synteny.png';
+                figName = 'Fig 3: Macroevolutionary Synteny Architecture and Codon Divergence Across Vertebrates';
+            }}
             const cap = document.getElementById('caption-meta');
             if (cap) cap.innerText = figName;
         }}

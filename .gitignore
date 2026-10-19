@@ -73,3 +73,5 @@ results/bivariate_length_gc_plots/
 results/chromosome_plots/
 results/*.html
 !results/dashboard.html
+!results/overview_guide.html
+!results/summary_figure0_overview_and_methodology.html
