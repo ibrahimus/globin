@@ -66,12 +66,13 @@ data/test_baselines/
 1_data_from_mike/data/genome_baselines
 scratch/
 
-# Large generated per-species plot galleries (regenerated on demand via CLI)
-results/diagnostic_plots/
-results/bivariate_with_inset_plots/
-results/bivariate_length_gc_plots/
-results/chromosome_plots/
+# Ignore large generated per-species Plotly HTMLs (1.3 GB), but track lightweight PNGs & PDFs for GitHub Pages
+results/diagnostic_plots/*.html
+results/bivariate_with_inset_plots/*.html
+results/bivariate_length_gc_plots/*.html
+results/chromosome_plots/*.html
 results/*.html
 !results/dashboard.html
 !results/overview_guide.html
 !results/summary_figure0_overview_and_methodology.html
+!results/summary_figure_bernardi_compaction_law.html

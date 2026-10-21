@@ -711,7 +711,8 @@ def main():
                     <button class="btn active" onclick="setMetaView('fig1a')">Fig 1A: Curated Summary</button>
                     <button class="btn" onclick="setMetaView('fig1b')">Fig 1B: All 68 Species</button>
                     <button class="btn" onclick="setMetaView('fig2')">Fig 2: Mechanistic Drivers</button>
-                    <button class="btn" onclick="setMetaView('fig3')">Fig 3: Phylogenetic Synteny &amp; Codon Map</button>
+                    <button class="btn" onclick="setMetaView('fig3')">Fig 3: Synteny &amp; Codon Map</button>
+                    <button class="btn" onclick="setMetaView('fig4')">Fig 4: Bernardi Compaction</button>
                 </div>
             </div>
             <!-- Subpanel Navigator for Overview Figures -->
@@ -1396,9 +1397,12 @@ def main():
             }} else if (figType === 'fig2') {{
                 img.src = 'summary_figure2_mechanistic_drivers.png';
                 figName = 'Fig 2: Mechanistic Drivers of GC Polarity';
-            }} else if (figType === 'fig3' || figType === 'fig4') {{
+            }} else if (figType === 'fig3') {{
                 img.src = 'summary_figure3_phylogenetic_synteny.png';
                 figName = 'Fig 3: Macroevolutionary Synteny Architecture and Codon Divergence Across Vertebrates';
+            }} else if (figType === 'fig4' || figType === 'bernardi') {{
+                img.src = 'summary_figure_bernardi_compaction_law.png';
+                figName = 'Fig 4: Empirical Proof of Bernardi\'s Isochore Compaction Law Across Vertebrates';
             }}
             const cap = document.getElementById('caption-meta');
             if (cap) cap.innerText = figName;
