@@ -27,11 +27,13 @@ def main():
     chr_out_dir = os.path.join(results_dir, "chromosome_plots")
     inset_out_dir = os.path.join(results_dir, "bivariate_with_inset_plots")
     biv_out_dir = os.path.join(results_dir, "bivariate_length_gc_plots")
+    diag_out_dir = os.path.join(results_dir, "diagnostic_plots")
     os.makedirs(chr_out_dir, exist_ok=True)
     os.makedirs(inset_out_dir, exist_ok=True)
     os.makedirs(biv_out_dir, exist_ok=True)
+    os.makedirs(diag_out_dir, exist_ok=True)
 
-    print("\n--- Generating chromosome_plots, bivariate_length_gc_plots, and bivariate_with_inset_plots ---")
+    print("\n--- Generating chromosome_plots, bivariate_length_gc_plots, bivariate_with_inset_plots, and diagnostic_plots ---")
     for i, sp in enumerate(species_list, 1):
         print(f"[{i:02d}/{len(species_list)}] Processing species: {sp}...")
         
@@ -44,12 +46,17 @@ def main():
         # 3. Generate bivariate_with_chromosome_inset (without other features / pseudogenes)
         inset_res = viz.plot_bivariate_with_chromosome_inset(sp, df_genes, df_intervals, output_dir=inset_out_dir)
 
+        # 4. Generate Diagnostic GC distribution (static PNG and interactive Plotly HTML)
+        viz.plot_diagnostic(sp, df_genes, output_dir=diag_out_dir)
+        viz.plot_diagnostic_interactive(sp, df_genes, output_dir=diag_out_dir)
+
     print(f"\nAll {len(species_list)} species successfully processed!")
 
     # Synchronize to 1_data_from_mike/results/
     target_chr = os.path.join(BASE_DIR, "1_data_from_mike/results/chromosome_plots")
     target_inset = os.path.join(BASE_DIR, "1_data_from_mike/results/bivariate_with_inset_plots")
     target_biv = os.path.join(BASE_DIR, "1_data_from_mike/results/bivariate_length_gc_plots")
+    target_diag = os.path.join(BASE_DIR, "1_data_from_mike/results/diagnostic_plots")
     
     print(f"Synchronizing {chr_out_dir} -> {target_chr}...")
     shutil.copytree(chr_out_dir, target_chr, dirs_exist_ok=True)
@@ -59,6 +66,9 @@ def main():
 
     print(f"Synchronizing {biv_out_dir} -> {target_biv}...")
     shutil.copytree(biv_out_dir, target_biv, dirs_exist_ok=True)
+
+    print(f"Synchronizing {diag_out_dir} -> {target_diag}...")
+    shutil.copytree(diag_out_dir, target_diag, dirs_exist_ok=True)
 
     print("Synchronization complete!")
 

@@ -342,7 +342,7 @@ def main():
 
         # Telomeric distance
         dist_telo = float(min(st, chrom_len - en))
-        rel_telo = round(dist_telo / (chrom_len / 2.0), 4)
+        rel_telo = round(dist_telo / chrom_len, 4)
 
         # Baselines
         m_cds = b_stats["mean_cds_gc"]

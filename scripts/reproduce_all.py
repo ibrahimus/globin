@@ -48,6 +48,11 @@ def main():
         sys.executable, "scripts/verify_cluster_completeness.py"
     ])
 
+    # Step 1b: Audit & Synchronize Per-Species Artifact Suites (Chromosome, Bivariate, Inset, Diagnostic)
+    run_step("Audit & Synchronize Per-Species Artifact Suites", [
+        sys.executable, "scripts/update_species_artifacts.py", "--check-stale"
+    ])
+
     # Step 2: Overview & Methodology Figures (Fig 0)
     run_step("Generate Overview & Methodology Figures (Fig 0A, 0B, 0C, 0D)", [
         sys.executable, "scripts/generate_overview_methodology_figure.py"
