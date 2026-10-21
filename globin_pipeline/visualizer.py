@@ -182,7 +182,9 @@ class Visualizer:
 
     COLOR_PALETTE = {
         "alpha_globin_coding": "#1f77b4",          # Deep Blue
+        "globin_coding_alpha": "#1f77b4",          # Deep Blue (alias)
         "beta_globin_coding": "#2ca02c",           # Forest Green
+        "globin_coding_beta": "#2ca02c",           # Forest Green (alias)
         "globin_coding": "#1f77b4",                # Deep Blue
         "globin_coding_locus_A": "#0d47a1",        # Cobalt Blue
         "globin_coding_locus_B": "#00acc1",        # Cyan / Teal
@@ -197,7 +199,9 @@ class Visualizer:
 
     MARKER_MAP = {
         "alpha_globin_coding": "o",
+        "globin_coding_alpha": "o",
         "beta_globin_coding": "s",
+        "globin_coding_beta": "s",
         "globin_coding": "o",
         "globin_coding_locus_A": "o",
         "globin_coding_locus_B": "^",
@@ -211,7 +215,9 @@ class Visualizer:
 
     LABEL_MAP = {
         "alpha_globin_coding": "Alpha Globin Coding",
+        "globin_coding_alpha": "Alpha Globin Coding",
         "beta_globin_coding": "Beta Globin Coding",
+        "globin_coding_beta": "Beta Globin Coding",
         "globin_coding": "Globin Coding",
         "globin_coding_locus_A": "Globin Coding (Locus A)",
         "globin_coding_locus_B": "Globin Coding (Locus B)",
@@ -226,10 +232,12 @@ class Visualizer:
     DETERMINISTIC_GROUP_TIERS = {
         # Tier 1 (closest to 0): Alpha-globins & ancestral linked globins
         "alpha_globin_coding": 1,
+        "globin_coding_alpha": 1,
         "globin_coding_locus_A": 1,
         "globin_coding": 1,
         # Tier 2: Beta-globins
         "beta_globin_coding": 2,
+        "globin_coding_beta": 2,
         "globin_coding_locus_B": 2,
         # Tier 3: Globin pseudogenes
         "globin_pseudogene": 3,
@@ -243,6 +251,70 @@ class Visualizer:
         # Tier 6: Other locus features
         "other_locus_feature": 6,
     }
+
+    @classmethod
+    def normalize_comparative_group(cls, r: Any) -> str:
+        """Deterministically normalizes comparative_group for any gene record.
+        Safeguards bona fide globins (is_globin == True) so they NEVER fall back
+        to 'other_locus_feature', and partitions alpha, beta, locus A/B, or ancestral globins.
+        """
+        if hasattr(r, "get"):
+            grp = str(r.get("comparative_group", "other_locus_feature") or "other_locus_feature")
+            is_glo = str(r.get("is_globin", False)).lower() == "true" or ("globin" in grp and "non_globin" not in grp)
+            biotype = str(r.get("biotype", "")).lower()
+            loc_id = str(r.get("locus_id", "") or "").lower()
+            gene_name = str(r.get("gene_name", "") or "").upper()
+            sym = str(r.get("display_symbol", "") or "").upper()
+        else:
+            return "other_locus_feature"
+
+        if "pseudogene" in biotype or grp == "globin_pseudogene" or "pseudo" in sym.lower():
+            return "globin_pseudogene" if is_glo else "other_locus_feature"
+
+        # Standard globin categories
+        if grp in ["alpha_globin_coding", "globin_coding_alpha"]:
+            return "alpha_globin_coding"
+        elif grp in ["beta_globin_coding", "globin_coding_beta"]:
+            return "beta_globin_coding"
+        elif grp == "globin_coding_locus_A":
+            return "globin_coding_locus_A"
+        elif grp == "globin_coding_locus_B":
+            return "globin_coding_locus_B"
+        elif grp == "globin_coding":
+            return "globin_coding"
+
+        if is_glo:
+            if "alpha" in loc_id and "beta" not in loc_id:
+                return "alpha_globin_coding"
+            elif "beta" in loc_id and "alpha" not in loc_id:
+                return "beta_globin_coding"
+            elif "locus_b" in loc_id:
+                return "globin_coding_locus_B"
+            elif "locus_a" in loc_id:
+                return "globin_coding_locus_A"
+            elif "proto" in loc_id:
+                return "globin_coding"
+            elif any(sym.startswith(x) or gene_name.startswith(x) for x in ["HBA", "HBZ", "HBM", "HBQ"]):
+                return "alpha_globin_coding"
+            elif any(sym.startswith(x) or gene_name.startswith(x) for x in ["HBB", "HBE", "HBD", "HBG"]):
+                return "beta_globin_coding"
+            elif "beta" in grp:
+                return "beta_globin_coding"
+            elif "alpha" in grp:
+                return "alpha_globin_coding"
+            else:
+                return "alpha_globin_coding"
+        else:
+            if grp in ["other_locus_feature", "cluster_non_globin"]:
+                if "alpha" in loc_id and "beta" not in loc_id:
+                    return "cluster_non_globin_alpha"
+                elif "beta" in loc_id and "alpha" not in loc_id:
+                    return "cluster_non_globin_beta"
+                elif "locus_a" in loc_id:
+                    return "cluster_non_globin_locus_A"
+                elif "locus_b" in loc_id:
+                    return "cluster_non_globin_locus_B"
+            return grp
 
     def _calculate_gene_y_positions(self, df: pd.DataFrame, val_col: str, y_max: float) -> Dict[str, float]:
         """Calculates deterministic, consistent y-axis positions stratified by gene category.
@@ -1881,6 +1953,7 @@ class Visualizer:
                 spine.set_linewidth(1.8)
 
             loc_genes = sp_genes[sp_genes["locus_id"] == loc_id].copy()
+            loc_genes["comparative_group"] = loc_genes.apply(self.normalize_comparative_group, axis=1)
             # Exclude other_locus_feature and pseudogenes to match clean protein-coding architecture
             loc_genes = loc_genes[~loc_genes["comparative_group"].isin(["other_locus_feature", "globin_pseudogene"])]
             loc_genes = loc_genes[~loc_genes["biotype"].astype(str).str.contains("pseudogene", case=False, na=False)]
@@ -2181,6 +2254,7 @@ class Visualizer:
 
             # Bottom: Zoomed locus track
             loc_genes = sp_genes[sp_genes["locus_id"] == r["loc_id"]].copy()
+            loc_genes["comparative_group"] = loc_genes.apply(self.normalize_comparative_group, axis=1)
             loc_genes = loc_genes[~loc_genes["comparative_group"].isin(["other_locus_feature", "globin_pseudogene"])]
             loc_genes = loc_genes[~loc_genes["biotype"].astype(str).str.contains("pseudogene", case=False, na=False)]
             if not loc_genes.empty:
@@ -2354,8 +2428,11 @@ class Visualizer:
         # 4. Beta Globins / Locus B: zorder=7 (annotations: 8)
         # 5. Alpha Globins / Locus A / Ancestral: zorder=9 (annotations: 10, TOP-MOST)
         BIVARIATE_GROUP_CONFIG = {
-            # Alpha / Locus A / Linked Globin Coding (Top Layer)
             "alpha_globin_coding": {
+                "label": "Alpha Globin Coding", "color": "#d32f2f", "edgecolor": "#b71c1c",
+                "marker": "o", "plotly_symbol": "circle", "size": 110, "zorder": 9, "tier": "alpha"
+            },
+            "globin_coding_alpha": {
                 "label": "Alpha Globin Coding", "color": "#d32f2f", "edgecolor": "#b71c1c",
                 "marker": "o", "plotly_symbol": "circle", "size": 110, "zorder": 9, "tier": "alpha"
             },
@@ -2369,6 +2446,10 @@ class Visualizer:
             },
             # Beta / Locus B Globin Coding (Middle Layer)
             "beta_globin_coding": {
+                "label": "Beta Globin Coding", "color": "#1976d2", "edgecolor": "#0d47a1",
+                "marker": "s", "plotly_symbol": "square", "size": 100, "zorder": 7, "tier": "beta"
+            },
+            "globin_coding_beta": {
                 "label": "Beta Globin Coding", "color": "#1976d2", "edgecolor": "#0d47a1",
                 "marker": "s", "plotly_symbol": "square", "size": 100, "zorder": 7, "tier": "beta"
             },
@@ -2413,10 +2494,11 @@ class Visualizer:
         all_items: list = []
 
         for _, r in sp_genes.iterrows():
-            grp = str(r.get("comparative_group", "other_locus_feature"))
+            grp = self.normalize_comparative_group(r)
             biotype = str(r.get("biotype", "")).lower()
-            if grp in ["other_locus_feature", "globin_pseudogene"] or "pseudogene" in biotype:
+            if "pseudogene" in biotype or grp in ["globin_pseudogene", "other_locus_feature"]:
                 continue
+
             l = r.get("coding_span_len") or r.get("full_gene_len", 0)
             gc_val = r.get("coding_span_gc") or r.get("full_gene_gc")
             if l <= 0 or pd.isna(gc_val):
@@ -2835,9 +2917,11 @@ class Visualizer:
 
         BIVARIATE_GROUP_CONFIG = {
             "alpha_globin_coding": {"label": "Alpha Globin Coding", "color": "#d32f2f", "edgecolor": "#b71c1c", "marker": "o", "plotly_symbol": "circle", "size": 110, "zorder": 9, "tier": "alpha"},
+            "globin_coding_alpha": {"label": "Alpha Globin Coding", "color": "#d32f2f", "edgecolor": "#b71c1c", "marker": "o", "plotly_symbol": "circle", "size": 110, "zorder": 9, "tier": "alpha"},
             "globin_coding_locus_A": {"label": "Globin Coding (Locus A)", "color": "#d32f2f", "edgecolor": "#b71c1c", "marker": "o", "plotly_symbol": "circle", "size": 110, "zorder": 9, "tier": "alpha"},
             "globin_coding": {"label": "Globin Coding", "color": "#d32f2f", "edgecolor": "#b71c1c", "marker": "o", "plotly_symbol": "circle", "size": 110, "zorder": 9, "tier": "alpha"},
             "beta_globin_coding": {"label": "Beta Globin Coding", "color": "#1976d2", "edgecolor": "#0d47a1", "marker": "s", "plotly_symbol": "square", "size": 100, "zorder": 7, "tier": "beta"},
+            "globin_coding_beta": {"label": "Beta Globin Coding", "color": "#1976d2", "edgecolor": "#0d47a1", "marker": "s", "plotly_symbol": "square", "size": 100, "zorder": 7, "tier": "beta"},
             "globin_coding_locus_B": {"label": "Globin Coding (Locus B)", "color": "#0288d1", "edgecolor": "#01579b", "marker": "s", "plotly_symbol": "square", "size": 100, "zorder": 7, "tier": "beta"},
             "globin_pseudogene": {"label": "Globin Pseudogene", "color": "#f57c00", "edgecolor": "#e65100", "marker": "D", "plotly_symbol": "diamond", "size": 85, "zorder": 5, "tier": "pseudogene"},
             "cluster_non_globin_alpha": {"label": "Non-Globin (α-Locus)", "color": "#2e7d32", "edgecolor": "#1b5e20", "marker": "^", "plotly_symbol": "triangle-up", "size": 75, "zorder": 3, "tier": "non_globin"},
@@ -2853,10 +2937,11 @@ class Visualizer:
         all_items: list = []
 
         for _, r in sp_genes.iterrows():
-            grp = str(r.get("comparative_group", "other_locus_feature"))
+            grp = self.normalize_comparative_group(r)
             biotype = str(r.get("biotype", "")).lower()
-            if grp in ["other_locus_feature", "globin_pseudogene"] or "pseudogene" in biotype:
+            if "pseudogene" in biotype or grp in ["globin_pseudogene", "other_locus_feature"]:
                 continue
+
             l = r.get("coding_span_len") or r.get("full_gene_len", 0)
             gc_val = r.get("coding_span_gc") or r.get("full_gene_gc")
             if l <= 0 or pd.isna(gc_val):
