@@ -1563,28 +1563,25 @@ species:
     common_name: Elephant Seal (M. angustirostris)
     clade: amniote_mammal
     division: NCBI_RefSeq
-    assembly: ASM2128878v3
+    assembly: mMirAng1.0.hap1
     status: active
     loci:
     - locus_id: alpha_globin
-      chromosome: NC_072358.1
-      start: 128750000
-      end: 128950000
+      chromosome: NW_026991713.1
+      start: 139500000
+      end: 139750000
       strand: +
       left_gene: RHBDF1
-      right_gene: FAM234A
-      notes: 'Northern elephant seal (champion pinniped diver) alpha-globin locus
-        on chr3 (NC_072358.1): RHBDF1 - MPG - NPRL3 - HBQ1 - LUC7L - FAM234A'
+      right_gene: AXIN1
+      notes: 'Northern elephant seal complete alpha locus on PacBio HiFi scaffold NW_026991713.1 (mMirAng1.0.hap1): RHBDF1 - MPG - NPRL3 - HBZ - HBM - HBA1 - HBA2 - HBQ1 - LUC7L - FAM234A - AXIN1'
     - locus_id: beta_globin
-      chromosome: NC_072366.1
-      start: 47000000
-      end: 48450000
-      strand: +
+      chromosome: NW_026991721.1
+      start: 58510000
+      end: 58580000
+      strand: '-'
       left_gene: HBE1
-      right_gene: CLPB
-      notes: 'Northern elephant seal (champion pinniped diver) beta-globin locus on
-        chr11 (NC_072366.1): HBE1 - LOC123856653 (HBE2) - LOC123857440 (HBB) flanked
-        by FOLR cluster and CLPB'
+      right_gene: LOC123857440
+      notes: 'Northern elephant seal complete beta locus on PacBio HiFi scaffold NW_026991721.1 (mMirAng1.0.hap1): HBE1 - HBE2 - HBBs'
   physeter_catodon:
     common_name: Sperm Whale (P. catodon)
     clade: amniote_mammal

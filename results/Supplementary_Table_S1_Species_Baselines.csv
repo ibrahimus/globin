@@ -57,7 +57,7 @@ miniopterus_natalensis,Bat (M. natalensis),amniote_mammal,Mammalia,mMinNat1.hap1
 desmodus_rotundus,Vampire Bat (D. rotundus),amniote_mammal,Mammalia,HLdesRot8A.1,HLdesRot8A.1,21,54.23,8.13,,54.23,8.13,63.0,14.98,41.0
 puma_concolor,Puma (P. concolor),amniote_mammal,Mammalia,mPumCon1.1.hap2,mPumCon1.1.hap2,21,47.950799531782785,8.782148232194626,,54.1391622983358,9.0503060184424,62.27163316199298,16.20674559287979,41.0
 zalophus_californianus,Sea Lion (Z. californianus),amniote_mammal,Mammalia,mZalCal1.pri.v2,mZalCal1.pri.v2,17,47.905669104289906,8.783477879785345,,53.670699147608175,8.996157812367935,61.356668219292935,16.17313699865304,41.0
-mirounga_angustirostris,Elephant Seal (M. angustirostris),amniote_mammal,Mammalia,ASM2128878v3,ASM2128878v3,71,53.8,9.13,,53.8,9.13,61.98,16.76,41.0
+mirounga_angustirostris,Elephant Seal (M. angustirostris),amniote_mammal,Mammalia,mMirAng1.0.hap1,mMirAng1.0.hap1,24,48.1,9.13,,53.8,9.13,61.98,16.76,41.51
 Sus_scrofa,Pig (S. scrofa),amniote_mammal,Mammalia,Sscrofa11.1,Sscrofa11.1,22018,47.87,8.67,22018.0,53.08,9.28,61.25,16.48,41.5
 camelus_dromedarius,Dromedary (C. dromedarius),amniote_mammal,Mammalia,mCamDro1.pat,mCamDro1.pat,18,54.41,8.47,,54.41,8.47,63.15,15.55,41.0
 vicugna_pacos,Alpaca (V. pacos),amniote_mammal,Mammalia,VicPac4,VicPac4,20,54.6,8.46,,54.6,8.46,63.14,15.39,41.0

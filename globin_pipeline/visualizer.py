@@ -3439,8 +3439,8 @@ class Visualizer:
             clade = sp_df['clade'].iloc[0]
             cname = self.COMMON_NAME_MAP.get(sp, sp)
             
-            a_genes = sp_df[sp_df['comparative_group'].isin(['alpha_globin_coding', 'globin_coding_locus_A', 'globin_coding'])]
-            b_genes = sp_df[sp_df['comparative_group'].isin(['beta_globin_coding', 'globin_coding_locus_B'])]
+            a_genes = sp_df[sp_df['comparative_group'].isin(['alpha_globin_coding', 'globin_coding_alpha', 'globin_coding_locus_A', 'globin_coding'])]
+            b_genes = sp_df[sp_df['comparative_group'].isin(['beta_globin_coding', 'globin_coding_beta', 'globin_coding_locus_B'])]
             
             a_flank = sp_df[sp_df['comparative_group'].isin(['cluster_non_globin_alpha', 'cluster_non_globin_locus_A', 'cluster_non_globin'])]
             b_flank = sp_df[sp_df['comparative_group'].isin(['cluster_non_globin_beta', 'cluster_non_globin_locus_B'])]

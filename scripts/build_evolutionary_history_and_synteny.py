@@ -164,7 +164,9 @@ def main():
         # If not Ensembl or no direct CDS file, splice from locus genomic sequence
         if not cds_seq and gdata:
             t_list = gdata.get("Transcript", [])
-            if t_list and "CDS" in t_list[0] and t_list[0]["CDS"]:
+            if isinstance(t_list, dict):
+                t_list = [t_list]
+            if t_list and isinstance(t_list[0], dict) and "CDS" in t_list[0] and t_list[0]["CDS"]:
                 target_t = t_list[0]
                 cds_list = sorted(target_t["CDS"], key=lambda c: c.get("start", 0))
                 strand = target_t.get("strand", 1)

@@ -121,5 +121,9 @@
   "aptenodytes_patagonicus::NC_134961.1": 20257728,
   "physeter_catodon::NW_021146805.1": 25000,
   "calypte_anna::NW_007619074.1": 179301,
-  "aptenodytes_patagonicus::VULM01006596.1": 469083
+  "aptenodytes_patagonicus::VULM01006596.1": 469083,
+  "mirounga_angustirostris": {
+    "NW_026991713.1": 180400003,
+    "NW_026991721.1": 108890317
+  }
 }
